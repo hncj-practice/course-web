@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+.h-center {
+  margin: 0 auto;
+}
+.vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  background: #2e333f;
+  padding-left: 18%;
+  display: flex;
+}
+header img {
+  width: 40px;
+  height: 40px;
+  margin-top: 7px;
+}
+header h2 {
+  margin: 0;
+  line-height: 55px;
+  color: #fff;
+  font-size: 26px;
+  margin-left: 10px;
+}
+header .account {
+  position: absolute;
+  height: 30px;
+  right: 120px;
+  top: 12px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header .account span {
+  margin-right: 8px;
+  color: #fff;
+  line-height: 30px;
+  cursor: pointer;
+}
+header .account span:hover {
+  color: #49af4f;
+}
+header .account img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0;
+}
+.headerwrap {
+  width: 100%;
+  height: 55px;
+  background: #fff;
+  padding-left: 18%;
+  border-bottom: solid 1px #e4e4e5;
+  display: flex;
+}
+.headerwrap .course-name {
+  margin: 0;
+  padding: 0;
+  height: 55px;
+  line-height: 55px;
+  font-size: 25px;
+  color: #49af4f;
+  margin-right: 30%;
+}
+.headerwrap ul {
+  list-style-type: none;
+  float: left;
+}
+.headerwrap ul li {
+  float: left;
+  font-size: 18px;
+  margin: 14px 8px 0;
+  padding: 2px 3px;
+  border-radius: 5px;
+}
+.headerwrap ul .active {
+  background: gray;
+}
+.headerwrap ul .active a {
+  text-decoration: none;
+  color: #fff;
+}
+.headerwrap ul .inactive {
+  background: #fff;
+}
+.headerwrap ul .inactive a {
+  text-decoration: none;
+  color: #000;
+}
+main {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 25px;
+  height: 500px;
+  background: #fff;
+  border: solid 1px #dddddd;
+  border-radius: 10px;
+}
+main .title {
+  margin-left: 10px;
+  font-size: 25px;
+}
+main ul {
+  margin: 10px 0 0 30px;
+}
