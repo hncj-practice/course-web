@@ -19,6 +19,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+.cnt-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 header {
   position: relative;
   width: 100%;
@@ -88,21 +94,24 @@ header .account img {
   float: left;
   font-size: 18px;
   margin: 14px 8px 0;
-  padding: 2px 3px;
+  padding: 2px 5px;
   border-radius: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 .headerwrap ul .active {
   background: gray;
 }
-.headerwrap ul .active a {
-  text-decoration: none;
+.headerwrap ul .active span {
   color: #fff;
 }
 .headerwrap ul .inactive {
   background: #fff;
 }
-.headerwrap ul .inactive a {
-  text-decoration: none;
+.headerwrap ul .inactive span {
   color: #000;
 }
 main {
@@ -115,9 +124,16 @@ main {
   border-radius: 10px;
 }
 main .title {
-  margin-left: 10px;
+  margin-left: 12px;
+  margin-bottom: 20px;
   font-size: 25px;
 }
 main ul {
   margin: 10px 0 0 30px;
+  list-style: none;
+}
+main ul li {
+  margin: 18px 0;
+  font-size: 16px;
+  cursor: pointer;
 }

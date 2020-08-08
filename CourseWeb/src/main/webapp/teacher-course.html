@@ -11,6 +11,7 @@
     <script src="./js/bootstrap.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/teacher-course.css">
+    <script src="./js/util.js"></script>
 </head>
 
 <body>
@@ -29,38 +30,36 @@
     <div class="headerwrap">
         <h2 class="course-name"> 移动终端开发 </h2>
         <ul>
-            <li class="active"><a href="1">首页</a></li>
-            <li class="inactive"><a href="2">题目</a></li>
-            <li class="inactive"><a href="3">试卷</a></li>
-            <li class="inactive"><a href="4">话题</a></li>
+            <li class="active" id="zj"><span>章节管理</span></li>
+            <li class="inactive" id="sj"><span>试卷管理</span></li>
+            <li class="inactive" id="ht"><span>话题管理</span></li>
 
         </ul>
     </div>
 
-    <main id="hone">
+    <main id="zjContain">
         <h2 class="title">目录</h2>
 
         <ul>
-            <li>第一章</li>
-            <li>第二章</li>
-            <li>第三章</li>
-            <li>第四章</li>
+            <li>第一章 三生三世</li>
+            <li>第二章 顶顶顶顶</li>
+            <li>第三章 反反复复</li>
+            <li>第四章 灌灌灌灌</li>
         </ul>
     </main>
-    <!-- 
-    <main id="question">
 
+    <main id="sjContain" style="display: none;">
+        试卷
     </main>
 
-    <main id="paper">
-
+    <main id="htContain" style="display: none;">
+        话题
     </main>
 
-    <main id="topic">
-
-    </main> -->
 
 
+
+    <script src="./js/t-course.js"></script>
 </body>
 
 </html>
