@@ -3,8 +3,6 @@ package com.ws.servlet;
 import com.ws.domain.Teacher;
 import com.ws.service.ITeacherService;
 import com.ws.service.impl.TeacherServiceImpl;
-import com.ws.util.HttpUtil;
-import com.ws.util.NetUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
