@@ -17,20 +17,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程助手 - 教师</title>
-    <script src="./js/util.js"></script>
-    <link rel="short icon" href="imgs/logo.png">
-    <script src="./js/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <script src="./js/bootstrap.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/teacher-index.css">
+    <script src="../js/util.js"></script>
+    <link rel="short icon" href="../imgs/logo.png">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/teacher-index.css">
 </head>
 
 <body>
 
 <header>
 
-    <img src="./imgs/logo.png" alt="">
+    <img src="../imgs/logo.png" alt="">
     <h2>网络课程助手（logo暂定）</h2>
 
     <div class="account">
@@ -76,13 +76,13 @@
 </div>
 
 <div class="loading" style="text-align: center">
-    <img src="./imgs/loading.gif" alt="" style="margin-top:30px ">
+    <img src="../imgs/loading.gif" alt="" style="margin-top:30px ">
 </div>
 
 <div class="courses" style="display: none">
 
     <div class="course">
-        <img src="./imgs/Java高级应用.png" alt="">
+        <img src="../imgs/Java高级应用.png" alt="">
         <div class="title">
             <h4 class="name">Java高级应用</h4>
             <h4 class="numbers">67人</h4>
@@ -91,7 +91,7 @@
 
 </div>
 
-<script src="./js/t-index.js"></script>
+<script src="../js/t-index.js"></script>
 </body>
 
 </html>

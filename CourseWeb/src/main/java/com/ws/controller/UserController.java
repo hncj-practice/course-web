@@ -9,12 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/user")
-public class LoginController {
-
+public class UserController {
 
     @RequestMapping("/teacher")
-    public String tLogin() {
-//        return "t-index";
+    public String teacherLogin() {
         return "t-index";
     }
 }

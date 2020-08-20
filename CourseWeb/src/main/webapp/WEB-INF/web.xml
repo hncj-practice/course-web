@@ -7,14 +7,14 @@
     <display-name>Archetype Created Web Application</display-name>
 
 
-<!--    <servlet>-->
-<!--        <servlet-name>tLogin</servlet-name>-->
-<!--        <servlet-class>com.ws.servlet.TLoginServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>tLogin</servlet-name>-->
-<!--        <url-pattern>/teacher</url-pattern>-->
-<!--    </servlet-mapping>-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>tLogin</servlet-name>-->
+    <!--        <servlet-class>com.ws.servlet.TLoginServlet</servlet-class>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>tLogin</servlet-name>-->
+    <!--        <url-pattern>/teacher</url-pattern>-->
+    <!--    </servlet-mapping>-->
 
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
@@ -29,5 +29,20 @@
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>default</servlet-name>-->
+<!--        <url-pattern>/static/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>default</servlet-name>-->
+<!--        <url-pattern>*.js</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>default</servlet-name>-->
+<!--        <url-pattern>*.css</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 </web-app>
