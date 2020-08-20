@@ -7,9 +7,6 @@ function $(param) {
 $(function () {
     // 请求课程信息
     requestCourses();
-
-    // 加载事件
-    loadEvent();
 });
 
 // 请求课程信息
@@ -23,6 +20,8 @@ function requestCourses() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // 请求成功，加载课程
             loadCourses(xhr.responseText);
+            // 加载事件
+            loadEvent();
         }
     };
     xhr.send();
@@ -51,14 +50,14 @@ function loadCourses(jsonText) {
     for (let i = 0; i < length; i++) {
         // noinspection all
         html += `
-        <div class="course" id="course{3}">
-            <img src="{0}" alt="" >
+        <div class="course">
+            <img class="course-img" cid="{3}" src="{0}" alt="" >
             <div class="title">
                 <h4 class="name">{1}</h4>
                 <h4 class="numbers">{2}人</h4>
             </div>
         </div>        
-        `.format(data[i]['coverimg'], data[i]['cname'], data[i]['snum'],data[i]['cid']);
+        `.format(data[i]['coverimg'], data[i]['cname'], data[i]['snum'], data[i]['cid']);
     }
     courses.html(html);
     loading.hide(250);
@@ -76,12 +75,21 @@ function loadEvent() {
 
         avatar.mouseenter(function () {
             console.log('移入');
-
             manage.slideDown(200);
         });
 
         manage.mouseleave(function () {
             manage.slideUp(200);
+        });
+    }
+
+    // 课程被点击
+    {
+        $('.course-img').click((e) => {
+            console.log($(this));
+            // 去正在点击的课程id
+            let cid = $(e.target).attr('cid');
+            // 跳转
         });
     }
 }
