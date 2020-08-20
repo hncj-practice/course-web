@@ -14,7 +14,7 @@ function classChange(dom, class1, class2) {
 
 function setClass(dom, class1, class2) {
     if (dom.hasClass(class1)) {
-        return;
+
     } else {
         if (dom.hasClass(class2)) {
             dom.removeClass(class2);

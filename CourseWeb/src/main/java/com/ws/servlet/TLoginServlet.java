@@ -29,6 +29,7 @@ public class TLoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
+        // 将来替换成spring
         ITeacherService teacherService = new TeacherServiceImpl();
         Teacher teacher = teacherService.getInfo(username, password);
 
@@ -40,7 +41,7 @@ public class TLoginServlet extends HttpServlet {
         }
         // 不正常
         else {
-            out.println("Error");
+            out.println("Login-Error");
         }
     }
 }

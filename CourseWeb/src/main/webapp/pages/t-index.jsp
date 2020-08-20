@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%--<jsp:useBean id="teacher" scope="request" class="com.ws.domain.Teacher"/>--%>
+<jsp:useBean id="teacher" scope="request" class="com.ws.domain.Teacher"/>
 
 <%--<jsp:useBean id="teacher" scope="request" type="com.ws.domain.Teacher"/>--%>
 
@@ -82,7 +82,7 @@
 <div class="courses" style="display: none">
 
     <div class="course">
-        <img src="../imgs/Java高级应用.png" alt="">
+        <img src="" alt="">
         <div class="title">
             <h4 class="name">Java高级应用</h4>
             <h4 class="numbers">67人</h4>

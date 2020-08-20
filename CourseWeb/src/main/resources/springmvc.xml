@@ -22,8 +22,8 @@
 
     <mvc:annotation-driven/>
 
+    <!-- 资源放行 -->
     <mvc:default-servlet-handler/>
-
     <!--    <mvc:resources location="/css/" mapping="/css/**"/>-->
     <!--    <mvc:resources location="/js/" mapping="/js/**"/>-->
     <!--    <mvc:resources location="/imgs/" mapping="/imgs/**"/>-->
