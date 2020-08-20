@@ -47,8 +47,6 @@ public class Teacher {
         String avatar;
         int status;
 
-
-
         public String getTno() {
             return tno;
         }
