@@ -104,11 +104,11 @@ main #userPanel {
 }
 main #userPanel .choose-user-type {
   width: fit-content;
-  height: 60px;
+  height: 55px;
   margin: 0 auto;
 }
 main #userPanel .choose-user-type span {
-  line-height: 60px;
+  line-height: 55px;
   padding: 10px;
   background: #444348;
   border-radius: 10px;
@@ -116,6 +116,31 @@ main #userPanel .choose-user-type span {
   margin: 0 5px;
   color: #fff;
   cursor: pointer;
+}
+main #userPanel .teacher {
+  padding: 28px;
+}
+main #userPanel .teacher table tr {
+  height: 38px;
+}
+main #userPanel .teacher table tr:hover {
+  background: #e0f5f1;
+  outline: solid 1px #a9d4c7;
+}
+main #userPanel .teacher table tr .options {
+  position: relative;
+}
+main #userPanel .teacher table tr .options span {
+  position: absolute;
+  cursor: pointer;
+}
+main #userPanel .teacher table tr .options .reset-teacher {
+  left: 15px;
+  color: #5d6691;
+}
+main #userPanel .teacher table tr .options .delete-teacher {
+  right: 15px;
+  color: red;
 }
 main #coursePanel {
   width: 100%;

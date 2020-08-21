@@ -100,13 +100,13 @@ main {
 
         .choose-user-type {
             width : fit-content;
-            height: 60px;
+            height: 55px;
 
             // background: hotpink;
             margin: 0 auto;
 
             span {
-                line-height  : 60px;
+                line-height  : 55px;
                 padding      : 10px;
                 background   : #444348;
                 border-radius: 10px;
@@ -114,6 +114,44 @@ main {
                 margin       : 0 5px;
                 color        : #fff;
                 cursor       : pointer;
+            }
+        }
+
+        .teacher {
+            padding   : 28px;
+            // color  : indianred;
+
+            table {
+                tr {
+                    height   : 38px;
+                    // cursor: pointer;
+
+                    &:hover {
+                        background   : #e0f5f1;
+                        // border    : 1px solid #a9d4c7;
+                        outline      : solid 1px #a9d4c7;
+                    }
+
+                    .options {
+                        position: relative;
+
+                        span {
+                            position: absolute;
+                            cursor  : pointer;
+                        }
+
+                        .reset-teacher {
+
+                            left : 15px;
+                            color: #5d6691;
+                        }
+
+                        .delete-teacher {
+                            right: 15px;
+                            color: red;
+                        }
+                    }
+                }
             }
         }
     }

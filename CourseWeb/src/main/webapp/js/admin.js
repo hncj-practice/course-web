@@ -52,4 +52,21 @@ function loadEvents() {
             student.show(200);
         });
     }
+
+
+    // 教师用户操作
+    {
+        // 重置
+        $('.reset-teacher').click((e) => {
+            let sno = $(e.target).attr('tno');
+            alert('重置 ' + tno);
+        });
+
+        // 删除
+        $('.delete-teacher').click((e) => {
+            let sno = $(e.target).attr('tno');
+            alert('删除 ' + tno);
+        });
+    }
 }
+
