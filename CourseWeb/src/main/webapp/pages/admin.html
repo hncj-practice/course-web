@@ -49,7 +49,7 @@
                     <span id="cg2Student">学生用户</span>
                 </div>
 
-                <div class="teacher">
+                <div class="teacher table-div">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -140,28 +140,94 @@
 
 
 
-                <div class="student" style="display: none;">
-                    <table class="table" id="studentTable">
+                <div class="student table-div" style="display: none;">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>表格标题</th>
-                                <th>表格标题</th>
-                                <th>表格标题</th>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>班级</th>
+                                <th>性别</th>
+                                <th>邮箱</th>
+                                <th style="width: 110px;">状态</th>
+                                <th style="width: 130px;">操作</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="teacherTable">
                             <tr>
-                                <td>student</td>
-                                <td>student</td>
-                                <td>student</td>
+                                <td>
+                                    <input type="checkbox" />
+                                    081417137
+                                </td>
+                                <td>吴硕</td>
+                                <td>0814171</td>
+                                <td>男</td>
+                                <td>1953649096@qq.com</td>
+                                <td>OK</td>
+                                <td class="options">
+                                    <span tno="081417137" class="reset-teacher">重置</span>
+                                    <span tno="081417137" class="delete-teacher">删除</span>
+                                </td>
                             </tr>
                             <tr>
-                                <td>表格单元格</td>
-                                <td>表格单元格</td>
-                                <td>表格单元格</td>
+                                <td>
+                                    <input type="checkbox" />
+                                    081417138
+                                </td>
+                                <td>吴硕</td>
+                                <td>0814171</td>
+                                <td>男</td>
+                                <td>1953649096@qq.com</td>
+                                <td>OK</td>
+                                <td class="options">
+                                    <span tno="081417138" class="reset-teacher">重置</span>
+                                    <span tno="081417138" class="delete-teacher">删除</span>
+                                </td>
                             </tr>
+
+                            <tr class="add-teacher-tr">
+                                <td><input type="text" placeholder="学号（9位）"></td>
+                                <td><input type="text" placeholder="姓名"></td>
+                                <td><input type="text" placeholder="班级"></td>
+                                <td><input type="text" placeholder="性别（男/女）"></td>
+                                <td><input type="text" placeholder="邮箱"></td>
+                                <td>OK</td>
+                                <td class="options">
+                                    <span class="add-teacher">添加学生</span>
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
+
+
+                    <!-- 批量操作等 -->
+                    <div class="teacher-options">
+
+                        <!-- 功能按钮 -->
+                        <ul class="pager opts">
+                            <li class="all"><a href="#">全选</a></li>
+                            <li class="reset-all"><a href="#">重置</a></li>
+                            <li class="delete-all"><a href="#">删除</a></li>
+                        </ul>
+
+                        <!-- 翻页按钮 -->
+                        <ul class="pagination pagination-lg pages">
+                            <li><a href="#">首页</a></li>
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                            <li><a href="#">末页 386</a></li>
+                            <li><a href="#">跳转</a></li>
+                        </ul>
+
+                        <input class="jump" type="text" placeholder="1">
+
+                    </div>
                 </div>
 
 
