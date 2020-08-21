@@ -1,5 +1,3 @@
-
-
 $('#userLogin').click(() => {
     $('#userLogin').attr('class', 'active');
     $('#adminLogin').attr('class', 'inactive');

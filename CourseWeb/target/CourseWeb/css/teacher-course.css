@@ -118,7 +118,6 @@ main {
   width: 50%;
   margin: 0 auto;
   margin-top: 25px;
-  height: 500px;
   background: #fff;
   border: solid 1px #dddddd;
   border-radius: 10px;
@@ -128,12 +127,72 @@ main .title {
   margin-bottom: 20px;
   font-size: 25px;
 }
-main ul {
+main .ul-zj {
   margin: 10px 0 0 30px;
   list-style: none;
 }
-main ul li {
+main .ul-zj li {
   margin: 18px 0;
   font-size: 16px;
   cursor: pointer;
+}
+main .ul-ht {
+  list-style: none;
+}
+main .ul-ht li {
+  width: 94%;
+  margin: 20px auto;
+  background: #f7f7f7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+main .ul-ht li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 12px 2px 12px 12px;
+}
+main .ul-ht li .right {
+  width: 100%;
+  flex-flow: 1;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+main .ul-ht li .right .who-start {
+  margin-top: 18px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  color: #49af4f;
+  font-size: 16px;
+}
+main .ul-ht li .right .title {
+  margin: 10px 0 0 10px;
+  font-size: 18px;
+}
+main .ul-ht li .right .content {
+  margin: 8px 0 0 10px;
+  font-size: 17px;
+}
+main .ul-ht li .right .comments {
+  width: calc(100% - 20px);
+  margin: 10px;
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+main .ul-ht li .right .comments .comment {
+  text-align: left;
+}
+main .ul-ht li .right .comments .comment .who-commit {
+  color: #49af4f;
+}
+main .ul-ht li .right .comments .comment .comment-content {
+  margin-top: 5px;
+}
+main .ul-ht li .right .comments button {
+  text-align: center;
+  margin: 10px auto;
 }

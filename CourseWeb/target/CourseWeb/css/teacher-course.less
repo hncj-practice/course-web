@@ -110,12 +110,13 @@ header {
 }
 
 
+// 主显示区域
 main {
 
   width: 50%;
   .h-center();
   margin-top: 25px;
-  height    : 500px;
+  // height    : 500px;
 
   background: #fff;
 
@@ -128,7 +129,8 @@ main {
     font-size    : 25px;
   }
 
-  ul {
+  // 章节
+  .ul-zj {
     margin    : 10px 0 0 30px;
     list-style: none;
 
@@ -137,6 +139,83 @@ main {
       font-size: 16px;
 
       cursor: pointer;
+    }
+  }
+
+  // 话题
+  .ul-ht {
+    list-style: none;
+
+    li {
+      width               : 94%;
+      // height        : 200px;
+      margin              : 20px auto;
+      background          : #f7f7f7;
+      // background       : palevioletred;
+      border-radius       : 10px;
+      display             : flex;
+      flex-direction      : row;
+
+      img {
+        width        : 50px;
+        height       : 50px;
+        border-radius: 50%;
+        margin       : 12px 2px 12px 12px;
+      }
+
+      .right {
+        width                        : 100%;
+        flex-flow                    : 1;
+        // background                : violet;
+        border-bottom-right-radius   : 10px;
+        border-top-right-radius      : 10px;
+
+        .who-start {
+          margin-top   : 18px;
+          margin-bottom: 0;
+          margin-left  : 10px;
+          color        : @colorPrimary;
+          font-size    : 16px;
+        }
+
+        .title {
+          margin   : 10px 0 0 10px;
+          font-size: 18px;
+        }
+
+        .content {
+          margin   : 8px 0 0 10px;
+          font-size: 17px;
+        }
+
+        .comments {
+          width        : calc(100% - 20px);
+          // height    : 50px;
+          margin       : 10px;
+          margin-bottom: 15px;
+          background   : #fff;
+          border-radius: 5px;
+          text-align   : center;
+          padding      : 5px;
+
+          .comment {
+            text-align: left;
+
+            .who-commit {
+              color: @colorPrimary;
+            }
+
+            .comment-content {
+              margin-top: 5px;
+            }
+          }
+
+          button {
+            text-align: center;
+            margin    : 10px auto;
+          }
+        }
+      }
     }
   }
 }

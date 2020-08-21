@@ -12,13 +12,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
-    <link rel="short icon" href="imgs/logo.png">
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/teacher-login.css">
-    <script src="js/t-login.js"></script>
+    <link rel="short icon" href="../imgs/logo.png">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/util.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/teacher-login.css">
+
 </head>
 
 <body>
@@ -31,7 +32,8 @@
         <div class="login-way">
             <div class="active" id="userLogin">用户登录</div>
             <div class="inactive" id="adminLogin">管理员登录</div>
-        </div><br>
+        </div>
+        <br>
 
         <form action="${pageContext.request.contextPath}/user/teacher"
               method="POST" class="user">
@@ -39,7 +41,7 @@
             <input type="password" name="password" placeholder="密码" value="000000"><br>
             <div class="v-code">
                 <input type="text" placeholder="验证码">
-                <img src="imgs/code.jpg" alt=""></div>
+                <img src="../imgs/code.jpg" alt=""></div>
             <input type="submit" value="登录" class="submit">
         </form>
 
@@ -48,7 +50,7 @@
             <input type="password" placeholder="密码"><br>
             <div class="v-code">
                 <input type="text" placeholder="验证码">
-                <img src="imgs/code.jpg" alt=""></div>
+                <img src="../imgs/code.jpg" alt=""></div>
             <input type="submit" value="登录" class="submit">
         </form>
 
@@ -67,14 +69,13 @@
     <!-- 右半部分 -->
     <div class="right">
         <div class="qr-code">
-            <img src="imgs/qr.png" alt="">
+            <img src="../imgs/qr.png" alt="">
             <h4 class="h4">使用微信扫一扫登录微信小程序</h4>
         </div>
     </div>
 </main>
 
-
-
+<script src="../js/t-login.js"></script>
 </body>
 
 </html>
