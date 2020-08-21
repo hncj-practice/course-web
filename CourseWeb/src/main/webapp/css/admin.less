@@ -86,4 +86,42 @@ header {
     }
 }
 
-main {}
+main {
+    width : 100%;
+    height: 100%;
+
+    background: #f1f1f2;
+
+    // 用户管理
+    #userPanel {
+        width        : 100%;
+        height       : 100%;
+        // background: pink;
+
+        .choose-user-type {
+            width : fit-content;
+            height: 60px;
+
+            // background: hotpink;
+            margin: 0 auto;
+
+            span {
+                line-height  : 60px;
+                padding      : 10px;
+                background   : #444348;
+                border-radius: 10px;
+                font-size    : 24px;
+                margin       : 0 5px;
+                color        : #fff;
+                cursor       : pointer;
+            }
+        }
+    }
+
+    // 课程管理
+    #coursePanel {
+        width     : 100%;
+        height    : 100%;
+        background: sandybrown;
+    }
+}

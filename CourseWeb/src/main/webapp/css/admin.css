@@ -93,3 +93,32 @@ header h3 {
   font-size: 20px;
   color: #fff;
 }
+main {
+  width: 100%;
+  height: 100%;
+  background: #f1f1f2;
+}
+main #userPanel {
+  width: 100%;
+  height: 100%;
+}
+main #userPanel .choose-user-type {
+  width: fit-content;
+  height: 60px;
+  margin: 0 auto;
+}
+main #userPanel .choose-user-type span {
+  line-height: 60px;
+  padding: 10px;
+  background: #444348;
+  border-radius: 10px;
+  font-size: 24px;
+  margin: 0 5px;
+  color: #fff;
+  cursor: pointer;
+}
+main #coursePanel {
+  width: 100%;
+  height: 100%;
+  background: sandybrown;
+}

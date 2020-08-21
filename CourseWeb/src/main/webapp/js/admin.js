@@ -34,4 +34,22 @@ function loadEvents() {
             coursePanel.css('display', 'block');
         });
     }
+
+
+    // 用户管理界面 切换教师/学生
+    {
+        let cg2Teacher = $('#cg2Teacher');
+        let cg2Student = $('#cg2Student');
+        let teacher = $('.teacher');
+        let student = $('.student');
+
+        cg2Teacher.click(() => {
+            student.hide(200);
+            teacher.show(200);
+        });
+        cg2Student.click(() => {
+            teacher.hide(200);
+            student.show(200);
+        });
+    }
 }
