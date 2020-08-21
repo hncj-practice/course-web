@@ -1,38 +1,40 @@
-function $(param) {
-    // noinspection JSUnresolvedFunction
-    return jQuery(param);
-}
-
 // 入口函数
 $(function () {
     // 请求课程信息
     requestCourses();
 });
 
+
 // 请求课程信息
 function requestCourses() {
-    let url = "http://123.56.156.212/Interface/teacher/teach?tno=" + $('#tno').text();
     // 进行请求，请求未完成时，显示加载中
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // 请求成功，加载课程
-            loadCourses(xhr.responseText);
-            // 加载事件
-            loadEvent();
-        }
+    let url = 'http://123.56.156.212/Interface/course/getcoursebytno';
+    let param = {
+        tno: $('#tno').text()
     };
-    xhr.send();
+
+    // // 延迟1秒再请求
+    // setTimeout(() => {
+    //     ajax_post(url, param, loadCourses, loadError, 5000);
+    // }, 1000);
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: param,
+        traditional: true,
+        success: loadCourses,
+        error: loadError
+    });
+
 }
 
 /**
- * 根据json字符串生成
- * @param jsonText
+ * 根据xhr生成课程信息
+ // * @param {XMLHttpRequest} xhr
  */
-function loadCourses(jsonText) {
-    let obj = JSON.parse(jsonText);
+function loadCourses(responseText) {
+    let obj = JSON.parse(responseText);
     let loading = $('.loading');
     let courses = $('.courses');
     if (!obj.data) {
@@ -41,10 +43,7 @@ function loadCourses(jsonText) {
         return;
     }
     let data = obj.data;
-    console.log(data);
     let length = data.length;
-
-
     let html = "";
 
     for (let i = 0; i < length; i++) {
@@ -62,6 +61,17 @@ function loadCourses(jsonText) {
     courses.html(html);
     loading.hide(250);
     courses.show(250);
+
+    // 加载事件
+    loadEvent();
+}
+
+function loadError() {
+    // alert('请求课程失败！');
+    setTimeout(() => {
+        $('.loading').css('display', 'none');
+        $('.failed').css('display', 'block');
+    }, 1800);
 }
 
 /**
@@ -88,6 +98,7 @@ function loadEvent() {
         $('.course-img').click((e) => {
             // 去正在点击的课程id
             let cid = $(e.target).attr('cid');
+            console.log(cid);
             // 跳转
         });
     }

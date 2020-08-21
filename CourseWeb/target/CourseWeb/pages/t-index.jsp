@@ -8,8 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <jsp:useBean id="teacher" scope="request" class="com.ws.domain.Teacher"/>
 
-<%--<jsp:useBean id="teacher" scope="request" type="com.ws.domain.Teacher"/>--%>
-
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -18,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程助手 - 教师</title>
     <script src="../js/util.js"></script>
+    <script src="../js/ajax.js"></script>
     <link rel="short icon" href="../imgs/logo.png">
     <script src="../js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -77,6 +76,10 @@
 
 <div class="loading" style="text-align: center">
     <img src="../imgs/loading.gif" alt="" style="margin-top:30px ">
+</div>
+
+<div class="failed" style="text-align: center;display: none">
+    <img src="../imgs/failed.gif" alt="" style="margin-top:30px ">
 </div>
 
 <div class="courses" style="display: none">

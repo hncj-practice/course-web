@@ -8,8 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <jsp:useBean id="teacher" scope="request" class="com.ws.domain.Teacher"/>
 
-<%--<jsp:useBean id="teacher" scope="request" type="com.ws.domain.Teacher"/>--%>
-
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -77,6 +75,10 @@
 
 <div class="loading" style="text-align: center">
     <img src="../imgs/loading.gif" alt="" style="margin-top:30px ">
+</div>
+
+<div class="failed" style="text-align: center;display: none">
+    <img src="../imgs/failed.gif" alt="" style="margin-top:30px ">
 </div>
 
 <div class="courses" style="display: none">

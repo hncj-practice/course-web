@@ -18,7 +18,7 @@ public class UserController {
 
     @RequestMapping("/teacher")
     public String teacherLogin(HttpServletRequest req) {
-        System.out.println("request" + req.getParameter("username") + ' ' + req.getParameter("password"));
+//        System.out.println("request" + req.getParameter("username") + ' ' + req.getParameter("password"));
 
         // 接收参数
         String username = req.getParameter("username");

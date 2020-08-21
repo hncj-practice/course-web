@@ -23,6 +23,17 @@ function setClass(dom, class1, class2) {
     }
 }
 
+
+/**
+ * 去掉$警告
+ * @param param
+ * @returns {jQuery|HTMLElement}
+ */
+function $(param) {
+    // noinspection JSUnresolvedFunction
+    return jQuery(param);
+}
+
 /**
  * 字符串格式化辅助
  */
