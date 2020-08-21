@@ -1,3 +1,4 @@
+
 package com.ws.util;
 
 import java.io.BufferedReader;
@@ -8,6 +9,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Java发送http请求工具类
+ */
 public class HttpUtil {
     public static String sendPost(String url, String param) {
         PrintWriter out = null;

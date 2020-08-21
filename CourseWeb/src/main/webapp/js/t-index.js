@@ -13,19 +13,19 @@ function requestCourses() {
         tno: $('#tno').text()
     };
 
-    // // 延迟1秒再请求
-    // setTimeout(() => {
-    //     ajax_post(url, param, loadCourses, loadError, 5000);
-    // }, 1000);
+    // 延迟1秒再请求
+    setTimeout(() => {
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: param,
+            traditional: true,
+            timeout: 5000,
+            success: loadCourses,
+            error: loadError
+        });
+    }, 1000);
 
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: param,
-        traditional: true,
-        success: loadCourses,
-        error: loadError
-    });
 
 }
 
@@ -33,8 +33,7 @@ function requestCourses() {
  * 根据xhr生成课程信息
  // * @param {XMLHttpRequest} xhr
  */
-function loadCourses(responseText) {
-    let obj = JSON.parse(responseText);
+function loadCourses(obj) {
     let loading = $('.loading');
     let courses = $('.courses');
     if (!obj.data) {

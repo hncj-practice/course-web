@@ -3,6 +3,7 @@ package com.ws.controller;
 import com.ws.domain.Teacher;
 import com.ws.service.ITeacherService;
 import com.ws.service.impl.TeacherServiceImpl;
+import com.ws.util.DebugUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,6 +27,7 @@ public class UserController {
         ITeacherService teacherService = new TeacherServiceImpl();
         Teacher teacher = teacherService.getInfo(username, password);
         System.out.println(teacher);
+        DebugUtil.log(this, teacher);
 
         // 请求正常
         if (teacher.getCode() == 200) {
