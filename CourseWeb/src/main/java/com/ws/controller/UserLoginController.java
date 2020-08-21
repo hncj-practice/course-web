@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * 用户登录控制器
@@ -57,8 +58,14 @@ public class UserLoginController {
         }
     }
 
+    /**
+     * 跳转到管理员页面
+     *
+     * @return admin.jsp
+     */
     @RequestMapping("/admin")
-    public String adminLogin(){
+    public String adminLogin(HttpServletRequest req) {
+        HttpSession session = req.getSession();
         return "admin";
     }
 

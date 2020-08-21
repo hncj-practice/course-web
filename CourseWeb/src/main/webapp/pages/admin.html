@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程助手-管理员</title>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/util.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="../imgs/logo.png" alt="" class="logo">
+        <h3>课程助手 - 管理员</h3>
+    </header>
+
+    <div class="body">
+
+        <div class="side">
+            <ul>
+                <li class="active" id="change2User">
+                    <div>
+                        <img src="../imgs/user-manage.png" alt="">
+                        <span>用户管理</span>
+                    </div>
+                </li>
+
+                <li class="inactive" id="change2Course">
+                    <div>
+                        <img src="../imgs/course-manage.png" alt="">
+                        <span>课程管理</span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <main>
+            <!-- 用户管理 -->
+            <div id="userPanel">
+                用户
+            </div>
+
+            <!-- 课程管理 -->
+            <div id="coursePanel" style="display: none;">
+                课程
+            </div>
+        </main>
+    </div>
+
+
+
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

@@ -12,6 +12,12 @@ function classChange(dom, class1, class2) {
 }
 
 
+/**
+ * 将dom的class2 替换成 class1
+ * @param {*} dom 
+ * @param {*} class1 
+ * @param {*} class2 
+ */
 function setClass(dom, class1, class2) {
     if (dom.hasClass(class1)) {
 
