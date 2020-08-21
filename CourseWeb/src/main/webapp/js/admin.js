@@ -1,9 +1,15 @@
+// 定义一些常量
+// 每页展示的教师数
+const TEACHER_PER_PAGE = 15;
+const STUDENT_PER_PAGE = 15;
+
 // 入口函数
 $(function () {
 
 
     loadEvents();
 });
+
 
 
 
@@ -58,14 +64,14 @@ function loadEvents() {
     {
         // 重置
         $('.reset-teacher').click((e) => {
-            let sno = $(e.target).attr('tno');
-            alert('重置 ' + tno);
+            let tno = $(e.target).attr('tno');
+            console.log('重置 ' + tno);
         });
 
         // 删除
         $('.delete-teacher').click((e) => {
-            let sno = $(e.target).attr('tno');
-            alert('删除 ' + tno);
+            let tno = $(e.target).attr('tno');
+            console.log('删除 ' + tno);
         });
     }
 }

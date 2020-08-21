@@ -118,13 +118,16 @@ main {
         }
 
         .teacher {
-            padding   : 28px;
+            padding   : 28px 28px 0 28px;
             // color  : indianred;
 
             table {
+                margin-bottom: 0;
+
                 tr {
                     height   : 38px;
                     // cursor: pointer;
+
 
                     &:hover {
                         background   : #e0f5f1;
@@ -151,8 +154,61 @@ main {
                             color: red;
                         }
                     }
+
+                    td {
+                        line-height: 30px;
+
+                        input[type=checkbox] {
+                            margin-right: 3px;
+                        }
+                    }
                 }
             }
+
+            .teacher-options {
+                display      : flex;
+                position     : relative;
+                // text-align: right;
+
+                // 功能按钮
+                .opts {
+                    .all {}
+
+                    .reset-all {
+                        a {
+                            color: #5d6691;
+                        }
+                    }
+
+                    .delete-all {
+                        a {
+                            color: red;
+                        }
+                    }
+                }
+
+                // 翻页按钮
+                .pages {
+                    position     : absolute;
+                    right        : 46px;
+                    margin-bottom: 0;
+                    z-index      : 1;
+                }
+
+                .jump {
+                    position    : absolute;
+                    width       : 50px;
+                    height      : 46px;
+                    top         : 20px;
+                    right       : 0;
+                    outline     : none;
+                    border      : solid 1px #dddddd;
+                    padding-left: 5px;
+                    font-size   : 18px;
+                    z-index     : 2;
+                }
+            }
+
         }
     }
 

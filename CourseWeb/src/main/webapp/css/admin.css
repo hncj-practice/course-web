@@ -118,7 +118,10 @@ main #userPanel .choose-user-type span {
   cursor: pointer;
 }
 main #userPanel .teacher {
-  padding: 28px;
+  padding: 28px 28px 0 28px;
+}
+main #userPanel .teacher table {
+  margin-bottom: 0;
 }
 main #userPanel .teacher table tr {
   height: 38px;
@@ -141,6 +144,40 @@ main #userPanel .teacher table tr .options .reset-teacher {
 main #userPanel .teacher table tr .options .delete-teacher {
   right: 15px;
   color: red;
+}
+main #userPanel .teacher table tr td {
+  line-height: 30px;
+}
+main #userPanel .teacher table tr td input[type=checkbox] {
+  margin-right: 3px;
+}
+main #userPanel .teacher .teacher-options {
+  display: flex;
+  position: relative;
+}
+main #userPanel .teacher .teacher-options .opts .reset-all a {
+  color: #5d6691;
+}
+main #userPanel .teacher .teacher-options .opts .delete-all a {
+  color: red;
+}
+main #userPanel .teacher .teacher-options .pages {
+  position: absolute;
+  right: 46px;
+  margin-bottom: 0;
+  z-index: 1;
+}
+main #userPanel .teacher .teacher-options .jump {
+  position: absolute;
+  width: 50px;
+  height: 46px;
+  top: 20px;
+  right: 0;
+  outline: none;
+  border: solid 1px #dddddd;
+  padding-left: 5px;
+  font-size: 18px;
+  z-index: 2;
 }
 main #coursePanel {
   width: 100%;
