@@ -15,12 +15,28 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserLoginController {
 
+    /**
+     * /user/login
+     * 跳转登录页面
+     *
+     * @return login.jsp
+     */
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    /**
+     * /user/teacher
+     * 跳转教师页面
+     *
+     * @param req request
+     * @return 成功：t-index.jsp 失败：Login-Error.jsp
+     */
     @RequestMapping("/teacher")
     public String teacherLogin(HttpServletRequest req) {
-//        System.out.println("request" + req.getParameter("username") + ' ' + req.getParameter("password"));
-
         // 接收参数
         String username = req.getParameter("username");
         String password = req.getParameter("password");
@@ -40,4 +56,11 @@ public class UserController {
             return "Login-Error";
         }
     }
+
+    @RequestMapping("/admin")
+    public String adminLogin(){
+        return "admin";
+    }
+
+
 }
