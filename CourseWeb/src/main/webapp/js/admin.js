@@ -3,6 +3,8 @@
 const TEACHER_PER_PAGE = 15;
 const STUDENT_PER_PAGE = 15;
 
+
+
 // 入口函数
 $(function () {
     // 获取第一页数据
@@ -92,15 +94,15 @@ function renderTeacherTable(obj) {
 
     html += `
     <tr class="add-user-tr">
-        <td><input type="text" placeholder="工号（9位）"></td>
-        <td><input type="text" placeholder="姓名"></td>
-        <td><input type="text" placeholder="性别（男/女）"></td>
-        <td><input type="text" placeholder="邮箱"></td>
+        <td><input id="tnoAdd" type="text" placeholder="工号（9位）"></td>
+        <td><input id="tnameAdd" type="text" placeholder="姓名"></td>
+        <td><input id="tsexAdd" type="text" placeholder="性别（男/女）"></td>
+        <td><input id="temailAdd" type="text" placeholder="邮箱"></td>
         <td>OK</td>
         <td class="options">
             <span class="add-user">添加教师</span>
         </td>
-    </tr>    
+    </tr>
     `;
     teacherTable.html(html);
 
@@ -169,6 +171,59 @@ function loadEvents() {
         $('.delete-user').click((e) => {
             let tno = $(e.target).attr('tno');
             console.log('删除 ' + tno);
+        });
+
+        // 单独添加教师
+        $('.add-user').off('click');
+        $('.add-user').click(() => {
+            console.log('点击添加教师');
+            let tno = $('#tnoAdd').val();
+            let tname = $('#tnameAdd').val();
+            let tsex = $('#tsexAdd').val();
+            let temail = $('#temailAdd').val();
+
+            // 简单检验参数
+            if (isEmpty(tno) || isEmpty(tname) || isEmpty(tsex) || isEmpty(temail)) {
+                alert("参数不能为空");
+                return;
+            }
+
+            // 处理性别
+            if (tsex === '女') {
+                tsex = 'f';
+            } else {
+                tsex = 'm';
+            }
+
+            // 请求添加教师API
+            let url = 'http://123.56.156.212/Interface/account/addteacher';
+
+            let param = {
+                tno: tno,
+                pwd: "000000",
+                name: tname,
+                sex: tsex,
+                email: temail,
+                avatar: "default",
+                status: 1
+            };
+
+            jQuery.ajax({
+                type: "POST",
+                url: url,
+                data: param,
+                traditional: true,
+                timeout: 5000,
+                success: (e) => {
+                    alert(e.message);
+                    // 刷新表格
+                    refreshTeachers(1, TEACHER_PER_PAGE);
+                },
+                error: (e) => {
+                    alert(e.message);
+                }
+            });
+
         });
     }
 }

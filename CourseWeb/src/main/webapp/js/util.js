@@ -64,3 +64,14 @@ String.prototype.format = function (args) {
     }
     return result;
 };
+
+/**
+ * 判断字符串是否为空
+ */
+function isEmpty(obj) {
+    if (typeof obj == "undefined" || obj == null || obj.trim() == "") {
+        return true;
+    } else {
+        return false;
+    }
+}
