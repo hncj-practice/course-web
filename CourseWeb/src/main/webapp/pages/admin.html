@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
 <html lang="en">
 
 <head>
@@ -15,219 +16,221 @@
 
 <body>
 
-    <header>
-        <img src="../imgs/logo.png" alt="" class="logo">
-        <h3>课程助手 - 管理员</h3>
-    </header>
+<header>
+    <img src="../imgs/logo.png" alt="" class="logo">
+    <h3>课程助手 - 管理员</h3>
+</header>
 
-    <div class="body">
+<div class="body">
 
-        <div class="side">
-            <ul>
-                <li class="active" id="change2User">
-                    <div>
-                        <img src="../imgs/user-manage.png" alt="">
-                        <span>用户管理</span>
-                    </div>
-                </li>
-
-                <li class="inactive" id="change2Course">
-                    <div>
-                        <img src="../imgs/course-manage.png" alt="">
-                        <span>课程管理</span>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-
-        <main>
-            <!-- 用户管理 -->
-            <div id="userPanel">
-                <div class="choose-user-type">
-                    <span id="cg2Teacher">教师用户</span>
-                    <span id="cg2Student">学生用户</span>
+    <div class="side">
+        <ul>
+            <li class="active" id="change2User">
+                <div>
+                    <img src="../imgs/user-manage.png" alt="">
+                    <span>用户管理</span>
                 </div>
+            </li>
 
-                <!-- 教师页面 -->
-                <div class="teacher table-div">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>工号</th>
-                                <th>姓名</th>
-                                <th>性别</th>
-                                <th>邮箱</th>
-                                <th style="width: 110px;">状态</th>
-                                <th style="width: 130px;">操作</th>
-                            </tr>
-                        </thead>
-                        <tbody id="teacherTable">
-                            <tr>
-                                <td>
-                                    <input type="checkbox" />
-                                    正在获取中
-                                </td>
-                                <td>正在获取中</td>
-                                <td>正在获取中</td>
-                                <td>正在获取中</td>
-                                <td>LOADING</td>
-                                <td class="options">
-                                    <span tno="0" class="reset-user">重置</span>
-                                    <span tno="0" class="delete-user">删除</span>
-                                </td>
-                            </tr>
-
-                            <!-- <tr class="add-user-tr">
-                                <td><input type="text" placeholder="工号（9位）"></td>
-                                <td><input type="text" placeholder="姓名"></td>
-                                <td><input type="text" placeholder="性别（男/女）"></td>
-                                <td><input type="text" placeholder="邮箱"></td>
-                                <td>OK</td>
-                                <td class="options">
-                                    <span class="add-user">添加教师</span>
-                                </td>
-                            </tr> -->
-
-                        </tbody>
-                    </table>
-
-
-                    <!-- 批量操作等 -->
-                    <div class="user-options" id="teacherOpts">
-
-                        <!-- 功能按钮 -->
-                        <ul class="pager opts">
-                            <li class="all"><a href="#">全选</a></li>
-                            <li class="reset-all"><a href="#">重置</a></li>
-                            <li class="delete-all"><a href="#">删除</a></li>
-                        </ul>
-
-                        <!-- 翻页按钮 -->
-                        <ul class="pagination pagination-lg pages">
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                            <li><a href="#">末页 386</a></li>
-                            <li><a href="#">跳转</a></li>
-                        </ul>
-
-                        <input class="jump" type="text" placeholder="1">
-
-                    </div>
+            <li class="inactive" id="change2Course">
+                <div>
+                    <img src="../imgs/course-manage.png" alt="">
+                    <span>课程管理</span>
                 </div>
+            </li>
 
-
-
-                <!-- 学生页面 -->
-                <div class="student table-div" style="display: none;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>学号</th>
-                                <th>姓名</th>
-                                <th>班级</th>
-                                <th>性别</th>
-                                <th>邮箱</th>
-                                <th style="width: 110px;">状态</th>
-                                <th style="width: 130px;">操作</th>
-                            </tr>
-                        </thead>
-                        <tbody id="teacherTable">
-                            <tr>
-                                <td>
-                                    <input type="checkbox" />
-                                    081417137
-                                </td>
-                                <td>吴硕</td>
-                                <td>0814171</td>
-                                <td>男</td>
-                                <td>1953649096@qq.com</td>
-                                <td>OK</td>
-                                <td class="options">
-                                    <span tno="081417137" class="reset-user">重置</span>
-                                    <span tno="081417137" class="delete-user">删除</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" />
-                                    081417138
-                                </td>
-                                <td>吴硕</td>
-                                <td>0814171</td>
-                                <td>男</td>
-                                <td>1953649096@qq.com</td>
-                                <td>OK</td>
-                                <td class="options">
-                                    <span tno="081417138" class="reset-user">重置</span>
-                                    <span tno="081417138" class="delete-user">删除</span>
-                                </td>
-                            </tr>
-
-                            <tr class="add-user-tr">
-                                <td><input type="text" placeholder="学号（9位）"></td>
-                                <td><input type="text" placeholder="姓名"></td>
-                                <td><input type="text" placeholder="班级"></td>
-                                <td><input type="text" placeholder="性别（男/女）"></td>
-                                <td><input type="text" placeholder="邮箱"></td>
-                                <td>OK</td>
-                                <td class="options">
-                                    <span class="add-user">添加学生</span>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-
-                    <!-- 批量操作等 -->
-                    <div class="user-options" id="studentOpts">
-
-                        <!-- 功能按钮 -->
-                        <ul class="pager opts">
-                            <li class="all"><a href="#">全选</a></li>
-                            <li class="reset-all"><a href="#">重置</a></li>
-                            <li class="delete-all"><a href="#">删除</a></li>
-                        </ul>
-
-                        <!-- 翻页按钮 -->
-                        <ul class="pagination pagination-lg pages">
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                            <li><a href="#">末页 386</a></li>
-                            <li><a href="#">跳转</a></li>
-                        </ul>
-
-                        <input class="jump" type="text" placeholder="1">
-
-                    </div>
-                </div>
-
-
-            </div>
-
-            <!-- 课程管理 -->
-            <div id="coursePanel" style="display: none;">
-                课程
-            </div>
-        </main>
+        </ul>
     </div>
 
+    <main>
+        <!-- 用户管理 -->
+        <div id="userPanel">
+            <div class="choose-user-type">
+                <span id="cg2Teacher">教师用户</span>
+                <span id="cg2Student">学生用户</span>
+            </div>
+
+            <!-- 教师页面 -->
+            <div class="teacher table-div">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>工号</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>邮箱</th>
+                        <th style="width: 110px;">状态</th>
+                        <th style="width: 130px;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="teacherTable">
+                    <tr>
+                        <td>
+                            <label>
+                                <input type="checkbox"/>
+                            </label>
+                            正在获取中
+                        </td>
+                        <td>正在获取中</td>
+                        <td>正在获取中</td>
+                        <td>正在获取中</td>
+                        <td>LOADING</td>
+                        <td class="options">
+                            <span tno="0" class="reset-user">重置</span>
+                            <span tno="0" class="delete-user">删除</span>
+                        </td>
+                    </tr>
+
+                    <!-- <tr class="add-user-tr">
+                        <td><input type="text" placeholder="工号（9位）"></td>
+                        <td><input type="text" placeholder="姓名"></td>
+                        <td><input type="text" placeholder="性别（男/女）"></td>
+                        <td><input type="text" placeholder="邮箱"></td>
+                        <td>OK</td>
+                        <td class="options">
+                            <span class="add-user">添加教师</span>
+                        </td>
+                    </tr> -->
+
+                    </tbody>
+                </table>
 
 
-    <script src="../js/admin.js"></script>
+                <!-- 批量操作等 -->
+                <div class="user-options" id="teacherOpts">
+
+                    <!-- 功能按钮 -->
+                    <ul class="pager opts">
+                        <li class="all"><a href="#">全选</a></li>
+                        <li class="reset-all"><a href="#">重置</a></li>
+                        <li class="delete-all"><a href="#">删除</a></li>
+                    </ul>
+
+                    <!-- 翻页按钮 -->
+                    <ul class="pagination pagination-lg pages">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                        <li><a href="#">末页 386</a></li>
+                        <li><a href="#">跳转</a></li>
+                    </ul>
+
+                    <input class="jump" type="text" placeholder="1">
+
+                </div>
+            </div>
+
+
+            <!-- 学生页面 -->
+            <div class="student table-div" style="display: none;">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>班级</th>
+                        <th>性别</th>
+                        <th>邮箱</th>
+                        <th style="width: 110px;">状态</th>
+                        <th style="width: 130px;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="studentTable">
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                            081417137
+                        </td>
+                        <td>吴硕</td>
+                        <td>0814171</td>
+                        <td>男</td>
+                        <td>1953649096@qq.com</td>
+                        <td>OK</td>
+                        <td class="options">
+                            <span tno="081417137" class="reset-user">重置</span>
+                            <span tno="081417137" class="delete-user">删除</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>
+                            081417138
+                        </td>
+                        <td>吴硕</td>
+                        <td>0814171</td>
+                        <td>男</td>
+                        <td>1953649096@qq.com</td>
+                        <td>OK</td>
+                        <td class="options">
+                            <span tno="081417138" class="reset-user">重置</span>
+                            <span tno="081417138" class="delete-user">删除</span>
+                        </td>
+                    </tr>
+
+                    <tr class="add-user-tr">
+
+                        <td><input type="text" placeholder="学号（9位）"></td>
+                        <td><input type="text" placeholder="姓名"></td>
+                        <td><input type="text" placeholder="班级"></td>
+                        <td><input type="text" placeholder="性别（男/女）"></td>
+                        <td><input type="text" placeholder="邮箱"></td>
+                        <td>OK</td>
+                        <td class="options">
+                            <span class="add-user">添加学生</span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+
+                <!-- 批量操作等 -->
+                <div class="user-options" id="studentOpts">
+
+                    <!-- 功能按钮 -->
+                    <ul class="pager opts">
+                        <li class="all"><a href="#">全选</a></li>
+                        <li class="reset-all"><a href="#">重置</a></li>
+                        <li class="delete-all"><a href="#">删除</a></li>
+                    </ul>
+
+                    <!-- 翻页按钮 -->
+                    <ul class="pagination pagination-lg pages">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                        <li><a href="#">末页 386</a></li>
+                        <li><a href="#">跳转</a></li>
+                    </ul>
+
+
+                    <input class="jump" type="text" placeholder="1">
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- 课程管理 -->
+        <div id="coursePanel" style="display: none;">
+            课程
+        </div>
+    </main>
+</div>
+
+
+<script src="../js/admin.js"></script>
 </body>
 
 </html>

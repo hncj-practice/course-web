@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1gRpClPV9xKDO6HwMuD3NZYDsMV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/Program Files/nodejs/node_global/lessc.cmd" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RunManager">
+    <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.admin.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="" />
+      <created>1598087133736</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598087133736</updated>
+      <workItem from="1598087135546" duration="1451000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
+      <screen x="72" y="0" width="1848" height="1080" />
+    </state>
+    <state x="588" y="198" key="#Inspections/72.0.1848.1080@72.0.1848.1080" timestamp="1598087435041" />
+    <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1598088327264">
+      <screen x="72" y="0" width="1848" height="1080" />
+    </state>
+    <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
+    <state x="472" y="324" key="EditFileWatcherDialog" timestamp="1598088328623">
+      <screen x="72" y="0" width="1848" height="1080" />
+    </state>
+    <state x="472" y="324" key="EditFileWatcherDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088328623" />
+    <state x="646" y="303" key="FileChooserDialogImpl" timestamp="1598088098469">
+      <screen x="72" y="0" width="1848" height="1080" />
+    </state>
+    <state x="646" y="303" key="FileChooserDialogImpl/72.0.1848.1080@72.0.1848.1080" timestamp="1598088098469" />
+    <state x="367" y="190" key="SettingsEditor" timestamp="1598088329871">
+      <screen x="72" y="0" width="1848" height="1080" />
+    </state>
+    <state x="367" y="190" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598088329871" />
+  </component>
+</project>

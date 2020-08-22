@@ -1,8 +1,7 @@
 // 定义一些常量
 // 每页展示的教师数
 const TEACHER_PER_PAGE = 15;
-const STUDENT_PER_PAGE = 15;
-
+// const STUDENT_PER_PAGE = 15;
 
 
 // 入口函数
@@ -14,26 +13,25 @@ $(function () {
 });
 
 
-
-
 // 刷新教师用户表格
 function refreshTeachers(page, num) {
     let url = 'http://123.56.156.212/Interface/teacher/allteacher';
     let param = {
         page: page,
         num: num
-    }
+    };
 
     // let success = (e) => {
     //     console.log('成功');
     //     console.log(e);
     // };
 
-    let error = (e) => {
+    let error = () => {
         console.log('失败');
     };
 
     setTimeout(() => {
+        // noinspection JSUnresolvedVariable
         jQuery.ajax({
             type: "POST",
             url: url,
@@ -44,7 +42,6 @@ function refreshTeachers(page, num) {
             error: error
         });
     }, 500);
-
 
 
 }
@@ -66,12 +63,13 @@ function renderTeacherTable(obj) {
     obj.data.forEach((item) => {
         tno = item.tno;
         name = item.name;
-        sex = '男'
+        sex = '男';
         if (item.sex === 'f') {
             sex = '女';
         }
         email = item.email;
 
+        // noinspection all
         html += `
         <tr>
             <td>
@@ -160,6 +158,7 @@ function loadEvents() {
     // 教师用户操作
     {
         // 重置
+
         $('.reset-user').off('click');
         $('.reset-user').click((e) => {
             let tno = $(e.target).attr('tno');
@@ -208,6 +207,7 @@ function loadEvents() {
                 status: 1
             };
 
+            // noinspection JSUnresolvedVariable
             jQuery.ajax({
                 type: "POST",
                 url: url,
