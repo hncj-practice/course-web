@@ -110,8 +110,6 @@ function renderTeacherTable(obj) {
 
 // 事件
 function loadEvents() {
-
-
     // 点击左侧切换
     {
         // 左侧按钮
@@ -170,6 +168,33 @@ function loadEvents() {
         $('.delete-user').click((e) => {
             let tno = $(e.target).attr('tno');
             console.log('删除 ' + tno);
+            // 请求API删除
+            let url = 'http://123.56.156.212/Interface/account/delete';
+            let param = {
+                username: tno,
+                admin_user: 'wsgly',
+                admin_pwd: '000000',
+                type: 2
+            };
+
+            // 请求API
+            // noinspection JSUnresolvedVariable
+            jQuery.ajax({
+                type: "POST",
+                url: url,
+                data: param,
+                traditional: true,
+                timeout: 5000,
+                success: (e) => {
+                    // 删除成功
+                    alert(e.message);
+                    // 刷新表格
+                    refreshTeachers(1, TEACHER_PER_PAGE);
+                },
+                error: (e) => {
+                    alert(e.message);
+                }
+            });
         });
 
         // 单独添加教师
