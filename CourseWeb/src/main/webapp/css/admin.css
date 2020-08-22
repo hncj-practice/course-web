@@ -118,7 +118,7 @@ main #userPanel .choose-user-type span {
   cursor: pointer;
 }
 main #userPanel .table-div {
-  padding: 28px 28px 0 28px;
+  padding: 28px 60px 0 60px;
 }
 main #userPanel .table-div table {
   margin-bottom: 0;
