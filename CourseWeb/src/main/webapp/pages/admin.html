@@ -49,6 +49,7 @@
                     <span id="cg2Student">学生用户</span>
                 </div>
 
+                <!-- 教师页面 -->
                 <div class="teacher table-div">
                     <table class="table table-bordered">
                         <thead>
@@ -72,8 +73,8 @@
                                 <td>1953649096@qq.com</td>
                                 <td>OK</td>
                                 <td class="options">
-                                    <span tno="081417137" class="reset-teacher">重置</span>
-                                    <span tno="081417137" class="delete-teacher">删除</span>
+                                    <span tno="081417137" class="reset-user">重置</span>
+                                    <span tno="081417137" class="delete-user">删除</span>
                                 </td>
                             </tr>
                             <tr>
@@ -86,19 +87,19 @@
                                 <td>1953649096@qq.com</td>
                                 <td>OK</td>
                                 <td class="options">
-                                    <span tno="081417138" class="reset-teacher">重置</span>
-                                    <span tno="081417138" class="delete-teacher">删除</span>
+                                    <span tno="081417138" class="reset-user">重置</span>
+                                    <span tno="081417138" class="delete-user">删除</span>
                                 </td>
                             </tr>
 
-                            <tr class="add-teacher-tr">
+                            <tr class="add-user-tr">
                                 <td><input type="text" placeholder="工号（9位）"></td>
                                 <td><input type="text" placeholder="姓名"></td>
                                 <td><input type="text" placeholder="性别（男/女）"></td>
                                 <td><input type="text" placeholder="邮箱"></td>
                                 <td>OK</td>
                                 <td class="options">
-                                    <span class="add-teacher">添加教师</span>
+                                    <span class="add-user">添加教师</span>
                                 </td>
                             </tr>
 
@@ -107,7 +108,7 @@
 
 
                     <!-- 批量操作等 -->
-                    <div class="teacher-options">
+                    <div class="user-options" id="teacherOpts">
 
                         <!-- 功能按钮 -->
                         <ul class="pager opts">
@@ -133,13 +134,11 @@
                         <input class="jump" type="text" placeholder="1">
 
                     </div>
-
-
                 </div>
 
 
 
-
+                <!-- 学生页面 -->
                 <div class="student table-div" style="display: none;">
                     <table class="table table-bordered">
                         <thead>
@@ -165,8 +164,8 @@
                                 <td>1953649096@qq.com</td>
                                 <td>OK</td>
                                 <td class="options">
-                                    <span tno="081417137" class="reset-teacher">重置</span>
-                                    <span tno="081417137" class="delete-teacher">删除</span>
+                                    <span tno="081417137" class="reset-user">重置</span>
+                                    <span tno="081417137" class="delete-user">删除</span>
                                 </td>
                             </tr>
                             <tr>
@@ -180,12 +179,12 @@
                                 <td>1953649096@qq.com</td>
                                 <td>OK</td>
                                 <td class="options">
-                                    <span tno="081417138" class="reset-teacher">重置</span>
-                                    <span tno="081417138" class="delete-teacher">删除</span>
+                                    <span tno="081417138" class="reset-user">重置</span>
+                                    <span tno="081417138" class="delete-user">删除</span>
                                 </td>
                             </tr>
 
-                            <tr class="add-teacher-tr">
+                            <tr class="add-user-tr">
                                 <td><input type="text" placeholder="学号（9位）"></td>
                                 <td><input type="text" placeholder="姓名"></td>
                                 <td><input type="text" placeholder="班级"></td>
@@ -193,7 +192,7 @@
                                 <td><input type="text" placeholder="邮箱"></td>
                                 <td>OK</td>
                                 <td class="options">
-                                    <span class="add-teacher">添加学生</span>
+                                    <span class="add-user">添加学生</span>
                                 </td>
                             </tr>
 
@@ -202,7 +201,7 @@
 
 
                     <!-- 批量操作等 -->
-                    <div class="teacher-options">
+                    <div class="user-options" id="studentOpts">
 
                         <!-- 功能按钮 -->
                         <ul class="pager opts">
