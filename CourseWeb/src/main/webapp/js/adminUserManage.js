@@ -108,7 +108,6 @@ function renderTeacherTable(obj) {
     </tr>
     `;
     teacherTable.html(html);
-
     // 每次请求完成后，添加对应的事件
     loadEvents();
 }
@@ -209,7 +208,7 @@ function loadEvents() {
                         admin_pwd: adminUP,
                         type: 2
                     };
-                    // noinspection JSUnresolvedVariable
+                    // noinspection all
                     jQuery.ajax({
                         type: "POST",
                         url: url,
@@ -218,12 +217,16 @@ function loadEvents() {
                         timeout: 5000,
                         success: (e) => {
                             // 删除成功
-                            alert(e.message);
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
+                                toastr.error(e.message);
+                            }
                             // 刷新表格
                             refreshTeachers(1, TEACHER_PER_PAGE);
                         },
                         error: (e) => {
-                            alert(e.message);
+                            toastr.error(e.message);
                         }
                     });
                 });
@@ -240,58 +243,55 @@ function loadEvents() {
 
             // 简单检验参数
             if (isEmpty(tno) || isEmpty(tname) || isEmpty(tsex) || isEmpty(temail)) {
-                alert("参数不能为空");
+                toastr.error("参数不能为空");
                 return;
             }
 
             // 添加确认提示
-            let msg = '确定添加教师用户？' + '\n' +
-                '工号：' + tno + '\n' +
-                '姓名：' + tname + '\n' +
-                '性别：' + tsex + '\n' +
+            let body = '确定添加教师用户？' + '<br>' +
+                '工号：' + tno + '<br>' +
+                '姓名：' + tname + '<br>' +
+                '性别：' + tsex + '<br>' +
                 '邮箱：' + temail;
-            let flag = confirm(msg);
-            if (!flag) {
-                return;
-            }
-
-            // 处理性别
-            if (tsex === '女') {
-                tsex = 'f';
-            } else {
-                tsex = 'm';
-            }
-
-            // 请求添加教师API
-            let url = 'http://123.56.156.212/Interface/account/addteacher';
-
-            let param = {
-                tno: tno,
-                pwd: "000000",
-                name: tname,
-                sex: tsex,
-                email: temail,
-                avatar: "default",
-                status: 1
-            };
-
-            // noinspection JSUnresolvedVariable
-            jQuery.ajax({
-                type: "POST",
-                url: url,
-                data: param,
-                traditional: true,
-                timeout: 5000,
-                success: (e) => {
-                    alert(e.message);
-                    // 刷新表格
-                    refreshTeachers(1, TEACHER_PER_PAGE);
-                },
-                error: (e) => {
-                    alert(e.message);
+            myBootstrapModel('提示', body, '确定', '取消', () => {
+                // 处理性别
+                if (tsex === '女') {
+                    tsex = 'f';
+                } else {
+                    tsex = 'm';
                 }
+                // 请求添加教师API
+                let url = 'http://123.56.156.212/Interface/account/addteacher';
+                let param = {
+                    tno: tno,
+                    pwd: "000000",
+                    name: tname,
+                    sex: tsex,
+                    email: temail,
+                    avatar: "default",
+                    status: 1
+                };
+                // noinspection all
+                jQuery.ajax({
+                    type: "POST",
+                    url: url,
+                    data: param,
+                    traditional: true,
+                    timeout: 5000,
+                    success: (e) => {
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
+                            toastr.error(e.message);
+                        }
+                        // 刷新表格
+                        refreshTeachers(1, TEACHER_PER_PAGE);
+                    },
+                    error: (e) => {
+                        toastr.error(e.message);
+                    }
+                });
             });
-
         });
     }
 }
