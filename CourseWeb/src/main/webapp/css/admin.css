@@ -148,6 +148,10 @@ main #userPanel .table-div table tr .options .add-user {
   left: 15px;
   color: #587c0c;
 }
+main #userPanel .table-div table tr .options .add-user-excel {
+  right: 15px;
+  color: #587c0c;
+}
 main #userPanel .table-div table tr td {
   line-height: 30px;
 }

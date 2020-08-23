@@ -98,7 +98,8 @@ function renderTeacherTable(obj) {
         <td><input id="temailAdd" type="text" placeholder="邮箱"></td>
         <td>OK</td>
         <td class="options">
-            <span class="add-user">添加教师</span>
+            <span class="add-user">添加</span>
+            <span class="add-user-excel">Excel导入</span>
         </td>
     </tr>
     `;
