@@ -161,7 +161,6 @@ function loadEvents() {
     // 教师用户操作
     {
         // 重置
-
         $('.reset-user').off('click');
         $('.reset-user').click((e) => {
             let tno = $(e.target).attr('tno');
@@ -206,8 +205,8 @@ function loadEvents() {
             let url = 'http://123.56.156.212/Interface/account/delete';
             let param = {
                 username: tno,
-                admin_user: 'wsgly',
-                admin_pwd: '000000',
+                admin_user: adminUN,
+                admin_pwd: adminUP,
                 type: 2
             };
 
