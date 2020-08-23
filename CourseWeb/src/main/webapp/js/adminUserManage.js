@@ -5,7 +5,7 @@
 // 定义一些常量
 // 每页展示的教师数
 const TEACHER_PER_PAGE = 15;
-// const STUDENT_PER_PAGE = 15;
+const STUDENT_PER_PAGE = 15;
 
 
 // 入口函数
@@ -24,16 +24,9 @@ function refreshTeachers(page, num) {
         page: page,
         num: num
     };
-
-    // let success = (e) => {
-    //     console.log('成功');
-    //     console.log(e);
-    // };
-
     let error = () => {
-        console.log('失败');
+        toastr.error('获取数据失败！');
     };
-
     setTimeout(() => {
         // noinspection JSUnresolvedVariable
         jQuery.ajax({
@@ -46,8 +39,30 @@ function refreshTeachers(page, num) {
             error: error
         });
     }, 500);
+}
 
-
+// 刷新学生用户表格
+function refreshStudents(page, num) {
+    let url = 'http://123.56.156.212/Interface/student/allstudent';
+    let param = {
+        page: page,
+        num: num
+    };
+    let error = () => {
+        toastr.error('获取数据失败！');
+    };
+    setTimeout(() => {
+        // noinspection JSUnresolvedVariable
+        jQuery.ajax({
+            type: "POST",
+            url: url,
+            data: param,
+            traditional: true,
+            timeout: 5000,
+            success: renderStudentTable,
+            error: error
+        });
+    }, 500);
 }
 
 // 渲染教师用户表格
@@ -112,6 +127,11 @@ function renderTeacherTable(obj) {
     loadEvents();
 }
 
+// 渲染学生用户表格
+function renderStudentTable(obj) {
+    console.log(obj);
+}
+
 // 事件
 function loadEvents() {
     // 点击左侧切换
@@ -122,14 +142,15 @@ function loadEvents() {
         // 面板
         let userPanel = $('#userPanel');
         let coursePanel = $('#coursePanel');
+        change2User.off('click');
         change2User.click(() => {
-
             setClass(change2Course, 'inactive', 'active');
             setClass(change2User, 'active', 'inactive');
             userPanel.css('display', 'block');
             coursePanel.css('display', 'none');
         });
 
+        change2Course.off('click');
         change2Course.click(() => {
             setClass(change2User, 'inactive', 'active');
             setClass(change2Course, 'active', 'inactive');
@@ -137,8 +158,7 @@ function loadEvents() {
             coursePanel.css('display', 'block');
         });
     }
-
-
+    
     // 用户管理界面 切换教师/学生
     {
         let cg2Teacher = $('#cg2Teacher');
@@ -146,13 +166,20 @@ function loadEvents() {
         let teacher = $('.teacher');
         let student = $('.student');
 
+        // 切换到教师用列表
+        cg2Teacher.off('click');
         cg2Teacher.click(() => {
             student.hide(200);
             teacher.show(200);
+            // 获取第一页数据
+            refreshTeachers(1, TEACHER_PER_PAGE);
         });
+        // 切换到学生用户列表
+        cg2Student.off('click');
         cg2Student.click(() => {
             teacher.hide(200);
             student.show(200);
+            refreshStudents(1, STUDENT_PER_PAGE);
         });
     }
 
