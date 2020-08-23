@@ -164,7 +164,7 @@ function loadEvents() {
         $('.reset-user').off('click');
         $('.reset-user').click((e) => {
             let tno = $(e.target).attr('tno');
-            console.log('重置 ' + tno);
+            console.log('点击：重置 ' + tno);
             let title = '提示';
             let body = '确定重置教师用户？<br>工号：' + tno;
             // 弹出提示
@@ -174,16 +174,15 @@ function loadEvents() {
                 '确定',
                 '取消',
                 () => {
-                    console.log('cz' + tno);
+                    console.log('重置：' + tno);
                     // 请求API重置
-                    // 请求API删除
-                    let url = 'http://123.56.156.212/Interface/account/resetpwd';
-                    let param = {
-                        username: tno,
-                        password: "",
-                        newpwd: "",
-                        type: 2
-                    };
+                    // let url = 'http://123.56.156.212/Interface/account/resetpwd';
+                    // let param = {
+                    //     username: tno,
+                    //     password: "",
+                    //     newpwd: "",
+                    //     type: 2
+                    // };
                 });
         });
 
@@ -191,43 +190,43 @@ function loadEvents() {
         $('.delete-user').off('click');
         $('.delete-user').click((e) => {
             let tno = $(e.target).attr('tno');
-            console.log('删除 ' + tno);
-
-            // 确认删除提示
-            let msg = '确定删除教师用户？' + '\n' +
-                '工号：' + tno;
-            let flag = confirm(msg);
-            if (!flag) {
-                return;
-            }
-
-            // 请求API删除
-            let url = 'http://123.56.156.212/Interface/account/delete';
-            let param = {
-                username: tno,
-                admin_user: adminUN,
-                admin_pwd: adminUP,
-                type: 2
-            };
-
-            // 请求API
-            // noinspection JSUnresolvedVariable
-            jQuery.ajax({
-                type: "POST",
-                url: url,
-                data: param,
-                traditional: true,
-                timeout: 5000,
-                success: (e) => {
-                    // 删除成功
-                    alert(e.message);
-                    // 刷新表格
-                    refreshTeachers(1, TEACHER_PER_PAGE);
-                },
-                error: (e) => {
-                    alert(e.message);
-                }
-            });
+            console.log('点击：删除 ' + tno);
+            let title = '提示';
+            let body = '确定删除教师用户？<br>工号：' + tno;
+            // 弹出提示
+            myBootstrapModel(
+                title,
+                body,
+                '确定',
+                '取消',
+                () => {
+                    console.log('删除：' + tno);
+                    // 请求API删除
+                    let url = 'http://123.56.156.212/Interface/account/delete';
+                    let param = {
+                        username: tno,
+                        admin_user: adminUN,
+                        admin_pwd: adminUP,
+                        type: 2
+                    };
+                    // noinspection JSUnresolvedVariable
+                    jQuery.ajax({
+                        type: "POST",
+                        url: url,
+                        data: param,
+                        traditional: true,
+                        timeout: 5000,
+                        success: (e) => {
+                            // 删除成功
+                            alert(e.message);
+                            // 刷新表格
+                            refreshTeachers(1, TEACHER_PER_PAGE);
+                        },
+                        error: (e) => {
+                            alert(e.message);
+                        }
+                    });
+                });
         });
 
         // 单独添加教师
