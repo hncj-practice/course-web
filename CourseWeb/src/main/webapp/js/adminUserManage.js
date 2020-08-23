@@ -1,3 +1,7 @@
+/**
+ * 管理员-用户管理菜单相关操作
+ */
+
 // 定义一些常量
 // 每页展示的教师数
 const TEACHER_PER_PAGE = 15;
@@ -162,6 +166,26 @@ function loadEvents() {
         $('.reset-user').click((e) => {
             let tno = $(e.target).attr('tno');
             console.log('重置 ' + tno);
+            let title = '提示';
+            let body = '确定重置教师用户？<br>工号：' + tno;
+            // 弹出提示
+            myBootstrapModel(
+                title,
+                body,
+                '确定',
+                '取消',
+                () => {
+                    console.log('cz' + tno);
+                    // 请求API重置
+                    // 请求API删除
+                    let url = 'http://123.56.156.212/Interface/account/resetpwd';
+                    let param = {
+                        username: tno,
+                        password: "",
+                        newpwd: "",
+                        type: 2
+                    };
+                });
         });
 
         // 删除

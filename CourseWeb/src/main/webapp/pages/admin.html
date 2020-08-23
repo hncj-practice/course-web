@@ -23,6 +23,34 @@
 
 <div class="body">
 
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        模态框标题
+                    </h4>
+                </div>
+                <div class="modal-body" id="myModelBody">
+                    模态框内容
+                </div>
+                <div class="modal-footer">
+                    <button id="modelCancel" type="button" class="btn btn-default" data-dismiss="modal">
+                        取消
+                    </button>
+                    <button id="modelConfirm" type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 左侧菜单 -->
     <div class="side">
         <ul>
             <li class="active" id="change2User">
@@ -38,7 +66,6 @@
                     <span>课程管理</span>
                 </div>
             </li>
-
         </ul>
     </div>
 
@@ -230,7 +257,7 @@
 </div>
 
 
-<script src="../js/admin.js"></script>
+<script src="../js/adminUserManage.js"></script>
 </body>
 
 </html>
