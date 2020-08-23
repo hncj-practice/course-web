@@ -168,6 +168,15 @@ function loadEvents() {
         $('.delete-user').click((e) => {
             let tno = $(e.target).attr('tno');
             console.log('删除 ' + tno);
+
+            // 确认删除提示
+            let msg = '确定删除教师用户？' + '\n' +
+                '工号：' + tno;
+            let flag = confirm(msg);
+            if (!flag) {
+                return;
+            }
+
             // 请求API删除
             let url = 'http://123.56.156.212/Interface/account/delete';
             let param = {
@@ -209,6 +218,17 @@ function loadEvents() {
             // 简单检验参数
             if (isEmpty(tno) || isEmpty(tname) || isEmpty(tsex) || isEmpty(temail)) {
                 alert("参数不能为空");
+                return;
+            }
+
+            // 添加确认提示
+            let msg = '确定添加教师用户？' + '\n' +
+                '工号：' + tno + '\n' +
+                '姓名：' + tname + '\n' +
+                '性别：' + tsex + '\n' +
+                '邮箱：' + temail;
+            let flag = confirm(msg);
+            if (!flag) {
                 return;
             }
 
