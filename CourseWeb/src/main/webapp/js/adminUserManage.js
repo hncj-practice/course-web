@@ -70,7 +70,7 @@ function renderTeacherTable(obj) {
     console.log(obj);
     // 判断有没有数据
     if (obj.code === 401) {
-        console.log('没有数据');
+        toastr.warning('没有数据');
         return;
     }
 
@@ -78,7 +78,7 @@ function renderTeacherTable(obj) {
     let teacherTable = $('#teacherTable');
     let html = '';
     let tno, name, sex, email;
-
+    // noinspection DuplicatedCode
     obj.data.forEach((item) => {
         tno = item.tno;
         name = item.name;
@@ -100,8 +100,8 @@ function renderTeacherTable(obj) {
             <td>{3}</td>
             <td>OK</td>
             <td class="options">
-                <span tno="{0}" class="reset-user">重置</span>
-                <span tno="{0}" class="delete-user">删除</span>
+                <span tno="{0}" class="reset-user reset-teacher">重置</span>
+                <span tno="{0}" class="delete-user delete-teacher">删除</span>
             </td>
         </tr>
         `.format(tno, name, sex, email);
@@ -117,8 +117,8 @@ function renderTeacherTable(obj) {
         <td><input id="temailAdd" type="text" placeholder="邮箱"></td>
         <td>OK</td>
         <td class="options">
-            <span class="add-user">添加</span>
-            <span class="add-user-excel">Excel导入</span>
+            <span class="add-user" id="addTeacher">添加</span>
+            <span class="add-user-excel" id="addTeacherExcel">Excel导入</span>
         </td>
     </tr>
     `;
@@ -130,6 +130,66 @@ function renderTeacherTable(obj) {
 // 渲染学生用户表格
 function renderStudentTable(obj) {
     console.log(obj);
+    // 判断有没有数据
+    if (obj.code === 401) {
+        toastr.warning('没有数据');
+        return;
+    }
+    // 处理数据
+    let studentTable = $('#studentTable');
+    let html = '';
+    let sno, name, cla, sex, email;
+
+
+    // noinspection DuplicatedCode
+    obj.data.forEach((item) => {
+        sno = item['sno'];
+        name = item['name'];
+        cla = '班级';
+        sex = '男';
+        if (item['sex'] === 'f') {
+            sex = '女';
+        }
+        email = item['email'];
+
+        // noinspection all
+        html += `
+        <tr>
+            <td>
+                <input type="checkbox"/>
+                {0}
+            </td>
+            <td>{1}</td>
+            <td>{2}</td>
+            <td>{3}</td>
+            <td>{4}</td>
+            <td>OK</td>
+            <td class="options">
+                <span tno="081417137" class="reset-user reset-student">重置</span>
+                <span tno="081417137" class="delete-user delete-student">删除</span>
+            </td>
+        </tr>
+        `.format(sno, name, cla, sex, email);
+    });
+    // 添加一行
+    html += `
+     <tr class="add-user-tr">
+        <td><input type="text" placeholder="学号（9位）"></td>
+        <td><input type="text" placeholder="姓名"></td>
+        <td><input type="text" placeholder="班级"></td>
+        <td><input type="text" placeholder="性别（男/女）"></td>
+        <td><input type="text" placeholder="邮箱"></td>
+        <td>OK</td>
+        <td class="options">
+            <span class="add-user" id="addStudent">添加</span>
+            <span class="add-user-excel" id="addStudentExcel">Excel导入</span>
+        </td>
+    </tr>
+    `;
+
+    studentTable.html(html);
+    // 每次请求完成后，添加对应的事件
+    loadEvents();
 }
 
 // 事件
@@ -158,7 +218,7 @@ function loadEvents() {
             coursePanel.css('display', 'block');
         });
     }
-    
+
     // 用户管理界面 切换教师/学生
     {
         let cg2Teacher = $('#cg2Teacher');
@@ -187,8 +247,8 @@ function loadEvents() {
     // 教师用户操作
     {
         // 重置
-        $('.reset-user').off('click');
-        $('.reset-user').click((e) => {
+        $('.reset-teacher').off('click');
+        $('.reset-teacher').click((e) => {
             let tno = $(e.target).attr('tno');
             console.log('点击：重置 ' + tno);
             let title = '提示';
@@ -213,8 +273,8 @@ function loadEvents() {
         });
 
         // 删除
-        $('.delete-user').off('click');
-        $('.delete-user').click((e) => {
+        $('.delete-teacher').off('click');
+        $('.delete-teacher').click((e) => {
             let tno = $(e.target).attr('tno');
             console.log('点击：删除 ' + tno);
             let title = '提示';
@@ -260,8 +320,8 @@ function loadEvents() {
         });
 
         // 单独添加教师
-        $('.add-user').off('click');
-        $('.add-user').click(() => {
+        $('#addTeacher').off('click');
+        $('#addTeacher').click(() => {
             console.log('点击添加教师');
             let tno = $('#tnoAdd').val();
             let tname = $('#tnameAdd').val();
