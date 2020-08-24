@@ -92,7 +92,7 @@ function renderTeacherTable(obj) {
         html += `
         <tr>
             <td>
-                <input type="checkbox" />
+                <input class="check-teacher" sno="{0}" type="checkbox" />
                 {0}
             </td>
             <td>{1}</td>
@@ -379,6 +379,72 @@ function loadEvents() {
                         }
                     });
                 });
+            });
+        }
+
+        // 批量删除教师
+        {
+            $('#deleteTAll').off('click');
+            $('#deleteTAll').click(() => {
+                console.log('批量删除教师');
+                // 拿到所有的复选框
+                let checkedTeachers = $('.check-teacher');
+                // 所选教师集合
+                let ts = [];
+                // 遍历
+                // noinspection JSUnresolvedVariable
+                jQuery.each(checkedTeachers, (index, item) => {
+                    if (item.checked) {
+                        ts.push($(item).attr('sno'));
+                    }
+                });
+                if (ts.length < 1) {
+                    toastr.warning('请选中教师');
+                    return;
+                }
+                let body = '确定删除以下教师：<br>工号：' + ts.join('<br>工号：');
+
+                // 删除完成标志
+                let n = 0;
+                myBootstrapModel('警告', body, '确定', '取消', () => {
+                    // 遍历删除
+                    ts.forEach((item) => {
+                        // noinspection all,DuplicatedCode
+                        let url = 'http://123.56.156.212/Interface/account/delete';
+                        let param = {
+                            username: item,
+                            admin_user: adminUN,
+                            admin_pwd: adminUP,
+                            type: 2
+                        };
+                        // noinspection all
+                        jQuery.ajax({
+                            type: "POST",
+                            url: url,
+                            data: param,
+                            traditional: true,
+                            timeout: 5000,
+                            success: (e) => {
+                                // 删除成功
+                                if (e.code === 200) {
+                                    toastr.success(e.message);
+                                } else {
+                                    toastr.error(e.message);
+                                }
+                                // 检测有没有完全删除
+                                n++;
+                                // 所有都删除完成
+                                if (n === ts.length) {
+                                    toastr.success('成功删除所选教师！');
+                                    refreshTeachers(1, TEACHER_PER_PAGE);
+                                }
+                            },
+                            error: (e) => {
+                                toastr.error(e.message);
+                            }
+                        });
+                    });
+                })
             });
         }
     }
