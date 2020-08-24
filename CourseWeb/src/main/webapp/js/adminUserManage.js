@@ -92,7 +92,7 @@ function renderTeacherTable(obj) {
         html += `
         <tr>
             <td>
-                <input class="check-teacher" sno="{0}" type="checkbox" />
+                <input class="check-teacher" tno="{0}" type="checkbox" />
                 {0}
             </td>
             <td>{1}</td>
@@ -156,7 +156,7 @@ function renderStudentTable(obj) {
         html += `
         <tr>
             <td>
-                <input type="checkbox"/>
+                <input class="check-student" sno="{0}" type="checkbox"/>
                 {0}
             </td>
             <td>{1}</td>
@@ -395,7 +395,7 @@ function loadEvents() {
                 // noinspection JSUnresolvedVariable
                 jQuery.each(checkedTeachers, (index, item) => {
                     if (item.checked) {
-                        ts.push($(item).attr('sno'));
+                        ts.push($(item).attr('tno'));
                     }
                 });
                 if (ts.length < 1) {
@@ -431,7 +431,6 @@ function loadEvents() {
                                 } else {
                                     toastr.error(e.message);
                                 }
-                                // 检测有没有完全删除
                                 n++;
                                 // 所有都删除完成
                                 if (n === ts.length) {
@@ -577,6 +576,71 @@ function loadEvents() {
                         // 请求API重置
 
                     });
+            });
+        }
+
+        // 批量删除学生
+        {
+            $('#deleteSAll').off('click');
+            $('#deleteSAll').click(() => {
+                console.log('批量删除学生');
+                // 拿到所有的复选框
+                let checkedStudents = $('.check-student');
+                // 所选教师集合
+                let ss = [];
+                // 遍历
+                // noinspection JSUnresolvedVariable
+                jQuery.each(checkedStudents, (index, item) => {
+                    if (item.checked) {
+                        ss.push($(item).attr('sno'));
+                    }
+                });
+                if (ss.length < 1) {
+                    toastr.warning('请选中学生');
+                    return;
+                }
+                let body = '确定删除以下学生：<br>学号：' + ss.join('<br>学号：');
+
+                // 删除完成标志
+                let n = 0;
+                myBootstrapModel('警告', body, '确定', '取消', () => {
+                    ss.forEach((item) => {
+                        // noinspection DuplicatedCode
+                        let url = 'http://123.56.156.212/Interface/account/delete';
+                        let param = {
+                            username: item,
+                            admin_user: adminUN,
+                            admin_pwd: adminUP,
+                            type: 1
+                        };
+                        // noinspection all
+                        jQuery.ajax({
+                            type: "POST",
+                            url: url,
+                            data: param,
+                            traditional: true,
+                            timeout: 5000,
+                            success: (e) => {
+                                // 删除成功
+                                if (e.code === 200) {
+                                    toastr.success(e.message);
+                                } else {
+                                    toastr.error(e.message);
+                                }
+                                n++;
+                                // 刷新表格
+                                if (n === ss.length) {
+                                    toastr.success('成功删除所选学生！');
+                                    refreshStudents(1, STUDENT_PER_PAGE);
+                                }
+                            },
+                            error: (e) => {
+                                toastr.error(e.message);
+                            }
+                        });
+                    });
+                })
+
             });
         }
 
