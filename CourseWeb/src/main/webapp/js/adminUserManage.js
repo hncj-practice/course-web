@@ -19,7 +19,7 @@ $(function () {
 
 // 刷新教师用户表格
 function refreshTeachers(page, num) {
-    let url = 'http://123.56.156.212/Interface/teacher/allteacher';
+    let url = TEACHER_API.FIND;
     let param = {
         page: page,
         num: num
@@ -43,7 +43,7 @@ function refreshTeachers(page, num) {
 
 // 刷新学生用户表格
 function refreshStudents(page, num) {
-    let url = 'http://123.56.156.212/Interface/student/allstudent';
+    let url = STUDENT_API.FIND;
     let param = {
         page: page,
         num: num
@@ -263,13 +263,7 @@ function loadEvents() {
                     () => {
                         console.log('重置：' + tno);
                         // 请求API重置
-                        // let url = 'http://123.56.156.212/Interface/account/resetpwd';
-                        // let param = {
-                        //     username: tno,
-                        //     password: "",
-                        //     newpwd: "",
-                        //     type: 2
-                        // };
+
                     });
             });
         }
@@ -286,7 +280,7 @@ function loadEvents() {
                 myBootstrapModel(title, body, '确定', '取消', () => {
                     console.log('删除：' + tno);
                     // 请求API删除
-                    let url = 'http://123.56.156.212/Interface/account/delete';
+                    let url = ACCOUNT_API.DELETE;
                     let param = {
                         username: tno,
                         admin_user: adminUN,
@@ -348,7 +342,7 @@ function loadEvents() {
                         tsex = 'm';
                     }
                     // 请求添加教师API
-                    let url = 'http://123.56.156.212/Interface/account/addteacher';
+                    let url = TEACHER_API.ADD;
                     let param = {
                         tno: tno,
                         pwd: "000000",
@@ -410,7 +404,7 @@ function loadEvents() {
                     // 遍历删除
                     ts.forEach((item) => {
                         // noinspection all,DuplicatedCode
-                        let url = 'http://123.56.156.212/Interface/account/delete';
+                        let url = ACCOUNT_API.DELETE;
                         let param = {
                             username: item,
                             admin_user: adminUN,
@@ -479,7 +473,7 @@ function loadEvents() {
                     } else {
                         ssex = 'm';
                     }
-                    let url = 'http://123.56.156.212/Interface/account/addstudent';
+                    let url = STUDENT_API.ADD;
                     let param = {
                         sno: sno,
                         cla: scla,
@@ -525,7 +519,7 @@ function loadEvents() {
                 let body = '确定删除学生用户？<br>学号：' + sno;
                 myBootstrapModel(title, body, '确定', '取消', () => {
                     // 请求API删除
-                    let url = 'http://123.56.156.212/Interface/account/delete';
+                    let url = ACCOUNT_API.DELETE;
                     let param = {
                         username: sno,
                         admin_user: adminUN,
@@ -606,7 +600,7 @@ function loadEvents() {
                 myBootstrapModel('警告', body, '确定', '取消', () => {
                     ss.forEach((item) => {
                         // noinspection DuplicatedCode
-                        let url = 'http://123.56.156.212/Interface/account/delete';
+                        let url = ACCOUNT_API.DELETE;
                         let param = {
                             username: item,
                             admin_user: adminUN,
@@ -640,7 +634,6 @@ function loadEvents() {
                         });
                     });
                 })
-
             });
         }
 

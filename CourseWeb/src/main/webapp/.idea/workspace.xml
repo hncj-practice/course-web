@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="实现批量删除学生">
+      <change afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
@@ -10,6 +11,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
@@ -58,7 +66,7 @@
       <workItem from="1598156050244" duration="1704000" />
       <workItem from="1598179509776" duration="6028000" />
       <workItem from="1598195993264" duration="2913000" />
-      <workItem from="1598232844061" duration="7979000" />
+      <workItem from="1598232844061" duration="9029000" />
     </task>
     <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
       <created>1598088622655</created>
@@ -172,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598239907641</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="实现批量删除学生">
+      <created>1598251479728</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1598251479728</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +210,8 @@
     <MESSAGE value="整理代码" />
     <MESSAGE value="删除整班学生/等待API" />
     <MESSAGE value="实现批量删除教师" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现批量删除教师" />
+    <MESSAGE value="实现批量删除学生" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现批量删除学生" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -206,10 +222,14 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598239906987">
+    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598251617393">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598239906987" />
+    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598251617393" />
+    <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
+      <screen x="72" y="0" width="1848" height="1080" />
+    </state>
+    <state x="249" y="90" key="DiffContextDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598251616416" />
     <state x="472" y="324" key="EditFileWatcherDialog" timestamp="1598088328623">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
