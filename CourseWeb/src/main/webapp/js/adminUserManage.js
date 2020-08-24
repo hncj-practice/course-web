@@ -562,10 +562,10 @@ function loadEvents() {
             // 指定页
             $('#pDist_t').off('click');
             $('#pDist_t').click(() => {
-                let page = parseInt($('.jump_t').val());
+                let page = parseInt($('#jumpT').val());
                 if (page >= 1 && page <= total_page_teacher) {
                     curr_page_teacher = page;
-                    $('.jump_t').val('');
+                    $('#jumpT').val('');
                     refreshTeachers()
                 }else {
                     toastr.warning('请输入正确页码！');
