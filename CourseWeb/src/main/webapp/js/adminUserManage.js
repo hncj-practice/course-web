@@ -487,6 +487,26 @@ function loadEvents() {
         }
 
         // 重置学生
+        {
+            $('.reset-student').off('click');
+            $('.reset-student').click((e) => {
+                let sno = $(e.target).attr('sno');
+                console.log('点击：重置 ' + sno);
+                let title = '提示';
+                let body = '确定重置学生用户？<br>学号：' + sno;
+                // 弹出提示
+                myBootstrapModel(
+                    title,
+                    body,
+                    '确定',
+                    '取消',
+                    () => {
+                        console.log('重置：' + sno);
+                        // 请求API重置
+
+                    });
+            });
+        }
     }
 
 }
