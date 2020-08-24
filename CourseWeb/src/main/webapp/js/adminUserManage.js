@@ -513,6 +513,25 @@ function loadEvents() {
                     });
             });
         }
+
+        // 删除整班学生
+        {
+            $('#deleteAllClsStudent').off('click');
+            $('#deleteAllClsStudent').click(() => {
+                toastr.warning('用户将要删除整班学生！');
+                let body = '删除 xxx 班所有学生？<br>该操作不能撤销!!';
+                myBootstrapModel('警告', body, '确定', '取消', () => {
+                    let flag = confirm('警告', '再次确认');
+                    if (!flag) {
+                        toastr.info('操作已取消');
+                        return;
+                    }
+                    // 调用API删除
+                    console.log('删除整班学生');
+                });
+
+            });
+        }
     }
 }
 

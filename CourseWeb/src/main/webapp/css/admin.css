@@ -168,6 +168,9 @@ main #userPanel .table-div .user-options {
   display: flex;
   position: relative;
 }
+main #userPanel .table-div .user-options .opts li a {
+  cursor: pointer;
+}
 main #userPanel .table-div .user-options .opts .reset-all a {
   color: #5d6691;
 }
