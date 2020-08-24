@@ -57,7 +57,7 @@
       <workItem from="1598156050244" duration="1704000" />
       <workItem from="1598179509776" duration="6028000" />
       <workItem from="1598195993264" duration="2913000" />
-      <workItem from="1598232844061" duration="1983000" />
+      <workItem from="1598232844061" duration="2202000" />
     </task>
     <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
       <created>1598088622655</created>
@@ -143,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598234729814</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="重置学生用户/未实现 等待API">
+      <created>1598234868004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1598234868004</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +169,8 @@
     <MESSAGE value="解决事件重复添加的bug" />
     <MESSAGE value="解决事件冲突的bug" />
     <MESSAGE value="实现添加/删除学生用户" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现添加/删除学生用户" />
+    <MESSAGE value="重置学生用户/未实现 等待API" />
+    <option name="LAST_COMMIT_MESSAGE" value="重置学生用户/未实现 等待API" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -173,10 +181,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598234729008">
+    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598235054117">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598234729008" />
+    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598235054117" />
     <state x="472" y="324" key="EditFileWatcherDialog" timestamp="1598088328623">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

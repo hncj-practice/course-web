@@ -246,135 +246,141 @@ function loadEvents() {
 
     // 教师用户操作
     {
-        // 重置
-        $('.reset-teacher').off('click');
-        $('.reset-teacher').click((e) => {
-            let tno = $(e.target).attr('tno');
-            console.log('点击：重置 ' + tno);
-            let title = '提示';
-            let body = '确定重置教师用户？<br>工号：' + tno;
-            // 弹出提示
-            myBootstrapModel(
-                title,
-                body,
-                '确定',
-                '取消',
-                () => {
-                    console.log('重置：' + tno);
-                    // 请求API重置
-                    // let url = 'http://123.56.156.212/Interface/account/resetpwd';
-                    // let param = {
-                    //     username: tno,
-                    //     password: "",
-                    //     newpwd: "",
-                    //     type: 2
-                    // };
-                });
-        });
+        // 重置教师
+        {
+            $('.reset-teacher').off('click');
+            $('.reset-teacher').click((e) => {
+                let tno = $(e.target).attr('tno');
+                console.log('点击：重置 ' + tno);
+                let title = '提示';
+                let body = '确定重置教师用户？<br>工号：' + tno;
+                // 弹出提示
+                myBootstrapModel(
+                    title,
+                    body,
+                    '确定',
+                    '取消',
+                    () => {
+                        console.log('重置：' + tno);
+                        // 请求API重置
+                        // let url = 'http://123.56.156.212/Interface/account/resetpwd';
+                        // let param = {
+                        //     username: tno,
+                        //     password: "",
+                        //     newpwd: "",
+                        //     type: 2
+                        // };
+                    });
+            });
+        }
 
-        // 删除
-        $('.delete-teacher').off('click');
-        $('.delete-teacher').click((e) => {
-            let tno = $(e.target).attr('tno');
-            console.log('点击：删除 ' + tno);
-            let title = '提示';
-            let body = '确定删除教师用户？<br>工号：' + tno;
-            // 弹出提示
-            myBootstrapModel(title, body, '确定', '取消', () => {
-                console.log('删除：' + tno);
-                // 请求API删除
-                let url = 'http://123.56.156.212/Interface/account/delete';
-                let param = {
-                    username: tno,
-                    admin_user: adminUN,
-                    admin_pwd: adminUP,
-                    type: 2
-                };
-                // noinspection all
-                jQuery.ajax({
-                    type: "POST",
-                    url: url,
-                    data: param,
-                    traditional: true,
-                    timeout: 5000,
-                    success: (e) => {
-                        // 删除成功
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
+        // 删除教师
+        {
+            $('.delete-teacher').off('click');
+            $('.delete-teacher').click((e) => {
+                let tno = $(e.target).attr('tno');
+                console.log('点击：删除 ' + tno);
+                let title = '提示';
+                let body = '确定删除教师用户？<br>工号：' + tno;
+                // 弹出提示
+                myBootstrapModel(title, body, '确定', '取消', () => {
+                    console.log('删除：' + tno);
+                    // 请求API删除
+                    let url = 'http://123.56.156.212/Interface/account/delete';
+                    let param = {
+                        username: tno,
+                        admin_user: adminUN,
+                        admin_pwd: adminUP,
+                        type: 2
+                    };
+                    // noinspection all
+                    jQuery.ajax({
+                        type: "POST",
+                        url: url,
+                        data: param,
+                        traditional: true,
+                        timeout: 5000,
+                        success: (e) => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
+                                toastr.error(e.message);
+                            }
+                            // 刷新表格
+                            refreshTeachers(1, TEACHER_PER_PAGE);
+                        },
+                        error: (e) => {
                             toastr.error(e.message);
                         }
-                        // 刷新表格
-                        refreshTeachers(1, TEACHER_PER_PAGE);
-                    },
-                    error: (e) => {
-                        toastr.error(e.message);
-                    }
+                    });
                 });
             });
-        });
+        }
 
         // 单独添加教师
-        $('#addTeacher').off('click');
-        $('#addTeacher').click(() => {
-            console.log('点击添加教师');
-            let tno = $('#tnoAdd').val();
-            let tname = $('#tnameAdd').val();
-            let tsex = $('#tsexAdd').val();
-            let temail = $('#temailAdd').val();
+        {
+            $('#addTeacher').off('click');
+            $('#addTeacher').click(() => {
+                console.log('点击添加教师');
+                let tno = $('#tnoAdd').val();
+                let tname = $('#tnameAdd').val();
+                let tsex = $('#tsexAdd').val();
+                let temail = $('#temailAdd').val();
 
-            // 简单检验参数
-            if (isEmpty(tno) || isEmpty(tname) || isEmpty(tsex) || isEmpty(temail)) {
-                toastr.error("参数不能为空");
-                return;
-            }
-
-            // 添加确认提示
-            let body = '确定添加教师用户？' + '<br>' +
-                '工号：' + tno + '<br>' +
-                '姓名：' + tname + '<br>' +
-                '性别：' + tsex + '<br>' +
-                '邮箱：' + temail;
-            myBootstrapModel('提示', body, '确定', '取消', () => {
-                // 处理性别
-                if (tsex === '女') {
-                    tsex = 'f';
-                } else {
-                    tsex = 'm';
+                // 简单检验参数
+                if (isEmpty(tno) || isEmpty(tname) || isEmpty(tsex) || isEmpty(temail)) {
+                    toastr.error("参数不能为空");
+                    return;
                 }
-                // 请求添加教师API
-                let url = 'http://123.56.156.212/Interface/account/addteacher';
-                let param = {
-                    tno: tno,
-                    pwd: "000000",
-                    name: tname,
-                    sex: tsex,
-                    email: temail,
-                    avatar: "default",
-                    status: 1
-                };
-                // noinspection all
-                jQuery.ajax({
-                    type: "POST",
-                    url: url,
-                    data: param,
-                    traditional: true,
-                    timeout: 5000,
-                    success: (e) => {
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
+
+                // 添加确认提示
+                let body = '确定添加教师用户？' + '<br>' +
+                    '工号：' + tno + '<br>' +
+                    '姓名：' + tname + '<br>' +
+                    '性别：' + tsex + '<br>' +
+                    '邮箱：' + temail;
+                myBootstrapModel('提示', body, '确定', '取消', () => {
+                    // 处理性别
+                    if (tsex === '女') {
+                        tsex = 'f';
+                    } else {
+                        tsex = 'm';
+                    }
+                    // 请求添加教师API
+                    let url = 'http://123.56.156.212/Interface/account/addteacher';
+                    let param = {
+                        tno: tno,
+                        pwd: "000000",
+                        name: tname,
+                        sex: tsex,
+                        email: temail,
+                        avatar: "default",
+                        status: 1
+                    };
+                    // noinspection all
+                    jQuery.ajax({
+                        type: "POST",
+                        url: url,
+                        data: param,
+                        traditional: true,
+                        timeout: 5000,
+                        success: (e) => {
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
+                                toastr.error(e.message);
+                            }
+                            // 刷新表格
+                            refreshTeachers(1, TEACHER_PER_PAGE);
+                        },
+                        error: (e) => {
                             toastr.error(e.message);
                         }
-                        // 刷新表格
-                        refreshTeachers(1, TEACHER_PER_PAGE);
-                    },
-                    error: (e) => {
-                        toastr.error(e.message);
-                    }
+                    });
                 });
             });
-        });
+        }
     }
 
     // 学生用户操作
@@ -508,6 +514,5 @@ function loadEvents() {
             });
         }
     }
-
 }
 
