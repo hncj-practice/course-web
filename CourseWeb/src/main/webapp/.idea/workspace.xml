@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,8 @@
       <workItem from="1598087135546" duration="2763000" />
       <workItem from="1598156050244" duration="1704000" />
       <workItem from="1598179509776" duration="6028000" />
-      <workItem from="1598195993264" duration="2521000" />
+      <workItem from="1598195993264" duration="2913000" />
+      <workItem from="1598232844061" duration="1860000" />
     </task>
     <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
       <created>1598088622655</created>
@@ -129,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598197492478</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="解决事件冲突的bug">
+      <created>1598198581712</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598198581712</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +154,8 @@
     <MESSAGE value="用封装的模态框重写删除教师用户" />
     <MESSAGE value="使用toastr弹出提示消息" />
     <MESSAGE value="解决事件重复添加的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决事件重复添加的bug" />
+    <MESSAGE value="解决事件冲突的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决事件冲突的bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -157,10 +166,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598197491867">
+    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598198581053">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598197491867" />
+    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598198581053" />
     <state x="472" y="324" key="EditFileWatcherDialog" timestamp="1598088328623">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -237,10 +246,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="367" y="190" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598088329871" />
-    <state x="489" y="270" key="Vcs.Push.Dialog.v2" timestamp="1598185361699">
+    <state x="489" y="270" key="Vcs.Push.Dialog.v2" timestamp="1598198656131">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="489" y="270" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598185361699" />
+    <state x="489" y="270" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598198656131" />
     <state x="689" y="331" key="git4idea.merge.GitPullDialog" timestamp="1598088662544">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

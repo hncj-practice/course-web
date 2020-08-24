@@ -165,8 +165,8 @@ function renderStudentTable(obj) {
             <td>{4}</td>
             <td>OK</td>
             <td class="options">
-                <span tno="081417137" class="reset-user reset-student">重置</span>
-                <span tno="081417137" class="delete-user delete-student">删除</span>
+                <span sno="{0}" class="reset-user reset-student">重置</span>
+                <span sno="{0}" class="delete-user delete-student">删除</span>
             </td>
         </tr>
         `.format(sno, name, cla, sex, email);
@@ -174,11 +174,11 @@ function renderStudentTable(obj) {
     // 添加一行
     html += `
      <tr class="add-user-tr">
-        <td><input type="text" placeholder="学号（9位）"></td>
-        <td><input type="text" placeholder="姓名"></td>
-        <td><input type="text" placeholder="班级"></td>
-        <td><input type="text" placeholder="性别（男/女）"></td>
-        <td><input type="text" placeholder="邮箱"></td>
+        <td><input id="snoAdd" type="text" placeholder="学号（9位）"></td>
+        <td><input id="snameAdd" type="text" placeholder="姓名"></td>
+        <td><input id="sclaAdd" type="text" placeholder="班级"></td>
+        <td><input id="ssexAdd" type="text" placeholder="性别（男/女）"></td>
+        <td><input id="semailAdd" type="text" placeholder="邮箱"></td>
         <td>OK</td>
         <td class="options">
             <span class="add-user" id="addStudent">添加</span>
@@ -280,43 +280,38 @@ function loadEvents() {
             let title = '提示';
             let body = '确定删除教师用户？<br>工号：' + tno;
             // 弹出提示
-            myBootstrapModel(
-                title,
-                body,
-                '确定',
-                '取消',
-                () => {
-                    console.log('删除：' + tno);
-                    // 请求API删除
-                    let url = 'http://123.56.156.212/Interface/account/delete';
-                    let param = {
-                        username: tno,
-                        admin_user: adminUN,
-                        admin_pwd: adminUP,
-                        type: 2
-                    };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshTeachers(1, TEACHER_PER_PAGE);
-                        },
-                        error: (e) => {
+            myBootstrapModel(title, body, '确定', '取消', () => {
+                console.log('删除：' + tno);
+                // 请求API删除
+                let url = 'http://123.56.156.212/Interface/account/delete';
+                let param = {
+                    username: tno,
+                    admin_user: adminUN,
+                    admin_pwd: adminUP,
+                    type: 2
+                };
+                // noinspection all
+                jQuery.ajax({
+                    type: "POST",
+                    url: url,
+                    data: param,
+                    traditional: true,
+                    timeout: 5000,
+                    success: (e) => {
+                        // 删除成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshTeachers(1, TEACHER_PER_PAGE);
+                    },
+                    error: (e) => {
+                        toastr.error(e.message);
+                    }
                 });
+            });
         });
 
         // 单独添加教师
@@ -381,5 +376,118 @@ function loadEvents() {
             });
         });
     }
+
+    // 学生用户操作
+    {
+        // 添加学生
+        {
+            $('#addStudent').off('click');
+            $('#addStudent').click(() => {
+                console.log('点击添加学生');
+                let sno = $('#snoAdd').val();
+                let sname = $('#snameAdd').val();
+                let scla = $('#sclaAdd').val();
+                let ssex = $('#ssexAdd').val();
+                let semail = $('#semailAdd').val();
+                // 简单检验参数
+                if (isEmpty(sno) || isEmpty(sname) || isEmpty(scla) || isEmpty(ssex) || isEmpty(semail)) {
+                    toastr.error("参数不能为空");
+                    return;
+                }
+                // 添加确认提示
+                let body = '确定添加学生用户？' + '<br>' +
+                    '学号：' + sno + '<br>' +
+                    '姓名：' + sname + '<br>' +
+                    '班级：' + scla + '<br>' +
+                    '性别：' + ssex + '<br>' +
+                    '邮箱：' + semail;
+                myBootstrapModel('提示', body, '确定', '取消', () => {
+                    // 处理性别
+                    if (ssex === '女') {
+                        ssex = 'f';
+                    } else {
+                        ssex = 'm';
+                    }
+                    let url = 'http://123.56.156.212/Interface/account/addstudent';
+                    let param = {
+                        sno: sno,
+                        cla: scla,
+                        pwd: "000000",
+                        name: sname,
+                        sex: ssex,
+                        email: semail,
+                        avatar: "default",
+                        status: 0
+                    };
+                    // noinspection all
+                    jQuery.ajax({
+                        type: "POST",
+                        url: url,
+                        data: param,
+                        traditional: true,
+                        timeout: 5000,
+                        success: (e) => {
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
+                                toastr.error(e.message);
+                                return;
+                            }
+                            // 刷新表格
+                            refreshStudents(1, STUDENT_PER_PAGE);
+                        },
+                        error: (e) => {
+                            toastr.error(e.message);
+                        }
+                    });
+                });
+            });
+        }
+
+        // 删除学生
+        {
+            $('.delete-student').off('click');
+            $('.delete-student').click((e) => {
+                let sno = $(e.target).attr('sno');
+                console.log('点击：删除 ' + sno);
+                let title = '提示';
+                let body = '确定删除学生用户？<br>学号：' + sno;
+                myBootstrapModel(title, body, '确定', '取消', () => {
+                    // 请求API删除
+                    let url = 'http://123.56.156.212/Interface/account/delete';
+                    let param = {
+                        username: sno,
+                        admin_user: adminUN,
+                        admin_pwd: adminUP,
+                        type: 1
+                    };
+                    // noinspection all
+                    jQuery.ajax({
+                        type: "POST",
+                        url: url,
+                        data: param,
+                        traditional: true,
+                        timeout: 5000,
+                        success: (e) => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
+                                toastr.error(e.message);
+                            }
+                            // 刷新表格
+                            refreshStudents(1, STUDENT_PER_PAGE);
+                        },
+                        error: (e) => {
+                            toastr.error(e.message);
+                        }
+                    });
+                });
+            });
+        }
+
+        // 重置学生
+    }
+
 }
 
