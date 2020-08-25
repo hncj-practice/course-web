@@ -33,3 +33,10 @@ const STUDENT_API = {
     // 查询学生
     FIND: 'http://123.56.156.212/Interface/student/allstudent'
 };
+
+/**
+ * 班级操作
+ */
+const CLASS_API = {
+    DELETE: 'http://123.56.156.212/Interface/class/delclass'
+};

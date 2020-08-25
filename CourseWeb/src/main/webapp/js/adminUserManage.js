@@ -234,7 +234,7 @@ function renderStudentTable(obj) {
         html += `
         <tr>
             <td>
-                <input class="check-student" sno="{0}" type="checkbox"/>
+                <input class="check-student" sno="{0}" cla="{2}" type="checkbox"/>
                 {0}
             </td>
             <td>{1}</td>
@@ -951,18 +951,62 @@ function loadEvents() {
         {
             $('#deleteAllClsStudent').off('click');
             $('#deleteAllClsStudent').click(() => {
+                // 获取选择的学生
+                // 拿到所有的复选框
+                let checkedStudents = $('.check-student');
+                // 所选教师集合
+                let ss = [];
+                // 遍历
+                // noinspection JSUnresolvedVariable
+                jQuery.each(checkedStudents, (index, item) => {
+                    if (item.checked) {
+                        ss.push($(item).attr('cla'));
+                    }
+                });
+                if (ss.length < 1) {
+                    toastr.warning('请选中学生');
+                    return;
+                } else if (ss.length > 1) {
+                    toastr.warning('请选中一名学生！');
+                    return;
+                }
+
                 toastr.warning('用户将要删除整班学生！');
-                let body = '删除 xxx 班所有学生？<br>该操作不能撤销!!';
+                let body = '删除 ' + ss[0] + ' 班所有学生？<br>该班级也会被一并删除！<br>该操作不能撤销!!';
                 myBootstrapModel('警告', body, '确定', '取消', () => {
-                    let flag = confirm('警告', '再次确认');
+                    let flag = confirm('再次确认');
                     if (!flag) {
                         toastr.info('操作已取消');
                         return;
                     }
                     // 调用API删除
                     console.log('删除整班学生');
+                    let url = CLASS_API.DELETE;
+                    let param = {
+                        classid: ss[0]
+                    };
+                    // noinspection all
+                    jQuery.ajax({
+                        type: "POST",
+                        url: url,
+                        data: param,
+                        traditional: true,
+                        timeout: 5000,
+                        success: (e) => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
+                                toastr.error(e.message);
+                            }
+                            // 刷新表格
+                            refreshStudents();
+                        },
+                        error: (e) => {
+                            toastr.error(e.message);
+                        }
+                    });
                 });
-
             });
         }
     }
