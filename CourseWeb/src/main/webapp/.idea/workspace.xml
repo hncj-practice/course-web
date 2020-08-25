@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,8 @@
       <workItem from="1598179509776" duration="6028000" />
       <workItem from="1598195993264" duration="2913000" />
       <workItem from="1598232844061" duration="9516000" />
-      <workItem from="1598273397041" duration="6472000" />
+      <workItem from="1598273397041" duration="8018000" />
+      <workItem from="1598321164858" duration="195000" />
     </task>
     <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
       <created>1598088622655</created>
@@ -203,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598279832717</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="修复样式bug">
+      <created>1598280062339</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1598280062339</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +235,8 @@
     <MESSAGE value="实现批量删除学生" />
     <MESSAGE value="将API接口放在同一文件下" />
     <MESSAGE value="实现教师列表页码跳转" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现教师列表页码跳转" />
+    <MESSAGE value="修复样式bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复样式bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -240,10 +247,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598279831752">
+    <state x="587" y="130" key="CommitChangelistDialog2" timestamp="1598280061699">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598279831752" />
+    <state x="587" y="130" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598280061699" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -324,10 +331,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="367" y="190" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598088329871" />
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1598279865223">
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1598280070943">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598279865223" />
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598280070943" />
     <state x="689" y="331" key="git4idea.merge.GitPullDialog" timestamp="1598088662544">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

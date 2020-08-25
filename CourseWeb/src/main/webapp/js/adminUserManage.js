@@ -340,7 +340,33 @@ function loadEvents() {
                     () => {
                         console.log('重置：' + tno);
                         // 请求API重置
-
+                        let url = ACCOUNT_API.RESET_BY_ADMIN;
+                        // noinspection DuplicatedCode
+                        let param = {
+                            username: tno,
+                            admin_user: adminUN,
+                            admin_pwd: adminUP,
+                            type: 2
+                        };
+                        // noinspection all
+                        jQuery.ajax({
+                            type: "POST",
+                            url: url,
+                            data: param,
+                            traditional: true,
+                            timeout: 5000,
+                            success: (e) => {
+                                // 删除成功
+                                if (e.code === 200) {
+                                    toastr.success(e.message);
+                                } else {
+                                    toastr.error(e.message);
+                                }
+                            },
+                            error: (e) => {
+                                toastr.error(e.message);
+                            }
+                        });
                     });
             });
         }
@@ -567,7 +593,7 @@ function loadEvents() {
                     curr_page_teacher = page;
                     $('#jumpT').val('');
                     refreshTeachers()
-                }else {
+                } else {
                     toastr.warning('请输入正确页码！');
                 }
             });

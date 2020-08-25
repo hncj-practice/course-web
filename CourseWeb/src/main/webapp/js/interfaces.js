@@ -8,6 +8,8 @@
  * 账户相关操作
  */
 const ACCOUNT_API = {
+    // 重置
+    RESET_BY_ADMIN: 'http://123.56.156.212/Interface/account/resetpwdbyadmin',
     // 删除用户
     DELETE: 'http://123.56.156.212/Interface/account/delete'
 };
