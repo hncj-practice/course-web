@@ -786,7 +786,6 @@ function loadEvents() {
                     () => {
                         console.log('重置：' + sno);
                         // 请求API重置
-// 请求API重置
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         // noinspection DuplicatedCode
                         let param = {
@@ -870,6 +869,70 @@ function loadEvents() {
                                 // 刷新表格
                                 if (n === ss.length) {
                                     toastr.success('成功删除所选学生！');
+                                    refreshStudents(1, STUDENT_PER_PAGE);
+                                }
+                            },
+                            error: (e) => {
+                                toastr.error(e.message);
+                            }
+                        });
+                    });
+                })
+            });
+        }
+
+        // 批量重置学生
+        {
+            $('#resetSAll').off('click');
+            $('#resetSAll').click(() => {
+                console.log('批量重置学生');
+                // 拿到所有的复选框
+                let checkedStudents = $('.check-student');
+                // 所选教师集合
+                let ss = [];
+                // 遍历
+                // noinspection JSUnresolvedVariable
+                jQuery.each(checkedStudents, (index, item) => {
+                    if (item.checked) {
+                        ss.push($(item).attr('sno'));
+                    }
+                });
+                if (ss.length < 1) {
+                    toastr.warning('请选中学生');
+                    return;
+                }
+                let body = '确定重置以下学生：<br>学号：' + ss.join('<br>学号：');
+
+                // 删除完成标志
+                let n = 0;
+                myBootstrapModel('警告', body, '确定', '取消', () => {
+                    ss.forEach((item) => {
+                        // noinspection DuplicatedCode
+                        let url = ACCOUNT_API.RESET_BY_ADMIN;
+                        let param = {
+                            username: item,
+                            admin_user: adminUN,
+                            admin_pwd: adminUP,
+                            type: 1
+                        };
+                        // noinspection all
+                        jQuery.ajax({
+                            type: "POST",
+                            url: url,
+                            data: param,
+                            traditional: true,
+                            timeout: 5000,
+                            success: (e) => {
+                                // 删除成功
+                                if (e.code === 200) {
+                                    toastr.success(e.message);
+                                } else {
+                                    toastr.error(e.message);
+                                }
+                                n++;
+                                // 刷新表格
+                                if (n === ss.length) {
+                                    toastr.success('成功重置所选学生！');
                                     refreshStudents(1, STUDENT_PER_PAGE);
                                 }
                             },
