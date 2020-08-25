@@ -356,7 +356,7 @@ function loadEvents() {
                             traditional: true,
                             timeout: 5000,
                             success: (e) => {
-                                // 删除成功
+                                // 成功
                                 if (e.code === 200) {
                                     toastr.success(e.message);
                                 } else {
@@ -786,7 +786,34 @@ function loadEvents() {
                     () => {
                         console.log('重置：' + sno);
                         // 请求API重置
-
+// 请求API重置
+                        let url = ACCOUNT_API.RESET_BY_ADMIN;
+                        // noinspection DuplicatedCode
+                        let param = {
+                            username: sno,
+                            admin_user: adminUN,
+                            admin_pwd: adminUP,
+                            type: 1
+                        };
+                        // noinspection all
+                        jQuery.ajax({
+                            type: "POST",
+                            url: url,
+                            data: param,
+                            traditional: true,
+                            timeout: 5000,
+                            success: (e) => {
+                                // 成功
+                                if (e.code === 200) {
+                                    toastr.success(e.message);
+                                } else {
+                                    toastr.error(e.message);
+                                }
+                            },
+                            error: (e) => {
+                                toastr.error(e.message);
+                            }
+                        });
                     });
             });
         }
