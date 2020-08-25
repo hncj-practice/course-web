@@ -223,7 +223,7 @@ function renderStudentTable(obj) {
     obj.data.forEach((item) => {
         sno = item['sno'];
         name = item['name'];
-        cla = '班级';
+        cla = item['cla'];
         sex = '男';
         if (item['sex'] === 'f') {
             sex = '女';
@@ -545,64 +545,66 @@ function loadEvents() {
         }
 
         // 批量重置教师
-        $('#resetTAll').off('click');
-        $('#resetTAll').click(() => {
-            console.log('批量教师');
-            // 拿到所有的复选框
-            let checkedTeachers = $('.check-teacher');
-            // 所选教师集合
-            let ts = [];
-            // 遍历
-            // noinspection JSUnresolvedVariable
-            jQuery.each(checkedTeachers, (index, item) => {
-                if (item.checked) {
-                    ts.push($(item).attr('tno'));
+        {
+            $('#resetTAll').off('click');
+            $('#resetTAll').click(() => {
+                console.log('批量教师');
+                // 拿到所有的复选框
+                let checkedTeachers = $('.check-teacher');
+                // 所选教师集合
+                let ts = [];
+                // 遍历
+                // noinspection JSUnresolvedVariable
+                jQuery.each(checkedTeachers, (index, item) => {
+                    if (item.checked) {
+                        ts.push($(item).attr('tno'));
+                    }
+                });
+                if (ts.length < 1) {
+                    toastr.warning('请选中教师');
+                    return;
                 }
-            });
-            if (ts.length < 1) {
-                toastr.warning('请选中教师');
-                return;
-            }
-            let body = '确定重置以下教师：<br>工号：' + ts.join('<br>工号：');
-            let n = 0;
-            myBootstrapModel('警告', body, '确定', '取消', () => {
-                // 遍历删除
-                ts.forEach((item) => {
-                    // noinspection all,DuplicatedCode
-                    let url = ACCOUNT_API.RESET_BY_ADMIN;
-                    let param = {
-                        username: item,
-                        admin_user: adminUN,
-                        admin_pwd: adminUP,
-                        type: 2
-                    };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
+                let body = '确定重置以下教师：<br>工号：' + ts.join('<br>工号：');
+                let n = 0;
+                myBootstrapModel('警告', body, '确定', '取消', () => {
+                    // 遍历删除
+                    ts.forEach((item) => {
+                        // noinspection all,DuplicatedCode
+                        let url = ACCOUNT_API.RESET_BY_ADMIN;
+                        let param = {
+                            username: item,
+                            admin_user: adminUN,
+                            admin_pwd: adminUP,
+                            type: 2
+                        };
+                        // noinspection all
+                        jQuery.ajax({
+                            type: "POST",
+                            url: url,
+                            data: param,
+                            traditional: true,
+                            timeout: 5000,
+                            success: (e) => {
+                                // 成功
+                                if (e.code === 200) {
+                                    toastr.success(e.message);
+                                } else {
+                                    toastr.error(e.message);
+                                }
+                                n++;
+                                // 所有都完成
+                                if (n === ts.length) {
+                                    toastr.success('成功重置所选教师！');
+                                }
+                            },
+                            error: (e) => {
                                 toastr.error(e.message);
                             }
-                            n++;
-                            // 所有都完成
-                            if (n === ts.length) {
-                                toastr.success('成功重置所选教师！');
-                            }
-                        },
-                        error: (e) => {
-                            toastr.error(e.message);
-                        }
+                        });
                     });
                 });
             });
-        });
+        }
 
         // 底部页面跳转
         {
