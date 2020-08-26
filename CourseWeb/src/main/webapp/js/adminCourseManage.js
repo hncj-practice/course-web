@@ -162,18 +162,101 @@ function loadCourseEvents() {
         $('#newCourse').off('click');
         $('#newCourse').click(() => {
             $('.add-new-course').show(250);
+            console.log('打开');
+            $('#courseClassesAdd').text('');
             // 加载信息
+            // 加载所有教师信息，放在下拉框里面
+            {
+                let url = TEACHER_API.FIND;
+                // noinspection DuplicatedCode
+                let param = {};
+                // noinspection all
+                jQuery.ajax({
+                    type: "POST",
+                    url: url,
+                    data: param,
+                    traditional: true,
+                    timeout: 5000,
+                    success: (e) => {
+                        // 成功
+                        if (e.code === 200) {
+                            // 添加到下拉列表
+                            let html = '';
+                            let teacherList = $('#teacherList');
+                            e['data'].forEach((item) => {
+                                html += `<option value="{0}">{1}</option>`.format(item.tno, item.tno + ':' + item.name);
+                            });
+                            teacherList.html(html);
+                        } else {
+                            toastr.error(e.message);
+                        }
+                    },
+                    error: (e) => {
+                        toastr.error(e.message);
+                    }
+                });
+            }
+            // 加载所有班级信息，放在下拉框里面
+            {
+                let url = CLASS_API.FIND;
+                // noinspection DuplicatedCode
+                let param = {};
+                // noinspection all
+                jQuery.ajax({
+                    type: "POST",
+                    url: url,
+                    data: param,
+                    traditional: true,
+                    timeout: 5000,
+                    success: (e) => {
+                        // 成功
+                        if (e.code === 200) {
+                            // 添加到下拉列表
+                            let html = '';
+                            let classesList = $('#classesList');
+                            e['data'].forEach((item) => {
+                                html += `<option value="{0}">{0}</option>`.format(item.classid);
+                            });
+                            classesList.html(html);
+                        } else {
+                            toastr.error(e.message);
+                        }
+                    },
+                    error: (e) => {
+                        toastr.error(e.message);
+                    }
+                });
+            }
         });
         // 关闭按钮
         $('#closeAddCourseDiv').off('click');
         $('#closeAddCourseDiv').click(() => {
+            console.log('关闭');
             $('.add-new-course').hide(250);
         });
 
+        // 添加班级候选列表
+        $('#addClassToList').off('click');
+        $('#addClassToList').click(() => {
+            console.log('添加了');
+            // 拿到当前选择的班级
+            let classesList = $('#classesList').val();
+            console.log(classesList);
+            // 添加到候补列表
+            $('#courseClassesAdd').text($('#courseClassesAdd').text() + classesList + ';');
+        });
 
+        // 确定新建按钮
         $('#addCourseEnsure').off('click');
         $('#addCourseEnsure').click(() => {
             console.log('确定新建课程');
+
+            let name = $('#courseNameAdd').val();
+            let tno = $('#teacherList').val();
+            let classes = $('#courseClassesAdd').text();
+
+            console.log(name, tno, classes);
+
         });
 
 

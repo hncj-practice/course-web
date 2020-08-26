@@ -277,24 +277,24 @@
         <div class="add-new-course">
             <!-- 关闭按钮 -->
             <div class="close" id="closeAddCourseDiv">
-                X
+                x
             </div>
             <form>
                 课程名
                 <input id="courseNameAdd" type="text"><br>
                 授课教师
-                <select>
+                <select id="teacherList">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                 </select><br>
                 所属班级
-                <select>
+                <select id="classesList">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                 </select>
-                <input type="button" value="添加">
+                <input id="addClassToList" type="button" value="添加">
                 <!--suppress HtmlUnknownAttribute -->
-                <span id="courseClassesAdd" clas="">已选：</span><br>
+                <span id="courseClassesAdd"></span><br>
                 <input id="addCourseEnsure" type="button" value="确定">
             </form>
         </div>
