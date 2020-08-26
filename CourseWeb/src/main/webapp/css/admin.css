@@ -115,75 +115,26 @@ main #userPanel .choose-user-type span {
   color: #fff;
   cursor: pointer;
 }
-main #userPanel .table-div {
-  padding: 28px 60px 0 60px;
-}
-main #userPanel .table-div table {
-  margin-bottom: 0;
-  table-layout: fixed;
-}
-main #userPanel .table-div table tr {
-  height: 38px;
-}
-main #userPanel .table-div table tr:hover {
-  background: #e0f5f1;
-  outline: solid 1px #a9d4c7;
-}
-main #userPanel .table-div table tr .options {
-  position: relative;
-}
-main #userPanel .table-div table tr .options span {
-  position: absolute;
-  cursor: pointer;
-}
-main #userPanel .table-div table tr .options .reset-user {
-  left: 15px;
-  color: #5d6691;
-}
-main #userPanel .table-div table tr .options .delete-user {
-  right: 15px;
-  color: red;
-}
-main #userPanel .table-div table tr .options .add-user {
-  left: 15px;
-  color: #587c0c;
-}
-main #userPanel .table-div table tr .options .add-user-excel {
-  right: 15px;
-  color: #587c0c;
-}
-main #userPanel .table-div table tr td {
-  line-height: 30px;
-}
-main #userPanel .table-div table tr td input[type=checkbox] {
-  margin-right: 3px;
-}
-main #userPanel .table-div table .add-user-tr td input {
-  width: 80%;
-  outline: none;
-  border: none;
-  padding-left: 5px;
-}
-main #userPanel .table-div .user-options {
+main #userPanel .user-options {
   display: flex;
   position: relative;
 }
-main #userPanel .table-div .user-options .opts li a {
+main #userPanel .user-options .opts li a {
   cursor: pointer;
 }
-main #userPanel .table-div .user-options .opts .reset-all a {
+main #userPanel .user-options .opts .reset-all a {
   color: #5d6691;
 }
-main #userPanel .table-div .user-options .opts .delete-all a {
+main #userPanel .user-options .opts .delete-all a {
   color: red;
 }
-main #userPanel .table-div .user-options .pages {
+main #userPanel .user-options .pages {
   position: absolute;
   right: 46px;
   margin-bottom: 0;
   z-index: 1;
 }
-main #userPanel .table-div .user-options .jump {
+main #userPanel .user-options .jump {
   position: absolute;
   width: 50px;
   height: 46px;
@@ -198,5 +149,80 @@ main #userPanel .table-div .user-options .jump {
 main #coursePanel {
   width: 100%;
   height: 100%;
-  background: sandybrown;
+}
+main #coursePanel .search-course {
+  padding: 28px 28px 0 60px;
+  margin-bottom: 20px;
+}
+main #coursePanel .search-course input {
+  width: 280px;
+  height: 38px;
+  font-size: 16px;
+  padding-left: 5px;
+}
+main #coursePanel .search-course button {
+  width: 80px;
+  height: 38px;
+}
+main .table-div {
+  padding: 10px 60px 0 60px;
+}
+main .table-div table {
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+main .table-div table tr {
+  height: 38px;
+}
+main .table-div table tr:hover {
+  background: #e0f5f1;
+  outline: solid 1px #a9d4c7;
+}
+main .table-div table tr .options {
+  position: relative;
+}
+main .table-div table tr .options span {
+  position: absolute;
+  cursor: pointer;
+}
+main .table-div table tr .options .reset-user {
+  left: 15px;
+  color: #5d6691;
+}
+main .table-div table tr .options .delete-user {
+  right: 15px;
+  color: red;
+}
+main .table-div table tr .options .add-user {
+  left: 15px;
+  color: #587c0c;
+}
+main .table-div table tr .options .add-user-excel {
+  right: 15px;
+  color: #587c0c;
+}
+main .table-div table tr .options .save-course {
+  left: 15px;
+  color: #51A351;
+}
+main .table-div table tr .options .delete-course {
+  right: 15px;
+  color: red;
+}
+main .table-div table tr td {
+  line-height: 30px;
+}
+main .table-div table tr td input[type=checkbox] {
+  margin-right: 3px;
+}
+main .table-div table .add-user-tr td input {
+  width: 80%;
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
+main .table-div table .course-name {
+  outline: none;
+  border: none;
+  padding-left: 5px;
 }

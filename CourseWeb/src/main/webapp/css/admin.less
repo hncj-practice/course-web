@@ -117,129 +117,54 @@ main {
       }
     }
 
-    // 放表格的div
-    .table-div {
-      padding: 28px 60px 0 60px;
-      // color  : indianred;
+    // 用户操作
+    .user-options {
+      display: flex;
+      position: relative;
+      // text-align: right;
 
-      table {
+      // 功能按钮
+      .opts {
+
+        li {
+          a {
+            cursor: pointer;
+          }
+        }
+
+        .reset-all {
+          a {
+            color: #5d6691;
+          }
+        }
+
+        .delete-all {
+          a {
+            color: red;
+          }
+        }
+      }
+
+      // 翻页按钮
+      .pages {
+        position: absolute;
+        right: 46px;
         margin-bottom: 0;
-        table-layout: fixed;
-        //color: green;
-
-        tr {
-          height: 38px;
-          // cursor: pointer;
-
-
-          &:hover {
-            background: #e0f5f1;
-            // border    : 1px solid #a9d4c7;
-            outline: solid 1px #a9d4c7;
-          }
-
-          .options {
-            position: relative;
-
-            span {
-              position: absolute;
-              cursor: pointer;
-            }
-
-            .reset-user {
-              left: 15px;
-              color: #5d6691;
-            }
-
-            .delete-user {
-              right: 15px;
-              color: red;
-            }
-
-            .add-user {
-              left: 15px;
-              color: #587c0c;
-            }
-
-            .add-user-excel {
-              right: 15px;
-              color: #587c0c;
-            }
-
-          }
-
-          td {
-            line-height: 30px;
-
-            input[type=checkbox] {
-              margin-right: 3px;
-            }
-          }
-        }
-
-        .add-user-tr {
-          td {
-            input {
-              width: 80%;
-              outline: none;
-              border: none;
-              padding-left: 5px;
-            }
-          }
-        }
-
+        z-index: 1;
       }
 
-      // 用户操作
-      .user-options {
-        display: flex;
-        position: relative;
-        // text-align: right;
-
-        // 功能按钮
-        .opts {
-
-          li {
-            a {
-              cursor: pointer;
-            }
-          }
-
-          .reset-all {
-            a {
-              color: #5d6691;
-            }
-          }
-
-          .delete-all {
-            a {
-              color: red;
-            }
-          }
-        }
-
-        // 翻页按钮
-        .pages {
-          position: absolute;
-          right: 46px;
-          margin-bottom: 0;
-          z-index: 1;
-        }
-
-        .jump {
-          position: absolute;
-          width: 50px;
-          height: 46px;
-          top: 20px;
-          right: 0;
-          outline: none;
-          border: solid 1px #dddddd;
-          padding-left: 5px;
-          font-size: 18px;
-          z-index: 2;
-        }
+      .jump {
+        position: absolute;
+        width: 50px;
+        height: 46px;
+        top: 20px;
+        right: 0;
+        outline: none;
+        border: solid 1px #dddddd;
+        padding-left: 5px;
+        font-size: 18px;
+        z-index: 2;
       }
-
     }
   }
 
@@ -247,6 +172,114 @@ main {
   #coursePanel {
     width: 100%;
     height: 100%;
-    background: sandybrown;
+    //background: sandybrown;
+
+    .search-course {
+      padding: 28px 28px 0 60px;
+      margin-bottom: 20px;
+
+      input {
+        width: 280px;
+        height: 38px;
+        font-size: 16px;
+        padding-left: 5px;
+      }
+
+      button {
+        width: 80px;
+        height: 38px;
+      }
+    }
   }
+
+  // 放表格的div
+  .table-div {
+    padding: 10px 60px 0 60px;
+    // color  : indianred;
+
+    table {
+      margin-bottom: 0;
+      table-layout: fixed;
+      //color: green;
+
+      tr {
+        height: 38px;
+        // cursor: pointer;
+
+
+        &:hover {
+          background: #e0f5f1;
+          // border    : 1px solid #a9d4c7;
+          outline: solid 1px #a9d4c7;
+        }
+
+        .options {
+          position: relative;
+
+          span {
+            position: absolute;
+            cursor: pointer;
+          }
+
+          .reset-user {
+            left: 15px;
+            color: #5d6691;
+          }
+
+          .delete-user {
+            right: 15px;
+            color: red;
+          }
+
+          .add-user {
+            left: 15px;
+            color: #587c0c;
+          }
+
+          .add-user-excel {
+            right: 15px;
+            color: #587c0c;
+          }
+
+          .save-course {
+            left: 15px;
+            color: #51A351;
+          }
+
+          .delete-course {
+            right: 15px;
+            color: red;
+          }
+
+        }
+
+        td {
+          line-height: 30px;
+
+          input[type=checkbox] {
+            margin-right: 3px;
+          }
+        }
+      }
+
+      .add-user-tr {
+        td {
+          input {
+            width: 80%;
+            outline: none;
+            border: none;
+            padding-left: 5px;
+          }
+        }
+      }
+
+      .course-name{
+        //width: 80%;
+        outline: none;
+        border: none;
+        padding-left: 5px;
+      }
+    }
+  }
+
 }

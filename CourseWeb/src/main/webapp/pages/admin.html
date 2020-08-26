@@ -237,9 +237,41 @@
         </div>
 
         <!-- 课程管理 -->
-<!--        <div id="coursePanel" style="display: none;">-->
-        <div id="coursePanel" >
-            课程
+        <!--        <div id="coursePanel" style="display: none;">-->
+        <div id="coursePanel">
+            <div class="search-course">
+                <input type="text" placeholder="输入课程名">
+                <button>查询课程</button>
+                <button>添加课程</button>
+            </div>
+
+            <!-- 课程表格 -->
+            <div class="table-div">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>课程ID</th>
+                        <th>课程名</th>
+                        <th>任课教师</th>
+                        <th style="width: 150px;">状态</th>
+                        <th style="width: 150px;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="courseTable">
+                    <tr>
+                        <td>正在获取中</td>
+                        <td><input class="course-name" type="text"></td>
+                        <td>正在获取中</td>
+                        <td>LOADING</td>
+                        <td class="options">
+                            <span cno="0" class="save-course">保存更改</span>
+                            <span cno="0" class="delete-course">删除</span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 </div>
