@@ -40,6 +40,8 @@ const STUDENT_API = {
 const CLASS_API = {
     // 查询
     FIND: 'http://123.56.156.212/Interface/class/allclass',
+    // 添加
+    ADD: 'http://123.56.156.212/Interface/course/addcourse',
     // 删除班级
     DELETE: 'http://123.56.156.212/Interface/class/delclass'
 };

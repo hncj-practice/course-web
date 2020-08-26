@@ -253,13 +253,44 @@ function loadCourseEvents() {
 
             let name = $('#courseNameAdd').val();
             let tno = $('#teacherList').val();
-            let classes = $('#courseClassesAdd').text();
+            let classes = $('#courseClassesAdd').text().split(";");
+            // 删除最后面的空元素
+            classes.splice(classes.length - 1, 1);
 
-            console.log(name, tno, classes);
+            // 调用API新建
+            let url = CLASS_API.ADD;
+            let param = {
+                semester: '2020_09',
+                tno: tno,
+                cname: name,
+                classid: classes,
+                coverimg: 'default',
+                status: '1'
+            };
 
+            // 新建
+            // noinspection JSUnresolvedVariable
+            jQuery.ajax({
+                type: "POST",
+                url: url,
+                data: param,
+                traditional: true,
+                timeout: 5000,
+                success: (e) => {
+                    // 成功
+                    if (e.code === 200) {
+                        toastr.success(e.message);
+                        $('.add-new-course').hide(250);
+                        refreshCourses();
+                    } else {
+                        toastr.error(e.message);
+                    }
+                },
+                error: (e) => {
+                    toastr.error(e.message);
+                }
+            });
         });
-
-
     }
 
 
