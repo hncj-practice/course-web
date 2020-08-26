@@ -15,7 +15,7 @@ let total_page_teacher = 1;
 // 入口函数
 $(function () {
     // 默认加载用户页面
-    // loadUserPage();
+    loadUserPage();
 });
 
 // 点击左侧切换
