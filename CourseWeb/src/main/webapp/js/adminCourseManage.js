@@ -56,7 +56,7 @@ function renderCourseTable(obj) {
         html += `
         <tr>
             <td>{0}</td>
-            <td><input class="course-name" type="text" value="{1}"></td>
+            <td><input id="courseName{0}" class="course-name" type="text" value="{1}"></td>
             <td>{2}</td>
             <td>{3}</td>
             <td class="options">
@@ -84,7 +84,6 @@ function loadCourseEvents() {
         $('.delete-course').off('click');
         $('.delete-course').click((e) => {
             let cid = $(e.target).attr('cid');
-            console.log('删除' + cid);
             let body = '确定删除课程？<br>课程ID：' + cid;
             myBootstrapModel('警告', body, '确定', '取消', () => {
                 // 请求API删除
@@ -115,6 +114,44 @@ function loadCourseEvents() {
             });
 
 
+        });
+    }
+
+    // 修改课程名称
+    {
+        $('.save-course').off('click');
+        $('.save-course').click((e) => {
+            let cid = $(e.target).attr('cid');
+            let newName = $('#courseName' + cid).val();
+            let body = '确定改名？<br>新名称：' + newName;
+            myBootstrapModel('警告', body, '确定', '取消', () => {
+                // 请求API修改
+                let url = COURSE_API.UPDATE;
+                // noinspection DuplicatedCode
+                let param = {
+                    courseid: cid,
+                    name: newName
+                };
+                // noinspection all
+                jQuery.ajax({
+                    type: "POST",
+                    url: url,
+                    data: param,
+                    traditional: true,
+                    timeout: 5000,
+                    success: (e) => {
+                        // 成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
+                            toastr.error(e.message);
+                        }
+                    },
+                    error: (e) => {
+                        toastr.error(e.message);
+                    }
+                });
+            });
         });
     }
 }

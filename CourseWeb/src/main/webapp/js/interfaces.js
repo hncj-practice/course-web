@@ -52,7 +52,8 @@ const COURSE_API = {
     FIND: '',
     // 根据教师或名字查询查询
     FIND_BY: 'http://123.56.156.212/Interface/course/getcoursebytnoorcoursename',
-// 删除
-    DELETE: 'http://123.56.156.212/Interface/course/delcourse'
-
+    // 删除
+    DELETE: 'http://123.56.156.212/Interface/course/delcourse',
+    // 修改
+    UPDATE: 'http://123.56.156.212/Interface/course/updatecourse'
 };
