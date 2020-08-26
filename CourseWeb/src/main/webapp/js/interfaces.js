@@ -52,7 +52,7 @@ const CLASS_API = {
  */
 const COURSE_API = {
     // 查询课程
-    FIND: '',
+    FIND: 'http://123.56.156.212/Interface/course/allcourse',
     // 根据教师或名字查询查询
     FIND_BY: 'http://123.56.156.212/Interface/course/getcoursebytnoorcoursename',
     // 删除

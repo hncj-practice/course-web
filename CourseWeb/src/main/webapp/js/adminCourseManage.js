@@ -10,12 +10,10 @@ function loadCoursePage() {
 
 // 刷新课程列表
 function refreshCourses() {
-    let url = COURSE_API.FIND_BY;
+    let url = COURSE_API.FIND;
     let param = {
-        condition: '888888888',
         page: 1,
-        num: 14,
-        type: 1
+        num: 14
     };
 
     setTimeout(() => {
@@ -28,7 +26,7 @@ function refreshCourses() {
             timeout: 5000,
             success: renderCourseTable,
             error: (e) => {
-                toastr.error(e.message);
+                toastr.error('查询失败：服务器异常');
             }
         });
     }, 500);
@@ -103,6 +101,7 @@ function loadCourseEvents() {
                         // 成功
                         if (e.code === 200) {
                             toastr.success(e.message);
+                            refreshCourses();
                         } else {
                             toastr.error(e.message);
                         }
