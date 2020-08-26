@@ -25,7 +25,7 @@ function refreshCourses() {
             traditional: true,
             timeout: 5000,
             success: renderCourseTable,
-            error: (e) => {
+            error: () => {
                 toastr.error('查询失败：服务器异常');
             }
         });
