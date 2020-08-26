@@ -60,8 +60,8 @@ function renderCourseTable(obj) {
             <td>{2}</td>
             <td>{3}</td>
             <td class="options">
-                <span cno="{0}" class="save-course">保存更改</span>
-                <span cno="{0}" class="delete-course">删除</span>
+                <span cid="{0}" class="save-course">保存更改</span>
+                <span cid="{0}" class="delete-course">删除</span>
             </td>
         </tr>
         `.format(cid, cname, tname, status);
@@ -70,4 +70,51 @@ function renderCourseTable(obj) {
 
     courseTable.html(html);
 
+    // 元素生成后添加事件
+    loadCourseEvents();
+
+}
+
+
+// 加载课程管理相关事件
+function loadCourseEvents() {
+
+    // 删除课程
+    {
+        $('.delete-course').off('click');
+        $('.delete-course').click((e) => {
+            let cid = $(e.target).attr('cid');
+            console.log('删除' + cid);
+            let body = '确定删除课程？<br>课程ID：' + cid;
+            myBootstrapModel('警告', body, '确定', '取消', () => {
+                // 请求API删除
+                let url = COURSE_API.DELETE;
+                // noinspection DuplicatedCode
+                let param = {
+                    courseid: cid
+                };
+                // noinspection all
+                jQuery.ajax({
+                    type: "POST",
+                    url: url,
+                    data: param,
+                    traditional: true,
+                    timeout: 5000,
+                    success: (e) => {
+                        // 成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
+                            toastr.error(e.message);
+                        }
+                    },
+                    error: (e) => {
+                        toastr.error(e.message);
+                    }
+                });
+            });
+
+
+        });
+    }
 }
