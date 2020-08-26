@@ -38,5 +38,18 @@ const STUDENT_API = {
  * 班级操作
  */
 const CLASS_API = {
+
+    // 删除班级
     DELETE: 'http://123.56.156.212/Interface/class/delclass'
+};
+
+
+/**
+ * 课程操作
+ */
+const COURSE_API = {
+    // 查询课程
+    FIND: '',
+    // 根据教师或名字查询查询
+    FIND_BY: 'http://123.56.156.212/Interface/course/getcoursebytnoorcoursename'
 };
