@@ -89,7 +89,7 @@ header {
 main {
   width: 100%;
   height: 100%;
-
+  position: relative;
   background: #f1f1f2;
 
   // 用户管理
@@ -192,6 +192,29 @@ main {
     }
   }
 
+  // 添加课程面板
+  .add-new-course {
+    display: none;
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+
+    margin-top: -250px;
+    transform: translateX(-50%);
+
+    background: #fff;
+    z-index: 2;
+
+
+    .close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+
   // 放表格的div
   .table-div {
     padding: 10px 60px 0 60px;
@@ -205,7 +228,6 @@ main {
       tr {
         height: 38px;
         // cursor: pointer;
-
 
         &:hover {
           background: #e0f5f1;
@@ -273,7 +295,7 @@ main {
         }
       }
 
-      .course-name{
+      .course-name {
         //width: 80%;
         outline: none;
         border: none;
@@ -281,5 +303,6 @@ main {
       }
     }
   }
-
 }
+
+

@@ -154,4 +154,30 @@ function loadCourseEvents() {
             });
         });
     }
+
+
+    // 新建课程
+    {
+        // 打开按钮
+        $('#newCourse').off('click');
+        $('#newCourse').click(() => {
+            $('.add-new-course').show(250);
+            // 加载信息
+        });
+        // 关闭按钮
+        $('#closeAddCourseDiv').off('click');
+        $('#closeAddCourseDiv').click(() => {
+            $('.add-new-course').hide(250);
+        });
+
+
+        $('#addCourseEnsure').off('click');
+        $('#addCourseEnsure').click(() => {
+            console.log('确定新建课程');
+        });
+
+
+    }
+
+
 }

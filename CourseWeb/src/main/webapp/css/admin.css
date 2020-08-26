@@ -94,6 +94,7 @@ header h3 {
 main {
   width: 100%;
   height: 100%;
+  position: relative;
   background: #f1f1f2;
 }
 main #userPanel {
@@ -163,6 +164,23 @@ main #coursePanel .search-course input {
 main #coursePanel .search-course button {
   width: 80px;
   height: 38px;
+}
+main .add-new-course {
+  display: none;
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  transform: translateX(-50%);
+  background: #fff;
+  z-index: 2;
+}
+main .add-new-course .close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 main .table-div {
   padding: 10px 60px 0 60px;
