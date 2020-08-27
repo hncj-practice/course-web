@@ -3,15 +3,21 @@
     <words>
       <w>chapterid</w>
       <w>chaptername</w>
+      <w>choicepoints</w>
       <w>classid</w>
       <w>courseid</w>
       <w>coverimg</w>
       <w>cpid</w>
       <w>endtime</w>
+      <w>fillpoints</w>
       <w>headerwrap</w>
       <w>imgs</w>
+      <w>judgepoints</w>
       <w>newpwd</w>
       <w>paperid</w>
+      <w>papername</w>
+      <w>problemids</w>
+      <w>ptype</w>
       <w>scla</w>
       <w>semail</w>
       <w>sname</w>

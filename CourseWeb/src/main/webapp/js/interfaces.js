@@ -74,9 +74,16 @@ const CHAPTER_API = {
  * 试卷操作
  */
 const PAPER_API = {
-    FIND: 'http://123.56.156.212/Interface/paper/getpaperbycourseid',
-    RANDOM_PAPER: 'http://123.56.156.212/Interface/paper/randomgenerate'
 
+    FIND: 'http://123.56.156.212/Interface/paper/getpaperbycourseid',
+
+    RANDOM_PAPER: 'http://123.56.156.212/Interface/paper/randomgenerate',
+
+    // 创建试卷
+    NEW: 'http://123.56.156.212/Interface/paper/addpaper',
+
+    // 给试卷添加试题
+    ADD: 'http://123.56.156.212/Interface/paper/addproblems'
 };
 
 

@@ -17,35 +17,25 @@ $(function () {
 
 // 加载章节
 function loadChapters() {
-
     let url = CHAPTER_API.FIND;
     let param = {
         courseid: currCid
     };
-
-    let chapters = $('.ul-zj');
-    // noinspection JSUnresolvedVariable
-    jQuery.ajax({
-        type: "POST",
-        url: url,
-        data: param,
-        traditional: true,
-        timeout: 5000,
-        success: (e) => {
-            if (e.code === 200) {
-                let html = '';
-                e.data.forEach((item) => {
-                    html += `<li cpid="{0}">{1}</li>`.format(item['chapterid'], item['chaptername']);
-                });
-                chapters.html(html);
-            } else {
-                toastr.error(e.message);
-            }
-        },
-        error: () => {
-            toastr.error('服务器异常');
+    let success = (e) => {
+        if (e.code === 200) {
+            let html = '';
+            e.data.forEach((item) => {
+                html += `
+                <li cpid="{0}">{1}</li>
+                `.format(item['chapterid'], item['chaptername']);
+            });
+            chapters.html(html);
+        } else {
+            toastr.error(e.message);
         }
-    });
+    };
+    let chapters = $('.ul-zj');
+    my_ajax(url, param, success);
 }
 
 // 加载试卷
@@ -54,38 +44,28 @@ function loadPapers() {
     let param = {
         courseid: currCid
     };
-    let papers = $('.ul-sj');
-    // noinspection JSUnresolvedVariable
-    jQuery.ajax({
-        type: "POST",
-        url: url,
-        data: param,
-        traditional: true,
-        timeout: 5000,
-        success: (e) => {
-            if (e.code === 200) {
-                let html = '';
-                e.data.forEach((item) => {
-                    html += `
-                    <li>
-                        <img paperid="{0}" class="delete-paper" src="../imgs/delete.png" alt="">
-                        <img paperid="{0}" class="update-paper" src="../imgs/update.png" alt="">
-                        <p>{1}试卷名</p>
-                        <p>开始：{2}</p>
-                        <p>结束：{3}</p>
-                        <p>状态：{4}</p>
-                    </li>        
-                    `.format(item['paperid'], item['paperid'], item['starttime'], item['endtime'], item['status']);
-                });
-                papers.html(html);
-            } else {
-                toastr.error(e.message);
-            }
-        },
-        error: () => {
-            toastr.error('服务器异常');
+    let success = (e) => {
+        if (e.code === 200) {
+            let html = '';
+            e.data.forEach((item) => {
+                html += `
+                <li>
+                    <img paperid="{0}" class="delete-paper" src="../imgs/delete.png" alt="">
+                    <img paperid="{0}" class="update-paper" src="../imgs/update.png" alt="">
+                    <p>{1}试卷名</p>
+                    <p>开始：{2}</p>
+                    <p>结束：{3}</p>
+                    <p>状态：{4}</p>
+                </li>
+                `.format(item['paperid'], item['paperid'], item['starttime'], item['endtime'], item['status']);
+            });
+            papers.html(html);
+        } else {
+            toastr.error(e.message);
         }
-    });
+    };
+    let papers = $('.ul-sj');
+    my_ajax(url, param, success);
 }
 
 
@@ -150,30 +130,88 @@ function loadEvents_Course() {
                 fill: 0,
                 judge: 0
             };
-            // noinspection JSUnresolvedVariable
-            jQuery.ajax({
-                type: "POST",
-                url: url,
-                data: param,
-                traditional: true,
-                timeout: 5000,
-                success: (e) => {
-                    if (e.code === 200) {
-                        toastr.success(e.message);
-                        
-                    } else {
-                        toastr.error(e.message);
-                    }
-                },
-                error: () => {
-                    toastr.error('服务器异常');
+            let success = (e) => {
+                if (e.code === 200) {
+                    toastr.success(e.message);
+                    previewPaper(e.data);
+                } else {
+                    toastr.error(e.message);
                 }
-            });
+            };
+            my_ajax(url, param, success);
         });
     }
 }
 
-function add2Paper() {
+// 显示预览试卷
+function previewPaper(obj) {
+    $('.random-paper-preview').show(250);
+    console.log(obj);
+    let xzHtml = '';
+    let tkHtml = '';
+    let pdHtml = '';
+    obj.forEach((item) => {
+        // 选择题
+        if (item['ptype'] === 1) {
+            xzHtml += `
+            <p>{0}</p>
+            `.format(item['question']);
+        }
+        // 填空题
+
+        // 判断题
+    });
+
+    $('#previewXZ').html(xzHtml);
+
+    // 确定添加此试卷
+    $('.ensure-random-paper-new').click(() => {
+        console.log('确定添加此试卷');
+        // 添加进试卷
+        let url = PAPER_API.NEW;
+        let param = {
+            courseid: currCid,
+            papername: '随机卷 - 未命名',
+            choicepoints: 2,
+            fillpoints: 2,
+            judgepoints: 1,
+            starttime: '2020-08-31 14:30:00',
+            endtime: '2020-08-31 16:30:00',
+            status: 1
+        };
+        let success = (e) => {
+            // 试卷添加成功，插入题目
+            console.log('试卷创建成功');
+            console.log(e);
+            // 构造题目id
+            let problemids = [];
+            obj.forEach((item) => {
+                    problemids.push(item['chapterid']);
+                }
+            );
+
+            toastr.info('生成试卷ID为：' + e['data']['paperid']);
+            let url = PAPER_API.ADD;
+            let param = {
+                paperid: e['data']['paperid'],
+                problemids: problemids
+            };
+
+            console.log(param);
+
+            my_ajax(url, param, (e) => {
+                if (e.code === 200) {
+                    toastr.success(e.message);
+                } else {
+                    toastr.error(e.message);
+                }
+                $('.random-paper-preview').hide(250);
+                $('.random-paper').hide(250);
+            });
+        };
+
+        my_ajax(url, param, success);
+    });
 
 }
 
