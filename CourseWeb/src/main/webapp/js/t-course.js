@@ -10,6 +10,8 @@ $(function () {
     loadChapters();
 
     loadPapers();
+
+    loadEvents_Course();
 });
 
 
@@ -86,44 +88,92 @@ function loadPapers() {
     });
 }
 
-// 点击切换页面
-{
-    let zj = $('#zj');
-    let sj = $('#sj');
-    let ht = $('#ht');
-    let zjContain = $('#zjContain');
-    let sjContain = $('#sjContain');
-    let htContain = $('#htContain');
+
+function loadEvents_Course() {
+    // 点击切换页面
+    {
+        let zj = $('#zj');
+        let sj = $('#sj');
+        let ht = $('#ht');
+        let zjContain = $('#zjContain');
+        let sjContain = $('#sjContain');
+        let htContain = $('#htContain');
 
 
-    // 切换题目页
-    zj.click(() => {
-        setClass(zj, 'active', 'inactive');
-        setClass(sj, 'inactive', 'active');
-        setClass(ht, 'inactive', 'active');
-        zjContain.show(200);
-        sjContain.hide(200);
-        htContain.hide(200);
-    });
+        // 切换题目页
+        zj.click(() => {
+            setClass(zj, 'active', 'inactive');
+            setClass(sj, 'inactive', 'active');
+            setClass(ht, 'inactive', 'active');
+            zjContain.show(200);
+            sjContain.hide(200);
+            htContain.hide(200);
+        });
 
-    // 切换试卷页
-    sj.click(() => {
-        setClass(sj, 'active', 'inactive');
-        setClass(zj, 'inactive', 'active');
-        setClass(ht, 'inactive', 'active');
-        sjContain.show(200);
-        zjContain.hide(200);
-        htContain.hide(200);
-    });
+        // 切换试卷页
+        sj.click(() => {
+            setClass(sj, 'active', 'inactive');
+            setClass(zj, 'inactive', 'active');
+            setClass(ht, 'inactive', 'active');
+            sjContain.show(200);
+            zjContain.hide(200);
+            htContain.hide(200);
+        });
 
-    // 切换话题页
-    ht.click(() => {
-        setClass(ht, 'active', 'inactive');
-        setClass(zj, 'inactive', 'active');
-        setClass(sj, 'inactive', 'active');
-        htContain.show(200);
-        sjContain.hide(200);
-        zjContain.hide(200);
-    });
+        // 切换话题页
+        ht.click(() => {
+            setClass(ht, 'active', 'inactive');
+            setClass(zj, 'inactive', 'active');
+            setClass(sj, 'inactive', 'active');
+            htContain.show(200);
+            sjContain.hide(200);
+            zjContain.hide(200);
+        });
+    }
+
+
+    // 随机组卷
+    {
+        let randomPaper = $('#randomPaper');
+        randomPaper.click(() => {
+            $('.random-paper').show(250);
+        });
+
+
+        $('.ensure-random-paper').click(() => {
+            console.log('确定随机组卷');
+            let url = PAPER_API.RANDOM_PAPER;
+            let param = {
+                chapterid: ['1'],
+                type: 2,
+                choice: 2,
+                fill: 0,
+                judge: 0
+            };
+            // noinspection JSUnresolvedVariable
+            jQuery.ajax({
+                type: "POST",
+                url: url,
+                data: param,
+                traditional: true,
+                timeout: 5000,
+                success: (e) => {
+                    if (e.code === 200) {
+                        toastr.success(e.message);
+                        
+                    } else {
+                        toastr.error(e.message);
+                    }
+                },
+                error: () => {
+                    toastr.error('服务器异常');
+                }
+            });
+        });
+    }
+}
+
+function add2Paper() {
+
 }
 

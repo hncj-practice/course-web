@@ -74,7 +74,9 @@ const CHAPTER_API = {
  * 试卷操作
  */
 const PAPER_API = {
-    FIND: 'http://123.56.156.212/Interface/paper/getpaperbycourseid'
+    FIND: 'http://123.56.156.212/Interface/paper/getpaperbycourseid',
+    RANDOM_PAPER: 'http://123.56.156.212/Interface/paper/randomgenerate'
+
 };
 
 

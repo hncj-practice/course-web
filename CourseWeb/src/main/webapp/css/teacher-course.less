@@ -110,7 +110,7 @@ header {
 
 // 主显示区域
 main {
-
+  position: relative;
   width: 50%;
   .h-center();
   margin-top: 25px;
@@ -248,4 +248,18 @@ main {
       }
     }
   }
+
+
+  // 随机组卷面板
+  .random-paper {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #fff;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+
 }

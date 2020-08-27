@@ -113,6 +113,7 @@ header .account img {
   color: #000;
 }
 main {
+  position: relative;
   width: 50%;
   margin: 0 auto;
   margin-top: 25px;
@@ -219,4 +220,14 @@ main .ul-ht li .right .comments .comment .comment-content {
 main .ul-ht li .right .comments button {
   text-align: center;
   margin: 10px auto;
+}
+main .random-paper {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
 }
