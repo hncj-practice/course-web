@@ -42,8 +42,8 @@ function loadCourses(obj) {
         loading.hide(250);
         return;
     }
-    let data = obj.data;
-    let length = data.length;
+    allCourses = obj.data;
+    let length = allCourses.length;
     let html = "";
 
     for (let i = 0; i < length; i++) {
@@ -56,7 +56,7 @@ function loadCourses(obj) {
                 <h4 class="numbers">{2}人</h4>
             </div>
         </div>        
-        `.format(data[i]['coverimg'], data[i]['cname'], data[i]['snum'], data[i]['cid']);
+        `.format(allCourses[i]['coverimg'], allCourses[i]['cname'], allCourses[i]['snum'], allCourses[i]['cid']);
     }
     courses.html(html);
     loading.hide(250);

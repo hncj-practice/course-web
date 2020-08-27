@@ -60,19 +60,3 @@ const COURSE_API = {
     // 修改
     UPDATE: 'http://123.56.156.212/Interface/course/updatecourse'
 };
-
-
-/**
- * 章节操作
- */
-const CHAPTER_API = {
-    FIND: 'http://123.56.156.212/Interface/chapter/getchapterbycourseid'
-};
-
-
-/**
- * 试卷操作
- */
-const PAPER_API = {
-    FIND: 'http://123.56.156.212/Interface/paper/getpaperbycourseid'
-};

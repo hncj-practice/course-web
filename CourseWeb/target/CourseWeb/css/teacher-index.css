@@ -39,11 +39,10 @@ header img {
   margin-top: 7px;
 }
 header h2 {
-  margin: 0;
   line-height: 55px;
   color: #fff;
   font-size: 26px;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
 }
 header .account {
   position: absolute;
@@ -228,7 +227,6 @@ header .account img {
   bottom: 57px;
   left: 0;
   margin: 0;
-  padding: 0;
-  padding-left: 5px;
+  padding: 0 0 0 5px;
   font-size: 18px;
 }
