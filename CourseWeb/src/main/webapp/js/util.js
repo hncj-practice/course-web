@@ -26,6 +26,7 @@ function $(param) {
     return jQuery(param);
 }
 
+
 /**
  * 字符串格式化辅助
  */
@@ -60,33 +61,6 @@ function isEmpty(obj) {
 
 /**
  * 封装bootstrap的模态框
- * 使用页面必须包含此div
- <!-- 模态框 -->
- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
- <div class="modal-dialog">
- <div class="modal-content">
- <div class="modal-header">
- <button type="button" class="close" data-dismiss="modal"
- aria-hidden="true">×
- </button>
- <h4 class="modal-title" id="myModalLabel">
- 模态框标题
- </h4>
- </div>
- <div class="modal-body" id="myModelBody">
- 模态框内容
- </div>
- <div class="modal-footer">
- <button id="modelCancel" type="button" class="btn btn-default" data-dismiss="modal" >
- 取消
- </button>
- <button id="modelConfirm" type="button" class="btn btn-primary">
- 确定
- </button>
- </div>
- </div>
- </div>
- </div>
  * @param title 标题
  * @param body 内容
  * @param positive 积极按钮
@@ -94,7 +68,35 @@ function isEmpty(obj) {
  * @param onPositive 积极按钮事件
  */
 function myBootstrapModel(title, body, positive, negative, onPositive) {
-
+    /*
+    使用页面必须包含此div
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        模态框标题
+                    </h4>
+                </div>
+                <div class="modal-body" id="myModelBody">
+                    模态框内容
+                </div>
+                <div class="modal-footer">
+                    <button id="modelCancel" type="button" class="btn btn-default" data-dismiss="modal" >
+                        取消
+                    </button>
+                    <button id="modelConfirm" type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    */
     // 设置文字内容
     $('#myModalLabel').html(title);
     $('#myModelBody').html(body);
@@ -111,5 +113,39 @@ function myBootstrapModel(title, body, positive, negative, onPositive) {
 
     // 弹出
     $('#myModal').modal();
+
+}
+
+/**
+ * 根据jquery的ajax封装常用的ajax
+ * @param url url
+ * @param param 参数
+ * @param success 成功回调
+ * @param error 失败
+ */
+function my_ajax(url, param, success, error) {
+    // 判断是否传入success
+    if (!success) {
+        success = (e) => {
+            toastr.success(e.message);
+        };
+    }
+    // 判断是否传入error
+    if (!error) {
+        error = () => {
+            toastr.error('服务器异常');
+        }
+    }
+
+    // noinspection JSUnresolvedVariable
+    jQuery.ajax({
+        type: "POST",
+        url: url,
+        data: param,
+        traditional: true,
+        timeout: 5000,
+        success: success,
+        error: error
+    });
 
 }
