@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/t-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.t-question.html">
+  <component name="RunManager" selected="JavaScript Debug.admin.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -63,11 +62,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.t-question.html" />
         <item itemvalue="JavaScript Debug.t-course.html" />
         <item itemvalue="JavaScript Debug.t-index.html" />
         <item itemvalue="JavaScript Debug.login.html" />
-        <item itemvalue="JavaScript Debug.admin.html" />
       </list>
     </recent_temporary>
   </component>
@@ -90,7 +89,7 @@
       <workItem from="1598321164858" duration="4872000" />
       <workItem from="1598344111244" duration="3166000" />
       <workItem from="1598409977020" duration="12984000" />
-      <workItem from="1598494268283" duration="11649000" />
+      <workItem from="1598494268283" duration="11949000" />
     </task>
     <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
       <created>1598088622655</created>
@@ -393,14 +392,20 @@
       <option name="project" value="LOCAL" />
       <updated>1598509634625</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="封装my_ajax简化请求">
+      <created>1598510652920</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1598510652920</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="实现教师列表页码跳转" />
     <MESSAGE value="修复样式bug" />
     <MESSAGE value="实现重置教师密码" />
     <MESSAGE value="实现批量重置教师密码" />
@@ -425,7 +430,8 @@
     <MESSAGE value="显示课程的章节和试卷" />
     <MESSAGE value="显示课程的题目/选择题" />
     <MESSAGE value="随机组卷/生成题目数组" />
-    <option name="LAST_COMMIT_MESSAGE" value="随机组卷/生成题目数组" />
+    <MESSAGE value="封装my_ajax简化请求" />
+    <option name="LAST_COMMIT_MESSAGE" value="封装my_ajax简化请求" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -436,10 +442,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598509634044">
+    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598510652383">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598509634044" />
+    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598510652383" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -520,10 +526,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="367" y="190" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598088329871" />
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1598431747644">
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1598510664389">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598431747644" />
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598510664389" />
     <state x="689" y="331" key="git4idea.merge.GitPullDialog" timestamp="1598088662544">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
