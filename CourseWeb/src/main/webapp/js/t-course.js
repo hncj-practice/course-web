@@ -52,12 +52,12 @@ function loadPapers() {
                 <li>
                     <img paperid="{0}" class="delete-paper" src="../imgs/delete.png" alt="">
                     <img paperid="{0}" class="update-paper" src="../imgs/update.png" alt="">
-                    <p>{1}试卷名</p>
+                    <p>{1}</p>
                     <p>开始：{2}</p>
                     <p>结束：{3}</p>
                     <p>状态：{4}</p>
                 </li>
-                `.format(item['paperid'], item['paperid'], item['starttime'], item['endtime'], item['status']);
+                `.format(item['paperid'], item['papername'], item['starttime'], item['endtime'], item['status']);
             });
             papers.html(html);
         } else {
