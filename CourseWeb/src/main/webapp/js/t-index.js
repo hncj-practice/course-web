@@ -8,9 +8,10 @@ $(function () {
 // 请求课程信息
 function requestCourses() {
     // 进行请求，请求未完成时，显示加载中
-    let url = 'http://123.56.156.212/Interface/course/getcoursebytno';
+    let url = COURSE_API.FIND;
     let param = {
-        tno: $('#tno').text()
+        condition: $('#tno').text(),
+        type: 1
     };
 
     // 延迟1秒再请求
@@ -41,8 +42,8 @@ function loadCourses(obj) {
         loading.hide(250);
         return;
     }
-    let data = obj.data;
-    let length = data.length;
+    allCourses = obj.data;
+    let length = allCourses.length;
     let html = "";
 
     for (let i = 0; i < length; i++) {
@@ -55,7 +56,7 @@ function loadCourses(obj) {
                 <h4 class="numbers">{2}人</h4>
             </div>
         </div>        
-        `.format(data[i]['coverimg'], data[i]['cname'], data[i]['snum'], data[i]['cid']);
+        `.format(allCourses[i]['coverimg'], allCourses[i]['cname'], allCourses[i]['snum'], allCourses[i]['cid']);
     }
     courses.html(html);
     loading.hide(250);

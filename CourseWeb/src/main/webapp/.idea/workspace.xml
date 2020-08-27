@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/t-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/t-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/t-index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/pages/t-index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,15 +44,19 @@
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.login.html">
+  <component name="RunManager" selected="JavaScript Debug.t-index.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/webapp/pages/login.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="t-index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/webapp/pages/t-index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.t-index.html" />
         <item itemvalue="JavaScript Debug.login.html" />
         <item itemvalue="JavaScript Debug.admin.html" />
       </list>
@@ -75,7 +81,7 @@
       <workItem from="1598321164858" duration="4872000" />
       <workItem from="1598344111244" duration="3166000" />
       <workItem from="1598409977020" duration="12984000" />
-      <workItem from="1598494268283" duration="53000" />
+      <workItem from="1598494268283" duration="1746000" />
     </task>
     <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
       <created>1598088622655</created>
@@ -336,14 +342,20 @@
       <option name="project" value="LOCAL" />
       <updated>1598431817287</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="登录/html页面">
+      <created>1598494406506</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1598494406506</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="重置学生用户/未实现 等待API" />
     <MESSAGE value="整理代码" />
     <MESSAGE value="删除整班学生/等待API" />
     <MESSAGE value="实现批量删除教师" />
@@ -368,7 +380,8 @@
     <MESSAGE value="恢复测试前的布局" />
     <MESSAGE value="更换查询课程的API" />
     <MESSAGE value="修改细节" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改细节" />
+    <MESSAGE value="登录/html页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录/html页面" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -379,10 +392,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="635" y="144" key="CommitChangelistDialog2" timestamp="1598431815852">
+    <state x="635" y="144" key="CommitChangelistDialog2" timestamp="1598496838218">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="635" y="144" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598431815852" />
+    <state x="635" y="144" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598496838218" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
