@@ -89,7 +89,7 @@
       <workItem from="1598321164858" duration="4872000" />
       <workItem from="1598344111244" duration="3166000" />
       <workItem from="1598409977020" duration="12984000" />
-      <workItem from="1598494268283" duration="16258000" />
+      <workItem from="1598494268283" duration="19477000" />
     </task>
     <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
       <created>1598088622655</created>
@@ -413,14 +413,20 @@
       <option name="project" value="LOCAL" />
       <updated>1598514712948</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="*显示试卷名">
+      <created>1598515311757</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1598515311757</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="实现批量重置教师密码" />
     <MESSAGE value="实现重置学生密码" />
     <MESSAGE value="实现批量重置学生密码" />
     <MESSAGE value="成功显示学生班级" />
@@ -445,7 +451,8 @@
     <MESSAGE value="封装my_ajax简化请求" />
     <MESSAGE value="替换部分的ajax调用" />
     <MESSAGE value="随机组卷/测试未成功 API报错" />
-    <option name="LAST_COMMIT_MESSAGE" value="随机组卷/测试未成功 API报错" />
+    <MESSAGE value="*显示试卷名" />
+    <option name="LAST_COMMIT_MESSAGE" value="*显示试卷名" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -456,10 +463,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598514712346">
+    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598525063989">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598514712346" />
+    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598525063989" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

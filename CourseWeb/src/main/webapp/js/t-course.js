@@ -112,44 +112,48 @@ function loadEvents_Course() {
     }
 
 
-    // 随机组卷
-    {
-        let randomPaper = $('#randomPaper');
-        randomPaper.click(() => {
-            $('.random-paper').show(250);
-        });
+    // 自动出卷
+    autoPaper();
+}
 
+// 自动出卷/随机组卷
+function autoPaper() {
+    let randomPaper = $('#randomPaper');
+    randomPaper.click(() => {
+        $('.random-paper').show(250);
+    });
 
-        $('.ensure-random-paper').click(() => {
-            console.log('确定随机组卷');
-            let url = PAPER_API.RANDOM_PAPER;
-            let param = {
-                chapterid: ['1'],
-                type: 2,
-                choice: 2,
-                fill: 0,
-                judge: 0
-            };
-            let success = (e) => {
-                if (e.code === 200) {
-                    toastr.success(e.message);
-                    previewPaper(e.data);
-                } else {
-                    toastr.error(e.message);
-                }
-            };
-            my_ajax(url, param, success);
-        });
-    }
+    // 选好设置后点击确定
+    $('.ensure-random-paper').click(() => {
+        let url = PAPER_API.RANDOM_PAPER;
+        let param = {
+            chapterid: ['1'],
+            type: 2,
+            choice: 2,
+            fill: 0,
+            judge: 0
+        };
+        // 成功回调
+        let success = (e) => {
+            if (e.code === 200) {
+                toastr.success(e.message);
+                // 显示预览试卷窗口
+                previewPaper(e.data);
+            } else {
+                toastr.error(e.message);
+            }
+        };
+        my_ajax(url, param, success);
+    });
 }
 
 // 显示预览试卷
 function previewPaper(obj) {
     $('.random-paper-preview').show(250);
-    console.log(obj);
     let xzHtml = '';
     let tkHtml = '';
     let pdHtml = '';
+    // 根据传入的数组，生成元素
     obj.forEach((item) => {
         // 选择题
         if (item['ptype'] === 1) {
@@ -161,12 +165,12 @@ function previewPaper(obj) {
 
         // 判断题
     });
-
     $('#previewXZ').html(xzHtml);
 
-    // 确定添加此试卷
+    // 点击确定添加此试卷
+    // 1.生成试卷
+    // 2.给生成的试卷添加试题
     $('.ensure-random-paper-new').click(() => {
-        console.log('确定添加此试卷');
         // 添加进试卷
         let url = PAPER_API.NEW;
         let param = {
@@ -179,29 +183,24 @@ function previewPaper(obj) {
             endtime: '2020-08-31 16:30:00',
             status: 1
         };
+        // 试卷生成成功的回调
         let success = (e) => {
             // 试卷添加成功，插入题目
-            console.log('试卷创建成功');
-            console.log(e);
-            // 构造题目id
+            // 构造题目id数组
             let problemids = [];
             obj.forEach((item) => {
-                    problemids.push(item['chapterid']);
+                    problemids.push(item['pid']);
                 }
             );
-
-            toastr.info('生成试卷ID为：' + e['data']['paperid']);
-            let url = PAPER_API.ADD;
-            let param = {
+            toastr.info('生成试卷：随机卷 - 未命名');
+            let url2 = PAPER_API.ADD;
+            let param2 = {
                 paperid: e['data']['paperid'],
                 problemids: problemids
             };
-
-            console.log(param);
-
-            my_ajax(url, param, (e) => {
+            my_ajax(url2, param2, (e) => {
                 if (e.code === 200) {
-                    toastr.success(e.message);
+                    toastr.success('随机组卷成功');
                 } else {
                     toastr.error(e.message);
                 }
