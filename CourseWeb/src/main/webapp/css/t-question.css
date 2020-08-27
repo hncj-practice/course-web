@@ -81,6 +81,7 @@ main p {
 }
 main .tm-div .xz {
   border: solid 1px #000;
+  margin: 10px 0;
 }
 main .tm-div .xz:hover {
   background: #2F96B4;

@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/t-question.css">
-
+    <script src="../js/util.js"></script>
+    <script src="../js/interfaces.js"></script>
+    <script>
+        let currCpid = '1';
+    </script>
 </head>
 <body>
 <header>
@@ -24,8 +28,8 @@
 <main>
     <h2>章节名</h2>
     <button>添加题目</button>
-    <div class="tm-div">
-        <h3>选择题</h3>
+    <h3>选择题</h3>
+    <div class="tm-div" id="xzList">
         <div class="xz">
             <p>题目</p>
             <p>A.</p>
@@ -35,15 +39,15 @@
         </div>
     </div>
 
-    <div class="tm-div">
-        <h3>填空题</h3>
+    <h3>填空题</h3>
+    <div class="tm-div" id="tkList">
         <div class="tk">
             <p>题目</p>
         </div>
     </div>
 
-    <div class="tm-div">
-        <h3>判断题</h3>
+    <h3>判断题</h3>
+    <div class="tm-div" id="pdList">
         <div class="pd">
             <p>题目</p>
         </div>
@@ -51,5 +55,6 @@
     </div>
 </main>
 
+<script src="../js/t-question.js"></script>
 </body>
 </html>

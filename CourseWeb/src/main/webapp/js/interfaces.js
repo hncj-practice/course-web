@@ -76,3 +76,11 @@ const CHAPTER_API = {
 const PAPER_API = {
     FIND: 'http://123.56.156.212/Interface/paper/getpaperbycourseid'
 };
+
+
+/**
+ * 题目操作
+ */
+const QUESTION_API = {
+    FIND: 'http://123.56.156.212/Interface/problem/getproblembychapterid'
+};
