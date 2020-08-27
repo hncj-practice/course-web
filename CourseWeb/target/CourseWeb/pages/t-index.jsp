@@ -22,6 +22,7 @@
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/teacher-index.css">
+    <script src="../js/interfaces.js"></script>
 </head>
 
 <body>
