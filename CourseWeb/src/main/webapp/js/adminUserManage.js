@@ -14,12 +14,13 @@ let total_page_teacher = 1;
 
 // 入口函数
 $(function () {
+    switchTab();
     // 默认加载用户页面
     loadUserPage();
 });
 
 // 点击左侧切换
-{
+function switchTab() {
     // 左侧按钮
     let change2User = $('#change2User');
     let change2Course = $('#change2Course');

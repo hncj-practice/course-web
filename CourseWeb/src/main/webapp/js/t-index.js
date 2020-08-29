@@ -16,7 +16,8 @@ function requestCourses() {
 
     // 延迟1秒再请求
     setTimeout(() => {
-        $.ajax({
+        // noinspection JSUnresolvedVariable
+        jQuery.ajax({
             type: "POST",
             url: url,
             data: param,

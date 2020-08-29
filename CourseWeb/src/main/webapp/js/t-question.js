@@ -29,5 +29,4 @@ function loadXZQuestions() {
             toastr.error(e.message);
         }
     });
-
 }
