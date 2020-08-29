@@ -79,7 +79,7 @@ function loadPapers() {
 // 加载试卷相关点击事件
 function loadPaperEvents() {
     // 点击删除试卷
-    $('.delete-paper').off();
+    $('.delete-paper').off('click');
     $('.delete-paper').click((e) => {
         let paperid = $(e.target).attr('paperid');
         console.log('删试卷：' + paperid);
@@ -165,6 +165,8 @@ function autoPaper() {
     $('.ensure-random-paper').click(() => {
         let url = PAPER_API.RANDOM_PAPER;
         let param = {
+            user: teacherId,
+            pwd: teacherPassword,
             chapterid: ['1'],
             type: 2,
             choice: 2,
@@ -220,6 +222,8 @@ function previewPaper(obj) {
         // 添加进试卷
         let url = PAPER_API.NEW;
         let param = {
+            user: teacherId,
+            pwd: teacherPassword,
             courseid: currCourseId,
             papername: '随机卷 - 未命名',
             choicepoints: 2,
@@ -241,6 +245,8 @@ function previewPaper(obj) {
             toastr.info('生成试卷：随机卷 - 未命名');
             let url2 = PAPER_API.ADD;
             let param2 = {
+                user: teacherId,
+                pwd: teacherPassword,
                 paperid: e['data']['paperid'],
                 problemids: problemids
             };
