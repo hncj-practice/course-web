@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/t-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/t-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/t-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/teacher-course.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-course.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/teacher-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/teacher-question.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-question.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +48,7 @@
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.teacher-question.html">
+  <component name="RunManager" selected="JavaScript Debug.teacher-index.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -74,8 +66,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.teacher-question.html" />
         <item itemvalue="JavaScript Debug.teacher-index.html" />
+        <item itemvalue="JavaScript Debug.teacher-question.html" />
         <item itemvalue="JavaScript Debug.login.html" />
         <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.teacher-course.html" />
@@ -104,14 +96,7 @@
       <workItem from="1598494268283" duration="19615000" />
       <workItem from="1598607445239" duration="45000" />
       <workItem from="1598672866040" duration="2974000" />
-      <workItem from="1598706746250" duration="5012000" />
-    </task>
-    <task id="LOCAL-00005" summary="添加一些细节">
-      <created>1598179837216</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1598179837216</updated>
+      <workItem from="1598706746250" duration="5371000" />
     </task>
     <task id="LOCAL-00006" summary="封装bootstrap模态框">
       <created>1598183645745</created>
@@ -449,14 +434,20 @@
       <option name="project" value="LOCAL" />
       <updated>1598714112598</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="按照代码规范修改页面的head部分">
+      <created>1598714849153</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1598714849153</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="成功查询并显示课程列表" />
     <MESSAGE value="删除课程功能/未测试" />
     <MESSAGE value="修改课程名字/测试失败" />
     <MESSAGE value="新建课程相关布局" />
@@ -481,7 +472,8 @@
     <MESSAGE value="更改课程没有试卷时的错误" />
     <MESSAGE value="修改随机组卷的API参数" />
     <MESSAGE value="制定前端代码规范" />
-    <option name="LAST_COMMIT_MESSAGE" value="制定前端代码规范" />
+    <MESSAGE value="按照代码规范修改页面的head部分" />
+    <option name="LAST_COMMIT_MESSAGE" value="按照代码规范修改页面的head部分" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -496,10 +488,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598714111922">
+    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598714848553">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598714111922" />
+    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598714848553" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

@@ -16,19 +16,8 @@ function requestCourses() {
 
     // 延迟1秒再请求
     setTimeout(() => {
-        // noinspection JSUnresolvedVariable
-        jQuery.ajax({
-            type: "POST",
-            url: url,
-            data: param,
-            traditional: true,
-            timeout: 5000,
-            success: loadCourses,
-            error: loadError
-        });
+        my_ajax(url, param, loadCourses, loadError);
     }, 1000);
-
-
 }
 
 /**
