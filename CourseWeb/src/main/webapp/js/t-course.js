@@ -19,7 +19,7 @@ $(function () {
 function loadChapters() {
     let url = CHAPTER_API.FIND;
     let param = {
-        courseid: currCid
+        courseid: currCourseId
     };
     let success = (e) => {
         if (e.code === 200) {
@@ -42,7 +42,7 @@ function loadChapters() {
 function loadPapers() {
     let url = PAPER_API.FIND;
     let param = {
-        courseid: currCid
+        courseid: currCourseId
     };
     let success = (e) => {
         if (e.code === 200) {
@@ -80,6 +80,8 @@ function loadPaperEvents() {
         myBootstrapModel('警告', '确定删除此试卷', '确定', '取消', () => {
             let url = PAPER_API.DELETE;
             let param = {
+                user: teacherId,
+                pwd: teacherPassword,
                 paperid: paperid
             };
             let success = (e) => {
@@ -96,6 +98,7 @@ function loadPaperEvents() {
     });
 }
 
+// 加载页面原有元素的事件，不加载js生成的元素的事件
 function loadEvents_Course() {
     // 点击切换页面
     {
@@ -105,7 +108,6 @@ function loadEvents_Course() {
         let zjContain = $('#zjContain');
         let sjContain = $('#sjContain');
         let htContain = $('#htContain');
-
 
         // 切换题目页
         zj.click(() => {
@@ -138,9 +140,11 @@ function loadEvents_Course() {
         });
     }
 
-
     // 自动出卷
     autoPaper();
+
+    // 归档课程
+    loadEventArchive();
 }
 
 // 自动出卷/随机组卷
@@ -174,12 +178,20 @@ function autoPaper() {
     });
 }
 
+// 归档课程
+function loadEventArchive() {
+    $('#archive').off('click');
+    $('#archive').click(() => {
+        console.log('归档课程：' + currCourseId);
+    });
+}
+
 // 显示预览试卷
 function previewPaper(obj) {
     $('.random-paper-preview').show(250);
     let xzHtml = '';
-    let tkHtml = '';
-    let pdHtml = '';
+    // let tkHtml = '';
+    // let pdHtml = '';
     // 根据传入的数组，生成元素
     obj.forEach((item) => {
         // 选择题
@@ -201,7 +213,7 @@ function previewPaper(obj) {
         // 添加进试卷
         let url = PAPER_API.NEW;
         let param = {
-            courseid: currCid,
+            courseid: currCourseId,
             papername: '随机卷 - 未命名',
             choicepoints: 2,
             fillpoints: 2,
