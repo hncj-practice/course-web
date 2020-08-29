@@ -83,7 +83,10 @@ const PAPER_API = {
     NEW: 'http://123.56.156.212/Interface/paper/addpaper',
 
     // 给试卷添加试题
-    ADD: 'http://123.56.156.212/Interface/paper/addproblems'
+    ADD: 'http://123.56.156.212/Interface/paper/addproblems',
+
+    // 删除
+    DELETE: 'http://123.56.156.212/Interface/paper/delpaper'
 };
 
 

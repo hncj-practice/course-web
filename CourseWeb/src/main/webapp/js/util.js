@@ -52,12 +52,16 @@ String.prototype.format = function (args) {
     return result;
 };
 
+
 /**
  * 判断字符串是否为空
+ * @param obj 字符串
+ * @returns {boolean}
  */
 function isEmpty(obj) {
     return typeof obj == "undefined" || obj == null || obj.trim() === "";
 }
+
 
 /**
  * 封装bootstrap的模态框
@@ -103,7 +107,6 @@ function myBootstrapModel(title, body, positive, negative, onPositive) {
     $('#modelConfirm').html(positive);
     $('#modelCancel').html(negative);
 
-
     // 点击确定
     $('#modelConfirm').off('click');
     $('#modelConfirm').click(() => {
@@ -136,7 +139,6 @@ function my_ajax(url, param, success, error) {
             toastr.error('服务器异常');
         }
     }
-
     // noinspection JSUnresolvedVariable
     jQuery.ajax({
         type: "POST",

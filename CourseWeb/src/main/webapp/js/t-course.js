@@ -63,11 +63,38 @@ function loadPapers() {
         } else {
             toastr.error(e.message);
         }
+        loadPaperEvents();
     };
     let papers = $('.ul-sj');
     my_ajax(url, param, success);
 }
 
+// 加载试卷相关点击事件
+function loadPaperEvents() {
+    // 点击删除试卷
+    $('.delete-paper').off();
+    $('.delete-paper').click((e) => {
+        let paperid = $(e.target).attr('paperid');
+        console.log('删试卷：' + paperid);
+        // 弹出警告对话框
+        myBootstrapModel('警告', '确定删除此试卷', '确定', '取消', () => {
+            let url = PAPER_API.DELETE;
+            let param = {
+                paperid: paperid
+            };
+            let success = (e) => {
+                if (e.code === 200) {
+                    toastr.success(e.message);
+                    // 删除成功刷新列表
+                    loadPapers();
+                } else {
+                    toastr.error(e.message);
+                }
+            };
+            my_ajax(url, param, success);
+        });
+    });
+}
 
 function loadEvents_Course() {
     // 点击切换页面
@@ -201,6 +228,7 @@ function previewPaper(obj) {
             my_ajax(url2, param2, (e) => {
                 if (e.code === 200) {
                     toastr.success('随机组卷成功');
+                    loadPapers();
                 } else {
                     toastr.error(e.message);
                 }
