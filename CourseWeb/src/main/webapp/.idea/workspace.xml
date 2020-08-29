@@ -93,14 +93,7 @@
       <workItem from="1598494268283" duration="19615000" />
       <workItem from="1598607445239" duration="45000" />
       <workItem from="1598672866040" duration="2974000" />
-      <workItem from="1598706746250" duration="931000" />
-    </task>
-    <task id="LOCAL-00001" summary="用webstorm编写页面并消除一些警告">
-      <created>1598088622655</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1598088622656</updated>
+      <workItem from="1598706746250" duration="1360000" />
     </task>
     <task id="LOCAL-00002" summary="添加文件">
       <created>1598088645083</created>
@@ -438,14 +431,20 @@
       <option name="project" value="LOCAL" />
       <updated>1598673955214</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="修改删除试卷的API参数">
+      <created>1598707717253</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1598707717254</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="成功显示学生班级" />
     <MESSAGE value="实现按班批量删除" />
     <MESSAGE value="准备编写课程管理页面" />
     <MESSAGE value="课程管理基本布局" />
@@ -470,7 +469,8 @@
     <MESSAGE value="*显示试卷名" />
     <MESSAGE value="初步实现随机组卷功能" />
     <MESSAGE value="实现删除试卷" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现删除试卷" />
+    <MESSAGE value="修改删除试卷的API参数" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改删除试卷的API参数" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -481,10 +481,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="596" y="253" key="#com.intellij.ide.macro.MacrosDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088327264" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598673954240">
+    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598707716333">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598673954240" />
+    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598707716333" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

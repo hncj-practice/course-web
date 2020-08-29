@@ -45,8 +45,10 @@ function loadPapers() {
         courseid: currCourseId
     };
     let success = (e) => {
+        let papers = $('.ul-sj');
+        let html = '';
         if (e.code === 200) {
-            let html = '';
+            html = '';
             e.data.forEach((item) => {
                 html += `
                 <li>
@@ -59,13 +61,18 @@ function loadPapers() {
                 </li>
                 `.format(item['paperid'], item['papername'], item['starttime'], item['endtime'], item['status']);
             });
-            papers.html(html);
         } else {
-            toastr.error(e.message);
+            // 没有一张试卷
+            html = `
+            <li>
+                <h3>暂无试卷，请添加！</h3>
+            </li>
+            `;
         }
+        papers.html(html);
         loadPaperEvents();
     };
-    let papers = $('.ul-sj');
+
     my_ajax(url, param, success);
 }
 
