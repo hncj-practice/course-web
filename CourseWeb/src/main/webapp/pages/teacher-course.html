@@ -26,7 +26,7 @@
     <script src="../js/interfaces.js"></script>
 
     <!-- 自己的js -->
-    <script src="../js/t-course.js"></script>
+    <script src="../js/teacher-course.js"></script>
 
     <!-- 页面可能用到的js代码 -->
     <script>
@@ -80,18 +80,18 @@
 <div class="headerwrap">
     <h2 class="course-name" id="courseName"> 课程名称 </h2>
     <ul>
-        <li class="active" id="zj"><span>章节管理</span></li>
-        <li class="inactive" id="sj"><span>试卷管理</span></li>
-        <li class="inactive" id="ht"><span>话题管理</span></li>
-        <li class="inactive" id="xs"><span>学生情况</span></li>
+        <li class="active" id="chapterManage"><span>章节管理</span></li>
+        <li class="inactive" id="paperManage"><span>试卷管理</span></li>
+        <li class="inactive" id="topicManage"><span>话题管理</span></li>
+        <li class="inactive" id="studentsInfo"><span>学生情况</span></li>
         <li class="inactive" id="archive"><span>归档</span></li>
     </ul>
 </div>
 
 <!-- 章节 -->
-<main id="zjContain">
+<main id="chapterContain">
     <h2 class="title">目录</h2>
-    <ul class="ul-zj">
+    <ul class="chapters-ul">
         <li>第一章</li>
         <li>第二章</li>
         <li>第三章</li>
@@ -99,11 +99,11 @@
     </ul>
 </main>
 
-<main id="sjContain" style="display: none;">
+<main id="paperContain" style="display: none;">
     <button>手动组卷</button>
     <button id="randomPaper">自动出卷</button>
     <!-- 试卷ul -->
-    <ul class="ul-sj">
+    <ul class="papers-ul">
         <li>
             <h3>暂无试卷，请添加！</h3>
         </li>
@@ -140,10 +140,10 @@
 
 </main>
 
-<main id="htContain" style="display: none;">
+<main id="topicContain" style="display: none;">
 
     <button>新建话题</button>
-    <ul class="ul-ht">
+    <ul class="topics-ul">
         <li>
             <img src="../imgs/头像.png" alt="">
             <div class="right">
@@ -183,8 +183,6 @@
     </ul>
 </main>
 
-
-<!--<script src="../js/t-course.js"></script>-->
 </body>
 
 </html>

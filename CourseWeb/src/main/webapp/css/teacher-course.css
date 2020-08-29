@@ -126,19 +126,19 @@ main .title {
   margin-bottom: 20px;
   font-size: 25px;
 }
-main .ul-zj {
+main .chapters-ul {
   margin: 10px 0 0 30px;
   list-style: none;
 }
-main .ul-zj li {
+main .chapters-ul li {
   margin: 18px 0;
   font-size: 16px;
   cursor: pointer;
 }
-main .ul-sj {
+main .papers-ul {
   list-style: none;
 }
-main .ul-sj li {
+main .papers-ul li {
   width: 96%;
   height: 120px;
   margin: 20px auto;
@@ -147,7 +147,7 @@ main .ul-sj li {
   position: relative;
   padding-left: 10px;
 }
-main .ul-sj li .update-paper {
+main .papers-ul li .update-paper {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -155,7 +155,7 @@ main .ul-sj li .update-paper {
   right: 35px;
   cursor: pointer;
 }
-main .ul-sj li .delete-paper {
+main .papers-ul li .delete-paper {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -163,10 +163,10 @@ main .ul-sj li .delete-paper {
   right: 5px;
   cursor: pointer;
 }
-main .ul-ht {
+main .topics-ul {
   list-style: none;
 }
-main .ul-ht li {
+main .topics-ul li {
   width: 94%;
   margin: 20px auto;
   background: #f7f7f7;
@@ -174,33 +174,33 @@ main .ul-ht li {
   display: flex;
   flex-direction: row;
 }
-main .ul-ht li img {
+main .topics-ul li img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin: 12px 2px 12px 12px;
 }
-main .ul-ht li .right {
+main .topics-ul li .right {
   width: 100%;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
-main .ul-ht li .right .who-start {
+main .topics-ul li .right .who-start {
   margin-top: 18px;
   margin-bottom: 0;
   margin-left: 10px;
   color: #49af4f;
   font-size: 16px;
 }
-main .ul-ht li .right .title {
+main .topics-ul li .right .title {
   margin: 10px 0 0 10px;
   font-size: 18px;
 }
-main .ul-ht li .right .content {
+main .topics-ul li .right .content {
   margin: 8px 0 0 10px;
   font-size: 17px;
 }
-main .ul-ht li .right .comments {
+main .topics-ul li .right .comments {
   width: calc(100% - 20px);
   margin: 10px 10px 15px;
   background: #fff;
@@ -208,16 +208,16 @@ main .ul-ht li .right .comments {
   text-align: center;
   padding: 5px;
 }
-main .ul-ht li .right .comments .comment {
+main .topics-ul li .right .comments .comment {
   text-align: left;
 }
-main .ul-ht li .right .comments .comment .who-commit {
+main .topics-ul li .right .comments .comment .who-commit {
   color: #49af4f;
 }
-main .ul-ht li .right .comments .comment .comment-content {
+main .topics-ul li .right .comments .comment .comment-content {
   margin-top: 5px;
 }
-main .ul-ht li .right .comments button {
+main .topics-ul li .right .comments button {
   text-align: center;
   margin: 10px auto;
 }

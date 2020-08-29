@@ -34,7 +34,7 @@ function loadChapters() {
             toastr.error(e.message);
         }
     };
-    let chapters = $('.ul-zj');
+    let chapters = $('.chapters-ul');
     my_ajax(url, param, success);
 }
 
@@ -45,7 +45,7 @@ function loadPapers() {
         courseid: currCourseId
     };
     let success = (e) => {
-        let papers = $('.ul-sj');
+        let papers = $('.papers-ul');
         let html = '';
         if (e.code === 200) {
             html = '';
@@ -109,41 +109,41 @@ function loadPaperEvents() {
 function loadEvents_Course() {
     // 点击切换页面
     {
-        let zj = $('#zj');
-        let sj = $('#sj');
-        let ht = $('#ht');
-        let zjContain = $('#zjContain');
-        let sjContain = $('#sjContain');
-        let htContain = $('#htContain');
+        let chapterManage = $('#chapterManage');
+        let paperManage = $('#paperManage');
+        let topicManage = $('#topicManage');
+        let chapterContain = $('#chapterContain');
+        let paperContain = $('#paperContain');
+        let topicContain = $('#topicContain');
 
         // 切换题目页
-        zj.click(() => {
-            setClass(zj, 'active', 'inactive');
-            setClass(sj, 'inactive', 'active');
-            setClass(ht, 'inactive', 'active');
-            zjContain.show(200);
-            sjContain.hide(200);
-            htContain.hide(200);
+        chapterManage.click(() => {
+            setClass(chapterManage, 'active', 'inactive');
+            setClass(paperManage, 'inactive', 'active');
+            setClass(topicManage, 'inactive', 'active');
+            chapterContain.show(200);
+            paperContain.hide(200);
+            topicContain.hide(200);
         });
 
         // 切换试卷页
-        sj.click(() => {
-            setClass(sj, 'active', 'inactive');
-            setClass(zj, 'inactive', 'active');
-            setClass(ht, 'inactive', 'active');
-            sjContain.show(200);
-            zjContain.hide(200);
-            htContain.hide(200);
+        paperManage.click(() => {
+            setClass(paperManage, 'active', 'inactive');
+            setClass(chapterManage, 'inactive', 'active');
+            setClass(topicManage, 'inactive', 'active');
+            paperContain.show(200);
+            chapterContain.hide(200);
+            topicContain.hide(200);
         });
 
         // 切换话题页
-        ht.click(() => {
-            setClass(ht, 'active', 'inactive');
-            setClass(zj, 'inactive', 'active');
-            setClass(sj, 'inactive', 'active');
-            htContain.show(200);
-            sjContain.hide(200);
-            zjContain.hide(200);
+        topicManage.click(() => {
+            setClass(topicManage, 'active', 'inactive');
+            setClass(chapterManage, 'inactive', 'active');
+            setClass(paperManage, 'inactive', 'active');
+            topicContain.show(200);
+            paperContain.hide(200);
+            chapterContain.hide(200);
         });
     }
 
