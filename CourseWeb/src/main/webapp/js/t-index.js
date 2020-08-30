@@ -89,8 +89,9 @@ function loadEvent() {
         $('.course-img').click((e) => {
             // 去正在点击的课程id
             let cid = $(e.target).attr('cid');
-            console.log(cid);
+            console.log('跳转到课程：' + cid);
             // 跳转
+            window.open('/course/home?courseId=' + cid, '_blank');
         });
     }
 }
