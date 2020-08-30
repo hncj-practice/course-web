@@ -8,7 +8,7 @@ $(function () {
 // 请求课程信息
 function requestCourses() {
     // 进行请求，请求未完成时，显示加载中
-    let url = COURSE_API.FIND;
+    let url = COURSE_API.FIND_BY;
     let param = {
         condition: $('#tno').text(),
         type: 1
