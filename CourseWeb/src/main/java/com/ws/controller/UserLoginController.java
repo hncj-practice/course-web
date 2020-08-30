@@ -49,12 +49,13 @@ public class UserLoginController {
         // 请求正常
         if (teacher.getCode() == 200) {
             // 设置bean
-            req.setAttribute("teacher", teacher);
-            return "t-index";
+            HttpSession session = req.getSession();
+            session.setAttribute("teacher", teacher);
+            return "teacher-index";
         }
         // 不正常
         else {
-            return "Login-Error";
+            return "error-login";
         }
     }
 

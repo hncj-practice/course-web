@@ -14,12 +14,13 @@ let total_page_teacher = 1;
 
 // 入口函数
 $(function () {
+    switchTab();
     // 默认加载用户页面
     loadUserPage();
 });
 
 // 点击左侧切换
-{
+function switchTab() {
     // 左侧按钮
     let change2User = $('#change2User');
     let change2Course = $('#change2Course');
@@ -710,26 +711,15 @@ function loadEvents() {
                         avatar: "default",
                         status: 0
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                                return;
-                            }
-                            // 刷新表格
-                            refreshStudents(1, STUDENT_PER_PAGE);
-                        },
-                        error: (e) => {
+                    my_ajax(url, param, (e) => {
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
+                            return;
                         }
+                        // 刷新表格
+                        refreshStudents(1, STUDENT_PER_PAGE);
                     });
                 });
             });
@@ -924,6 +914,21 @@ function loadEvents() {
                             type: 1
                         };
                         // noinspection all
+                        my_ajax(url, param, () => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
+                                toastr.error(e.message);
+                            }
+                            n++;
+                            // 刷新表格
+                            if (n === ss.length) {
+                                toastr.success('成功重置所选学生！');
+                                refreshStudents(1, STUDENT_PER_PAGE);
+                            }
+                        });
+                        /*
                         jQuery.ajax({
                             type: "POST",
                             url: url,
@@ -948,6 +953,7 @@ function loadEvents() {
                                 toastr.error(e.message);
                             }
                         });
+                         */
                     });
                 })
             });

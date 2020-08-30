@@ -110,7 +110,7 @@ header {
 
 // 主显示区域
 main {
-
+  position: relative;
   width: 50%;
   .h-center();
   margin-top: 25px;
@@ -128,7 +128,7 @@ main {
   }
 
   // 章节
-  .ul-zj {
+  .chapters-ul {
     margin: 10px 0 0 30px;
     list-style: none;
 
@@ -141,7 +141,7 @@ main {
   }
 
   // 试卷
-  .ul-sj {
+  .papers-ul {
     list-style: none;
 
     li {
@@ -153,7 +153,7 @@ main {
       position: relative;
       padding-left: 10px;
 
-      .update {
+      .update-paper {
         position: absolute;
         width: 20px;
         height: 20px;
@@ -162,7 +162,7 @@ main {
         cursor: pointer;
       }
 
-      .delete {
+      .delete-paper {
         position: absolute;
         width: 20px;
         height: 20px;
@@ -174,7 +174,7 @@ main {
   }
 
   // 话题
-  .ul-ht {
+  .topics-ul {
     list-style: none;
 
     li {
@@ -248,4 +248,30 @@ main {
       }
     }
   }
+
+
+  // 随机组卷面板
+  .random-paper {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #fff;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+
+  // 随机组卷成功预览面板
+  .random-paper-preview {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #fff;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+
 }

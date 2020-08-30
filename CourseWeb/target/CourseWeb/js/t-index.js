@@ -16,23 +16,14 @@ function requestCourses() {
 
     // 延迟1秒再请求
     setTimeout(() => {
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: param,
-            traditional: true,
-            timeout: 5000,
-            success: loadCourses,
-            error: loadError
-        });
+        my_ajax(url, param, loadCourses, loadError);
     }, 1000);
-
-
 }
 
+
 /**
- * 根据xhr生成课程信息
- // * @param {XMLHttpRequest} xhr
+ * 根据obj生成课程信息
+ * @param obj obj
  */
 function loadCourses(obj) {
     let loading = $('.loading');
@@ -80,17 +71,17 @@ function loadError() {
 function loadEvent() {
     // 头像移入移出
     {
-        let avatar = $('#headAvatar');
-        let manage = $('.manage');
-
-        avatar.mouseenter(function () {
-            console.log('移入');
-            manage.slideDown(200);
-        });
-
-        manage.mouseleave(function () {
-            manage.slideUp(200);
-        });
+        // let avatar = $('#headAvatar');
+        // let manage = $('.manage');
+        //
+        // avatar.mouseenter(function () {
+        //     console.log('移入');
+        //     manage.slideDown(200);
+        // });
+        //
+        // manage.mouseleave(function () {
+        //     manage.slideUp(200);
+        // });
     }
 
     // 课程被点击

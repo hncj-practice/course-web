@@ -5,10 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>题目管理</title>
     <link rel="short icon" href="../imgs/logo.png">
+
+    <!-- jQuery -->
     <script src="../js/jquery-3.5.1.min.js"></script>
+
+    <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../css/t-question.css">
+
+    <!-- toastr -->
+    <link rel="stylesheet" href="../css/toastr.min.css">
+    <script src="../js/toastr.min.js"></script>
+
+    <!-- 自己的css -->
+    <link rel="stylesheet" href="../css/teacher-question.css">
+
+    <!-- 工具类和常量类 -->
+    <script src="../js/util.js"></script>
+    <script src="../js/interfaces.js"></script>
+
+    <!-- 自己的js -->
+    <script src="../js/t-question.js"></script>
+
+    <!-- 页面可能用到的js代码 -->
+    <script>
+        let currCpid = '1';
+    </script>
 
 </head>
 <body>
@@ -24,8 +46,8 @@
 <main>
     <h2>章节名</h2>
     <button>添加题目</button>
-    <div class="tm-div">
-        <h3>选择题</h3>
+    <h3>选择题</h3>
+    <div class="tm-div" id="xzList">
         <div class="xz">
             <p>题目</p>
             <p>A.</p>
@@ -35,21 +57,22 @@
         </div>
     </div>
 
-    <div class="tm-div">
-        <h3>填空题</h3>
+    <h3>填空题</h3>
+    <div class="tm-div" id="tkList">
         <div class="tk">
             <p>题目</p>
         </div>
     </div>
 
-    <div class="tm-div">
-        <h3>判断题</h3>
+    <h3>判断题</h3>
+    <div class="tm-div" id="pdList">
         <div class="pd">
             <p>题目</p>
         </div>
 
     </div>
 </main>
+
 
 </body>
 </html>

@@ -1,16 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: Tanyiqu
+  Date: 2020/8/30
+  Time: 10:39
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+<jsp:useBean id="teacher" class="com.ws.domain.Teacher" scope="session"/>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程助手 - 教师</title>
     <script src="../js/util.js"></script>
     <link rel="short icon" href="../imgs/logo.png">
+
+    <!-- jQuery -->
     <script src="../js/jquery-3.5.1.min.js"></script>
+
+    <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/bootstrap.js"></script>
+
+    <!-- toastr -->
+    <link rel="stylesheet" href="../css/toastr.min.css">
+    <script src="../js/toastr.min.js"></script>
+
+    <!-- 自己的css -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/teacher-index.css">
+
+    <!-- 工具类和常量类 -->
+    <script src="../js/util.js"></script>
+    <script src="../js/interfaces.js"></script>
+
+    <!-- 自己的js -->
+    <script src="../js/t-index.js"></script>
+
+    <!-- 页面可能用到的js代码 -->
+    <script>
+        let teacherId = ${teacher.data.tno};
+        let allCourses = [];
+    </script>
+
 </head>
 
 <body>
@@ -22,6 +54,7 @@
 
     <div class="account">
         <span id="tno">${teacher.data.tno}</span>
+        <%--        <span id="tno">888888888</span>--%>
         <img id="headAvatar" src="${teacher.data.avatar}" alt="">
 
     </div>
@@ -52,6 +85,7 @@
     </div>
 
     <div class="search-bar">
+        <!--suppress HtmlFormInputWithoutLabel -->
         <input class="search-courses" type="text" placeholder="搜索我的课程">
         <i></i>
     </div>
@@ -82,6 +116,5 @@
 
 </div>
 
-<script src="../js/t-index.js"></script>
 </body>
 </html>
