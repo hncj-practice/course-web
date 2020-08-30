@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 @Controller
 @RequestMapping("/user")
-public class TestC {
+public class TestController {
     @RequestMapping("/test")
     public String CJ(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("utf-8");

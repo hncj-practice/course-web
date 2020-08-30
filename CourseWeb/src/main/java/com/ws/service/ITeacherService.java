@@ -1,15 +1,8 @@
 package com.ws.service;
 
-import com.ws.domain.Teacher;
+import com.ws.domain.TeacherPack;
 
-/**
- * 教师相关操作的service
- */
 public interface ITeacherService {
 
-
-    /**
-     * 获取详情信息
-     */
-    Teacher getInfo(String username, String password);
+    TeacherPack getInfo(String username, String password);
 }

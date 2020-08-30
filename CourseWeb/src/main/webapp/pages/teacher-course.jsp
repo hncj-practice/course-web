@@ -6,8 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
-<jsp:useBean id="teacher" class="com.ws.domain.Teacher" scope="session"/>
-<%--<jsp:useBean id="course" class="com.ws.domain.CoursePack.Course" scope="session"/>--%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -39,8 +37,8 @@
     <!-- 页面可能用到的js代码 -->
     <script>
         let currCourseId = ${sessionScope.course.cid};
-        let teacherId = ${teacher.data.tno};
-        let teacherPassword = ${teacher.data.pwd};
+        let teacherId = ${sessionScope.teacher.tno};
+        let teacherPassword = ${sessionScope.teacher.pwd};
     </script>
 
 </head>

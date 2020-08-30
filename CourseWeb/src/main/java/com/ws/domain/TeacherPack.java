@@ -2,16 +2,17 @@ package com.ws.domain;
 
 import java.io.Serializable;
 
-public class Teacher implements Serializable {
-    int code;
-    String message;
-    Data data;
+public class TeacherPack implements Serializable {
 
-    public int getCode() {
+    Integer code;
+    String message;
+    TeacherPack.Teacher data;
+
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
@@ -23,31 +24,34 @@ public class Teacher implements Serializable {
         this.message = message;
     }
 
-    public Data getData() {
+    public Teacher getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(Teacher data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
-        return "TeacherBean{" +
+        return "TeacherPack{" +
                 "code=" + code +
                 ", message='" + message + '\'' +
                 ", data=" + data +
                 '}';
     }
 
-    public static class Data {
+    /**
+     * Teacher类
+     */
+    public static class Teacher {
         String tno;
         String pwd;
         String name;
         String sex;
         String email;
         String avatar;
-        int status;
+        Integer status;
 
         public String getTno() {
             return tno;
@@ -97,17 +101,17 @@ public class Teacher implements Serializable {
             this.avatar = avatar;
         }
 
-        public int getStatus() {
+        public Integer getStatus() {
             return status;
         }
 
-        public void setStatus(int status) {
+        public void setStatus(Integer status) {
             this.status = status;
         }
 
         @Override
         public String toString() {
-            return "Data{" +
+            return "Teacher{" +
                     "tno='" + tno + '\'' +
                     ", pwd='" + pwd + '\'' +
                     ", name='" + name + '\'' +

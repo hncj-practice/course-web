@@ -1,9 +1,8 @@
 package com.ws.controller;
 
-import com.ws.domain.Teacher;
+import com.ws.domain.TeacherPack;
 import com.ws.service.ITeacherService;
 import com.ws.service.impl.TeacherServiceImpl;
-import com.ws.util.DebugUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -41,16 +40,16 @@ public class UserLoginController {
         // 接收参数
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+
         ITeacherService teacherService = new TeacherServiceImpl();
-        Teacher teacher = teacherService.getInfo(username, password);
-        System.out.println(teacher);
-        DebugUtil.log(this, teacher);
+        TeacherPack teacherPack = teacherService.getInfo(username, password);
+
 
         // 请求正常
-        if (teacher.getCode() == 200) {
+        if (teacherPack.getCode() == 200) {
             // 设置bean
             HttpSession session = req.getSession();
-            session.setAttribute("teacher", teacher);
+            session.setAttribute("teacher", teacherPack.getData());
             return "teacher-index";
         }
         // 不正常

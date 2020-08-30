@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
-<jsp:useBean id="teacher" class="com.ws.domain.Teacher" scope="session"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -39,7 +38,7 @@
 
     <!-- 页面可能用到的js代码 -->
     <script>
-        let teacherId = ${teacher.data.tno};
+        let teacherId = ${sessionScope.teacher.tno};
         let allCourses = [];
     </script>
 
@@ -53,9 +52,9 @@
     <h2>网络课程助手（logo暂定）</h2>
 
     <div class="account">
-        <span id="tno">${teacher.data.tno}</span>
+        <span id="tno">${sessionScope.teacher.tno}</span>
         <%--        <span id="tno">888888888</span>--%>
-        <img id="headAvatar" src="${teacher.data.avatar}" alt="">
+        <img id="headAvatar" src="${sessionScope.teacher.avatar}" alt="">
 
     </div>
 </header>
@@ -63,11 +62,11 @@
 <div class="content-top">
     <div class="middle">
         <div class="avatar">
-            <img src="${teacher.data.avatar}" alt="">
+            <img src="${sessionScope.teacher.avatar}" alt="">
         </div>
 
         <div class="hello">
-            <h3>${teacher.data.name}，上午好！</h3>
+            <h3>${sessionScope.teacher.name}，上午好！</h3>
             <h4>就在线学习而言，重要的不是你花了多少钱，而是你投入了多少时间和精力。</h4>
         </div>
     </div>
