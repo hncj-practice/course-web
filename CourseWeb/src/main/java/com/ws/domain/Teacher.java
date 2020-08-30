@@ -1,6 +1,8 @@
 package com.ws.domain;
 
-public class Teacher {
+import java.io.Serializable;
+
+public class Teacher implements Serializable {
     int code;
     String message;
     Data data;

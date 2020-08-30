@@ -1,10 +1,14 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Tanyiqu">
     <words>
+      <w>chapterid</w>
+      <w>chaptername</w>
+      <w>courseid</w>
       <w>coverimg</w>
       <w>imgs</w>
       <w>signin</w>
       <w>snum</w>
+      <w>tname</w>
       <w>toastr</w>
     </words>
   </dictionary>

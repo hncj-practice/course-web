@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <jsp:useBean id="teacher" class="com.ws.domain.Teacher" scope="session"/>
-<jsp:useBean id="course" class="com.ws.domain.Course" scope="session"/>
+<%--<jsp:useBean id="course" class="com.ws.domain.CoursePack.Course" scope="session"/>--%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
 
     <!-- 页面可能用到的js代码 -->
     <script>
-        let currCourseId = ${course.id};
+        let currCourseId = ${sessionScope.course.cid};
         let teacherId = ${teacher.data.tno};
         let teacherPassword = ${teacher.data.pwd};
     </script>
@@ -86,7 +86,7 @@
 </header>
 
 <div class="headerwrap">
-    <h2 class="course-name" id="courseName"> 课程名称 </h2>
+    <h2 class="course-name" id="courseName"> ${sessionScope.course.cname} </h2>
     <ul>
         <li class="active" id="chapterManage"><span>章节管理</span></li>
         <li class="inactive" id="paperManage"><span>试卷管理</span></li>

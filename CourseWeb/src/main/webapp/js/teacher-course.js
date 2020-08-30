@@ -79,6 +79,7 @@ function loadPapers() {
 // 加载试卷相关点击事件
 function loadPaperEvents() {
     // 点击删除试卷
+    // noinspection JSJQueryEfficiency
     $('.delete-paper').off('click');
     $('.delete-paper').click((e) => {
         let paperid = $(e.target).attr('paperid');
