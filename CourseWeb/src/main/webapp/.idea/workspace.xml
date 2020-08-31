@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="添加规范内容">
-      <change afterPath="$PROJECT_DIR$/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java/com/ws/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/com/ws/controller/UserLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java/com/ws/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/com/ws/service/impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +98,7 @@
       <workItem from="1598706746250" duration="7001000" />
       <workItem from="1598754990590" duration="1845000" />
       <workItem from="1598794505224" duration="1481000" />
-      <workItem from="1598838273212" duration="620000" />
-    </task>
-    <task id="LOCAL-00008" summary="用封装的模态框重写删除教师用户">
-      <created>1598185254855</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1598185254855</updated>
+      <workItem from="1598838273212" duration="1081000" />
     </task>
     <task id="LOCAL-00009" summary="使用toastr弹出提示消息">
       <created>1598196899518</created>
@@ -448,14 +436,20 @@
       <option name="project" value="LOCAL" />
       <updated>1598716226240</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="修复管理员页面教师相关敏感操作">
+      <created>1598838921258</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1598838921258</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新建课程相关布局" />
     <MESSAGE value="手动新建课程/未完成" />
     <MESSAGE value="实现手动新建课程" />
     <MESSAGE value="恢复测试前的布局" />
@@ -480,7 +474,8 @@
     <MESSAGE value="按照代码规范修改页面的head部分" />
     <MESSAGE value="修改一些封装过的方法" />
     <MESSAGE value="添加规范内容" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加规范内容" />
+    <MESSAGE value="修复管理员页面教师相关敏感操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复管理员页面教师相关敏感操作" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -495,10 +490,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598838875334">
+    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598838920467">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598838875334" />
+    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598838920467" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

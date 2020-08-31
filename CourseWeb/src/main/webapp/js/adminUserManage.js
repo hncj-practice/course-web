@@ -51,7 +51,7 @@ function refreshStudents(page, num) {
         toastr.error('获取数据失败！');
     };
     setTimeout(() => {
-        my_ajax(url, param, renderStudentTable);
+        my_ajax(url, param, renderStudentTable, error);
     }, 500);
 }
 
@@ -311,25 +311,15 @@ function loadEvents() {
                             admin_pwd: adminUP,
                             type: 2
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                        };
+                        my_ajax(url, param, success);
                     });
             });
         }
@@ -355,27 +345,17 @@ function loadEvents() {
                         admin_pwd: adminUP,
                         type: 2
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshTeachers();
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        // 删除成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshTeachers();
+                    };
+                    my_ajax(url, param, success);
                 });
             });
         }
@@ -422,26 +402,16 @@ function loadEvents() {
                         avatar: "default",
                         status: 1
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshTeachers();
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshTeachers();
+                    };
+                    my_ajax(url, param, success);
                 });
             });
         }
@@ -483,31 +453,21 @@ function loadEvents() {
                             admin_pwd: adminUP,
                             type: 2
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 删除成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 所有都删除完成
-                                if (n === ts.length) {
-                                    toastr.success('成功删除所选教师！');
-                                    refreshTeachers();
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                            n++;
+                            // 所有都删除完成
+                            if (n === ts.length) {
+                                toastr.success('成功删除所选教师！');
+                                refreshTeachers();
+                            }
+                        };
+                        my_ajax(url, param, success);
                     });
                 })
             });
@@ -548,30 +508,20 @@ function loadEvents() {
                             admin_pwd: adminUP,
                             type: 2
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 所有都完成
-                                if (n === ts.length) {
-                                    toastr.success('成功重置所选教师！');
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                            n++;
+                            // 所有都完成
+                            if (n === ts.length) {
+                                toastr.success('成功重置所选教师！');
+                            }
+                        };
+                        my_ajax(url, param, success);
                     });
                 });
             });
@@ -706,27 +656,17 @@ function loadEvents() {
                         admin_pwd: adminUP,
                         type: 1
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshStudents(1, STUDENT_PER_PAGE);
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        // 删除成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshStudents(1, STUDENT_PER_PAGE);
+                    };
+                    my_ajax(url, param, success);
                 });
             });
         }
@@ -756,25 +696,15 @@ function loadEvents() {
                             admin_pwd: adminUP,
                             type: 1
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                        };
+                        my_ajax(url, param, success);
                     });
             });
         }
@@ -813,31 +743,21 @@ function loadEvents() {
                             admin_pwd: adminUP,
                             type: 1
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 删除成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 刷新表格
-                                if (n === ss.length) {
-                                    toastr.success('成功删除所选学生！');
-                                    refreshStudents(1, STUDENT_PER_PAGE);
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                            n++;
+                            // 刷新表格
+                            if (n === ss.length) {
+                                toastr.success('成功删除所选学生！');
+                                refreshStudents(1, STUDENT_PER_PAGE);
+                            }
+                        };
+                        my_ajax(url, param, success);
                     });
                 })
             });
@@ -878,7 +798,7 @@ function loadEvents() {
                             type: 1
                         };
                         // noinspection all
-                        my_ajax(url, param, () => {
+                        my_ajax(url, param, (e) => {
                             // 删除成功
                             if (e.code === 200) {
                                 toastr.success(e.message);
@@ -892,32 +812,6 @@ function loadEvents() {
                                 refreshStudents(1, STUDENT_PER_PAGE);
                             }
                         });
-                        /*
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 删除成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 刷新表格
-                                if (n === ss.length) {
-                                    toastr.success('成功重置所选学生！');
-                                    refreshStudents(1, STUDENT_PER_PAGE);
-                                }
-                            },
-                            error: (e) => {
-                                toastr.error(e.message);
-                            }
-                        });
-                         */
                     });
                 })
             });
@@ -961,27 +855,18 @@ function loadEvents() {
                     let param = {
                         classid: ss[0]
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshStudents();
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        // 删除成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshStudents();
+                    };
+                    my_ajax(url, param, success);
+
                 });
             });
         }
