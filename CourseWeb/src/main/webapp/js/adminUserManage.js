@@ -307,8 +307,6 @@ function loadEvents() {
                             adminuser: adminUN,
                             adminpwd: adminUP,
                             username: tno,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 2
                         };
                         let success = (e) => {
@@ -341,8 +339,6 @@ function loadEvents() {
                         adminuser: adminUN,
                         adminpwd: adminUP,
                         username: tno,
-                        admin_user: adminUN,
-                        admin_pwd: adminUP,
                         type: 2
                     };
                     let success = (e) => {
@@ -449,8 +445,6 @@ function loadEvents() {
                             adminuser: adminUN,
                             adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 2
                         };
                         let success = (e) => {
@@ -504,8 +498,6 @@ function loadEvents() {
                             adminuser: adminUN,
                             adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 2
                         };
                         let success = (e) => {
@@ -616,6 +608,8 @@ function loadEvents() {
                     }
                     let url = STUDENT_API.ADD;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         sno: sno,
                         cla: scla,
                         pwd: "000000",
@@ -651,9 +645,9 @@ function loadEvents() {
                     // 请求API删除
                     let url = ACCOUNT_API.DELETE;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         username: sno,
-                        admin_user: adminUN,
-                        admin_pwd: adminUP,
                         type: 1
                     };
                     let success = (e) => {
@@ -691,9 +685,9 @@ function loadEvents() {
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         // noinspection DuplicatedCode
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: sno,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 1
                         };
                         let success = (e) => {
@@ -738,9 +732,9 @@ function loadEvents() {
                         // noinspection DuplicatedCode
                         let url = ACCOUNT_API.DELETE;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 1
                         };
                         let success = (e) => {
@@ -792,9 +786,9 @@ function loadEvents() {
                         // noinspection DuplicatedCode
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 1
                         };
                         // noinspection all
@@ -853,6 +847,8 @@ function loadEvents() {
                     console.log('删除整班学生');
                     let url = CLASS_API.DELETE;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         classid: ss[0]
                     };
                     let success = (e) => {
