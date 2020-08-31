@@ -85,6 +85,8 @@ function loadCourseEvents() {
                 let url = COURSE_API.DELETE;
                 // noinspection DuplicatedCode
                 let param = {
+                    adminuser: adminUN,
+                    adminpwd: adminUP,
                     courseid: cid
                 };
                 let success = (e) => {
@@ -113,6 +115,8 @@ function loadCourseEvents() {
                 let url = COURSE_API.UPDATE;
                 // noinspection DuplicatedCode
                 let param = {
+                    user: adminUN,
+                    pwd: adminUP,
                     courseid: cid,
                     name: newName
                 };
@@ -210,9 +214,11 @@ function loadCourseEvents() {
             classes.splice(classes.length - 1, 1);
 
             // 调用API新建
-            let url = CLASS_API.ADD;
+            let url = COURSE_API.ADD;
             let param = {
-                semester: '2020_09',
+                adminuser: adminUN,
+                adminpwd: adminUP,
+                semester: 1,
                 tno: tno,
                 cname: name,
                 classid: classes,
@@ -233,6 +239,4 @@ function loadCourseEvents() {
             my_ajax(url, param, success);
         });
     }
-
-
 }
