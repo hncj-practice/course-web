@@ -8,7 +8,6 @@ const TEACHER_PER_PAGE = 14;
 const STUDENT_PER_PAGE = 14;
 // 当前教师列表的页数
 let curr_page_teacher = 1;
-
 // 教师列表总页数
 let total_page_teacher = 1;
 
@@ -19,32 +18,6 @@ $(function () {
     loadUserPage();
 });
 
-// 点击左侧切换
-function switchTab() {
-    // 左侧按钮
-    let change2User = $('#change2User');
-    let change2Course = $('#change2Course');
-    // 面板
-    let userPanel = $('#userPanel');
-    let coursePanel = $('#coursePanel');
-    change2User.off('click');
-    change2User.click(() => {
-        setClass(change2Course, 'inactive', 'active');
-        setClass(change2User, 'active', 'inactive');
-        userPanel.css('display', 'block');
-        coursePanel.css('display', 'none');
-        loadUserPage();
-    });
-
-    change2Course.off('click');
-    change2Course.click(() => {
-        setClass(change2User, 'inactive', 'active');
-        setClass(change2Course, 'active', 'inactive');
-        userPanel.css('display', 'none');
-        coursePanel.css('display', 'block');
-        loadCoursePage();
-    });
-}
 
 // 加载用户页面
 function loadUserPage() {
@@ -62,18 +35,7 @@ function refreshTeachers() {
     };
 
     setTimeout(() => {
-        // noinspection JSUnresolvedVariable
-        jQuery.ajax({
-            type: "POST",
-            url: url,
-            data: param,
-            traditional: true,
-            timeout: 5000,
-            success: renderTeacherTable,
-            error: (e) => {
-                toastr.error(e.message);
-            }
-        });
+        my_ajax(url, param, renderTeacherTable);
     }, 500);
 }
 
@@ -88,16 +50,7 @@ function refreshStudents(page, num) {
         toastr.error('获取数据失败！');
     };
     setTimeout(() => {
-        // noinspection JSUnresolvedVariable
-        jQuery.ajax({
-            type: "POST",
-            url: url,
-            data: param,
-            traditional: true,
-            timeout: 5000,
-            success: renderStudentTable,
-            error: error
-        });
+        my_ajax(url, param, renderStudentTable, error);
     }, 500);
 }
 
@@ -350,30 +303,20 @@ function loadEvents() {
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         // noinspection DuplicatedCode
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: tno,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 2
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                        };
+                        my_ajax(url, param, success);
                     });
             });
         }
@@ -392,32 +335,22 @@ function loadEvents() {
                     // 请求API删除
                     let url = ACCOUNT_API.DELETE;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         username: tno,
-                        admin_user: adminUN,
-                        admin_pwd: adminUP,
                         type: 2
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshTeachers();
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        // 删除成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshTeachers();
+                    };
+                    my_ajax(url, param, success);
                 });
             });
         }
@@ -454,6 +387,8 @@ function loadEvents() {
                     // 请求添加教师API
                     let url = TEACHER_API.ADD;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         tno: tno,
                         pwd: "000000",
                         name: tname,
@@ -462,26 +397,16 @@ function loadEvents() {
                         avatar: "default",
                         status: 1
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshTeachers();
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshTeachers();
+                    };
+                    my_ajax(url, param, success);
                 });
             });
         }
@@ -516,36 +441,26 @@ function loadEvents() {
                         // noinspection all,DuplicatedCode
                         let url = ACCOUNT_API.DELETE;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 2
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 删除成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 所有都删除完成
-                                if (n === ts.length) {
-                                    toastr.success('成功删除所选教师！');
-                                    refreshTeachers();
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                            n++;
+                            // 所有都删除完成
+                            if (n === ts.length) {
+                                toastr.success('成功删除所选教师！');
+                                refreshTeachers();
+                            }
+                        };
+                        my_ajax(url, param, success);
                     });
                 })
             });
@@ -579,35 +494,25 @@ function loadEvents() {
                         // noinspection all,DuplicatedCode
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 2
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 所有都完成
-                                if (n === ts.length) {
-                                    toastr.success('成功重置所选教师！');
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                            n++;
+                            // 所有都完成
+                            if (n === ts.length) {
+                                toastr.success('成功重置所选教师！');
+                            }
+                        };
+                        my_ajax(url, param, success);
                     });
                 });
             });
@@ -702,6 +607,8 @@ function loadEvents() {
                     }
                     let url = STUDENT_API.ADD;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         sno: sno,
                         cla: scla,
                         pwd: "000000",
@@ -737,32 +644,22 @@ function loadEvents() {
                     // 请求API删除
                     let url = ACCOUNT_API.DELETE;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         username: sno,
-                        admin_user: adminUN,
-                        admin_pwd: adminUP,
                         type: 1
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshStudents(1, STUDENT_PER_PAGE);
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        // 删除成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshStudents(1, STUDENT_PER_PAGE);
+                    };
+                    my_ajax(url, param, success);
                 });
             });
         }
@@ -787,30 +684,20 @@ function loadEvents() {
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         // noinspection DuplicatedCode
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: sno,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 1
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                        };
+                        my_ajax(url, param, success);
                     });
             });
         }
@@ -844,36 +731,26 @@ function loadEvents() {
                         // noinspection DuplicatedCode
                         let url = ACCOUNT_API.DELETE;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 1
                         };
-                        // noinspection all
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 删除成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 刷新表格
-                                if (n === ss.length) {
-                                    toastr.success('成功删除所选学生！');
-                                    refreshStudents(1, STUDENT_PER_PAGE);
-                                }
-                            },
-                            error: (e) => {
+                        let success = (e) => {
+                            // 删除成功
+                            if (e.code === 200) {
+                                toastr.success(e.message);
+                            } else {
                                 toastr.error(e.message);
                             }
-                        });
+                            n++;
+                            // 刷新表格
+                            if (n === ss.length) {
+                                toastr.success('成功删除所选学生！');
+                                refreshStudents(1, STUDENT_PER_PAGE);
+                            }
+                        };
+                        my_ajax(url, param, success);
                     });
                 })
             });
@@ -908,13 +785,13 @@ function loadEvents() {
                         // noinspection DuplicatedCode
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
-                            admin_user: adminUN,
-                            admin_pwd: adminUP,
                             type: 1
                         };
                         // noinspection all
-                        my_ajax(url, param, () => {
+                        my_ajax(url, param, (e) => {
                             // 删除成功
                             if (e.code === 200) {
                                 toastr.success(e.message);
@@ -928,32 +805,6 @@ function loadEvents() {
                                 refreshStudents(1, STUDENT_PER_PAGE);
                             }
                         });
-                        /*
-                        jQuery.ajax({
-                            type: "POST",
-                            url: url,
-                            data: param,
-                            traditional: true,
-                            timeout: 5000,
-                            success: (e) => {
-                                // 删除成功
-                                if (e.code === 200) {
-                                    toastr.success(e.message);
-                                } else {
-                                    toastr.error(e.message);
-                                }
-                                n++;
-                                // 刷新表格
-                                if (n === ss.length) {
-                                    toastr.success('成功重置所选学生！');
-                                    refreshStudents(1, STUDENT_PER_PAGE);
-                                }
-                            },
-                            error: (e) => {
-                                toastr.error(e.message);
-                            }
-                        });
-                         */
                     });
                 })
             });
@@ -995,29 +846,22 @@ function loadEvents() {
                     console.log('删除整班学生');
                     let url = CLASS_API.DELETE;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         classid: ss[0]
                     };
-                    // noinspection all
-                    jQuery.ajax({
-                        type: "POST",
-                        url: url,
-                        data: param,
-                        traditional: true,
-                        timeout: 5000,
-                        success: (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                            // 刷新表格
-                            refreshStudents();
-                        },
-                        error: (e) => {
+                    let success = (e) => {
+                        // 删除成功
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
                             toastr.error(e.message);
                         }
-                    });
+                        // 刷新表格
+                        refreshStudents();
+                    };
+                    my_ajax(url, param, success);
+
                 });
             });
         }

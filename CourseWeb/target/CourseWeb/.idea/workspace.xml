@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="" />
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,8 +13,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Less File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,7 +46,7 @@
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.teacher-course.html">
+  <component name="RunManager" selected="JavaScript Debug.admin.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -62,11 +64,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.teacher-course.html" />
         <item itemvalue="JavaScript Debug.teacher-index.html" />
         <item itemvalue="JavaScript Debug.teacher-question.html" />
         <item itemvalue="JavaScript Debug.login.html" />
-        <item itemvalue="JavaScript Debug.admin.html" />
       </list>
     </recent_temporary>
   </component>
@@ -94,41 +96,8 @@
       <workItem from="1598672866040" duration="2974000" />
       <workItem from="1598706746250" duration="7001000" />
       <workItem from="1598754990590" duration="1845000" />
-    </task>
-    <task id="LOCAL-00008" summary="用封装的模态框重写删除教师用户">
-      <created>1598185254855</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1598185254855</updated>
-    </task>
-    <task id="LOCAL-00009" summary="使用toastr弹出提示消息">
-      <created>1598196899518</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1598196899518</updated>
-    </task>
-    <task id="LOCAL-00010" summary="解决事件重复添加的bug">
-      <created>1598197492478</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1598197492478</updated>
-    </task>
-    <task id="LOCAL-00011" summary="解决事件冲突的bug">
-      <created>1598198581712</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1598198581712</updated>
-    </task>
-    <task id="LOCAL-00012" summary="实现添加/删除学生用户">
-      <created>1598234729814</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1598234729814</updated>
+      <workItem from="1598794505224" duration="1481000" />
+      <workItem from="1598838273212" duration="3142000" />
     </task>
     <task id="LOCAL-00013" summary="重置学生用户/未实现 等待API">
       <created>1598234868004</created>
@@ -438,18 +407,48 @@
       <option name="project" value="LOCAL" />
       <updated>1598716226240</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="修复管理员页面教师相关敏感操作">
+      <created>1598838921258</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1598838921258</updated>
+    </task>
+    <task id="LOCAL-00058" summary="修改所有jQuery.ajax方法为my_ajax">
+      <created>1598839441183</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1598839441183</updated>
+    </task>
+    <task id="LOCAL-00059" summary="修复管理员页面学生相关敏感操作">
+      <created>1598839816693</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1598839816693</updated>
+    </task>
+    <task id="LOCAL-00060" summary="替换jQuery.ajax">
+      <created>1598840146545</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1598840146545</updated>
+    </task>
+    <task id="LOCAL-00061" summary="修复管理员页面课程相关敏感操作">
+      <created>1598840727273</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1598840727273</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新建课程相关布局" />
-    <MESSAGE value="手动新建课程/未完成" />
-    <MESSAGE value="实现手动新建课程" />
-    <MESSAGE value="恢复测试前的布局" />
-    <MESSAGE value="更换查询课程的API" />
     <MESSAGE value="修改细节" />
     <MESSAGE value="登录/html页面" />
     <MESSAGE value="修改教师主页查询课程的接口" />
@@ -470,7 +469,12 @@
     <MESSAGE value="按照代码规范修改页面的head部分" />
     <MESSAGE value="修改一些封装过的方法" />
     <MESSAGE value="添加规范内容" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加规范内容" />
+    <MESSAGE value="修复管理员页面教师相关敏感操作" />
+    <MESSAGE value="修改所有jQuery.ajax方法为my_ajax" />
+    <MESSAGE value="修复管理员页面学生相关敏感操作" />
+    <MESSAGE value="替换jQuery.ajax" />
+    <MESSAGE value="修复管理员页面课程相关敏感操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复管理员页面课程相关敏感操作" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -485,10 +489,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598716941067">
+    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598840726630">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598716941067" />
+    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598840726630" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -569,10 +573,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1598716949037">
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1598840820049">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598716949037" />
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598840820049" />
     <state x="689" y="331" key="git4idea.merge.GitPullDialog" timestamp="1598088662544">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

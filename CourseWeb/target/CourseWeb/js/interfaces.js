@@ -40,8 +40,7 @@ const STUDENT_API = {
 const CLASS_API = {
     // 查询
     FIND: 'http://123.56.156.212/Interface/class/allclass',
-    // 添加
-    ADD: 'http://123.56.156.212/Interface/course/addcourse',
+
     // 删除班级
     DELETE: 'http://123.56.156.212/Interface/class/delclass'
 };
@@ -51,6 +50,8 @@ const CLASS_API = {
  * 课程操作
  */
 const COURSE_API = {
+    // 添加
+    ADD: 'http://123.56.156.212/Interface/course/addcourse',
     // 查询课程
     FIND: 'http://123.56.156.212/Interface/course/allcourse',
     // 根据教师或名字查询查询

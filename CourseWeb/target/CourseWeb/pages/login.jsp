@@ -45,9 +45,10 @@
             <input type="submit" value="登录" class="submit">
         </form>
 
-        <form action="#" class="admin">
-            <input type="text" placeholder="账号"><br>
-            <input type="password" placeholder="密码"><br>
+        <form action="${pageContext.request.contextPath}/user/admin"
+              method="POST" class="admin">
+            <input type="text" name="username" placeholder="账号" value="wsgly"><br>
+            <input type="password" name="password" placeholder="密码" value="000000"><br>
             <div class="v-code">
                 <input type="text" placeholder="验证码">
                 <img src="../imgs/code.jpg" alt=""></div>

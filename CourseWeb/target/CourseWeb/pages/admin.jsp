@@ -1,7 +1,12 @@
-<!DOCTYPE html>
-<!--suppress HtmlFormInputWithoutLabel -->
-<html lang="en">
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Tanyiqu
+  Date: 2020/8/31
+  Time: 14:28
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,8 +39,8 @@
     <!-- 页面可能用到的js代码 -->
     <script>
         // 敏感操作暂时先这样写
-        let adminUN = 'wsgly';
-        let adminUP = '000000';
+        let adminUN = '${sessionScope.admin.adminAccount}';
+        let adminUP = '${sessionScope.admin.adminPwd}';
     </script>
 
 </head>

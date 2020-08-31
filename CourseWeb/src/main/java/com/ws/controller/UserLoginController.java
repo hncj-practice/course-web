@@ -1,7 +1,10 @@
 package com.ws.controller;
 
+import com.ws.domain.AdminPack;
 import com.ws.domain.TeacherPack;
+import com.ws.service.IAdminService;
 import com.ws.service.ITeacherService;
+import com.ws.service.impl.AdminServiceImpl;
 import com.ws.service.impl.TeacherServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -64,9 +67,24 @@ public class UserLoginController {
      */
     @RequestMapping("/admin")
     public String adminLogin(HttpServletRequest req) {
-        HttpSession session = req.getSession();
-        return "admin";
-    }
 
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        IAdminService adminService = new AdminServiceImpl();
+        AdminPack adminPack = adminService.getInfo(username, password);
+
+        // 请求正常
+        if (adminPack.getCode() == 200) {
+            // 设置bean
+            HttpSession session = req.getSession();
+            session.setAttribute("admin", adminPack.getData());
+            return "admin";
+        }
+        // 不正常
+        else {
+            return "error-login";
+        }
+    }
 
 }
