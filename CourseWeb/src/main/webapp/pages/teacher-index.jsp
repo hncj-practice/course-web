@@ -38,7 +38,7 @@
 
     <!-- 页面可能用到的js代码 -->
     <script>
-        let teacherId = ${sessionScope.teacher.tno};
+        let teacherId = '${sessionScope.teacher.tno}';
         let allCourses = [];
     </script>
 
