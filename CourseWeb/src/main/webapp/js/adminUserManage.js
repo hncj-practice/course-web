@@ -8,7 +8,6 @@ const TEACHER_PER_PAGE = 14;
 const STUDENT_PER_PAGE = 14;
 // 当前教师列表的页数
 let curr_page_teacher = 1;
-
 // 教师列表总页数
 let total_page_teacher = 1;
 

@@ -1,6 +1,10 @@
 /**
  * 管理员-课程管理菜单相关操作
  */
+// 入口函数
+$(function () {
+
+});
 
 // 加载用户页面
 function loadCoursePage() {
@@ -15,20 +19,13 @@ function refreshCourses() {
         page: 1,
         num: 14
     };
-
+    let error = () => {
+        toastr.error('查询失败：服务器异常');
+    };
     setTimeout(() => {
         // noinspection JSUnresolvedVariable
-        jQuery.ajax({
-            type: "POST",
-            url: url,
-            data: param,
-            traditional: true,
-            timeout: 5000,
-            success: renderCourseTable,
-            error: () => {
-                toastr.error('查询失败：服务器异常');
-            }
-        });
+
+        my_ajax(url, param, renderCourseTable, error);
     }, 500);
 }
 
@@ -90,29 +87,17 @@ function loadCourseEvents() {
                 let param = {
                     courseid: cid
                 };
-                // noinspection all
-                jQuery.ajax({
-                    type: "POST",
-                    url: url,
-                    data: param,
-                    traditional: true,
-                    timeout: 5000,
-                    success: (e) => {
-                        // 成功
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                            refreshCourses();
-                        } else {
-                            toastr.error(e.message);
-                        }
-                    },
-                    error: (e) => {
+                let success = (e) => {
+                    // 成功
+                    if (e.code === 200) {
+                        toastr.success(e.message);
+                        refreshCourses();
+                    } else {
                         toastr.error(e.message);
                     }
-                });
+                };
+                my_ajax(url, param, success);
             });
-
-
         });
     }
 
@@ -131,25 +116,15 @@ function loadCourseEvents() {
                     courseid: cid,
                     name: newName
                 };
-                // noinspection all
-                jQuery.ajax({
-                    type: "POST",
-                    url: url,
-                    data: param,
-                    traditional: true,
-                    timeout: 5000,
-                    success: (e) => {
-                        // 成功
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                    },
-                    error: (e) => {
+                let success = (e) => {
+                    // 成功
+                    if (e.code === 200) {
+                        toastr.success(e.message);
+                    } else {
                         toastr.error(e.message);
                     }
-                });
+                };
+                my_ajax(url, param, success);
             });
         });
     }
@@ -167,64 +142,42 @@ function loadCourseEvents() {
             // 加载所有教师信息，放在下拉框里面
             {
                 let url = TEACHER_API.FIND;
-                // noinspection DuplicatedCode
                 let param = {};
-                // noinspection all
-                jQuery.ajax({
-                    type: "POST",
-                    url: url,
-                    data: param,
-                    traditional: true,
-                    timeout: 5000,
-                    success: (e) => {
-                        // 成功
-                        if (e.code === 200) {
-                            // 添加到下拉列表
-                            let html = '';
-                            let teacherList = $('#teacherList');
-                            e['data'].forEach((item) => {
-                                html += `<option value="{0}">{1}</option>`.format(item.tno, item.tno + ':' + item.name);
-                            });
-                            teacherList.html(html);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                    },
-                    error: (e) => {
+                let success = (e) => {
+                    // 成功
+                    if (e.code === 200) {
+                        // 添加到下拉列表
+                        let html = '';
+                        let teacherList = $('#teacherList');
+                        e['data'].forEach((item) => {
+                            html += `<option value="{0}">{1}</option>`.format(item.tno, item.tno + ':' + item.name);
+                        });
+                        teacherList.html(html);
+                    } else {
                         toastr.error(e.message);
                     }
-                });
+                };
+                my_ajax(url, param, success);
             }
             // 加载所有班级信息，放在下拉框里面
             {
                 let url = CLASS_API.FIND;
-                // noinspection DuplicatedCode
                 let param = {};
-                // noinspection all
-                jQuery.ajax({
-                    type: "POST",
-                    url: url,
-                    data: param,
-                    traditional: true,
-                    timeout: 5000,
-                    success: (e) => {
-                        // 成功
-                        if (e.code === 200) {
-                            // 添加到下拉列表
-                            let html = '';
-                            let classesList = $('#classesList');
-                            e['data'].forEach((item) => {
-                                html += `<option value="{0}">{0}</option>`.format(item.classid);
-                            });
-                            classesList.html(html);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                    },
-                    error: (e) => {
+                let success = (e) => {
+                    // 成功
+                    if (e.code === 200) {
+                        // 添加到下拉列表
+                        let html = '';
+                        let classesList = $('#classesList');
+                        e['data'].forEach((item) => {
+                            html += `<option value="{0}">{0}</option>`.format(item.classid);
+                        });
+                        classesList.html(html);
+                    } else {
                         toastr.error(e.message);
                     }
-                });
+                };
+                my_ajax(url, param, success);
             }
         });
         // 关闭按钮
@@ -266,29 +219,18 @@ function loadCourseEvents() {
                 coverimg: 'default',
                 status: '1'
             };
-
-            // 新建
-            // noinspection JSUnresolvedVariable
-            jQuery.ajax({
-                type: "POST",
-                url: url,
-                data: param,
-                traditional: true,
-                timeout: 5000,
-                success: (e) => {
-                    // 成功
-                    if (e.code === 200) {
-                        toastr.success(e.message);
-                        $('.add-new-course').hide(250);
-                        refreshCourses();
-                    } else {
-                        toastr.error(e.message);
-                    }
-                },
-                error: (e) => {
+            let success = (e) => {
+                // 成功
+                if (e.code === 200) {
+                    toastr.success(e.message);
+                    $('.add-new-course').hide(250);
+                    refreshCourses();
+                } else {
                     toastr.error(e.message);
                 }
-            });
+            };
+            // 新建
+            my_ajax(url, param, success);
         });
     }
 
