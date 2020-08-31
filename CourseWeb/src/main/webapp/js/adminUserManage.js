@@ -19,32 +19,6 @@ $(function () {
     loadUserPage();
 });
 
-// 点击左侧切换
-function switchTab() {
-    // 左侧按钮
-    let change2User = $('#change2User');
-    let change2Course = $('#change2Course');
-    // 面板
-    let userPanel = $('#userPanel');
-    let coursePanel = $('#coursePanel');
-    change2User.off('click');
-    change2User.click(() => {
-        setClass(change2Course, 'inactive', 'active');
-        setClass(change2User, 'active', 'inactive');
-        userPanel.css('display', 'block');
-        coursePanel.css('display', 'none');
-        loadUserPage();
-    });
-
-    change2Course.off('click');
-    change2Course.click(() => {
-        setClass(change2User, 'inactive', 'active');
-        setClass(change2Course, 'active', 'inactive');
-        userPanel.css('display', 'none');
-        coursePanel.css('display', 'block');
-        loadCoursePage();
-    });
-}
 
 // 加载用户页面
 function loadUserPage() {
@@ -62,18 +36,7 @@ function refreshTeachers() {
     };
 
     setTimeout(() => {
-        // noinspection JSUnresolvedVariable
-        jQuery.ajax({
-            type: "POST",
-            url: url,
-            data: param,
-            traditional: true,
-            timeout: 5000,
-            success: renderTeacherTable,
-            error: (e) => {
-                toastr.error(e.message);
-            }
-        });
+        my_ajax(url, param, renderTeacherTable);
     }, 500);
 }
 
@@ -88,16 +51,7 @@ function refreshStudents(page, num) {
         toastr.error('获取数据失败！');
     };
     setTimeout(() => {
-        // noinspection JSUnresolvedVariable
-        jQuery.ajax({
-            type: "POST",
-            url: url,
-            data: param,
-            traditional: true,
-            timeout: 5000,
-            success: renderStudentTable,
-            error: error
-        });
+        my_ajax(url, param, renderStudentTable);
     }, 500);
 }
 
@@ -350,6 +304,8 @@ function loadEvents() {
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         // noinspection DuplicatedCode
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: tno,
                             admin_user: adminUN,
                             admin_pwd: adminUP,
@@ -392,6 +348,8 @@ function loadEvents() {
                     // 请求API删除
                     let url = ACCOUNT_API.DELETE;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         username: tno,
                         admin_user: adminUN,
                         admin_pwd: adminUP,
@@ -454,6 +412,8 @@ function loadEvents() {
                     // 请求添加教师API
                     let url = TEACHER_API.ADD;
                     let param = {
+                        adminuser: adminUN,
+                        adminpwd: adminUP,
                         tno: tno,
                         pwd: "000000",
                         name: tname,
@@ -516,6 +476,8 @@ function loadEvents() {
                         // noinspection all,DuplicatedCode
                         let url = ACCOUNT_API.DELETE;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
                             admin_user: adminUN,
                             admin_pwd: adminUP,
@@ -579,6 +541,8 @@ function loadEvents() {
                         // noinspection all,DuplicatedCode
                         let url = ACCOUNT_API.RESET_BY_ADMIN;
                         let param = {
+                            adminuser: adminUN,
+                            adminpwd: adminUP,
                             username: item,
                             admin_user: adminUN,
                             admin_pwd: adminUP,

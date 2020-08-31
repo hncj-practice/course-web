@@ -13,7 +13,6 @@ public class CourseServiceImpl implements ICourseService {
         String url = "http://123.56.156.212/Interface/course/getcoursebycid";
         String param = "courseid=" + courseId;
         String json = HttpUtil.sendPost(url, param);
-        System.out.println("json " + json);
         return JSONObject.parseObject(json, CoursePack.class);
     }
 

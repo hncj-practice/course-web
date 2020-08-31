@@ -44,7 +44,6 @@ public class UserLoginController {
         ITeacherService teacherService = new TeacherServiceImpl();
         TeacherPack teacherPack = teacherService.getInfo(username, password);
 
-
         // 请求正常
         if (teacherPack.getCode() == 200) {
             // 设置bean
