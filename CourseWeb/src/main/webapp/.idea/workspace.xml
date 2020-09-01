@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/t-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-course.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +101,7 @@
       <workItem from="1598754990590" duration="1845000" />
       <workItem from="1598794505224" duration="1481000" />
       <workItem from="1598838273212" duration="3142000" />
+      <workItem from="1598939274436" duration="810000" />
     </task>
     <task id="LOCAL-00013" summary="重置学生用户/未实现 等待API">
       <created>1598234868004</created>

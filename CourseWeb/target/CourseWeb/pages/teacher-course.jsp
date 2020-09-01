@@ -36,9 +36,9 @@
 
     <!-- 页面可能用到的js代码 -->
     <script>
-        let currCourseId = ${sessionScope.course.cid};
-        let teacherId = ${sessionScope.teacher.tno};
-        let teacherPassword = ${sessionScope.teacher.pwd};
+        let currCourseId = '${sessionScope.course.cid}';
+        let teacherId = '${sessionScope.teacher.tno}';
+        let teacherPassword = '${sessionScope.teacher.pwd}';
     </script>
 
 </head>
