@@ -5,20 +5,41 @@
   Time: 11:29
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%-- 兼容360和IE --%>
+    <meta name=”renderer” content=”webkit|ie-comp|ie-stand” />
+
     <title>登录</title>
     <link rel="short icon" href="../imgs/logo.png">
+
+    <!-- jQuery -->
     <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/util.js"></script>
+
+    <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/bootstrap.js"></script>
+
+    <!-- toastr -->
+    <link rel="stylesheet" href="../css/toastr.min.css">
+    <script src="../js/toastr.min.js"></script>
+
+    <!-- 自己的css -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/teacher-login.css">
+
+    <!-- 工具类和常量类 -->
+    <script src="../js/util.js"></script>
+    <script src="../js/interfaces.js"></script>
+
+    <!-- 自己的js -->
+    <script src="../js/t-login.js"></script>
 
 </head>
 
@@ -76,7 +97,5 @@
     </div>
 </main>
 
-<script src="../js/t-login.js"></script>
-</body>
 
-</html>
+</body>

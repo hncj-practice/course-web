@@ -91,7 +91,7 @@ function loadEvent() {
             let cid = $(e.target).attr('cid');
             console.log('跳转到课程：' + cid);
             // 跳转
-            window.open('/course/home?courseId=' + cid, '_blank');
+            window.open('../course/home?courseId=' + cid, '_blank');
         });
     }
 }
