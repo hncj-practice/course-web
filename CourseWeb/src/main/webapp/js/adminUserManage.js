@@ -517,8 +517,24 @@ function loadEvents() {
             $('#batchTImportInput').change((e) => {
                 // 解析文件内容成obj数组
                 resolveXlsx(false, e.target.files, (list) => {
-                    console.log(list)
-
+                    list.forEach((item, index) => {
+                        // 请求添加教师API
+                        let param = {
+                            tno: item['tno'],
+                            pwd: "000000",
+                            name: item['tname'],
+                            sex: item['tsex'],
+                            email: item['temail'],
+                            avatar: "default",
+                            status: 1
+                        };
+                        // 最后一次成功回调后刷新页面
+                        if (index === list.length - 1) {
+                            addTeacher(param, refreshTeachers);
+                        } else {
+                            addTeacher(param);
+                        }
+                    });
                 });
             });
         }
