@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/xlsx.core.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/t-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-course.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-course.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/pages/teacher-index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/t-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/js/t-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/js/t-login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/pages/login.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,17 +44,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
+      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\pages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\css" />
-      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.admin.html">
@@ -102,6 +110,8 @@
       <workItem from="1598794505224" duration="1481000" />
       <workItem from="1598838273212" duration="3142000" />
       <workItem from="1598939274436" duration="810000" />
+      <workItem from="1601344133552" duration="331000" />
+      <workItem from="1601860794819" duration="3803000" />
     </task>
     <task id="LOCAL-00013" summary="重置学生用户/未实现 等待API">
       <created>1598234868004</created>

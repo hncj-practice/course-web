@@ -1,7 +1,7 @@
 // 入口函数
 $(function () {
     switchTab();
-    alert("已加载js");
+    // alert("已加载js");
 });
 
 function switchTab() {

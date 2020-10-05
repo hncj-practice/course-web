@@ -25,6 +25,7 @@
     <!-- 工具类和常量类 -->
     <script src="../js/util.js"></script>
     <script src="../js/interfaces.js"></script>
+    <script src="../js/xlsx.core.min.js"></script>
 
     <!-- 自己的js -->
     <script src="../js/admin.js"></script>
@@ -148,6 +149,9 @@
                         <li id="resetTAll" class="reset-all"><a>重置</a></li>
                         <li id="deleteTAll" class="delete-all"><a>删除</a></li>
                     </ul>
+
+                    <input id="batchTImportInput" type="file" style="display: none;"/>
+                    <input id="batchTImport" class="batch-import" type="button" value="批量导入">
 
                     <!-- 翻页按钮 -->
                     <ul class="pagination pagination-lg pages">

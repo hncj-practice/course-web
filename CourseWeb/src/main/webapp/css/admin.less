@@ -121,7 +121,7 @@ main {
     .user-options {
       display: flex;
       position: relative;
-      // text-align: right;
+      align-items: center;
 
       // 功能按钮
       .opts {
@@ -142,6 +142,22 @@ main {
           a {
             color: red;
           }
+        }
+      }
+
+      .batch-import {
+        height: 32px;
+        line-height: 32px;
+        margin-left: 5px;
+        padding: 0 12px;
+        background: #fff;
+        color: #2F96B4;
+        outline: none;
+        border: solid 1px #dddddd;
+        border-radius: 16px;
+
+        &:hover {
+          background: #eeeeee;
         }
       }
 

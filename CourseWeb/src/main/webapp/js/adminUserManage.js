@@ -518,6 +518,49 @@ function loadEvents() {
             });
         }
 
+        // 批量导入教师
+        {
+            // 按钮的点击事件
+            $('#batchTImport').off('click');
+            $('#batchTImport').click(() => {
+                return $('#batchTImportInput').click();
+                // $('batchTImportInput').trigger('click');
+            });
+            // input file的事件
+            $('#batchTImportInput').off('change');
+            $('#batchTImportInput').change((e) => {
+                var wb; //读取完成的数据
+                var rABS = false; //是否将文件读取为二进制字符串
+                let obj = e.target;
+                if (!obj.files) {
+                    return;
+                }
+                var f = obj.files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var data = e.target.result;
+                    if (rABS) {
+                        wb = XLSX.read(btoa(fixdata(data)), {//手动转化
+                            type: 'base64'
+                        });
+                    } else {
+                        wb = XLSX.read(data, {
+                            type: 'binary'
+                        });
+                    }
+                    let obj = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+                    console.log(obj);
+                };
+                if (rABS) {
+                    reader.readAsArrayBuffer(f);
+                } else {
+                    reader.readAsBinaryString(f);
+                }
+            });
+
+
+        }
+
         // 底部页面跳转
         {
             // 5个活动页码跳转
