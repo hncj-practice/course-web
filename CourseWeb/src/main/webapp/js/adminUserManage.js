@@ -635,8 +635,6 @@ function loadEvents() {
                     }
                     let url = STUDENT_API.ADD;
                     let param = {
-                        adminuser: adminUN,
-                        adminpwd: adminUP,
                         sno: sno,
                         cla: scla,
                         pwd: "000000",
@@ -646,16 +644,7 @@ function loadEvents() {
                         avatar: "default",
                         status: 0
                     };
-                    my_ajax(url, param, (e) => {
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                            return;
-                        }
-                        // 刷新表格
-                        refreshStudents(1, STUDENT_PER_PAGE);
-                    });
+                    addStudent(param, refreshStudents(1, STUDENT_PER_PAGE));
                 });
             });
         }
@@ -903,15 +892,33 @@ function addTeacher(param, success) {
     param['adminpwd'] = adminUP;
     // 请求添加教师
     my_ajax(url, param, (e) => {
-            if (e.code === 200) {
-                toastr.success(e.message);
-                if (!success) {
-                    return;
-                }
-                success();
-            } else {
-                toastr.error(e.message);
+        if (e.code === 200) {
+            toastr.success(e.message);
+            if (!success) {
+                return;
             }
+            success();
+        } else {
+            toastr.error(e.message);
         }
-    );
+    });
+}
+
+// 单独添加学生
+function addStudent(param, success) {
+    let url = STUDENT_API.ADD;
+    param['adminuser'] = adminUN;
+    param['adminpwd'] = adminUP;
+    // 请求添加
+    my_ajax(url, param, (e) => {
+        if (e.code === 200) {
+            toastr.success(e.message);
+            if (!success) {
+                return;
+            }
+            success();
+        } else {
+            toastr.error(e.message);
+        }
+    });
 }
