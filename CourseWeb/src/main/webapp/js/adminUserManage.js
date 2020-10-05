@@ -18,7 +18,6 @@ $(function () {
     loadUserPage();
 });
 
-
 // 加载用户页面
 function loadUserPage() {
     refreshTeachers();
@@ -385,10 +384,7 @@ function loadEvents() {
                         tsex = 'm';
                     }
                     // 请求添加教师API
-                    let url = TEACHER_API.ADD;
                     let param = {
-                        adminuser: adminUN,
-                        adminpwd: adminUP,
                         tno: tno,
                         pwd: "000000",
                         name: tname,
@@ -397,16 +393,7 @@ function loadEvents() {
                         avatar: "default",
                         status: 1
                     };
-                    let success = (e) => {
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                        // 刷新表格
-                        refreshTeachers();
-                    };
-                    my_ajax(url, param, success);
+                    addTeacher(param, refreshTeachers);
                 });
             });
         }
@@ -548,8 +535,24 @@ function loadEvents() {
                             type: 'binary'
                         });
                     }
-                    let obj = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-                    console.log(obj);
+                    let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+
+                    console.log('list');
+                    console.log(list);
+
+                    jQuery.each(list, (index, item) => {
+                        let param = {
+                            tno: item['tno'],
+                            pwd: "000000",
+                            name: item['tname'],
+                            sex: item['tsex'],
+                            email: item['temail'],
+                            avatar: "default",
+                            status: 1
+                        };
+                        addTeacher(param);
+                    });
+
                 };
                 if (rABS) {
                     reader.readAsArrayBuffer(f);
@@ -911,3 +914,25 @@ function loadEvents() {
     }
 }
 
+// 单独添加教师
+function addTeacher(param, callback) {
+    console.log('my Add');
+    let url = TEACHER_API.ADD;
+    param['adminuser'] = adminUN;
+    param['adminpwd'] = adminUP;
+
+    // console.log(param);
+
+    let success = (e) => {
+        if (e.code === 200) {
+            toastr.success(e.message);
+            if (!callback) {
+                return;
+            }
+            callback();
+        } else {
+            toastr.error(e.message);
+        }
+    };
+    my_ajax(url, param, success);
+}
