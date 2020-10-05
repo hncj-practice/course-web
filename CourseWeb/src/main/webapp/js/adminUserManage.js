@@ -516,7 +516,7 @@ function loadEvents() {
             $('#addTeacherExcel').click(() => {
                 return $('#batchTImportInput').click();
             });
-            // input file的事件
+            // input file的change事件
             $('#batchTImportInput').off('change');
             $('#batchTImportInput').change((e) => {
                 let files = e.target.files;
@@ -633,7 +633,6 @@ function loadEvents() {
                     } else {
                         ssex = 'm';
                     }
-                    let url = STUDENT_API.ADD;
                     let param = {
                         sno: sno,
                         cla: scla,
@@ -879,6 +878,48 @@ function loadEvents() {
                     };
                     my_ajax(url, param, success);
 
+                });
+            });
+        }
+
+        // 批量导入学生
+        {
+            // 按钮的点击事件
+            $('#batchSImport').off('click');
+            $('#addStudentExcel').off('click');
+            $('#batchSImport').click(() => {
+                return $('#batchSImportInput').click();
+            });
+            $('#addStudentExcel').click(() => {
+                return $('#batchSImportInput').click();
+            });
+            // input file的change事件
+            $('#batchSImportInput').off('change');
+            $('#batchSImportInput').change((e) => {
+                let files = e.target.files;
+                // 解析文件内容成obj数组
+                resolveXlsx(false, files, (list) => {
+                    list.forEach((item, index) => {
+                        // 请求添加教师API
+                        let param = {
+                            sno: item['sno'],
+                            cla: item['sclass'],
+                            pwd: "000000",
+                            name: item['sname'],
+                            sex: item['ssex'],
+                            email: item['semail'],
+                            avatar: "default",
+                            status: 1
+                        };
+                        // 最后一次成功回调后刷新页面
+                        if (index === list.length - 1) {
+                            addStudent(param, refreshStudents(1, STUDENT_PER_PAGE));
+                            // 最后置value为null，修复onchange只能触发一次的bug
+                            e.target.value = null;
+                        } else {
+                            addStudent(param);
+                        }
+                    });
                 });
             });
         }
