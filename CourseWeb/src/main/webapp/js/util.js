@@ -153,8 +153,37 @@ function my_ajax(url, param, success, error) {
 }
 
 
-function fixdata(data) { //文件流转BinaryString
-    var o = "",
+/**
+ * 解析excel文件
+ * @param rABS 是否用二进制读取
+ * @param obj file列表
+ * @param onlaod 回调
+ */
+function resolveXlsx(rABS, obj, onlaod) {
+    console.log('resolve');
+    console.log(obj);
+
+    let f = obj[0];
+    let reader = new FileReader();
+
+    // load回调函数
+    reader.onload = onlaod;
+
+    if (rABS) {
+        reader.readAsArrayBuffer(f);
+    } else {
+        reader.readAsBinaryString(f);
+    }
+}
+
+
+/**
+ * 文件流转BinaryString
+ * @param data
+ * @returns {string}
+ */
+function fixData(data) {
+    let o = "",
         l = 0,
         w = 10240;
     for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)));

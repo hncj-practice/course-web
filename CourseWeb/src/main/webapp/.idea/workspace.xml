@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,14 +104,7 @@
       <workItem from="1598838273212" duration="3142000" />
       <workItem from="1598939274436" duration="810000" />
       <workItem from="1601344133552" duration="331000" />
-      <workItem from="1601860794819" duration="7690000" />
-    </task>
-    <task id="LOCAL-00014" summary="整理代码">
-      <created>1598235102731</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1598235102731</updated>
+      <workItem from="1601860794819" duration="9661000" />
     </task>
     <task id="LOCAL-00015" summary="删除整班学生/等待API">
       <created>1598237291617</created>
@@ -446,14 +442,20 @@
       <option name="project" value="LOCAL" />
       <updated>1601865414270</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="初步实现批量添加教师">
+      <created>1601871717688</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1601871717688</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="登录/html页面" />
     <MESSAGE value="修改教师主页查询课程的接口" />
     <MESSAGE value="题目管理页面框架" />
     <MESSAGE value="显示课程的章节和试卷" />
@@ -478,7 +480,8 @@
     <MESSAGE value="替换jQuery.ajax" />
     <MESSAGE value="修复管理员页面课程相关敏感操作" />
     <MESSAGE value="初步实现批量导入教师用户：解析excel" />
-    <option name="LAST_COMMIT_MESSAGE" value="初步实现批量导入教师用户：解析excel" />
+    <MESSAGE value="初步实现批量添加教师" />
+    <option name="LAST_COMMIT_MESSAGE" value="初步实现批量添加教师" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -493,10 +496,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1601865413294">
+    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1601871717097">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1601865413294" />
+    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1601871717097" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

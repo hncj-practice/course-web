@@ -511,23 +511,16 @@ function loadEvents() {
             $('#batchTImport').off('click');
             $('#batchTImport').click(() => {
                 return $('#batchTImportInput').click();
-                // $('batchTImportInput').trigger('click');
             });
             // input file的事件
             $('#batchTImportInput').off('change');
             $('#batchTImportInput').change((e) => {
-                var wb; //读取完成的数据
-                var rABS = false; //是否将文件读取为二进制字符串
-                let obj = e.target;
-                if (!obj.files) {
-                    return;
-                }
-                var f = obj.files[0];
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    var data = e.target.result;
+                let wb;
+                let rABS = false;
+                resolveXlsx(rABS, e.target.files, (e1) => {
+                    let data = e1.target.result;
                     if (rABS) {
-                        wb = XLSX.read(btoa(fixdata(data)), {//手动转化
+                        wb = XLSX.read(btoa(fixData(data)), {//手动转化
                             type: 'base64'
                         });
                     } else {
@@ -540,6 +533,7 @@ function loadEvents() {
                     console.log('list');
                     console.log(list);
 
+                    // noinspection JSUnresolvedVariable
                     jQuery.each(list, (index, item) => {
                         let param = {
                             tno: item['tno'],
@@ -552,13 +546,7 @@ function loadEvents() {
                         };
                         addTeacher(param);
                     });
-
-                };
-                if (rABS) {
-                    reader.readAsArrayBuffer(f);
-                } else {
-                    reader.readAsBinaryString(f);
-                }
+                });
             });
 
 
