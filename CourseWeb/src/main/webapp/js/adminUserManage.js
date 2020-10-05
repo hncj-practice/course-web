@@ -515,41 +515,12 @@ function loadEvents() {
             // input file的事件
             $('#batchTImportInput').off('change');
             $('#batchTImportInput').change((e) => {
-                let wb;
-                let rABS = false;
-                resolveXlsx(rABS, e.target.files, (e1) => {
-                    let data = e1.target.result;
-                    if (rABS) {
-                        wb = XLSX.read(btoa(fixData(data)), {//手动转化
-                            type: 'base64'
-                        });
-                    } else {
-                        wb = XLSX.read(data, {
-                            type: 'binary'
-                        });
-                    }
-                    let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+                // 解析文件内容成obj数组
+                resolveXlsx(false, e.target.files, (list) => {
+                    console.log(list)
 
-                    console.log('list');
-                    console.log(list);
-
-                    // noinspection JSUnresolvedVariable
-                    jQuery.each(list, (index, item) => {
-                        let param = {
-                            tno: item['tno'],
-                            pwd: "000000",
-                            name: item['tname'],
-                            sex: item['tsex'],
-                            email: item['temail'],
-                            avatar: "default",
-                            status: 1
-                        };
-                        addTeacher(param);
-                    });
                 });
             });
-
-
         }
 
         // 底部页面跳转
@@ -903,24 +874,21 @@ function loadEvents() {
 }
 
 // 单独添加教师
-function addTeacher(param, callback) {
-    console.log('my Add');
+function addTeacher(param, success) {
     let url = TEACHER_API.ADD;
     param['adminuser'] = adminUN;
     param['adminpwd'] = adminUP;
-
-    // console.log(param);
-
-    let success = (e) => {
-        if (e.code === 200) {
-            toastr.success(e.message);
-            if (!callback) {
-                return;
+    // 请求添加教师
+    my_ajax(url, param, (e) => {
+            if (e.code === 200) {
+                toastr.success(e.message);
+                if (!success) {
+                    return;
+                }
+                success();
+            } else {
+                toastr.error(e.message);
             }
-            callback();
-        } else {
-            toastr.error(e.message);
         }
-    };
-    my_ajax(url, param, success);
+    );
 }

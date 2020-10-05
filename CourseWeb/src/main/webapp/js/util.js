@@ -156,18 +156,31 @@ function my_ajax(url, param, success, error) {
 /**
  * 解析excel文件
  * @param rABS 是否用二进制读取
- * @param obj file列表
- * @param onlaod 回调
+ * @param files file列表
+ * @param callback 回调
  */
-function resolveXlsx(rABS, obj, onlaod) {
-    console.log('resolve');
-    console.log(obj);
-
-    let f = obj[0];
+function resolveXlsx(rABS, files, callback) {
+    console.log('my resolve');
+    console.log(files);
+    let wb;
+    let f = files[0];
     let reader = new FileReader();
 
     // load回调函数
-    reader.onload = onlaod;
+    reader.onload = (e) => {
+        let data = e.target.result;
+        if (rABS) {
+            wb = XLSX.read(btoa(fixData(data)), {//手动转化
+                type: 'base64'
+            });
+        } else {
+            wb = XLSX.read(data, {
+                type: 'binary'
+            });
+        }
+        let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+        callback(list);
+    };
 
     if (rABS) {
         reader.readAsArrayBuffer(f);
