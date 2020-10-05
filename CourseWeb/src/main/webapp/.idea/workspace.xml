@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="修复onchange只能触发一次的bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,14 +102,7 @@
       <workItem from="1598838273212" duration="3142000" />
       <workItem from="1598939274436" duration="810000" />
       <workItem from="1601344133552" duration="331000" />
-      <workItem from="1601860794819" duration="12913000" />
-    </task>
-    <task id="LOCAL-00017" summary="实现批量删除学生">
-      <created>1598251479728</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1598251479728</updated>
+      <workItem from="1601860794819" duration="13921000" />
     </task>
     <task id="LOCAL-00018" summary="将API接口放在同一文件下">
       <created>1598252647840</created>
@@ -446,14 +440,20 @@
       <option name="project" value="LOCAL" />
       <updated>1601879464382</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="实现批量添加教师成功后刷新页面">
+      <created>1601882569623</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1601882569623</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="显示课程的章节和试卷" />
     <MESSAGE value="显示课程的题目/选择题" />
     <MESSAGE value="随机组卷/生成题目数组" />
     <MESSAGE value="封装my_ajax简化请求" />
@@ -478,7 +478,8 @@
     <MESSAGE value="初步实现批量添加教师" />
     <MESSAGE value="改进批量操作01" />
     <MESSAGE value="封装解析excel的工具函数" />
-    <option name="LAST_COMMIT_MESSAGE" value="封装解析excel的工具函数" />
+    <MESSAGE value="实现批量添加教师成功后刷新页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现批量添加教师成功后刷新页面" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -493,10 +494,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1601879463799">
+    <state x="313" y="163" key="CommitChangelistDialog2" timestamp="1601883495562">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1601879463799" />
+    <state x="313" y="163" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1601883495562" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -509,22 +510,22 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="646" y="303" key="FileChooserDialogImpl/72.0.1848.1080@72.0.1848.1080" timestamp="1598088098469" />
-    <state width="1827" height="295" key="GridCell.Tab.0.bottom" timestamp="1601882085729">
+    <state width="1827" height="145" key="GridCell.Tab.0.bottom" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="295" key="GridCell.Tab.0.bottom/72.0.1848.1080@72.0.1848.1080" timestamp="1601882085729" />
-    <state width="1827" height="295" key="GridCell.Tab.0.center" timestamp="1601882085729">
+    <state width="1827" height="145" key="GridCell.Tab.0.bottom/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
+    <state width="1827" height="145" key="GridCell.Tab.0.center" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="295" key="GridCell.Tab.0.center/72.0.1848.1080@72.0.1848.1080" timestamp="1601882085729" />
-    <state width="1827" height="295" key="GridCell.Tab.0.left" timestamp="1601882085729">
+    <state width="1827" height="145" key="GridCell.Tab.0.center/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
+    <state width="1827" height="145" key="GridCell.Tab.0.left" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="295" key="GridCell.Tab.0.left/72.0.1848.1080@72.0.1848.1080" timestamp="1601882085729" />
-    <state width="1827" height="295" key="GridCell.Tab.0.right" timestamp="1601882085729">
+    <state width="1827" height="145" key="GridCell.Tab.0.left/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
+    <state width="1827" height="145" key="GridCell.Tab.0.right" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="295" key="GridCell.Tab.0.right/72.0.1848.1080@72.0.1848.1080" timestamp="1601882085729" />
+    <state width="1827" height="145" key="GridCell.Tab.0.right/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
     <state width="1827" height="364" key="GridCell.Tab.1.bottom" timestamp="1598525182306">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

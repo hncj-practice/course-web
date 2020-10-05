@@ -160,12 +160,9 @@ function my_ajax(url, param, success, error) {
  * @param callback 回调
  */
 function resolveXlsx(rABS, files, callback) {
-    console.log('my resolve');
-    console.log(files);
     let wb;
     let f = files[0];
     let reader = new FileReader();
-
     // load回调函数
     reader.onload = (e) => {
         let data = e.target.result;
@@ -181,7 +178,6 @@ function resolveXlsx(rABS, files, callback) {
         let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
         callback(list);
     };
-
     if (rABS) {
         reader.readAsArrayBuffer(f);
     } else {

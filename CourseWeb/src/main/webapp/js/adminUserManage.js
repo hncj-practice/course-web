@@ -509,14 +509,19 @@ function loadEvents() {
         {
             // 按钮的点击事件
             $('#batchTImport').off('click');
+            $('#addTeacherExcel').off('click');
             $('#batchTImport').click(() => {
+                return $('#batchTImportInput').click();
+            });
+            $('#addTeacherExcel').click(() => {
                 return $('#batchTImportInput').click();
             });
             // input file的事件
             $('#batchTImportInput').off('change');
             $('#batchTImportInput').change((e) => {
+                let files = e.target.files;
                 // 解析文件内容成obj数组
-                resolveXlsx(false, e.target.files, (list) => {
+                resolveXlsx(false, files, (list) => {
                     list.forEach((item, index) => {
                         // 请求添加教师API
                         let param = {
@@ -531,6 +536,8 @@ function loadEvents() {
                         // 最后一次成功回调后刷新页面
                         if (index === list.length - 1) {
                             addTeacher(param, refreshTeachers);
+                            // 最后置value为null，修复onchange只能触发一次的bug
+                            e.target.value = null;
                         } else {
                             addTeacher(param);
                         }
