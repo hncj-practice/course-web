@@ -7,8 +7,8 @@
  *  静态资源
  */
 const STATIC = {
-    TEACHER_TEMPLATE: 'https://mirrors.tuna.tsinghua.edu.cn/qt/archive/qt/5.12/5.12.8/qt-opensource-linux-x64-5.12.8.run',
-    STUDENT_TEMPLATE: 'https://mirrors.tuna.tsinghua.edu.cn/qt/archive/qt/5.12/5.12.8/qt-opensource-linux-x64-5.12.8.run',
+    TEACHER_TEMPLATE: 'https://fyz1522426323.oss-cn-beijing.aliyuncs.com/kczs/static/teacher_template.xlsx',
+    STUDENT_TEMPLATE: 'https://fyz1522426323.oss-cn-beijing.aliyuncs.com/kczs/static/student_template.xlsx',
 };
 
 /**
