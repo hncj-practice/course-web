@@ -18,7 +18,6 @@ $(function () {
     loadUserPage();
 });
 
-
 // 加载用户页面
 function loadUserPage() {
     refreshTeachers();
@@ -385,10 +384,7 @@ function loadEvents() {
                         tsex = 'm';
                     }
                     // 请求添加教师API
-                    let url = TEACHER_API.ADD;
                     let param = {
-                        adminuser: adminUN,
-                        adminpwd: adminUP,
                         tno: tno,
                         pwd: "000000",
                         name: tname,
@@ -397,16 +393,7 @@ function loadEvents() {
                         avatar: "default",
                         status: 1
                     };
-                    let success = (e) => {
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                        // 刷新表格
-                        refreshTeachers();
-                    };
-                    my_ajax(url, param, success);
+                    addTeacher(param, refreshTeachers);
                 });
             });
         }
@@ -518,6 +505,47 @@ function loadEvents() {
             });
         }
 
+        // 批量导入教师
+        {
+            // 按钮的点击事件
+            $('#batchTImport').off('click');
+            $('#addTeacherExcel').off('click');
+            $('#batchTImport').click(() => {
+                return $('#batchTImportInput').click();
+            });
+            $('#addTeacherExcel').click(() => {
+                return $('#batchTImportInput').click();
+            });
+            // input file的change事件
+            $('#batchTImportInput').off('change');
+            $('#batchTImportInput').change((e) => {
+                let files = e.target.files;
+                // 解析文件内容成obj数组
+                resolveXlsx(false, files, (list) => {
+                    list.forEach((item, index) => {
+                        // 请求添加教师API
+                        let param = {
+                            tno: item['tno'],
+                            pwd: "000000",
+                            name: item['tname'],
+                            sex: item['tsex'],
+                            email: item['temail'],
+                            avatar: "default",
+                            status: 1
+                        };
+                        // 最后一次成功回调后刷新页面
+                        if (index === list.length - 1) {
+                            addTeacher(param, refreshTeachers);
+                            // 最后置value为null，修复onchange只能触发一次的bug
+                            e.target.value = null;
+                        } else {
+                            addTeacher(param);
+                        }
+                    });
+                });
+            });
+        }
+
         // 底部页面跳转
         {
             // 5个活动页码跳转
@@ -605,10 +633,7 @@ function loadEvents() {
                     } else {
                         ssex = 'm';
                     }
-                    let url = STUDENT_API.ADD;
                     let param = {
-                        adminuser: adminUN,
-                        adminpwd: adminUP,
                         sno: sno,
                         cla: scla,
                         pwd: "000000",
@@ -618,16 +643,7 @@ function loadEvents() {
                         avatar: "default",
                         status: 0
                     };
-                    my_ajax(url, param, (e) => {
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                            return;
-                        }
-                        // 刷新表格
-                        refreshStudents(1, STUDENT_PER_PAGE);
-                    });
+                    addStudent(param, refreshStudents(1, STUDENT_PER_PAGE));
                 });
             });
         }
@@ -865,6 +881,85 @@ function loadEvents() {
                 });
             });
         }
+
+        // 批量导入学生
+        {
+            // 按钮的点击事件
+            $('#batchSImport').off('click');
+            $('#addStudentExcel').off('click');
+            $('#batchSImport').click(() => {
+                return $('#batchSImportInput').click();
+            });
+            $('#addStudentExcel').click(() => {
+                return $('#batchSImportInput').click();
+            });
+            // input file的change事件
+            $('#batchSImportInput').off('change');
+            $('#batchSImportInput').change((e) => {
+                let files = e.target.files;
+                // 解析文件内容成obj数组
+                resolveXlsx(false, files, (list) => {
+                    list.forEach((item, index) => {
+                        // 请求添加教师API
+                        let param = {
+                            sno: item['sno'],
+                            cla: item['sclass'],
+                            pwd: "000000",
+                            name: item['sname'],
+                            sex: item['ssex'],
+                            email: item['semail'],
+                            avatar: "default",
+                            status: 1
+                        };
+                        // 最后一次成功回调后刷新页面
+                        if (index === list.length - 1) {
+                            addStudent(param, refreshStudents(1, STUDENT_PER_PAGE));
+                            // 最后置value为null，修复onchange只能触发一次的bug
+                            e.target.value = null;
+                        } else {
+                            addStudent(param);
+                        }
+                    });
+                });
+            });
+        }
     }
 }
 
+// 单独添加教师
+function addTeacher(param, success) {
+    let url = TEACHER_API.ADD;
+    param['adminuser'] = adminUN;
+    param['adminpwd'] = adminUP;
+    // 请求添加教师
+    my_ajax(url, param, (e) => {
+        if (e.code === 200) {
+            toastr.success(e.message);
+            if (!success) {
+                return;
+            }
+            success();
+        } else {
+            toastr.error(e.message);
+        }
+    });
+}
+
+// 单独添加学生
+function addStudent(param, success) {
+    let url = STUDENT_API.ADD;
+    param['adminuser'] = adminUN;
+    param['adminpwd'] = adminUP;
+    // 请求添加
+    my_ajax(url, param, (e) => {
+        if (e.code === 200) {
+            toastr.success(e.message);
+            if (!success) {
+                return;
+            }
+            success();
+        } else {
+            toastr.error(e.message);
+        }
+    });
+}

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="实现批量添加学生">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/js/t-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/js/t-login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/pages/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,24 +36,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
+      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\pages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\css" />
-      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.admin.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/login.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="teacher-course.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/teacher-course.html" useBuiltInWebServerPort="true">
@@ -64,13 +62,16 @@
     <configuration name="teacher-question.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/teacher-question.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="util.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/util.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.admin.html" />
+        <item itemvalue="Node.js.util.js" />
         <item itemvalue="JavaScript Debug.teacher-course.html" />
         <item itemvalue="JavaScript Debug.teacher-index.html" />
         <item itemvalue="JavaScript Debug.teacher-question.html" />
-        <item itemvalue="JavaScript Debug.login.html" />
       </list>
     </recent_temporary>
   </component>
@@ -102,55 +103,7 @@
       <workItem from="1598838273212" duration="3142000" />
       <workItem from="1598939274436" duration="810000" />
       <workItem from="1601344133552" duration="331000" />
-    </task>
-    <task id="LOCAL-00013" summary="重置学生用户/未实现 等待API">
-      <created>1598234868004</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1598234868004</updated>
-    </task>
-    <task id="LOCAL-00014" summary="整理代码">
-      <created>1598235102731</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1598235102731</updated>
-    </task>
-    <task id="LOCAL-00015" summary="删除整班学生/等待API">
-      <created>1598237291617</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1598237291617</updated>
-    </task>
-    <task id="LOCAL-00016" summary="实现批量删除教师">
-      <created>1598239907641</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1598239907641</updated>
-    </task>
-    <task id="LOCAL-00017" summary="实现批量删除学生">
-      <created>1598251479728</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1598251479728</updated>
-    </task>
-    <task id="LOCAL-00018" summary="将API接口放在同一文件下">
-      <created>1598252647840</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1598252647840</updated>
-    </task>
-    <task id="LOCAL-00019" summary="实现教师列表页码跳转">
-      <created>1598279832717</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1598279832717</updated>
+      <workItem from="1601860794819" duration="15540000" />
     </task>
     <task id="LOCAL-00020" summary="修复样式bug">
       <created>1598280062339</created>
@@ -446,22 +399,62 @@
       <option name="project" value="LOCAL" />
       <updated>1598840727273</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="初步实现批量导入教师用户：解析excel">
+      <created>1601865414269</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1601865414270</updated>
+    </task>
+    <task id="LOCAL-00063" summary="初步实现批量添加教师">
+      <created>1601871717688</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1601871717688</updated>
+    </task>
+    <task id="LOCAL-00064" summary="改进批量操作01">
+      <created>1601873912698</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1601873912698</updated>
+    </task>
+    <task id="LOCAL-00065" summary="封装解析excel的工具函数">
+      <created>1601879464382</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1601879464382</updated>
+    </task>
+    <task id="LOCAL-00066" summary="实现批量添加教师成功后刷新页面">
+      <created>1601882569623</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1601882569623</updated>
+    </task>
+    <task id="LOCAL-00067" summary="修复onchange只能触发一次的bug">
+      <created>1601883511010</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1601883511010</updated>
+    </task>
+    <task id="LOCAL-00068" summary="分离单独添加学生的方法">
+      <created>1601884284227</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1601884284227</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改细节" />
-    <MESSAGE value="登录/html页面" />
-    <MESSAGE value="修改教师主页查询课程的接口" />
-    <MESSAGE value="题目管理页面框架" />
-    <MESSAGE value="显示课程的章节和试卷" />
-    <MESSAGE value="显示课程的题目/选择题" />
-    <MESSAGE value="随机组卷/生成题目数组" />
-    <MESSAGE value="封装my_ajax简化请求" />
-    <MESSAGE value="替换部分的ajax调用" />
     <MESSAGE value="随机组卷/测试未成功 API报错" />
     <MESSAGE value="*显示试卷名" />
     <MESSAGE value="初步实现随机组卷功能" />
@@ -478,7 +471,16 @@
     <MESSAGE value="修复管理员页面学生相关敏感操作" />
     <MESSAGE value="替换jQuery.ajax" />
     <MESSAGE value="修复管理员页面课程相关敏感操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复管理员页面课程相关敏感操作" />
+    <MESSAGE value="初步实现批量导入教师用户：解析excel" />
+    <MESSAGE value="初步实现批量添加教师" />
+    <MESSAGE value="改进批量操作01" />
+    <MESSAGE value="封装解析excel的工具函数" />
+    <MESSAGE value="实现批量添加教师成功后刷新页面" />
+    <MESSAGE value="修复onchange只能触发一次的bug" />
+    <MESSAGE value="分离批量添加学生的方法" />
+    <MESSAGE value="分离单独添加学生的方法" />
+    <MESSAGE value="实现批量添加学生" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现批量添加学生" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -493,10 +495,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="141" key="CommitChangelistDialog2" timestamp="1598840726630">
+    <state x="313" y="163" key="CommitChangelistDialog2" timestamp="1601885112058">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="756" y="141" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1598840726630" />
+    <state x="313" y="163" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1601885112058" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -509,22 +511,22 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="646" y="303" key="FileChooserDialogImpl/72.0.1848.1080@72.0.1848.1080" timestamp="1598088098469" />
-    <state width="1827" height="364" key="GridCell.Tab.0.bottom" timestamp="1598525182306">
+    <state width="1827" height="145" key="GridCell.Tab.0.bottom" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="364" key="GridCell.Tab.0.bottom/72.0.1848.1080@72.0.1848.1080" timestamp="1598525182306" />
-    <state width="1827" height="364" key="GridCell.Tab.0.center" timestamp="1598525182306">
+    <state width="1827" height="145" key="GridCell.Tab.0.bottom/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
+    <state width="1827" height="145" key="GridCell.Tab.0.center" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="364" key="GridCell.Tab.0.center/72.0.1848.1080@72.0.1848.1080" timestamp="1598525182306" />
-    <state width="1827" height="364" key="GridCell.Tab.0.left" timestamp="1598525182305">
+    <state width="1827" height="145" key="GridCell.Tab.0.center/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
+    <state width="1827" height="145" key="GridCell.Tab.0.left" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="364" key="GridCell.Tab.0.left/72.0.1848.1080@72.0.1848.1080" timestamp="1598525182305" />
-    <state width="1827" height="364" key="GridCell.Tab.0.right" timestamp="1598525182306">
+    <state width="1827" height="145" key="GridCell.Tab.0.left/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
+    <state width="1827" height="145" key="GridCell.Tab.0.right" timestamp="1601882584402">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state width="1827" height="364" key="GridCell.Tab.0.right/72.0.1848.1080@72.0.1848.1080" timestamp="1598525182306" />
+    <state width="1827" height="145" key="GridCell.Tab.0.right/72.0.1848.1080@72.0.1848.1080" timestamp="1601882584402" />
     <state width="1827" height="364" key="GridCell.Tab.1.bottom" timestamp="1598525182306">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -577,10 +579,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1598840820049">
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2" timestamp="1601884289809">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1598840820049" />
+    <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1601884289809" />
     <state x="689" y="331" key="git4idea.merge.GitPullDialog" timestamp="1598088662544">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -589,9 +591,9 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="652" y="250" key="run.anything.popup/72.0.1848.1080@72.0.1848.1080" timestamp="1598504276472" />
-    <state x="659" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1598673522269">
+    <state x="659" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1601882246263">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="659" y="235" width="672" height="678" key="search.everywhere.popup/72.0.1848.1080@72.0.1848.1080" timestamp="1598673522269" />
+    <state x="659" y="235" width="672" height="678" key="search.everywhere.popup/72.0.1848.1080@72.0.1848.1080" timestamp="1601882246263" />
   </component>
 </project>

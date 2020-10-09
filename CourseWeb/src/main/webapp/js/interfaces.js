@@ -3,6 +3,13 @@
  * 统一管理API接口，方便进行替换
  */
 
+/**
+ *  静态资源
+ */
+const STATIC = {
+    TEACHER_TEMPLATE: 'https://mirrors.tuna.tsinghua.edu.cn/qt/archive/qt/5.12/5.12.8/qt-opensource-linux-x64-5.12.8.run',
+    STUDENT_TEMPLATE: 'https://mirrors.tuna.tsinghua.edu.cn/qt/archive/qt/5.12/5.12.8/qt-opensource-linux-x64-5.12.8.run',
+};
 
 /**
  * 账户相关操作

@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="实现批量添加学生">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="添加批量导入模板的下载功能">
+      <change afterPath="$PROJECT_DIR$/../../../target/CourseWeb/js/xlsx.core.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/teacher-course.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-course.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/teacher-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/teacher-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/teacher-question.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-question.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/teacher-register.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminUserManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/css/admin.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/js/adminUserManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/js/adminUserManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/js/t-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/js/t-login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/js/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/CourseWeb/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/CourseWeb/pages/admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +119,7 @@
       <workItem from="1598939274436" duration="810000" />
       <workItem from="1601344133552" duration="331000" />
       <workItem from="1601860794819" duration="15540000" />
+      <workItem from="1602211054154" duration="1233000" />
     </task>
     <task id="LOCAL-00020" summary="修复样式bug">
       <created>1598280062339</created>
@@ -455,7 +471,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="随机组卷/测试未成功 API报错" />
     <MESSAGE value="*显示试卷名" />
     <MESSAGE value="初步实现随机组卷功能" />
     <MESSAGE value="实现删除试卷" />
@@ -480,7 +495,8 @@
     <MESSAGE value="分离批量添加学生的方法" />
     <MESSAGE value="分离单独添加学生的方法" />
     <MESSAGE value="实现批量添加学生" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现批量添加学生" />
+    <MESSAGE value="添加批量导入模板的下载功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加批量导入模板的下载功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -495,10 +511,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="313" y="163" key="CommitChangelistDialog2" timestamp="1601885112058">
+    <state x="438" y="132" key="CommitChangelistDialog2" timestamp="1602212215699">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
-    <state x="313" y="163" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1601885112058" />
+    <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602212215699" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

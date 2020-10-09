@@ -151,3 +151,51 @@ function my_ajax(url, param, success, error) {
     });
 
 }
+
+
+/**
+ * 解析excel文件
+ * @param rABS 是否用二进制读取
+ * @param files file列表
+ * @param callback 回调
+ */
+function resolveXlsx(rABS, files, callback) {
+    let wb;
+    let f = files[0];
+    let reader = new FileReader();
+    // load回调函数
+    reader.onload = (e) => {
+        let data = e.target.result;
+        if (rABS) {
+            wb = XLSX.read(btoa(fixData(data)), {//手动转化
+                type: 'base64'
+            });
+        } else {
+            wb = XLSX.read(data, {
+                type: 'binary'
+            });
+        }
+        let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+        callback(list);
+    };
+    if (rABS) {
+        reader.readAsArrayBuffer(f);
+    } else {
+        reader.readAsBinaryString(f);
+    }
+}
+
+
+/**
+ * 文件流转BinaryString
+ * @param data
+ * @returns {string}
+ */
+function fixData(data) {
+    let o = "",
+        l = 0,
+        w = 10240;
+    for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)));
+    o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)));
+    return o;
+}

@@ -507,6 +507,8 @@ function loadEvents() {
 
         // 批量导入教师
         {
+            // 下载模板
+            $('#downloadTemplateT').attr('href', STATIC.TEACHER_TEMPLATE);
             // 按钮的点击事件
             $('#batchTImport').off('click');
             $('#addTeacherExcel').off('click');
@@ -884,6 +886,8 @@ function loadEvents() {
 
         // 批量导入学生
         {
+            // 下载模板
+            $('#downloadTemplateS').attr('href', STATIC.STUDENT_TEMPLATE);
             // 按钮的点击事件
             $('#batchSImport').off('click');
             $('#addStudentExcel').off('click');

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../css/admin.css">
 
     <!-- 工具类和常量类 -->
+    <script src="../js/xlsx.core.min.js"></script>
     <script src="../js/util.js"></script>
     <script src="../js/interfaces.js"></script>
 
@@ -149,6 +150,9 @@
                         <li id="deleteTAll" class="delete-all"><a>删除</a></li>
                     </ul>
 
+                    <input id="batchTImportInput" type="file" style="display: none;"/>
+                    <input id="batchTImport" class="batch-import" type="button" value="批量导入">
+
                     <!-- 翻页按钮 -->
                     <ul class="pagination pagination-lg pages">
                         <li><a id="pStart_t">首页</a></li>
@@ -200,6 +204,8 @@
                             <span tno="0" class="reset-user">重置</span>
                             <span tno="0" class="delete-user">删除</span>
                         </td>
+
+
                     </tr>
 
                     <!-- 添加学生
@@ -231,6 +237,8 @@
                         <li id="deleteSAll" class="delete-all"><a>删除</a></li>
                         <li class="delete-all" id="deleteAllClsStudent"><a>删除整班学生</a></li>
                     </ul>
+                    <input id="batchSImportInput" type="file" style="display: none;"/>
+                    <input id="batchSImport" class="batch-import" type="button" value="批量导入">
 
                     <!-- 翻页按钮 -->
                     <ul class="pagination pagination-lg pages">

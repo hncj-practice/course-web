@@ -119,6 +119,7 @@ main #userPanel .choose-user-type span {
 main #userPanel .user-options {
   display: flex;
   position: relative;
+  align-items: center;
 }
 main #userPanel .user-options .opts li a {
   cursor: pointer;
@@ -128,6 +129,20 @@ main #userPanel .user-options .opts .reset-all a {
 }
 main #userPanel .user-options .opts .delete-all a {
   color: red;
+}
+main #userPanel .user-options .batch-import {
+  height: 32px;
+  line-height: 32px;
+  margin-left: 5px;
+  padding: 0 12px;
+  background: #fff;
+  color: #2F96B4;
+  outline: none;
+  border: solid 1px #dddddd;
+  border-radius: 16px;
+}
+main #userPanel .user-options .batch-import:hover {
+  background: #eeeeee;
 }
 main #userPanel .user-options .pages {
   position: absolute;

@@ -16,11 +16,13 @@
       <w>imgs</w>
       <w>judgepoints</w>
       <w>newpwd</w>
+      <w>onlaod</w>
       <w>paperid</w>
       <w>papername</w>
       <w>problemids</w>
       <w>ptype</w>
       <w>scla</w>
+      <w>sclass</w>
       <w>semail</w>
       <w>sname</w>
       <w>ssex</w>
@@ -30,6 +32,7 @@
       <w>toastr</w>
       <w>tsex</w>
       <w>wsgly</w>
+      <w>xlsx</w>
     </words>
   </dictionary>
 </component>
