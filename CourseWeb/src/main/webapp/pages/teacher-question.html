@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/teacher-question.css">
 
     <!-- 工具类和常量类 -->
+    <script src="../js/xlsx.core.min.js"></script>
     <script src="../js/util.js"></script>
     <script src="../js/interfaces.js"></script>
 
@@ -29,6 +30,8 @@
 
     <!-- 页面可能用到的js代码 -->
     <script>
+        let teacherId = '888888888';
+        let teacherPassword = '000000'
         let currCpid = '1';
     </script>
 
@@ -45,7 +48,8 @@
 
 <main>
     <h2>章节名</h2>
-    <button>导入题目</button>
+    <input id="importQuestionInput" type="file" style="display: none">
+    <button id="importQuestion">导入题目</button>
     <h3>选择题</h3>
     <div class="tm-div" id="xzList">
         <div class="xz">

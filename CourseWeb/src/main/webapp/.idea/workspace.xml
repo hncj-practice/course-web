@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="教师题目页面加载题目">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-course.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-course.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-course.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-course.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/t-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/teacher-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/teacher-course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/teacher-course.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-course.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/teacher-question.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-question.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,14 +109,7 @@
       <workItem from="1602216409832" duration="643000" />
       <workItem from="1602224960987" duration="722000" />
       <workItem from="1602246668765" duration="1451000" />
-      <workItem from="1602297020755" duration="6154000" />
-    </task>
-    <task id="LOCAL-00022" summary="实现批量重置教师密码">
-      <created>1598321690309</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1598321690309</updated>
+      <workItem from="1602297020755" duration="7776000" />
     </task>
     <task id="LOCAL-00023" summary="实现重置学生密码">
       <created>1598321791214</created>
@@ -456,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602225005796</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="教师题目页面加载题目">
+      <created>1602305587568</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1602305587569</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,11 +501,11 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="498" y="138" key="CommitChangelistDialog2" timestamp="1602305535568">
+    <state x="498" y="138" key="CommitChangelistDialog2" timestamp="1602307490367">
       <screen x="73" y="0" width="1847" height="1080" />
     </state>
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
-    <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602305535568" />
+    <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602307490367" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>

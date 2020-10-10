@@ -1,6 +1,9 @@
 // 入口函数
 $(function () {
     loadQuestions();
+
+    // 加载事件
+    loadEvents();
 });
 
 
@@ -51,3 +54,47 @@ function loadQuestions(type) {
         }
     });
 }
+
+// 加载事件
+function loadEvents() {
+
+    // 导入题目
+    {
+        // 按钮的点击事件
+        $('#importQuestion').off('click');
+        $('#importQuestion').click(() => {
+            return $('#importQuestionInput').click();
+        });
+        // input file的change事件
+        $('#importQuestionInput').off('change');
+        $('#importQuestionInput').change((e) => {
+            let files = e.target.files;
+            // 解析excel文件
+            resolveXlsx(false, files, (list) => {
+                list.forEach((item, index) => {
+                    // console.log(item);
+                    // 请求添加题目API
+                    let url = QUESTION_API.ADD;
+                    let param = {
+                        user: teacherId,
+                        pwd: teacherPassword,
+                        chapterid: currCpid,
+                        ptype: item['qtype'],
+                        question: item['question'],
+                        panswer: item['answer']
+                    };
+                    my_ajax(url, param, (e) => {
+                        console.log(e);
+                        if (e.code === 200) {
+                            toastr.success(e.message);
+                        } else {
+                            toastr.error(e.message);
+                        }
+                    })
+                });
+            });
+        });
+    }
+}
+
+

@@ -74,6 +74,7 @@ const COURSE_API = {
  * 章节操作
  */
 const CHAPTER_API = {
+    // 查询
     FIND: 'http://123.56.156.212/Interface/chapter/getchapterbycourseid'
 };
 
@@ -101,5 +102,8 @@ const PAPER_API = {
  * 题目操作
  */
 const QUESTION_API = {
+    // 添加
+    ADD: 'http://123.56.156.212/Interface/problem/addproblem',
+    // 查询
     FIND: 'http://123.56.156.212/Interface/problem/getproblembychapterid'
 };
