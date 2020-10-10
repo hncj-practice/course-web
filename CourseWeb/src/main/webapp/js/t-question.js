@@ -10,8 +10,9 @@ $(function () {
 /**
  * 加载题目
  * @param type 类型 [1:选择，2:填空，3:判断]，不填则请求所有类型的题目
+ * @param success 加载成功的回调
  */
-function loadQuestions(type) {
+function loadQuestions(type, success) {
     let url = QUESTION_API.FIND;
     let param = {
         chapterid: currCpid,
@@ -22,7 +23,9 @@ function loadQuestions(type) {
     if (!type) {
         loadQuestions(1);
         loadQuestions(2);
-        loadQuestions(3);
+        loadQuestions(3, () => {
+            toastr.success('刷新成功')
+        });
         return;
     }
     switch (type) {
@@ -49,6 +52,9 @@ function loadQuestions(type) {
                     `.format(item['pid'], item['question']);
             });
             list.html(html);
+            if (success) {
+                success();
+            }
         } else {
             toastr.error(e.message);
         }
@@ -74,27 +80,38 @@ function loadEvents() {
                 list.forEach((item, index) => {
                     // console.log(item);
                     // 请求添加题目API
-                    let url = QUESTION_API.ADD;
                     let param = {
-                        user: teacherId,
-                        pwd: teacherPassword,
                         chapterid: currCpid,
                         ptype: item['qtype'],
                         question: item['question'],
                         panswer: item['answer']
                     };
-                    my_ajax(url, param, (e) => {
-                        console.log(e);
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                    })
+                    // 最后一次成功回调后刷新页面
+                    if (index === list.length - 1) {
+                        addQuestion(param, loadQuestions);
+                    } else {
+                        addQuestion(param);
+                    }
                 });
             });
         });
     }
+}
+
+// 单独添加题目
+function addQuestion(param, success) {
+    let url = QUESTION_API.ADD;
+    param['user'] = teacherId;
+    param['pwd'] = teacherPassword;
+    my_ajax(url, param, (e) => {
+        if (e.code === 200) {
+            if (success) {
+                success();
+            }
+        } else {
+            toastr.error(e.message);
+        }
+    });
 }
 
 
