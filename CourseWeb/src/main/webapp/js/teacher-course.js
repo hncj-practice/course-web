@@ -7,7 +7,7 @@
 
 // 入口函数
 $(function () {
-    loadChapters();
+    loadChapterQuestions();
 
     loadPapers();
 
@@ -15,8 +15,8 @@ $(function () {
 });
 
 
-// 加载章节
-function loadChapters() {
+// 加载章节试题
+function loadChapterQuestions() {
     let url = CHAPTER_API.FIND;
     let param = {
         courseid: currCourseId
@@ -29,12 +29,12 @@ function loadChapters() {
                 <li cpid="{0}">{1}</li>
                 `.format(item['chapterid'], item['chaptername']);
             });
-            chapters.html(html);
+            // chapters.html(html);
         } else {
             toastr.error(e.message);
         }
     };
-    let chapters = $('.chapters-ul');
+    // let chapters = $('.chapters-ul');
     my_ajax(url, param, success);
 }
 
