@@ -9,6 +9,7 @@
 const STATIC = {
     TEACHER_TEMPLATE: 'https://fyz1522426323.oss-cn-beijing.aliyuncs.com/kczs/static/teacher_template.xlsx',
     STUDENT_TEMPLATE: 'https://fyz1522426323.oss-cn-beijing.aliyuncs.com/kczs/static/student_template.xlsx',
+    QUESTION_TEMPLATE: 'https://fyz1522426323.oss-cn-beijing.aliyuncs.com/kczs/static/question_template.xlsx',
 };
 
 /**

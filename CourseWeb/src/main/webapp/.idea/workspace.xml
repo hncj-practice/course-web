@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/t-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-question.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/teacher-question.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-question.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +49,7 @@
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\pages" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.admin.html">
+  <component name="RunManager" selected="JavaScript Debug.teacher-question.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -66,8 +67,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.teacher-question.html" />
+        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.teacher-course.html" />
         <item itemvalue="Node.js.util.js" />
         <item itemvalue="JavaScript Debug.teacher-index.html" />
@@ -108,14 +109,8 @@
       <workItem from="1602224960987" duration="722000" />
       <workItem from="1602246668765" duration="1451000" />
       <workItem from="1602297020755" duration="12714000" />
-      <workItem from="1602383545202" duration="1629000" />
-    </task>
-    <task id="LOCAL-00025" summary="成功显示学生班级">
-      <created>1598322050724</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1598322050724</updated>
+      <workItem from="1602383545202" duration="4038000" />
+      <workItem from="1602641761201" duration="1628000" />
     </task>
     <task id="LOCAL-00026" summary="实现按班批量删除">
       <created>1598322719453</created>
@@ -453,14 +448,20 @@
       <option name="project" value="LOCAL" />
       <updated>1602311905306</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="选择导入模板时指定文件类型">
+      <created>1602386497931</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1602386497932</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更改课程没有试卷时的错误" />
     <MESSAGE value="修改随机组卷的API参数" />
     <MESSAGE value="制定前端代码规范" />
     <MESSAGE value="按照代码规范修改页面的head部分" />
@@ -485,7 +486,8 @@
     <MESSAGE value="教师题目页面加载题目" />
     <MESSAGE value="初步实现批量添加题目" />
     <MESSAGE value="完善批量添加题目" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善批量添加题目" />
+    <MESSAGE value="选择导入模板时指定文件类型" />
+    <option name="LAST_COMMIT_MESSAGE" value="选择导入模板时指定文件类型" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -500,11 +502,11 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="498" y="138" key="CommitChangelistDialog2" timestamp="1602311904757">
+    <state x="498" y="138" key="CommitChangelistDialog2" timestamp="1602386496988">
       <screen x="73" y="0" width="1847" height="1080" />
     </state>
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
-    <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602311904757" />
+    <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -585,15 +587,16 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="524" y="257" key="Vcs.Push.Dialog.v2" timestamp="1602311911931">
+    <state x="524" y="257" key="Vcs.Push.Dialog.v2" timestamp="1602386502391">
       <screen x="73" y="0" width="1847" height="1080" />
     </state>
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
-    <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602311911931" />
-    <state x="689" y="331" key="git4idea.merge.GitPullDialog" timestamp="1598088662544">
-      <screen x="72" y="0" width="1848" height="1080" />
+    <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
+    <state x="691" y="331" key="git4idea.merge.GitPullDialog" timestamp="1602642205172">
+      <screen x="75" y="0" width="1845" height="1080" />
     </state>
     <state x="689" y="331" key="git4idea.merge.GitPullDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598088662544" />
+    <state x="691" y="331" key="git4idea.merge.GitPullDialog/75.0.1845.1080@75.0.1845.1080" timestamp="1602642205172" />
     <state x="653" y="250" key="run.anything.popup" timestamp="1602247750017">
       <screen x="73" y="0" width="1847" height="1080" />
     </state>

@@ -66,6 +66,8 @@ function loadEvents() {
 
     // 导入题目
     {
+        // 下载导入模板
+        $('#downloadTemplate').attr('href', STATIC.QUESTION_TEMPLATE);
         // 按钮的点击事件
         $('#importQuestion').off('click');
         $('#importQuestion').click(() => {
