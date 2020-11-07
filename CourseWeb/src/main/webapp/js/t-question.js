@@ -29,19 +29,29 @@ function loadQuestions(type, success) {
         });
         return;
     }
-    switch (type) {
-        // 选择题
-        case 1:
-            list = $('#xzList');
-            my_ajax(url, param, (e) => {
-                if (e.code === 200) {
+    my_ajax(url, param, (e) => {
+        let questionList = e.data;
+        if (e.code === 200) {
+            switch (type) {
+                // 填空
+                case 2:
+                    list = $('#tkList');
+                    break;
+                // 判断
+                case 3:
+                    list = $('#pdList');
+                    break;
+                // 选择
+                case 1:
+                default:
                     let html = '';
-                    e.data.forEach((item) => {
+                    list = $('#xzList');
+                    questionList.forEach((item) => {
                         // 格式化题干
-                        let q = formatChoice(item['question']);
+                        let question = formatQuestion(item['question'], item['panswer'], 1);
                         // 动态生成选项
                         let optHtml = '';
-                        q['opts'].forEach((opt) => {
+                        question['opts'].forEach((opt) => {
                             optHtml += '<p>{0}</p>'.format(opt);
                         });
                         // 添加题目
@@ -51,25 +61,63 @@ function loadQuestions(type, success) {
                             {2}
                             <p>答案：{3}</p>
                         </div>
-                        `.format(item['pid'], q['question'], optHtml, item['panswer']);
+                        `.format(item['pid'], question['question'], optHtml, question['answer']);
                     });
                     list.html(html);
-                    if (success) {
-                        success();
-                    }
-                } else {
-                    toastr.error(e.message);
-                }
-            });
-            break;
-        case 2:
-            list = $('#tkList');
-            break;
-        case 3:
-            list = $('#pdList');
-            break;
-    }
+                    break;
+            }
+            if (success) {
+                success();
+            }
+        } else {
+            toastr.error(e.message);
+        }
+    });
 
+    // my_ajax(url, param, (e) => {
+    //     if (e.code === 200) {
+    //         switch (type) {
+    //             // 填空
+    //             case 2:
+    //                 list = $('#tkList');
+    //
+    //                 break;
+    //             // 判断
+    //             case 3:
+    //                 list = $('#pdList');
+    //                 break;
+    //             // 选择
+    //             case 1:
+    //             default:
+    //                 let html = '';
+    //                 list = $('#xzList');
+    //                 e.data.forEach((item) => {
+    //                     // 格式化题干
+    //                     let q = formatChoice(item['question']);
+    //                     // 动态生成选项
+    //                     let optHtml = '';
+    //                     q['opts'].forEach((opt) => {
+    //                         optHtml += '<p>{0}</p>'.format(opt);
+    //                     });
+    //                     // 添加题目
+    //                     html += `
+    //                     <div questionid="{0}" class="xz">
+    //                         <p>{1}</p>
+    //                         {2}
+    //                         <p>答案：{3}</p>
+    //                     </div>
+    //                     `.format(item['pid'], q['question'], optHtml, item['panswer']);
+    //                 });
+    //                 list.html(html);
+    //                 break;
+    //         }
+    //         if (success) {
+    //             success();
+    //         }
+    //     } else {
+    //         toastr.error(e.message);
+    //     }
+    // });
 }
 
 // 加载事件
@@ -128,17 +176,33 @@ function addQuestion(param, success) {
 }
 
 
-// 格式化选择题
-function formatChoice(questionStr) {
-    // 以下关于线性分类器说法不正确的（ ）$A:线性分类器的一种直观的最优决策边界为最大间隔边界$B:线性可分的情形下，线性分类器的决策边界可以是多样的$C:线性分类器打分越高的样例越离决策边界越近，具有更高的分类置信度$D:训练好的SVM模型直接给出样例的列别标签
-    let questions = questionStr.split('$');
-    let q = questions[0];
-    let opts = [];
-    for (let i = 1; i < questions.length; i++) {
-        opts.push(questions[i])
+/**
+ * 格式化题目
+ * @param questionStr   题干字符串
+ * @param answerStr     答案字符串
+ * @param type          题目类型
+ */
+function formatQuestion(questionStr, answerStr, type) {
+    switch (type) {
+        // 填空题
+        case 2:
+            break;
+        // 判断题
+        case 3:
+            break;
+        // 选择题
+        case 1:
+        default:
+            let questions = questionStr.split('$');
+            let q = questions[0];
+            let opts = [];
+            for (let i = 1; i < questions.length; i++) {
+                opts.push(questions[i])
+            }
+            return {
+                question: q,
+                opts: opts,
+                answer: answerStr
+            };
     }
-    return {
-        question: q,
-        opts: opts
-    };
 }
