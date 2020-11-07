@@ -31,21 +31,44 @@ function loadQuestions(type, success) {
     }
     my_ajax(url, param, (e) => {
         let questionList = e.data;
+        let html = '';
         if (e.code === 200) {
             switch (type) {
                 // 填空
                 case 2:
                     list = $('#tkList');
+                    html = '';
+                    questionList.forEach((item) => {
+                        let question = formatQuestion(item['question'], item['panswer'], 2);
+                        html += `
+                        <div questionid="{0}" class="tk">
+                            <p>{1}</p>
+                            <p>答案：{2}</p>
+                        </div>                         
+                        `.format(item['pid'], question['question'], question['answer']);
+                    });
+                    list.html(html);
                     break;
                 // 判断
                 case 3:
                     list = $('#pdList');
+                    html = '';
+                    questionList.forEach((item) => {
+                        let question = formatQuestion(item['question'], item['panswer'], 3);
+                        html += `
+                        <div questionid="{0}" class="pd">
+                            <p>{1}</p>
+                            <p>答案：{2}</p>
+                        </div>
+                        `.format(item['pid'], question['question'], question['answer']);
+                    });
+                    list.html(html);
                     break;
                 // 选择
                 case 1:
                 default:
-                    let html = '';
                     list = $('#xzList');
+                    html = '';
                     questionList.forEach((item) => {
                         // 格式化题干
                         let question = formatQuestion(item['question'], item['panswer'], 1);
@@ -73,51 +96,6 @@ function loadQuestions(type, success) {
             toastr.error(e.message);
         }
     });
-
-    // my_ajax(url, param, (e) => {
-    //     if (e.code === 200) {
-    //         switch (type) {
-    //             // 填空
-    //             case 2:
-    //                 list = $('#tkList');
-    //
-    //                 break;
-    //             // 判断
-    //             case 3:
-    //                 list = $('#pdList');
-    //                 break;
-    //             // 选择
-    //             case 1:
-    //             default:
-    //                 let html = '';
-    //                 list = $('#xzList');
-    //                 e.data.forEach((item) => {
-    //                     // 格式化题干
-    //                     let q = formatChoice(item['question']);
-    //                     // 动态生成选项
-    //                     let optHtml = '';
-    //                     q['opts'].forEach((opt) => {
-    //                         optHtml += '<p>{0}</p>'.format(opt);
-    //                     });
-    //                     // 添加题目
-    //                     html += `
-    //                     <div questionid="{0}" class="xz">
-    //                         <p>{1}</p>
-    //                         {2}
-    //                         <p>答案：{3}</p>
-    //                     </div>
-    //                     `.format(item['pid'], q['question'], optHtml, item['panswer']);
-    //                 });
-    //                 list.html(html);
-    //                 break;
-    //         }
-    //         if (success) {
-    //             success();
-    //         }
-    //     } else {
-    //         toastr.error(e.message);
-    //     }
-    // });
 }
 
 // 加载事件
@@ -186,10 +164,17 @@ function formatQuestion(questionStr, answerStr, type) {
     switch (type) {
         // 填空题
         case 2:
-            break;
+            let answer = answerStr.replace(/\$/g, '、');
+            return {
+                question: questionStr,
+                answer: answer
+            };
         // 判断题
         case 3:
-            break;
+            return {
+                question: questionStr,
+                answer: answerStr
+            };
         // 选择题
         case 1:
         default:
