@@ -1,11 +1,10 @@
 // 入口函数
 $(function () {
-
-    formatChoice('以下关于线性分类器说法不正确的（ ）$A:线性分类器的一种直观的最优决策边界为最大间隔边界$B:线性可分的情形下，线性分类器的决策边界可以是多样的$C:线性分类器打分越高的样例越离决策边界越近，具有更高的分类置信度$D:训练好的SVM模型直接给出样例的列别标签');
+    // 加载题目
     loadQuestions();
 
     // 加载事件
-    // loadEvents();
+    loadEvents();
 });
 
 
@@ -50,8 +49,9 @@ function loadQuestions(type, success) {
                         <div questionid="{0}" class="xz">
                             <p>{1}</p>
                             {2}
+                            <p>答案：{3}</p>
                         </div>
-                        `.format(item['pid'], q['question'], optHtml);
+                        `.format(item['pid'], q['question'], optHtml, item['panswer']);
                     });
                     list.html(html);
                     if (success) {
@@ -137,10 +137,8 @@ function formatChoice(questionStr) {
     for (let i = 1; i < questions.length; i++) {
         opts.push(questions[i])
     }
-    let question = {
+    return {
         question: q,
         opts: opts
     };
-    // console.log(question);
-    return question;
 }

@@ -110,14 +110,7 @@
       <workItem from="1602297020755" duration="12714000" />
       <workItem from="1602383545202" duration="4038000" />
       <workItem from="1602641761201" duration="2229000" />
-      <workItem from="1604726086403" duration="1957000" />
-    </task>
-    <task id="LOCAL-00027" summary="准备编写课程管理页面">
-      <created>1598324757242</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1598324757242</updated>
+      <workItem from="1604726086403" duration="2167000" />
     </task>
     <task id="LOCAL-00028" summary="课程管理基本布局">
       <created>1598410025754</created>
@@ -455,14 +448,20 @@
       <option name="project" value="LOCAL" />
       <updated>1602643482354</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="教师题目管理 选择题选项和题目分开显示">
+      <created>1604728090298</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1604728090299</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="制定前端代码规范" />
     <MESSAGE value="按照代码规范修改页面的head部分" />
     <MESSAGE value="修改一些封装过的方法" />
     <MESSAGE value="添加规范内容" />
@@ -487,7 +486,8 @@
     <MESSAGE value="完善批量添加题目" />
     <MESSAGE value="选择导入模板时指定文件类型" />
     <MESSAGE value="添加题目导入模板的下载链接" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加题目导入模板的下载链接" />
+    <MESSAGE value="教师题目管理 选择题选项和题目分开显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="教师题目管理 选择题选项和题目分开显示" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -502,9 +502,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="397" y="196" key="CommitChangelistDialog2" timestamp="1602643481716">
-      <screen x="75" y="0" width="1845" height="1080" />
+    <state x="638" y="196" key="CommitChangelistDialog2" timestamp="1604728089633">
+      <screen x="62" y="0" width="1858" height="1080" />
     </state>
+    <state x="638" y="196" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604728089633" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
@@ -589,9 +590,10 @@
     </state>
     <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="526" y="257" key="Vcs.Push.Dialog.v2" timestamp="1602643491472">
-      <screen x="75" y="0" width="1845" height="1080" />
+    <state x="516" y="257" key="Vcs.Push.Dialog.v2" timestamp="1604728120581">
+      <screen x="62" y="0" width="1858" height="1080" />
     </state>
+    <state x="516" y="257" key="Vcs.Push.Dialog.v2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604728120581" />
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
     <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />
