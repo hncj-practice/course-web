@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/t-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-question.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/teacher-question.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-question.html" afterDir="false" />
     </list>
@@ -110,14 +109,8 @@
       <workItem from="1602246668765" duration="1451000" />
       <workItem from="1602297020755" duration="12714000" />
       <workItem from="1602383545202" duration="4038000" />
-      <workItem from="1602641761201" duration="1628000" />
-    </task>
-    <task id="LOCAL-00026" summary="实现按班批量删除">
-      <created>1598322719453</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1598322719453</updated>
+      <workItem from="1602641761201" duration="2229000" />
+      <workItem from="1604726086403" duration="1957000" />
     </task>
     <task id="LOCAL-00027" summary="准备编写课程管理页面">
       <created>1598324757242</created>
@@ -455,14 +448,20 @@
       <option name="project" value="LOCAL" />
       <updated>1602386497932</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="添加题目导入模板的下载链接">
+      <created>1602643482353</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1602643482354</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改随机组卷的API参数" />
     <MESSAGE value="制定前端代码规范" />
     <MESSAGE value="按照代码规范修改页面的head部分" />
     <MESSAGE value="修改一些封装过的方法" />
@@ -487,7 +486,8 @@
     <MESSAGE value="初步实现批量添加题目" />
     <MESSAGE value="完善批量添加题目" />
     <MESSAGE value="选择导入模板时指定文件类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="选择导入模板时指定文件类型" />
+    <MESSAGE value="添加题目导入模板的下载链接" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加题目导入模板的下载链接" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -502,11 +502,12 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="498" y="138" key="CommitChangelistDialog2" timestamp="1602386496988">
-      <screen x="73" y="0" width="1847" height="1080" />
+    <state x="397" y="196" key="CommitChangelistDialog2" timestamp="1602643481716">
+      <screen x="75" y="0" width="1845" height="1080" />
     </state>
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
+    <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
     <state x="249" y="90" key="DiffContextDialog" timestamp="1598251616416">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
@@ -583,15 +584,17 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state width="1827" height="364" key="GridCell.Tab.3.right/72.0.1848.1080@72.0.1848.1080" timestamp="1598525182306" />
-    <state x="-34" y="243" key="SettingsEditor" timestamp="1598607474470">
-      <screen x="72" y="0" width="1848" height="1080" />
+    <state x="574" y="209" key="SettingsEditor" timestamp="1604726836452">
+      <screen x="62" y="0" width="1858" height="1080" />
     </state>
+    <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="524" y="257" key="Vcs.Push.Dialog.v2" timestamp="1602386502391">
-      <screen x="73" y="0" width="1847" height="1080" />
+    <state x="526" y="257" key="Vcs.Push.Dialog.v2" timestamp="1602643491472">
+      <screen x="75" y="0" width="1845" height="1080" />
     </state>
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
+    <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />
     <state x="691" y="331" key="git4idea.merge.GitPullDialog" timestamp="1602642205172">
       <screen x="75" y="0" width="1845" height="1080" />
     </state>

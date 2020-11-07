@@ -1,9 +1,11 @@
 // 入口函数
 $(function () {
+
+    formatChoice('以下关于线性分类器说法不正确的（ ）$A:线性分类器的一种直观的最优决策边界为最大间隔边界$B:线性可分的情形下，线性分类器的决策边界可以是多样的$C:线性分类器打分越高的样例越离决策边界越近，具有更高的分类置信度$D:训练好的SVM模型直接给出样例的列别标签');
     loadQuestions();
 
     // 加载事件
-    loadEvents();
+    // loadEvents();
 });
 
 
@@ -29,8 +31,36 @@ function loadQuestions(type, success) {
         return;
     }
     switch (type) {
+        // 选择题
         case 1:
             list = $('#xzList');
+            my_ajax(url, param, (e) => {
+                if (e.code === 200) {
+                    let html = '';
+                    e.data.forEach((item) => {
+                        // 格式化题干
+                        let q = formatChoice(item['question']);
+                        // 动态生成选项
+                        let optHtml = '';
+                        q['opts'].forEach((opt) => {
+                            optHtml += '<p>{0}</p>'.format(opt);
+                        });
+                        // 添加题目
+                        html += `
+                        <div questionid="{0}" class="xz">
+                            <p>{1}</p>
+                            {2}
+                        </div>
+                        `.format(item['pid'], q['question'], optHtml);
+                    });
+                    list.html(html);
+                    if (success) {
+                        success();
+                    }
+                } else {
+                    toastr.error(e.message);
+                }
+            });
             break;
         case 2:
             list = $('#tkList');
@@ -38,27 +68,8 @@ function loadQuestions(type, success) {
         case 3:
             list = $('#pdList');
             break;
-        default:
-            list = $('#xzList');
     }
-    my_ajax(url, param, (e) => {
-        if (e.code === 200) {
-            let html = '';
-            e.data.forEach((item) => {
-                html += `
-                    <div questionid="{0}" class="xz">
-                        <p>{1}</p>
-                    </div>
-                    `.format(item['pid'], item['question']);
-            });
-            list.html(html);
-            if (success) {
-                success();
-            }
-        } else {
-            toastr.error(e.message);
-        }
-    });
+
 }
 
 // 加载事件
@@ -117,3 +128,19 @@ function addQuestion(param, success) {
 }
 
 
+// 格式化选择题
+function formatChoice(questionStr) {
+    // 以下关于线性分类器说法不正确的（ ）$A:线性分类器的一种直观的最优决策边界为最大间隔边界$B:线性可分的情形下，线性分类器的决策边界可以是多样的$C:线性分类器打分越高的样例越离决策边界越近，具有更高的分类置信度$D:训练好的SVM模型直接给出样例的列别标签
+    let questions = questionStr.split('$');
+    let q = questions[0];
+    let opts = [];
+    for (let i = 1; i < questions.length; i++) {
+        opts.push(questions[i])
+    }
+    let question = {
+        question: q,
+        opts: opts
+    };
+    // console.log(question);
+    return question;
+}
