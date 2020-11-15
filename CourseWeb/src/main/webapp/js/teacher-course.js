@@ -149,10 +149,10 @@ function loadEvents_Course() {
     }
 
     // 自动出卷
-    autoPaper();
+    // autoPaper();
 
     // 归档课程
-    loadEventArchive();
+    // loadEventArchive();
 }
 
 // 自动出卷/随机组卷

@@ -107,6 +107,9 @@ header {
   }
 }
 
+p {
+  margin: 0;
+}
 
 // 主显示区域
 //main {
@@ -277,6 +280,77 @@ main {
       margin: 18px 0;
       font-size: 20px;
       cursor: pointer;
+    }
+  }
+}
+
+// 试卷管理
+#paperContain {
+  background: #f4f4f4;
+  border: none;
+  margin-top: 0;
+
+  // 组卷按钮
+  .make-paper {
+    margin: 10px 0;
+
+    button {
+      width: 100px;
+      height: 35px;
+    }
+  }
+
+  // 试卷
+  .papers-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // 试卷item
+    .paper-item {
+      margin: 12px 0;
+      width: 32%;
+      height: 180px;
+      background: #fff;
+      border: solid 1px #d6d6d6;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        height: 40px;
+        line-height: 40px;
+        margin: 0;
+        padding-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .desc {
+        flex: 1;
+        padding-left: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        font-size: 16px;
+
+        .status {
+
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .option {
+        height: 25%;
+        background: #e8eeda;
+      }
+
+
     }
   }
 }
