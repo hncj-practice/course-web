@@ -4,7 +4,7 @@ $(function () {
     loadQuestions();
 
     // 加载事件
-    // loadEvents();
+    loadEvents();
 });
 
 
@@ -124,22 +124,31 @@ function loadEvents() {
             let files = e.target.files;
             // 解析excel文件
             resolveXlsx(false, files, (list) => {
-                list.forEach((item, index) => {
-                    // console.log(item);
-                    // 请求添加题目API
-                    let param = {
-                        chapterid: currCpid,
-                        ptype: item['qtype'],
-                        question: item['question'],
-                        panswer: item['answer']
-                    };
-                    // 最后一次成功回调后刷新页面
-                    if (index === list.length - 1) {
-                        addQuestion(param, loadQuestions);
-                    } else {
-                        addQuestion(param);
-                    }
-                });
+                try {
+                    list.forEach((item, index) => {
+                        console.log(item);
+                        // 判断模板是否正确
+                        if (!(item['answer'] && item['qtype'] && item['question'])) {
+                            throw new Error('请使用正确的模板！');
+                        }
+                        // 请求添加题目API
+                        let param = {
+                            chapterid: currCpid,
+                            ptype: item['qtype'],
+                            question: item['question'],
+                            panswer: item['answer']
+                        };
+                        // 最后一次成功回调后刷新页面
+                        if (index === list.length - 1) {
+                            addQuestion(param, loadQuestions);
+                        } else {
+                            addQuestion(param);
+                        }
+                    });
+                } catch (e) {
+                    toastr.error(e.message);
+                }
+
             });
         });
     }
