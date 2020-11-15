@@ -47,36 +47,52 @@
 </header>
 
 <main>
-    <h2>章节名</h2>
+    <h2 class="chapterName">第一章 基本数据类型</h2>
     <input id="importQuestionInput" type="file" accept=".xlsx" style="display: none">
-    <button id="importQuestion">导入题目</button>
-    <button><a id="downloadTemplate" target="_blank" style="text-decoration: none;color: #000">下载导入模板</a></button>
-    <h3>选择题</h3>
-    <div class="tm-div" id="xzList">
-        <div class="xz">
-            <p>题目</p>
-            <div class="opts">
-                <p>A.选项A</p>
-                <p>B.选项B</p>
-                <p>C.选项C</p>
-                <p>D.选项D</p>
+    <button class="btn-import-question" id="importQuestion">导入题目</button>
+    <button class="btn-download-template"><a id="downloadTemplate" target="_blank"
+                                             style="text-decoration: none;color: #000">下载导入模板</a></button>
+
+    <!-- 选择题 -->
+    <div class="question-type question-xz">
+        <h3>一、选择题</h3>
+        <div class="xz-list" id="xzList">
+            <div class="xz-item">
+                <p class="question-main">1、这道题选A</p>
+                <div class="question-opts">
+                    <p>A、选B</p>
+                    <p>B、选C</p>
+                    <p>C、选D</p>
+                    <p>D、A是正确的</p>
+                </div>
+                <p class="question-answer">答案：A</p>
             </div>
-            <p>答案：A</p>
+
+            <div class="xz-item">
+                <p class="question-main">2、这道题选A</p>
+                <div class="question-opts">
+                    <p>A.选B</p>
+                    <p>B.选C</p>
+                    <p>C.选D</p>
+                    <p>D.A是正确的</p>
+                </div>
+                <p class="question-answer">答案：A</p>
+            </div>
         </div>
     </div>
 
     <h3>填空题</h3>
     <div class="tm-div" id="tkList">
         <div class="tk">
-            <p>题目</p>
-            <p>答案：</p>
+            <p>这是一道填空题____，填吧</p>
+            <p>答案：吧</p>
         </div>
     </div>
 
     <h3>判断题</h3>
     <div class="tm-div" id="pdList">
         <div class="pd">
-            <p>题目</p>
+            <p>这道题是错的</p>
             <p>答案：对</p>
         </div>
     </div>

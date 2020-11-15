@@ -1,10 +1,10 @@
 // 入口函数
 $(function () {
     // 加载题目
-    loadQuestions();
+    // loadQuestions();
 
     // 加载事件
-    loadEvents();
+    // loadEvents();
 });
 
 

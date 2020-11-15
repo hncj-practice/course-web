@@ -68,27 +68,47 @@ header .account img {
   border-radius: 50%;
   margin: 0;
 }
-main {
-  width: 80%;
-  height: 500px;
-  margin: 20px auto;
-}
-main h3 {
-  margin: 20px 0 0;
-}
-main p {
+p {
   margin: 0;
 }
-main .tm-div .xz {
-  border: solid 1px #000;
-  margin: 10px 0;
+main {
+  width: 60%;
+  height: 500px;
+  margin: 0 auto 40px;
+  padding: 18px;
 }
-main .tm-div .xz:hover {
-  background: #2F96B4;
+main .chapterName {
+  margin: 0 0 10px 0;
+  color: #000;
+  font-size: 34px;
 }
-main .tm-div .tk {
-  border: solid 1px #000;
+main .btn-import-question {
+  width: 75px;
+  height: 35px;
 }
-main .tm-div .pd {
-  border: solid 1px #000;
+main .btn-download-template {
+  width: 100px;
+  height: 35px;
+}
+main .question-type h3 {
+  width: 100%;
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: solid 1px #d8d8d8;
+}
+main .question-type .question-main {
+  margin: 0 0 6px 0;
+  font-size: 17px;
+}
+main .question-type .question-answer {
+  margin: 12px 0 0 0;
+  font-size: 16px;
+  color: gray;
+}
+main .question-xz .xz-list .xz-item {
+  padding: 10px 0 6px 0;
+  border-bottom: solid 1px #d8d8d8;
+}
+main .question-xz .xz-list .xz-item .question-opts p {
+  margin: 6px 0 0 5px;
 }

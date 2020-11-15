@@ -1,5 +1,6 @@
 @import "./style.less";
 
+//顶部
 header {
   position: relative;
   width: 100%;
@@ -54,37 +55,78 @@ header {
   }
 }
 
+p {
+  margin: 0;
+}
+
 main {
-  width: 80%;
+  width: 60%;
   height: 500px;
-  margin: 20px auto;
-  //background: #51A351;
+  margin: 0 auto 40px;
+  padding: 18px;
 
-  h3 {
-    margin: 20px 0 0;
+  //章节名
+  .chapterName {
+    margin: 0 0 10px 0;
+    color: #000;
+    font-size: 34px;
   }
 
-  p {
-    margin: 0;
+  // 导入题目按钮
+  .btn-import-question {
+    width: 75px;
+    height: 35px;
   }
 
-  // 选择题
-  .tm-div {
-    .xz {
-      border: solid 1px #000;
-      margin: 10px 0;
+  // 下载题目模板按钮
+  .btn-download-template {
+    width: 100px;
+    height: 35px;
+  }
 
-      &:hover {
-        background: #2F96B4;
+  // 题目（通用的样式在这里）
+  .question-type {
+    // 题目标题
+    h3 {
+      width: 100%;
+      margin: 0;
+      padding: 15px 0;
+      border-bottom: solid 1px #d8d8d8;
+    }
+
+    // 题干
+    .question-main {
+      margin: 0 0 6px 0;
+      font-size: 17px;
+    }
+
+    // 答案
+    .question-answer {
+      margin: 12px 0 0 0;
+      font-size: 16px;
+      color: gray;
+    }
+
+
+  }
+
+  // 选择
+  .question-xz {
+    .xz-list {
+      // 单个选择题
+      .xz-item {
+        padding: 10px 0 6px 0;
+        border-bottom: solid 1px #d8d8d8;
+
+        // 选项
+        .question-opts {
+          p {
+            margin: 6px 0 0 5px;
+          }
+        }
+
       }
     }
-
-    .tk {
-      border: solid 1px #000;
-    }
-
-    .pd {
-      border: solid 1px #000;
-    }
   }
+
 }
