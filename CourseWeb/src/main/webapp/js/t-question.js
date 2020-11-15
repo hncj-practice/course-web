@@ -1,7 +1,7 @@
 // 入口函数
 $(function () {
     // 加载题目
-    // loadQuestions();
+    loadQuestions();
 
     // 加载事件
     // loadEvents();
@@ -41,10 +41,10 @@ function loadQuestions(type, success) {
                     questionList.forEach((item) => {
                         let question = formatQuestion(item['question'], item['panswer'], 2);
                         html += `
-                        <div questionid="{0}" class="tk">
-                            <p>{1}</p>
-                            <p>答案：{2}</p>
-                        </div>                         
+                        <div questionid="{0}" class="tk-item">
+                            <p class="question-main">{1}</p>
+                            <p class="question-answer">答案：{2}</p>
+                        </div>                  
                         `.format(item['pid'], question['question'], question['answer']);
                     });
                     list.html(html);
@@ -56,9 +56,9 @@ function loadQuestions(type, success) {
                     questionList.forEach((item) => {
                         let question = formatQuestion(item['question'], item['panswer'], 3);
                         html += `
-                        <div questionid="{0}" class="pd">
-                            <p>{1}</p>
-                            <p>答案：{2}</p>
+                        <div questionid="{0}" class="pd-item">
+                            <p class="question-main">{1}</p>
+                            <p class="question-answer">答案：{2}</p>
                         </div>
                         `.format(item['pid'], question['question'], question['answer']);
                     });
@@ -79,10 +79,12 @@ function loadQuestions(type, success) {
                         });
                         // 添加题目
                         html += `
-                        <div questionid="{0}" class="xz">
-                            <p>{1}</p>
+                        <div questionid="{0}" class="xz-item">
+                            <p class="question-main">{1}</p>
+                            <div class="question-opts">
                             {2}
-                            <p>答案：{3}</p>
+                            </div>
+                            <p class="question-answer">答案：{3}</p>
                         </div>
                         `.format(item['pid'], question['question'], optHtml, question['answer']);
                     });
