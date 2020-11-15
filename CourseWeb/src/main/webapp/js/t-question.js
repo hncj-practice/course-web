@@ -36,6 +36,7 @@ function loadQuestions(type, success) {
             switch (type) {
                 // 填空
                 case 2:
+                    let num_tk = 1;
                     list = $('#tkList');
                     html = '';
                     questionList.forEach((item) => {
@@ -45,12 +46,14 @@ function loadQuestions(type, success) {
                             <p class="question-main">{1}</p>
                             <p class="question-answer">答案：{2}</p>
                         </div>                  
-                        `.format(item['pid'], question['question'], question['answer']);
+                        `.format(item['pid'], num_tk + '、' + question['question'], question['answer']);
+                        num_tk++;
                     });
                     list.html(html);
                     break;
                 // 判断
                 case 3:
+                    let num_pd = 1;
                     list = $('#pdList');
                     html = '';
                     questionList.forEach((item) => {
@@ -60,13 +63,15 @@ function loadQuestions(type, success) {
                             <p class="question-main">{1}</p>
                             <p class="question-answer">答案：{2}</p>
                         </div>
-                        `.format(item['pid'], question['question'], question['answer']);
+                        `.format(item['pid'], num_pd + '、' + question['question'], question['answer']);
+                        num_pd++;
                     });
                     list.html(html);
                     break;
                 // 选择
                 case 1:
                 default:
+                    let num_xz = 1;
                     list = $('#xzList');
                     html = '';
                     questionList.forEach((item) => {
@@ -86,7 +91,8 @@ function loadQuestions(type, success) {
                             </div>
                             <p class="question-answer">答案：{3}</p>
                         </div>
-                        `.format(item['pid'], question['question'], optHtml, question['answer']);
+                        `.format(item['pid'], num_xz + '、' + question['question'], optHtml, question['answer']);
+                        num_xz++;
                     });
                     list.html(html);
                     break;
