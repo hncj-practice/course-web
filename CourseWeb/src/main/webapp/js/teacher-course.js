@@ -7,9 +7,9 @@
 
 // 入口函数
 $(function () {
-    loadChapterQuestions();
+    // loadChapterQuestions();
 
-    loadPapers();
+    // loadPapers();
 
     loadEvents_Course();
 });

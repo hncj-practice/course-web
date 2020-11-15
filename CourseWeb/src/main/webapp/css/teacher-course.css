@@ -121,107 +121,21 @@ main {
   border: solid 1px #dddddd;
   border-radius: 10px;
 }
-main .title {
+#chapterContain .title {
   margin-left: 28px;
   margin-bottom: 20px;
-  font-size: 25px;
+  font-size: 26px;
 }
-main .chapters-ul {
+#chapterContain .chapters-ul {
   margin: 10px 0 0 30px;
   list-style: none;
 }
-main .chapters-ul li {
+#chapterContain .chapters-ul li {
   margin: 18px 0;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 }
-main .papers-ul {
-  list-style: none;
-}
-main .papers-ul li {
-  width: 96%;
-  height: 120px;
-  margin: 20px auto;
-  background: #f7f7f7;
-  border-radius: 10px;
-  position: relative;
-  padding-left: 10px;
-}
-main .papers-ul li .update-paper {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 5px;
-  right: 35px;
-  cursor: pointer;
-}
-main .papers-ul li .delete-paper {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
-}
-main .topics-ul {
-  list-style: none;
-}
-main .topics-ul li {
-  width: 94%;
-  margin: 20px auto;
-  background: #f7f7f7;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-}
-main .topics-ul li img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 12px 2px 12px 12px;
-}
-main .topics-ul li .right {
-  width: 100%;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-}
-main .topics-ul li .right .who-start {
-  margin-top: 18px;
-  margin-bottom: 0;
-  margin-left: 10px;
-  color: #49af4f;
-  font-size: 16px;
-}
-main .topics-ul li .right .title {
-  margin: 10px 0 0 10px;
-  font-size: 18px;
-}
-main .topics-ul li .right .content {
-  margin: 8px 0 0 10px;
-  font-size: 17px;
-}
-main .topics-ul li .right .comments {
-  width: calc(100% - 20px);
-  margin: 10px 10px 15px;
-  background: #fff;
-  border-radius: 5px;
-  text-align: center;
-  padding: 5px;
-}
-main .topics-ul li .right .comments .comment {
-  text-align: left;
-}
-main .topics-ul li .right .comments .comment .who-commit {
-  color: #49af4f;
-}
-main .topics-ul li .right .comments .comment .comment-content {
-  margin-top: 5px;
-}
-main .topics-ul li .right .comments button {
-  text-align: center;
-  margin: 10px auto;
-}
-main .random-paper {
+.random-paper {
   position: fixed;
   width: 500px;
   height: 500px;
@@ -231,7 +145,7 @@ main .random-paper {
   transform: translateX(-50%);
   display: none;
 }
-main .random-paper-preview {
+.random-paper-preview {
   position: fixed;
   width: 500px;
   height: 500px;

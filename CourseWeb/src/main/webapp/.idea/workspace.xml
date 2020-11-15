@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/t-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/t-question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/teacher-course.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-course.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/teacher-course.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-course.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/teacher-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/teacher-course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/teacher-course.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-course.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +50,7 @@
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\pages" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.teacher-question.html">
+  <component name="RunManager" selected="JavaScript Debug.teacher-course.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -65,9 +68,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.teacher-course.html" />
         <item itemvalue="JavaScript Debug.teacher-question.html" />
         <item itemvalue="JavaScript Debug.admin.html" />
-        <item itemvalue="JavaScript Debug.teacher-course.html" />
         <item itemvalue="Node.js.util.js" />
         <item itemvalue="JavaScript Debug.teacher-index.html" />
       </list>
@@ -110,14 +113,7 @@
       <workItem from="1602383545202" duration="4038000" />
       <workItem from="1602641761201" duration="2229000" />
       <workItem from="1604726086403" duration="7006000" />
-      <workItem from="1605410335241" duration="7661000" />
-    </task>
-    <task id="LOCAL-00035" summary="恢复测试前的布局">
-      <created>1598429956995</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1598429956995</updated>
+      <workItem from="1605410335241" duration="10431000" />
     </task>
     <task id="LOCAL-00036" summary="更换查询课程的API">
       <created>1598431701815</created>
@@ -455,14 +451,20 @@
       <option name="project" value="LOCAL" />
       <updated>1605420916013</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="教师题目管理 检查批量导入模板是否正确">
+      <created>1605421526998</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1605421526998</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复管理员页面课程相关敏感操作" />
     <MESSAGE value="初步实现批量导入教师用户：解析excel" />
     <MESSAGE value="初步实现批量添加教师" />
     <MESSAGE value="改进批量操作01" />
@@ -487,7 +489,8 @@
     <MESSAGE value="教师题目管理 填空和判断题样式" />
     <MESSAGE value="教师题目管理 请求服务器加载题目" />
     <MESSAGE value="教师题目管理 题目前面显示编号" />
-    <option name="LAST_COMMIT_MESSAGE" value="教师题目管理 题目前面显示编号" />
+    <MESSAGE value="教师题目管理 检查批量导入模板是否正确" />
+    <option name="LAST_COMMIT_MESSAGE" value="教师题目管理 检查批量导入模板是否正确" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -502,11 +505,11 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="665" y="137" key="CommitChangelistDialog2" timestamp="1605420915414">
+    <state x="665" y="137" key="CommitChangelistDialog2" timestamp="1605421526404">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="665" y="137" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605420915414" />
+    <state x="665" y="137" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605421526404" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
@@ -591,11 +594,11 @@
     </state>
     <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1605420920309">
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1605421533755">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="516" y="257" key="Vcs.Push.Dialog.v2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733991625" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605420920309" />
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605421533755" />
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
     <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />
