@@ -173,6 +173,25 @@ function loadEvents() {
             switch (type) {
                 case 3:
                     console.log('添加判断题');
+                    let question = $('#questionPD').val();
+                    if (question.trim() === '') {
+                        toastr.error('请输入题目内容');
+                        break;
+                    }
+                    let answer = $('#answerPD').val();
+                    console.log(question);
+                    console.log(answer);
+                    // 添加题目
+                    addQuestion({
+                        chapterid: currCpid,
+                        ptype: type,
+                        question: question,
+                        panswer: answer
+                    }, () => {
+                        // 清空输入
+                        $('#questionPD').val('');
+                        toastr.success('添加成功，刷新后显示');
+                    });
                     break;
                 case 2:
                     console.log('添加填空题');
