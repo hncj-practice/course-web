@@ -158,6 +158,84 @@ function loadEvents() {
                 btnAddPD.addClass('active');
             });
         }
+
+        // 点击添加按钮
+        $('#btbAddTM').click(() => {
+            // 判断添加的题型，编号根据接口文档
+            let type;
+            if ($('#btnAddXZ').hasClass('active')) {
+                type = 1;
+            } else if ($('#btnAddTK').hasClass('active')) {
+                type = 2;
+            } else {
+                type = 3;
+            }
+            switch (type) {
+                case 3:
+                    console.log('添加判断题');
+                    break;
+                case 2:
+                    console.log('添加填空题');
+                    break;
+                case 1:
+                default: {
+                    console.log('添加选择题');
+                    let question = $('#questionXZ').val();
+                    let answer = $('#answerXZ').val();
+                    if (question.trim() === '') {
+                        toastr.error('没有题目内容');
+                        break;
+                    }
+                    // 获取4个选项的值
+                    let opts = [];
+                    // 循环ABCD
+                    let arr = ['A', 'B', 'C', 'D'];
+                    try {
+                        arr.forEach(item => {
+
+                            let id = '#opt' + item;
+                            let value = $(id).val();
+                            if (value.trim() === "") {
+                                if (item === 'A') {
+                                    throw new Error('请输入选项A');
+                                }
+                                if (item === 'B') {
+                                    throw new Error('请输入选项B');
+                                }
+                                throw new Error('空');
+                            }
+                            opts.push(item + '、' + value);
+                        });
+                    } catch (e) {
+                        if (e.message !== '空') {
+                            toastr.error(e.message);
+                            break;
+                        }
+                    }
+                    question += '$' + opts.join('$');
+                    console.log(question);
+                    console.log(answer);
+                    // 添加题目
+                    addQuestion({
+                        chapterid: currCpid,
+                        ptype: type,
+                        question: question,
+                        panswer: answer
+                    }, () => {
+                        // 清空输入
+                        $('#questionXZ').val('');
+                        $('#optA').val('');
+                        $('#optB').val('');
+                        $('#optC').val('');
+                        $('#optD').val('');
+                        toastr.success('添加成功，刷新后显示');
+                    });
+                    break
+                }
+
+            }
+
+        });
     }
 
     // 导入题目

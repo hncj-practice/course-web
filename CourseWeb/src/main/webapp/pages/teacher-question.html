@@ -116,6 +116,7 @@
         </div>
 
         <div class="right">
+            <!-- 添加选择题 -->
             <div id="addXZ" class="add-tm add-xz">
                 <h3>题目</h3>
                 <label>
@@ -126,28 +127,38 @@
                     <li no="A">
                         <span>A、</span>
                         <label>
-                            <input type="text" placeholder="选项内容">
+                            <input id="optA" type="text" placeholder="选项内容">
                         </label>
                     </li>
                     <li no="B">
                         <span>B、</span>
                         <label>
-                            <input type="text" placeholder="选项内容">
+                            <input id="optB" type="text" placeholder="选项内容">
                         </label>
                     </li>
                     <li no="C">
                         <span>C、</span>
                         <label>
-                            <input type="text" placeholder="选项内容">
+                            <input id="optC" type="text" placeholder="选项内容">
                         </label>
                     </li>
                     <li no="D">
                         <span>D、</span>
                         <label>
-                            <input type="text" placeholder="选项内容">
+                            <input id="optD" type="text" placeholder="选项内容">
                         </label>
                     </li>
                 </ul>
+                <h3>答案</h3>
+                <label>
+                    <select id="answerXZ">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                </label>
+
             </div>
             <div id="addTK" class="add-tm add-tk">
                 填空

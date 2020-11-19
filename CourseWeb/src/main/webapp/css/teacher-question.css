@@ -127,8 +127,8 @@ main .question-pd .pd-list .pd-item {
 }
 .add-question-div {
   position: absolute;
-  width: 900px;
-  height: 450px;
+  width: 950px;
+  height: 500px;
   top: 25%;
   left: 50%;
   transform: translateX(-50%);
@@ -224,6 +224,13 @@ main .question-pd .pd-list .pd-item {
   outline: none;
   padding-left: 5px;
   font-weight: normal;
+}
+.add-question-div .main .right .add-xz select {
+  width: 50px;
+  height: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
 }
 .add-question-div .main .right .btn-add-tm {
   width: 120px;
