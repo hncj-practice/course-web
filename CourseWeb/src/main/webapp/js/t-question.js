@@ -170,15 +170,17 @@ function loadEvents() {
             } else {
                 type = 3;
             }
+            let question;
+            let answer;
             switch (type) {
                 case 3:
                     console.log('添加判断题');
-                    let question = $('#questionPD').val();
+                    question = $('#questionPD').val();
                     if (question.trim() === '') {
                         toastr.error('请输入题目内容');
                         break;
                     }
-                    let answer = $('#answerPD').val();
+                    answer = $('#answerPD').val();
                     console.log(question);
                     console.log(answer);
                     // 添加题目
@@ -195,12 +197,33 @@ function loadEvents() {
                     break;
                 case 2:
                     console.log('添加填空题');
+                    question = $('#questionTK').val();
+                    answer = $('#answerTK').val();
+                    if (question.trim() === '') {
+                        toastr.error('请输入题目内容');
+                        break;
+                    }
+                    if (answer.trim() === '') {
+                        toastr.error('请输入答案');
+                        break;
+                    }
+                    addQuestion({
+                        chapterid: currCpid,
+                        ptype: type,
+                        question: question,
+                        panswer: answer
+                    }, () => {
+                        // 清空输入
+                        $('#questionTK').val('');
+                        $('#answerTK').val('');
+                        toastr.success('添加成功，刷新后显示');
+                    });
                     break;
                 case 1:
                 default: {
                     console.log('添加选择题');
-                    let question = $('#questionXZ').val();
-                    let answer = $('#answerXZ').val();
+                    question = $('#questionXZ').val();
+                    answer = $('#answerXZ').val();
                     if (question.trim() === '') {
                         toastr.error('没有题目内容');
                         break;
