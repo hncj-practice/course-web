@@ -239,13 +239,8 @@ main {
         display: none;
         padding-top: 30px;
         padding-left: 15px;
-      }
 
-      // 添加选择题的窗口
-      .add-xz {
-        display: block;
-
-        .question-xz {
+        .question {
           width: 640px;
           height: 150px;
           padding: 5px;
@@ -254,6 +249,13 @@ main {
           border: none;
           outline: none;
         }
+
+      }
+
+      // 添加选择题的窗口
+      .add-xz {
+        display: block;
+
 
         // 选项ul
         .opt-ul {
@@ -290,11 +292,29 @@ main {
       }
 
       .add-tk {
-
+        .answer-tk {
+          width: 640px;
+          height: 80px;
+          padding: 5px;
+          font-size: 16px;
+          font-weight: normal;
+          border: none;
+          outline: none;
+        }
       }
 
       .add-pd {
+        // 答案
+        select {
+          width: 50px;
+          height: 25px;
+          border: none;
+          outline: none;
+          font-size: 16px;
 
+          option {
+          }
+        }
       }
 
       // 添加按钮
@@ -308,7 +328,6 @@ main {
 
         &:hover {
           background: @colorPrimary;
-
         }
 
       }

@@ -197,10 +197,7 @@ main .question-pd .pd-list .pd-item {
   padding-top: 30px;
   padding-left: 15px;
 }
-.add-question-div .main .right .add-xz {
-  display: block;
-}
-.add-question-div .main .right .add-xz .question-xz {
+.add-question-div .main .right .add-tm .question {
   width: 640px;
   height: 150px;
   padding: 5px;
@@ -208,6 +205,9 @@ main .question-pd .pd-list .pd-item {
   font-weight: normal;
   border: none;
   outline: none;
+}
+.add-question-div .main .right .add-xz {
+  display: block;
 }
 .add-question-div .main .right .add-xz .opt-ul {
   list-style: none;
@@ -226,6 +226,22 @@ main .question-pd .pd-list .pd-item {
   font-weight: normal;
 }
 .add-question-div .main .right .add-xz select {
+  width: 50px;
+  height: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.add-question-div .main .right .add-tk .answer-tk {
+  width: 640px;
+  height: 80px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  border: none;
+  outline: none;
+}
+.add-question-div .main .right .add-pd select {
   width: 50px;
   height: 25px;
   border: none;
