@@ -121,6 +121,43 @@ function loadEvents() {
         $('#closeAddQuestion').click(() => {
             $('.add-question-div').hide(250);
         });
+
+        // 切换页面
+        {
+            let btnAddXZ = $('#btnAddXZ');
+            let btnAddTK = $('#btnAddTK');
+            let btnAddPD = $('#btnAddPD');
+            let addXZ = $('#addXZ');
+            let addTK = $('#addTK');
+            let addPD = $('#addPD');
+            btnAddXZ.click(() => {
+                // 显示
+                addXZ.show();
+                btnAddXZ.addClass('active');
+                addTK.hide();
+                btnAddTK.removeClass('active');
+                addPD.hide();
+                btnAddPD.removeClass('active');
+            });
+            btnAddTK.click(() => {
+                // 显示
+                addXZ.hide();
+                btnAddXZ.removeClass('active');
+                addTK.show();
+                btnAddTK.addClass('active');
+                addPD.hide();
+                btnAddPD.removeClass('active');
+            });
+            btnAddPD.click(() => {
+                // 显示
+                addXZ.hide();
+                btnAddXZ.removeClass('active');
+                addTK.hide();
+                btnAddTK.removeClass('active');
+                addPD.show();
+                btnAddPD.addClass('active');
+            });
+        }
     }
 
     // 导入题目
