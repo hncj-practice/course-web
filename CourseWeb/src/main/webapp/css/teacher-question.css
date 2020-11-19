@@ -30,6 +30,9 @@ body {
   width: 100%;
   height: 100%;
 }
+h3 {
+  margin: 0;
+}
 header {
   position: relative;
   width: 100%;
@@ -149,6 +152,9 @@ main .question-pd .pd-list .pd-item {
   height: 100%;
   display: flex;
 }
+.add-question-div .main h3 {
+  margin: 10px 0;
+}
 .add-question-div .main .left {
   flex: 1;
   height: 100%;
@@ -180,15 +186,53 @@ main .question-pd .pd-list .pd-item {
 .add-question-div .main .right {
   flex: 5;
   height: 100%;
-}
-.add-question-div .main .right .add-tm {
-  width: 100%;
-  height: 100%;
-  display: none;
   background: #f4f4f4;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+.add-question-div .main .right .add-tm {
+  width: 100%;
+  height: 90%;
+  display: none;
+  padding-top: 30px;
+  padding-left: 15px;
+}
 .add-question-div .main .right .add-xz {
   display: block;
+}
+.add-question-div .main .right .add-xz .question-xz {
+  width: 640px;
+  height: 150px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  border: none;
+  outline: none;
+}
+.add-question-div .main .right .add-xz .opt-ul {
+  list-style: none;
+}
+.add-question-div .main .right .add-xz .opt-ul li {
+  height: 25px;
+  font-size: 16px;
+  margin: 7px 0;
+}
+.add-question-div .main .right .add-xz .opt-ul li input {
+  width: 560px;
+  height: 25px;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  font-weight: normal;
+}
+.add-question-div .main .right .btn-add-tm {
+  width: 120px;
+  height: 10%;
+  float: right;
+  border: none;
+  outline: none;
+  border-bottom-right-radius: 10px;
+}
+.add-question-div .main .right .btn-add-tm:hover {
+  background: #49af4f;
 }
