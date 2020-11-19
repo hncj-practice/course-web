@@ -49,9 +49,12 @@
 <main>
     <h2 class="chapterName">第一章 基本数据类型</h2>
     <input id="importQuestionInput" type="file" accept=".xlsx" style="display: none">
-    <button class="btn-import-question" id="importQuestion">导入题目</button>
-    <button class="btn-download-template"><a id="downloadTemplate" target="_blank"
-                                             style="text-decoration: none;color: #000">下载导入模板</a></button>
+    <button class="btn-import-question" id="addQuestion">添加题目</button>
+    <button class="btn-import-question" id="importQuestion">批量导入题目</button>
+    <button class="btn-import-question">
+        <a id="downloadTemplate" target="_blank"
+           style="text-decoration: none;color: #000">下载导入模板</a>
+    </button>
 
     <!-- 选择题 -->
     <div class="question-type question-xz">
@@ -94,8 +97,15 @@
             <!--            </div>-->
         </div>
     </div>
+
+
 </main>
+<!-- 单独添加题目的窗口 -->
+<div class="add-question-div">
+    <!-- 关闭按钮 -->
+    <div id="closeAddQuestion" class="close">
 
-
+    </div>
+</div>
 </body>
 </html>

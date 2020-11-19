@@ -109,6 +109,20 @@ function loadQuestions(type, success) {
 // 加载事件
 function loadEvents() {
 
+    // 单独添加题目
+    {
+        $('#addQuestion').off('click');
+        $('#addQuestion').click(() => {
+            $('.add-question-div').show(250);
+        });
+
+        // 关闭窗口
+        $('#closeAddQuestion').off('click');
+        $('#closeAddQuestion').click(() => {
+            $('.add-question-div').hide(250);
+        });
+    }
+
     // 导入题目
     {
         // 下载导入模板
