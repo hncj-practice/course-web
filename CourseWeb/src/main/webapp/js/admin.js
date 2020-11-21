@@ -1,7 +1,12 @@
+/**
+ * 管理员页面
+ */
+
 // 入口函数
 $(function () {
     loadEvents();
 });
+
 
 /**
  * 加载事件
@@ -11,7 +16,6 @@ function loadEvents() {
     {
         let change2User = $('#change2User');
         let change2Course = $('#change2Course');
-
 
         change2User.click(() => {
             change2User.addClass('active');
@@ -24,6 +28,5 @@ function loadEvents() {
             change2User.removeClass('active');
             $('#mainFrame').attr('src', 'admin-course-manage.html');
         });
-
     }
 }

@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+.h-center {
+  margin: 0 auto;
+}
+.vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cnt-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.no-border {
+  border: none;
+  outline: none;
+}
+#coursePanel {
+  width: 100%;
+  height: 100%;
+}
+#coursePanel .search-course {
+  padding: 28px 28px 0 60px;
+  margin-bottom: 20px;
+}
+#coursePanel .search-course input {
+  width: 280px;
+  height: 38px;
+  font-size: 16px;
+  padding-left: 5px;
+}
+#coursePanel .search-course button {
+  width: 80px;
+  height: 38px;
+}
+.table-div {
+  padding: 10px 60px 0 60px;
+}
+.table-div table {
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+.table-div table tr {
+  height: 38px;
+}
+.table-div table tr:hover {
+  background: #e0f5f1;
+  outline: solid 1px #a9d4c7;
+}
+.table-div table tr .options {
+  position: relative;
+}
+.table-div table tr .options span {
+  position: absolute;
+  cursor: pointer;
+}
+.table-div table tr .options .reset-user {
+  left: 15px;
+  color: #5d6691;
+}
+.table-div table tr .options .delete-user {
+  right: 15px;
+  color: red;
+}
+.table-div table tr .options .add-user {
+  left: 15px;
+  color: #587c0c;
+}
+.table-div table tr .options .add-user-excel {
+  right: 15px;
+  color: #587c0c;
+}
+.table-div table tr .options .save-course {
+  left: 15px;
+  color: #51A351;
+}
+.table-div table tr .options .delete-course {
+  right: 15px;
+  color: red;
+}
+.table-div table tr td {
+  line-height: 30px;
+}
+.table-div table tr td input[type=checkbox] {
+  margin-right: 3px;
+}
+.table-div table .add-user-tr td input {
+  width: 80%;
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
+.table-div table .course-name {
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
+.add-new-course {
+  display: none;
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  transform: translateX(-50%);
+  background: #fff;
+  z-index: 2;
+}
+.add-new-course .close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

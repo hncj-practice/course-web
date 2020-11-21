@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/old-admin.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/old-admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/admin-course-manage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/admin-user-manage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/old-admin.html" afterDir="false" />
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="管理员页面 使用iframe管理页面">
+      <change afterPath="$PROJECT_DIR$/css/admin-course-manage.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/old-admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin-course-manage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/old-admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-course.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-course.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-question.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-question.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-register.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/old-admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/old-admin.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin-course-manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-course-manage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/old-admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/old-admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Less File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Less File" />
       </list>
     </option>
   </component>
@@ -64,6 +58,9 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.old-admin.html">
+    <configuration name="admin-course-manage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin-course-manage.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="admin-user-manage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin-user-manage.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -73,19 +70,16 @@
     <configuration name="i1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/i1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="new-admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/new-admin.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <configuration name="old-admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/old-admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.old-admin.html" />
+        <item itemvalue="JavaScript Debug.admin-course-manage.html" />
         <item itemvalue="JavaScript Debug.admin-user-manage.html" />
         <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.i1.html" />
-        <item itemvalue="JavaScript Debug.new-admin.html" />
       </list>
     </recent_temporary>
   </component>
@@ -133,14 +127,7 @@
       <workItem from="1605793577762" duration="2435000" />
       <workItem from="1605842550348" duration="1240000" />
       <workItem from="1605943008721" duration="1044000" />
-      <workItem from="1605944255496" duration="6831000" />
-    </task>
-    <task id="LOCAL-00049" summary="实现删除试卷">
-      <created>1598673955214</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1598673955214</updated>
+      <workItem from="1605944255496" duration="9461000" />
     </task>
     <task id="LOCAL-00050" summary="修改删除试卷的API参数">
       <created>1598707717253</created>
@@ -478,14 +465,20 @@
       <option name="project" value="LOCAL" />
       <updated>1605946641313</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="管理员页面 使用iframe管理页面">
+      <created>1605952495061</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1605952495062</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完善批量添加题目" />
     <MESSAGE value="选择导入模板时指定文件类型" />
     <MESSAGE value="添加题目导入模板的下载链接" />
     <MESSAGE value="教师题目管理 选择题选项和题目分开显示" />
@@ -510,7 +503,8 @@
     <MESSAGE value="教师试卷管理 完成试卷样式" />
     <MESSAGE value="准备整理目录结构" />
     <MESSAGE value="前端库使用cdn加速" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端库使用cdn加速" />
+    <MESSAGE value="管理员页面 使用iframe管理页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员页面 使用iframe管理页面" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -526,11 +520,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="562" y="174" key="CommitChangelistDialog2" timestamp="1605946640719">
+    <state x="562" y="174" key="CommitChangelistDialog2" timestamp="1605952494269">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="562" y="174" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605946640719" />
+    <state x="562" y="174" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605952494269" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
