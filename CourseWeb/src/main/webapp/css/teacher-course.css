@@ -25,6 +25,10 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+.no-border {
+  border: none;
+  outline: none;
+}
 header {
   position: relative;
   width: 100%;
@@ -164,6 +168,10 @@ main {
   border: solid 1px #d6d6d6;
   display: flex;
   flex-direction: column;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #paperContain .papers-list .paper-item .title {
   height: 40px;
@@ -188,6 +196,17 @@ main {
 #paperContain .papers-list .paper-item .option {
   height: 25%;
   background: #e8eeda;
+}
+#paperContain .papers-list .paper-item .option button {
+  width: 20%;
+  height: 70%;
+  float: right;
+  margin-top: 2.2%;
+  margin-right: 15px;
+  background: #7b9e31;
+  color: #fff;
+  border: none;
+  outline: none;
 }
 .random-paper {
   position: fixed;

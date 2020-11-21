@@ -25,6 +25,10 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+.no-border {
+  border: none;
+  outline: none;
+}
 header {
   position: relative;
   width: 100%;
