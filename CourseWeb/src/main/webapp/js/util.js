@@ -154,6 +154,32 @@ function my_ajax(url, param, success, error) {
 
 
 /**
+ * 获取网页文本
+ * @param obj \{url:'',param:obj'}
+ */
+function promiseAjaxPost(obj) {
+    return new Promise((resolve, reject) => {
+        jQuery.ajax({
+            url: obj['url'],
+            type: 'POST',
+            data: obj['param'],
+            traditional: true,
+            timeout: 5000,
+            success: e => {
+                resolve(e);
+            },
+            error: e => {
+                console.log('失败');
+                console.log(e);
+                toastr.error('服务器异常');
+                reject(e);
+            }
+        });
+    });
+}
+
+
+/**
  * 解析excel文件
  * @param rABS 是否用二进制读取
  * @param files file列表

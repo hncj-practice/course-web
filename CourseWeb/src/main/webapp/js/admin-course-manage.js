@@ -1,38 +1,43 @@
 /**
  * 管理员 - 课程管理页面
+ *
+ * 页面所做的三件事：
+ * （1）获取数据
+ * （2）渲染数据
+ * （3）添加事件
  */
 
 // 入口函数
 $(function () {
     // 刷新课程列表
     console.log('切换到课程管理');
-    refreshCourses();
+
+    refresh().then(r => {
+        console.log(r);
+    });
+
 });
 
 
-// 刷新课程列表
-function refreshCourses() {
-    let url = COURSE_API.FIND;
-    let param = {
-        page: 1,
-        num: 14
-    };
-    let error = () => {
-        toastr.error('查询失败：服务器异常');
-    };
-    setTimeout(() => {
-        // noinspection JSUnresolvedVariable
+// 获取数据
+async function refresh() {
+    // 获取数据
+    let data = await promiseAjaxPost({
+        url: COURSE_API.FIND,
+        param: {
+            page: 1,
+            num: 14
+        }
+    });
 
-        my_ajax(url, param, renderCourseTable, error);
-    }, 500);
+    // 渲染数据
+    renderCourseTable(data);
 }
 
-
 // 渲染课程列表
-function renderCourseTable(obj) {
-    console.log(obj);
+function renderCourseTable(data) {
     // 没有查到数据
-    if (obj.code === 401) {
+    if (data.code === 401) {
         toastr.warning('没有数据');
         return;
     }
@@ -40,7 +45,7 @@ function renderCourseTable(obj) {
     let courseTable = $('#courseTable');
     let html = '';
     let cid, cname, tname, status;
-    obj.data.forEach((item) => {
+    data.data.forEach((item) => {
         cid = item['cid'];
         cname = item['cname'];
         tname = item['tname'];

@@ -65,7 +65,8 @@
 </div>
 
 <!-- 主区域 -->
-<div id="coursePanel">
+<main>
+    <!-- 上面的按钮 -->
     <div class="search-course">
         <label>
             <input type="text" placeholder="输入课程名">
@@ -77,6 +78,7 @@
     <!-- 课程表格 -->
     <div class="table-div">
         <table class="table table-bordered">
+            <!-- 表头 -->
             <thead>
             <tr>
                 <th>课程ID</th>
@@ -86,6 +88,7 @@
                 <th style="width: 150px;">操作</th>
             </tr>
             </thead>
+            <!-- 表内容 -->
             <tbody id="courseTable">
             <tr>
                 <td>正在获取中</td>
@@ -101,11 +104,10 @@
                     <span class="delete-course">删除</span>
                 </td>
             </tr>
-
             </tbody>
         </table>
     </div>
-</div>
+</main>
 
 <!-- 添加课程的窗口 -->
 <div class="add-new-course">
@@ -115,19 +117,18 @@
     </div>
     <form>
         课程名
+        <label for="courseNameAdd"></label>
         <input id="courseNameAdd" type="text"><br>
 
         授课教师
-        <select id="teacherList">
-
-        </select><br>
+        <label for="teacherList"></label>
+        <select id="teacherList"> </select><br>
 
         所属班级
-        <select id="classesList">
+        <label for="classesList"></label>
+        <select id="classesList"> </select>
 
-        </select>
         <input id="addClassToList" type="button" value="添加">
-
         <span id="courseClassesAdd"></span><br>
         <input id="addCourseEnsure" type="button" value="确定">
     </form>
