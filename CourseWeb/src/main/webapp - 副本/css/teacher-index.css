@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+.h-center {
+  margin: 0 auto;
+}
+.vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cnt-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.no-border {
+  border: none;
+  outline: none;
+}
+header {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  background: #2e333f;
+  padding-left: 18%;
+  display: flex;
+}
+header img {
+  width: 40px;
+  height: 40px;
+  margin-top: 7px;
+}
+header h2 {
+  line-height: 55px;
+  color: #fff;
+  font-size: 26px;
+  margin: 0 0 0 10px;
+}
+header .account {
+  position: absolute;
+  height: 30px;
+  right: 120px;
+  top: 12px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header .account span {
+  margin-right: 8px;
+  color: #fff;
+  line-height: 30px;
+  cursor: pointer;
+}
+header .account span:hover {
+  color: #49af4f;
+}
+header .account img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0;
+}
+.content-top {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  background: url(../imgs/banner.png) no-repeat;
+  background-size: cover;
+}
+.content-top .middle {
+  position: absolute;
+  width: 100%;
+  height: 88px;
+  top: 50%;
+  margin-top: -47px;
+  display: flex;
+  padding-left: 18%;
+}
+.content-top .middle .avatar {
+  width: 88px;
+  height: 88px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+.content-top .middle .avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 4px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+.content-top .middle .hello {
+  width: 60%;
+  height: 88px;
+  color: #fffff3;
+  margin-left: 25px;
+}
+.content-top .middle .hello h3 {
+  margin-top: 18px;
+}
+.content-top .manage {
+  position: absolute;
+  right: 120px;
+  width: 140px;
+  height: 160px;
+  background: #fcdc06;
+  display: none;
+}
+.toolbar {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border-bottom: solid 1px #dfdfdf;
+  display: flex;
+  padding-left: 18%;
+  padding-right: 18%;
+}
+.toolbar .item {
+  margin-right: 50px;
+  cursor: pointer;
+}
+.toolbar .item h3 {
+  margin: 0;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+}
+.toolbar .item:hover {
+  color: #49af4f;
+  border-bottom: 3px solid #49af4f;
+}
+.toolbar .active {
+  color: #49af4f;
+  border-bottom: 3px solid #49af4f;
+}
+.toolbar .search-bar {
+  position: absolute;
+  right: 12%;
+  width: 338px;
+  height: 40px;
+  top: 50%;
+  margin-top: -20px;
+  border: solid 1px #49af4f;
+  border-radius: 4px;
+  display: flex;
+}
+.toolbar .search-bar input {
+  width: 300px;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+}
+.toolbar .search-bar i {
+  float: right;
+  width: 38px;
+  height: 38px;
+  background: url(../imgs/search.png) no-repeat center;
+  background-size: 90%;
+  cursor: pointer;
+}
+.order {
+  width: 64%;
+  height: 40px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+}
+.order span {
+  padding-left: 20px;
+  padding-right: 10px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.order .active {
+  color: #49af4f;
+}
+.courses {
+  width: 64%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+.courses .course {
+  position: relative;
+  width: 23%;
+  margin: 0 1% 20px;
+  height: 220px;
+  border: solid 1px #dbdbdb;
+  background: #f3f3f3;
+}
+.courses .course img {
+  width: 100%;
+  height: 160px;
+  cursor: pointer;
+  object-fit: cover;
+}
+.courses .course .title {
+  margin-left: 5px;
+}
+.courses .course .title .name {
+  margin: 0;
+  line-height: 32px;
+  font-size: 18px;
+}
+.courses .course .title .numbers {
+  margin: 0;
+  line-height: 25px;
+  font-size: 15px;
+}
+.courses .course .end {
+  position: absolute;
+  width: 270px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: 57px;
+  left: 0;
+  margin: 0;
+  padding: 0 0 0 5px;
+  font-size: 18px;
+}

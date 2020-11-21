@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+.h-center {
+  margin: 0 auto;
+}
+.vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cnt-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.no-border {
+  border: none;
+  outline: none;
+}
+header {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  background: #2e333f;
+  padding-left: 18%;
+  display: flex;
+}
+header img {
+  width: 40px;
+  height: 40px;
+  margin-top: 7px;
+}
+header h2 {
+  line-height: 55px;
+  color: #fff;
+  font-size: 26px;
+  margin: 0 0 0 10px;
+}
+header .account {
+  position: absolute;
+  height: 30px;
+  right: 120px;
+  top: 12px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header .account span {
+  margin-right: 8px;
+  color: #fff;
+  line-height: 30px;
+  cursor: pointer;
+}
+header .account span:hover {
+  color: #49af4f;
+}
+header .account img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0;
+}
+.headerwrap {
+  width: 100%;
+  height: 55px;
+  background: #fff;
+  padding-left: 18%;
+  border-bottom: solid 1px #e4e4e5;
+  display: flex;
+}
+.headerwrap .course-name {
+  padding: 0;
+  height: 55px;
+  line-height: 55px;
+  font-size: 25px;
+  color: #49af4f;
+  margin: 0 30% 0 0;
+}
+.headerwrap ul {
+  list-style-type: none;
+  float: left;
+}
+.headerwrap ul li {
+  float: left;
+  font-size: 18px;
+  margin: 14px 8px 0;
+  padding: 2px 5px;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.headerwrap ul .active {
+  background: gray;
+}
+.headerwrap ul .active span {
+  color: #fff;
+}
+.headerwrap ul .inactive {
+  background: #fff;
+}
+.headerwrap ul .inactive span {
+  color: #000;
+}
+p {
+  margin: 0;
+}
+main {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 25px;
+  background: #fff;
+  border: solid 1px #dddddd;
+  border-radius: 10px;
+}
+#chapterContain .title {
+  margin-left: 28px;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+#chapterContain .chapters-ul {
+  margin: 10px 0 0 30px;
+  list-style: none;
+}
+#chapterContain .chapters-ul li {
+  margin: 18px 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+#paperContain {
+  background: #f4f4f4;
+  border: none;
+  margin-top: 0;
+}
+#paperContain .make-paper {
+  margin: 10px 0;
+}
+#paperContain .make-paper button {
+  width: 100px;
+  height: 35px;
+}
+#paperContain .papers-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#paperContain .papers-list .paper-item {
+  margin: 12px 0;
+  width: 32%;
+  height: 180px;
+  background: #fff;
+  border: solid 1px #d6d6d6;
+  display: flex;
+  flex-direction: column;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#paperContain .papers-list .paper-item .title {
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#paperContain .papers-list .paper-item .desc {
+  flex: 1;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 16px;
+}
+#paperContain .papers-list .paper-item .desc .status span {
+  font-weight: bold;
+}
+#paperContain .papers-list .paper-item .option {
+  height: 25%;
+  background: #e8eeda;
+}
+#paperContain .papers-list .paper-item .option button {
+  width: 20%;
+  height: 70%;
+  float: right;
+  margin-top: 2.2%;
+  margin-right: 15px;
+  background: #7b9e31;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.random-paper {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.random-paper-preview {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
