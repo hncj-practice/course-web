@@ -13,7 +13,8 @@ $(function () {
     console.log('切换到课程管理');
 
     refresh().then(r => {
-        console.log(r);
+        // 为了不报警告
+        return r;
     });
 
 });
@@ -31,7 +32,13 @@ async function refresh() {
     });
 
     // 渲染数据
-    renderCourseTable(data);
+    await renderCourseTable(data);
+
+    // 元素生成后添加事件
+    loadEvents();
+
+    // 提示刷新成功
+    toastr.success('课程刷新成功');
 }
 
 // 渲染课程列表
@@ -41,6 +48,7 @@ function renderCourseTable(data) {
         toastr.warning('没有数据');
         return;
     }
+
     // 处理数据
     let courseTable = $('#courseTable');
     let html = '';
@@ -64,23 +72,17 @@ function renderCourseTable(data) {
             </td>
         </tr>
         `.format(cid, cname, tname, status);
-
     });
 
+    // 渲染到页面上
     courseTable.html(html);
-
-    // 提示刷新成功
-    toastr.success('课程刷新成功');
-
-    // 元素生成后添加事件
-    loadEvents();
 }
 
 
 /**
  * 加载事件
  */
-function loadEvents() {
+async function loadEvents() {
 
     // 删除课程
     {
@@ -101,7 +103,7 @@ function loadEvents() {
                     // 成功
                     if (e.code === 200) {
                         toastr.success(e.message);
-                        refreshCourses();
+                        refresh();
                     } else {
                         toastr.error(e.message);
                     }
@@ -110,6 +112,7 @@ function loadEvents() {
             });
         });
     }
+
 
     // 修改课程名称
     {
@@ -238,7 +241,7 @@ function loadEvents() {
                 if (e.code === 200) {
                     toastr.success(e.message);
                     $('.add-new-course').hide(250);
-                    refreshCourses();
+                    refresh();
                 } else {
                     toastr.error(e.message);
                 }
