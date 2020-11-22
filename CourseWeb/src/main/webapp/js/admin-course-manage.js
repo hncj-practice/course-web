@@ -35,7 +35,7 @@ async function refresh() {
     await renderCourseTable(data);
 
     // 元素生成后添加事件
-    loadEvents();
+    await loadEvents();
 
     // 提示刷新成功
     toastr.success('课程刷新成功');
@@ -95,8 +95,8 @@ async function loadEvents() {
                 let url = COURSE_API.DELETE;
                 // noinspection DuplicatedCode
                 let param = {
-                    adminuser: adminUN,
-                    adminpwd: adminUP,
+                    adminuser: parent.adminUN,
+                    adminpwd: parent.adminUP,
                     courseid: cid
                 };
                 let success = (e) => {
@@ -118,6 +118,10 @@ async function loadEvents() {
     {
         $('.save-course').off('click');
         $('.save-course').click((e) => {
+
+            console.log(parent.adminUN);
+            console.log(parent.adminUP);
+
             let cid = $(e.target).attr('cid');
             let newName = $('#courseName' + cid).val();
             let body = '确定改名？<br>新名称：' + newName;
@@ -126,8 +130,8 @@ async function loadEvents() {
                 let url = COURSE_API.UPDATE;
                 // noinspection DuplicatedCode
                 let param = {
-                    user: adminUN,
-                    pwd: adminUP,
+                    user: parent.adminUN,
+                    pwd: parent.adminUP,
                     courseid: cid,
                     name: newName
                 };
@@ -227,8 +231,8 @@ async function loadEvents() {
             // 调用API新建
             let url = COURSE_API.ADD;
             let param = {
-                adminuser: adminUN,
-                adminpwd: adminUP,
+                adminuser: parent.adminUN,
+                adminpwd: parent.adminUP,
                 semester: 1,
                 tno: tno,
                 cname: name,
