@@ -1,0 +1,244 @@
+/**
+ * 管理员页面 - 用户管理 - 学生
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+.h-center {
+  margin: 0 auto;
+}
+.vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cnt-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.no-border {
+  border: none;
+  outline: none;
+}
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+header {
+  width: 100%;
+  height: 60px;
+  background: #444348;
+  display: flex;
+}
+header .logo {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: calc((60px - 40px) / 2);
+  line-height: 60px;
+}
+header h3 {
+  color: #fff;
+  line-height: 60px;
+  margin: 0 0 0 10px;
+}
+.side {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  height: calc(100% - 60px);
+  background: #3b3a40;
+}
+.side .active {
+  border-left: 4px solid #49af4f;
+  background: #444348;
+}
+.side ul {
+  list-style: none;
+}
+.side ul li {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+}
+.side ul li div {
+  display: flex;
+  margin: 0 auto;
+}
+.side ul li img {
+  width: 24px;
+  height: 24px;
+  margin: 13px 5px 10px 0;
+  line-height: 50px;
+}
+.side ul li span {
+  line-height: 50px;
+  font-size: 20px;
+  color: #fff;
+}
+.frame-admin {
+  float: right;
+  width: calc(100% - 250px);
+  height: calc(100% - 60px);
+  border: none;
+  outline: none;
+}
+.table-div {
+  padding: 10px 60px 0 60px;
+}
+.table-div table {
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+.table-div table tr {
+  height: 38px;
+}
+.table-div table tr:hover {
+  background: #e0f5f1;
+  outline: solid 1px #a9d4c7;
+}
+.table-div table tr .options {
+  position: relative;
+}
+.table-div table tr .options span {
+  position: absolute;
+  cursor: pointer;
+}
+.table-div table tr .options .reset-user {
+  left: 15px;
+  color: #5d6691;
+}
+.table-div table tr .options .delete-user {
+  right: 15px;
+  color: red;
+}
+.table-div table tr .options .add-user {
+  left: 15px;
+  color: #587c0c;
+}
+.table-div table tr .options .add-user-excel {
+  right: 15px;
+  color: #587c0c;
+}
+.table-div table tr .options .save-course {
+  left: 15px;
+  color: #51A351;
+}
+.table-div table tr .options .delete-course {
+  right: 15px;
+  color: red;
+}
+.table-div table tr td {
+  line-height: 30px;
+}
+.table-div table tr td input[type=checkbox] {
+  margin-right: 3px;
+}
+.table-div table .add-user-tr td input {
+  width: 80%;
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
+.table-div table .course-name {
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.choose-user-type {
+  width: fit-content;
+  height: 55px;
+  margin: 0 auto;
+}
+.choose-user-type span {
+  line-height: 55px;
+  padding: 10px;
+  background: #868889;
+  border-radius: 10px;
+  font-size: 24px;
+  margin: 0 5px;
+  color: #fff;
+  cursor: pointer;
+}
+.choose-user-type .active {
+  background: #444348;
+}
+main {
+  width: 100%;
+  height: calc(100% - 55px);
+}
+main .frame-admin-user {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.user-options {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.user-options .opts li a {
+  cursor: pointer;
+}
+.user-options .opts .reset-all a {
+  color: #5d6691;
+}
+.user-options .opts .delete-all a {
+  color: red;
+}
+.user-options .batch-import {
+  height: 32px;
+  line-height: 32px;
+  margin-left: 5px;
+  padding: 0 12px;
+  background: #fff;
+  color: #2F96B4;
+  outline: none;
+  border: solid 1px #dddddd;
+  border-radius: 16px;
+}
+.user-options .batch-import:hover {
+  background: #eeeeee;
+}
+.user-options .pages {
+  position: absolute;
+  right: 46px;
+  margin-bottom: 0;
+  z-index: 1;
+}
+.user-options .jump {
+  position: absolute;
+  width: 50px;
+  height: 46px;
+  top: 20px;
+  right: 0;
+  outline: none;
+  border: solid 1px #dddddd;
+  padding-left: 5px;
+  font-size: 18px;
+  z-index: 2;
+}

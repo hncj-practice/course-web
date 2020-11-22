@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/css/admin-user-student.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin-user-student.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin-course-manage.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-course-manage.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin-user-manage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-user-manage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin-user-manage.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-user-manage.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin-user-teacher.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-user-teacher.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin-user-teacher.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-user-teacher.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/old-admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/old-admin.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin-user-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin-user-teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-teacher.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,14 +125,7 @@
       <workItem from="1605944255496" duration="14895000" />
       <workItem from="1605970144453" duration="7000" />
       <workItem from="1605970983304" duration="179000" />
-      <workItem from="1606014912377" duration="7875000" />
-    </task>
-    <task id="LOCAL-00057" summary="修复管理员页面教师相关敏感操作">
-      <created>1598838921258</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1598838921258</updated>
+      <workItem from="1606014912377" duration="10239000" />
     </task>
     <task id="LOCAL-00058" summary="修改所有jQuery.ajax方法为my_ajax">
       <created>1598839441183</created>
@@ -473,14 +463,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606025479848</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="管理员用户管理 样式统一分离出来">
+      <created>1606025823686</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1606025823686</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="教师题目管理 填空和判断题样式" />
     <MESSAGE value="教师题目管理 请求服务器加载题目" />
     <MESSAGE value="教师题目管理 题目前面显示编号" />
     <MESSAGE value="教师题目管理 检查批量导入模板是否正确" />
@@ -505,7 +501,8 @@
     <MESSAGE value="管理员用户管理 完成切换面板功能" />
     <MESSAGE value="封装tab切换的工具函数" />
     <MESSAGE value="管理员页面 将table-div分离出来" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员页面 将table-div分离出来" />
+    <MESSAGE value="管理员用户管理 样式统一分离出来" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员用户管理 样式统一分离出来" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -525,11 +522,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="374" y="153" key="CommitChangelistDialog2" timestamp="1606025479182">
+    <state x="617" y="153" key="CommitChangelistDialog2" timestamp="1606025823109">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="374" y="153" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606025479182" />
+    <state x="617" y="153" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606025823109" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
