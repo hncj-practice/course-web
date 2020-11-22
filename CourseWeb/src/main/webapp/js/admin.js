@@ -13,20 +13,8 @@ $(function () {
  */
 function loadEvents() {
     // 左侧菜单切换
-    {
-        let change2User = $('#change2User');
-        let change2Course = $('#change2Course');
-
-        change2User.click(() => {
-            change2User.addClass('active');
-            change2Course.removeClass('active');
-            $('.frame-admin').attr('src', 'admin-user-manage.html');
-        });
-
-        change2Course.click(() => {
-            change2Course.addClass('active');
-            change2User.removeClass('active');
-            $('.frame-admin').attr('src', 'admin-course-manage.html');
-        });
-    }
+    switchTab('.frame-admin', [
+        new Tab('#change2User', 'admin-user-manage.html'),
+        new Tab('#change2Course', 'admin-course-manage.html')
+    ]);
 }

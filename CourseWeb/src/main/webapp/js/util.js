@@ -1,4 +1,9 @@
 /**
+ * 此文件为js工具类
+ */
+
+
+/**
  * 将dom的class2 替换成 class1
  * @param {*} dom
  * @param {*} class1
@@ -119,6 +124,7 @@ function myBootstrapModel(title, body, positive, negative, onPositive) {
 
 }
 
+
 /**
  * 根据jquery的ajax封装常用的ajax
  * @param url url
@@ -154,7 +160,7 @@ function my_ajax(url, param, success, error) {
 
 
 /**
- * 获取网页文本
+ * promise的ajax
  * @param obj \{url:'',param:obj'}
  */
 function promiseAjaxPost(obj) {
@@ -224,4 +230,55 @@ function fixData(data) {
     for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)));
     o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)));
     return o;
+}
+
+// Tab类
+class Tab {
+    /**
+     * 构造器
+     * @param {string} selector 被点击元素的选择器
+     * @param {string} page 绑定的页面
+     */
+    constructor(selector, page) {
+        this.selector = selector;
+        this.page = page;
+        this.btn = $(this.selector);
+    }
+
+    // 设置激活状态
+    activate = () => {
+        this.btn.addClass('active');
+    };
+
+    // 取消激活状态
+    deactivate = () => {
+        this.btn.removeClass('active');
+    };
+}
+
+/**
+ * 切换iframe页面
+ * @param {string} frame iframe的选择器
+ * @param {Tab[]} tabs 页面数组
+ */
+function switchTab(frame, tabs) {
+    /**
+     * 步骤：当按钮被点击时：
+     * （1）所有按钮都取消激活状态
+     * （2）被点击的按钮设置激活状态
+     * （3）切换到被点击的tab的页面
+     */
+    const n = tabs.length;
+    for (let i = 0; i < n; i++) {
+        tabs[i].btn.click(() => {
+            // 所有按钮取消激活
+            for (let j = 0; j < n; j++) {
+                tabs[j].deactivate();
+            }
+            // 被点击的按钮激活
+            tabs[i].activate();
+            // 切换页面
+            $(frame).attr('src', tabs[i].page);
+        });
+    }
 }
