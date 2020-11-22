@@ -25,11 +25,43 @@
     <!-- 自己的js -->
     <script src="../js/admin-user-teacher.js"></script>
 
+
+
 </head>
 
 <body>
+
+<!-- 模态框 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    模态框标题
+                </h4>
+            </div>
+            <div class="modal-body" id="myModelBody">
+                模态框内容
+            </div>
+            <div class="modal-footer">
+                <button id="modelCancel" type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+                <button id="modelConfirm" type="button" class="btn btn-primary">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- 教师页面 -->
 <div class="teacher table-div">
+    <!-- 表格 -->
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -61,7 +93,6 @@
 
         </tbody>
     </table>
-
 
     <!-- 批量操作 教师 -->
     <div class="user-options" id="teacherOpts">
