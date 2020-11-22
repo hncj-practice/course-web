@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <title>教师用户</title>
+
+    <!-- jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- toastr -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- 自己的css -->
+    <link rel="stylesheet" href="../css/admin-user-teacher.css">
+
+    <!-- 工具类和常量类 -->
+    <script src="../js/util.js"></script>
+    <script src="../js/interfaces.js"></script>
+
+    <!-- 自己的js -->
+    <script src="../js/admin-user-teacher.js"></script>
+
 </head>
+
 <body>
 
-<h1>教师</h1>
+
+<!-- 教师页面 -->
+<div class="teacher table-div">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>工号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>邮箱</th>
+            <th style="width: 110px;">状态</th>
+            <th style="width: 150px;">操作</th>
+        </tr>
+        </thead>
+        <tbody id="teacherTable">
+        <tr>
+            <td>
+                <label>
+                    <input type="checkbox"/>
+                </label>
+                正在获取中
+            </td>
+            <td>正在获取中</td>
+            <td>正在获取中</td>
+            <td>正在获取中</td>
+            <td>LOADING</td>
+            <td class="options">
+                <span tno="0" class="reset-user">重置</span>
+                <span tno="0" class="delete-user">删除</span>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+    <!-- 批量操作 教师 -->
+    <div class="user-options" id="teacherOpts">
+
+        <!-- 功能按钮 -->
+        <ul class="pager opts">
+            <li class="all"><a>全选</a></li>
+            <li id="resetTAll" class="reset-all"><a>重置</a></li>
+            <li id="deleteTAll" class="delete-all"><a>删除</a></li>
+            <li class="all"><a id="downloadTemplateT" target="_blank">下载导入模板</a></li>
+        </ul>
+
+        <input id="batchTImportInput" type="file" accept=".xlsx" style="display: none;"/>
+        <input id="batchTImport" class="batch-import" type="button" value="批量导入">
+
+        <!-- 翻页按钮 -->
+        <ul class="pagination pagination-lg pages">
+            <li><a id="pStart_t">首页</a></li>
+            <li><a id="pPrev_t">&laquo;</a></li>
+            <li><a class="pg-t" id="p1_t" style="display: none">1</a></li>
+            <li><a class="pg-t" id="p2_t" style="display: none">2</a></li>
+            <li><a class="pg-t" id="p3_t" style="display: none">3</a></li>
+            <li><a class="pg-t" id="p4_t" style="display: none">4</a></li>
+            <li><a class="pg-t" id="p5_t" style="display: none">5</a></li>
+            <li><a id="pNext_t">&raquo;</a></li>
+            <li><a id="pEnd_t">末页 386</a></li>
+            <li><a id="pDist_t">跳转</a></li>
+        </ul>
+
+        <!--suppress HtmlFormInputWithoutLabel -->
+        <input class="jump" id="jumpT" type="text" placeholder="1">
+
+    </div>
+</div>
+
 </body>
 </html>

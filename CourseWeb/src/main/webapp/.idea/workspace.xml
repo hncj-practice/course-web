@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="管理员页面 将table-div分离出来">
+      <change afterPath="$PROJECT_DIR$/css/admin-user-teacher.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/admin-user-teacher.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin-user-teacher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/admin-user-manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-manage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin-user-manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin-course-manage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-course-manage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin-course-manage.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-course-manage.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/toastr.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-3.5.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/toastr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/xlsx.core.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin-user-teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-teacher.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Less File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -126,14 +134,7 @@
       <workItem from="1605944255496" duration="14895000" />
       <workItem from="1605970144453" duration="7000" />
       <workItem from="1605970983304" duration="179000" />
-      <workItem from="1606014912377" duration="6728000" />
-    </task>
-    <task id="LOCAL-00055" summary="修改一些封装过的方法">
-      <created>1598715198165</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1598715198165</updated>
+      <workItem from="1606014912377" duration="7614000" />
     </task>
     <task id="LOCAL-00056" summary="添加规范内容">
       <created>1598716226240</created>
@@ -471,15 +472,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606019988364</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="封装tab切换的工具函数">
+      <created>1606024637620</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1606024637620</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="教师题目管理 规范显示题目" />
-    <MESSAGE value="教师题目管理 选择题样式" />
     <MESSAGE value="教师题目管理 填空和判断题样式" />
     <MESSAGE value="教师题目管理 请求服务器加载题目" />
     <MESSAGE value="教师题目管理 题目前面显示编号" />
@@ -503,7 +509,9 @@
     <MESSAGE value="管理员课程管理 修改一些bug" />
     <MESSAGE value="管理员课程管理 让iframe可以使用父容器的变量" />
     <MESSAGE value="管理员用户管理 完成切换面板功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员用户管理 完成切换面板功能" />
+    <MESSAGE value="封装tab切换的工具函数" />
+    <MESSAGE value="管理员页面 将table-div分离出来" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员页面 将table-div分离出来" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -523,11 +531,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="645" y="135" key="CommitChangelistDialog2" timestamp="1606019987784">
+    <state x="374" y="153" key="CommitChangelistDialog2" timestamp="1606025444053">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="645" y="135" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606019987784" />
+    <state x="374" y="153" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606025444053" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
@@ -613,11 +621,11 @@
     <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="477" y="213" key="SettingsEditor/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605760147826" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606020001900">
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606024642039">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="516" y="257" key="Vcs.Push.Dialog.v2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733991625" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606020001900" />
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606024642039" />
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
     <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />

@@ -159,38 +159,3 @@ header h3 {
   border: none;
   padding-left: 5px;
 }
-main {
-  width: 100%;
-  height: 100%;
-}
-main .search-course {
-  padding: 28px 28px 0 60px;
-  margin-bottom: 20px;
-}
-main .search-course input {
-  width: 280px;
-  height: 38px;
-  font-size: 16px;
-  padding-left: 5px;
-}
-main .search-course button {
-  width: 80px;
-  height: 38px;
-}
-.add-new-course {
-  display: none;
-  position: absolute;
-  width: 800px;
-  height: 500px;
-  top: 50%;
-  left: 50%;
-  margin-top: -250px;
-  transform: translateX(-50%);
-  background: #fff;
-  z-index: 2;
-}
-.add-new-course .close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-}
