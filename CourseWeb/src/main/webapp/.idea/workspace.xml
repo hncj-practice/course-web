@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/css/admin-user-manage.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin-user-manage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin-user-student.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin-user-teacher.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/purple.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/admin-course-manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-course-manage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin-course-manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-course-manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin-user-manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-manage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
     </list>
@@ -16,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Less File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -43,16 +49,16 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\pages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\pages" />
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\js" />
       <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\css" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Code\_Project\course-web\CourseWeb\src\main\webapp\pages" />
+    </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.admin.html">
+  <component name="RunManager" selected="JavaScript Debug.old-admin.html">
     <configuration name="admin-course-manage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webapp/pages/admin-course-manage.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -70,8 +76,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.old-admin.html" />
+        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.admin-course-manage.html" />
         <item itemvalue="JavaScript Debug.admin-user-manage.html" />
         <item itemvalue="JavaScript Debug.i1.html" />
@@ -125,14 +131,7 @@
       <workItem from="1605944255496" duration="14895000" />
       <workItem from="1605970144453" duration="7000" />
       <workItem from="1605970983304" duration="179000" />
-      <workItem from="1606014912377" duration="698000" />
-    </task>
-    <task id="LOCAL-00053" summary="制定前端代码规范">
-      <created>1598714112598</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1598714112598</updated>
+      <workItem from="1606014912377" duration="3212000" />
     </task>
     <task id="LOCAL-00054" summary="按照代码规范修改页面的head部分">
       <created>1598714849153</created>
@@ -470,14 +469,20 @@
       <option name="project" value="LOCAL" />
       <updated>1605961324720</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="管理员课程管理 让iframe可以使用父容器的变量">
+      <created>1606015700608</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1606015700609</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="教师题目管理 选择题显示答案" />
     <MESSAGE value="教师题目管理 合理的格式化选择题" />
     <MESSAGE value="教师题目管理 规范显示题目" />
     <MESSAGE value="教师题目管理 选择题样式" />
@@ -502,7 +507,8 @@
     <MESSAGE value="管理员页面 重新实现课程管理" />
     <MESSAGE value="管理员课程管理 使用promise方式请求课程数据" />
     <MESSAGE value="管理员课程管理 修改一些bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 修改一些bug" />
+    <MESSAGE value="管理员课程管理 让iframe可以使用父容器的变量" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 让iframe可以使用父容器的变量" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="198" key="#Inspections" timestamp="1598087435041">
@@ -522,11 +528,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="645" y="135" key="CommitChangelistDialog2" timestamp="1605961324155">
+    <state x="645" y="135" key="CommitChangelistDialog2" timestamp="1606015699862">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="645" y="135" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605961324155" />
+    <state x="645" y="135" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606015699862" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
@@ -612,11 +618,11 @@
     <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="477" y="213" key="SettingsEditor/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605760147826" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1605961338865">
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606015709698">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="516" y="257" key="Vcs.Push.Dialog.v2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733991625" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605961338865" />
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606015709698" />
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
     <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />

@@ -30,6 +30,12 @@ body {
   border: none;
   outline: none;
 }
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 header {
   width: 100%;
   height: 60px;
@@ -84,7 +90,7 @@ header h3 {
   font-size: 20px;
   color: #fff;
 }
-.main-frame {
+.frame-admin {
   float: right;
   width: calc(100% - 250px);
   height: calc(100% - 60px);

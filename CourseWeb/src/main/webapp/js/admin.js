@@ -20,13 +20,13 @@ function loadEvents() {
         change2User.click(() => {
             change2User.addClass('active');
             change2Course.removeClass('active');
-            $('#mainFrame').attr('src', 'admin-user-manage.html');
+            $('.frame-admin').attr('src', 'admin-user-manage.html');
         });
 
         change2Course.click(() => {
             change2Course.addClass('active');
             change2User.removeClass('active');
-            $('#mainFrame').attr('src', 'admin-course-manage.html');
+            $('.frame-admin').attr('src', 'admin-course-manage.html');
         });
     }
 }
