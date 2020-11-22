@@ -1,9 +1,10 @@
-@import "./style.less";
+@import "style.less";
 
 
 * {
   .cnt-select();
 }
+
 
 // 选择用户类型
 .choose-user-type {
@@ -28,6 +29,8 @@
   }
 }
 
+
+// 主区域
 main {
   width: 100%;
   height: calc(100% - 55px);
@@ -38,4 +41,71 @@ main {
     .no-border();
   }
 
+}
+
+
+// 用户操作
+.user-options {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  // 功能按钮
+  .opts {
+
+    li {
+      a {
+        cursor: pointer;
+      }
+    }
+
+    .reset-all {
+      a {
+        color: #5d6691;
+      }
+    }
+
+    .delete-all {
+      a {
+        color: red;
+      }
+    }
+  }
+
+  .batch-import {
+    height: 32px;
+    line-height: 32px;
+    margin-left: 5px;
+    padding: 0 12px;
+    background: #fff;
+    color: #2F96B4;
+    outline: none;
+    border: solid 1px #dddddd;
+    border-radius: 16px;
+
+    &:hover {
+      background: #eeeeee;
+    }
+  }
+
+  // 翻页按钮
+  .pages {
+    position: absolute;
+    right: 46px;
+    margin-bottom: 0;
+    z-index: 1;
+  }
+
+  .jump {
+    position: absolute;
+    width: 50px;
+    height: 46px;
+    top: 20px;
+    right: 0;
+    outline: none;
+    border: solid 1px #dddddd;
+    padding-left: 5px;
+    font-size: 18px;
+    z-index: 2;
+  }
 }

@@ -64,3 +64,49 @@ main .frame-admin-user {
   border: none;
   outline: none;
 }
+.user-options {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.user-options .opts li a {
+  cursor: pointer;
+}
+.user-options .opts .reset-all a {
+  color: #5d6691;
+}
+.user-options .opts .delete-all a {
+  color: red;
+}
+.user-options .batch-import {
+  height: 32px;
+  line-height: 32px;
+  margin-left: 5px;
+  padding: 0 12px;
+  background: #fff;
+  color: #2F96B4;
+  outline: none;
+  border: solid 1px #dddddd;
+  border-radius: 16px;
+}
+.user-options .batch-import:hover {
+  background: #eeeeee;
+}
+.user-options .pages {
+  position: absolute;
+  right: 46px;
+  margin-bottom: 0;
+  z-index: 1;
+}
+.user-options .jump {
+  position: absolute;
+  width: 50px;
+  height: 46px;
+  top: 20px;
+  right: 0;
+  outline: none;
+  border: solid 1px #dddddd;
+  padding-left: 5px;
+  font-size: 18px;
+  z-index: 2;
+}
