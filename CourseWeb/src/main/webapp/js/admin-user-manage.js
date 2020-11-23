@@ -1,17 +1,43 @@
-// 入口函数
-$(function () {
-    // 刷新课程列表
-    console.log('切换到用户管理');
-
-    loadEvents();
-});
+/**
+ * 管理员 - 用户管理公共函数
+ */
 
 
-// 加载事件
-function loadEvents() {
-    // 点击切换面板
-    switchTab('.frame-admin-user', [
-        new Tab('#cg2Teacher', 'admin-user-teacher.html'),
-        new Tab('#cg2Student', 'admin-user-student.html')
-    ]);
+// 单独添加教师
+function addTeacher(param, success) {
+    // 添加上管理员权限
+    param['adminuser'] = adminUN;
+    param['adminpwd'] = adminUP;
+
+    let url = TEACHER_API.ADD;
+    // 调用API添加
+    post(url, param).then(e => {
+        toastr.success(e.message);
+        // 如果有回调，执行回调
+        if (success) {
+            success();
+        }
+    }).catch(reason => {
+        toastr.error(reason);
+    });
+}
+
+
+// 单独添加学生
+function addStudent(param, success) {
+    // 添加上管理员权限
+    param['adminuser'] = adminUN;
+    param['adminpwd'] = adminUP;
+
+    let url = STUDENT_API.ADD;
+    // 调用API添加
+    post(url, param).then(e => {
+        toastr.success(e.message);
+        // 如果有回调，执行回调
+        if (success) {
+            success();
+        }
+    }).catch(reason => {
+        toastr.error(reason);
+    });
 }

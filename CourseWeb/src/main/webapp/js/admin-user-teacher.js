@@ -516,21 +516,3 @@ function loadEvents() {
 
 }
 
-// 单独添加教师
-function addTeacher(param, success) {
-    // 添加上管理员权限
-    param['adminuser'] = adminUN;
-    param['adminpwd'] = adminUP;
-
-    let url = TEACHER_API.ADD;
-    // 调用API添加
-    post(url, param).then(e => {
-        toastr.success(e.message);
-        // 如果有回调，执行回调
-        if (success) {
-            success();
-        }
-    }).catch(reason => {
-        toastr.error(reason);
-    });
-}

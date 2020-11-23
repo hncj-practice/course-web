@@ -16,8 +16,19 @@
     <!-- 工具类和常量类 -->
     <script src="../js/util.js"></script>
 
-    <!-- 自己的js -->
-    <script src="../js/admin-user-manage.js"></script>
+    <!-- 一些操作 -->
+    <script>
+        // 入口函数
+        $(function () {
+            // 刷新课程列表
+            console.log('切换到用户管理');
+            // 点击切换面板
+            switchTab('.frame-admin-user', [
+                new Tab('#cg2Teacher', 'admin-user-teacher.html'),
+                new Tab('#cg2Student', 'admin-user-student.html')
+            ]);
+        });
+    </script>
 
 </head>
 <body>
