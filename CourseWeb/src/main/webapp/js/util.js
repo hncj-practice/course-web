@@ -160,7 +160,7 @@ function my_ajax(url, param, success, error) {
 
 
 /**
- * promise的ajax
+ * promise的ajax post请求
  * @param obj \{url:'',param:obj'}
  */
 function promiseAjaxPost(obj) {
@@ -175,10 +175,42 @@ function promiseAjaxPost(obj) {
                 resolve(e);
             },
             error: e => {
-                console.log('失败');
-                console.log(e);
                 toastr.error('服务器异常');
                 reject(e);
+            }
+        });
+    });
+}
+
+
+/**
+ * promise的ajax
+ * @param url
+ * @param param
+ * @param timeout
+ * @returns {Promise}
+ */
+function promiseAjax(url, param, timeout = 5000) {
+    return new Promise((resolve, reject) => {
+        jQuery.ajax({
+            url: url,
+            type: 'POST',
+            data: param,
+            traditional: true,
+            timeout: timeout,
+            success: e => {
+                if (e.code === 200) {
+                    resolve(e);
+                } else {
+                    if (e.message) {
+                        reject(e.message);
+                    } else {
+                        reject(ErrorCode['10001']);
+                    }
+                }
+            },
+            error: e => {
+                reject(ErrorCode['10003']);
             }
         });
     });

@@ -518,19 +518,18 @@ function loadEvents() {
 
 // 单独添加教师
 function addTeacher(param, success) {
-    let url = TEACHER_API.ADD;
     param['adminuser'] = adminUN;
     param['adminpwd'] = adminUP;
-    // 请求添加教师
-    my_ajax(url, param, (e) => {
-        if (e.code === 200) {
-            toastr.success(e.message);
-            if (!success) {
-                return;
-            }
+
+    let url = TEACHER_API.ADD;
+    // 调用API添加
+    promiseAjax(url, param).then(e => {
+        toastr.success(e.message);
+        // 如果有回调，执行回调
+        if (success) {
             success();
-        } else {
-            toastr.error(e.message);
         }
+    }).catch(reason => {
+        toastr.error(reason);
     });
 }

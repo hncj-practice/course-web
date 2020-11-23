@@ -12,6 +12,17 @@ const STATIC = {
     QUESTION_TEMPLATE: 'https://fyz1522426323.oss-cn-beijing.aliyuncs.com/kczs/static/question_template.xlsx',
 };
 
+
+/**
+ * 定义错误码
+ */
+const ErrorCode = {
+    10001: '服务器异常 [错误码：10001]',
+    10002: '服务器忙碌 [错误码：10002]',
+    10003: '服务器拒绝 [错误码：10003]',
+};
+
+
 /**
  * 账户相关操作
  */
