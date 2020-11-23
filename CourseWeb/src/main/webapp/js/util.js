@@ -210,6 +210,7 @@ function promiseAjax(url, param, timeout = 5000) {
                 }
             },
             error: e => {
+                console.log(e);
                 reject(ErrorCode['10003']);
             }
         });
