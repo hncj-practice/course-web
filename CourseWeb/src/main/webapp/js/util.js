@@ -190,7 +190,7 @@ function promiseAjaxPost(obj) {
  * @param timeout
  * @returns {Promise}
  */
-function promiseAjax(url, param, timeout = 5000) {
+function post(url, param, timeout = 5000) {
     return new Promise((resolve, reject) => {
         jQuery.ajax({
             url: url,
