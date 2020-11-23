@@ -109,7 +109,7 @@ function renderTeacherTable(obj) {
         } else {
             total_page_teacher = parseInt(total / TEACHER_PER_PAGE) + 1;
         }
-        $('#pEnd_t').text('末页' + total_page_teacher);
+        $('#pEnd_t').text('末页 ' + total_page_teacher);
 
         // 取消所有激活页码
         $('.pages li').removeClass('active');
