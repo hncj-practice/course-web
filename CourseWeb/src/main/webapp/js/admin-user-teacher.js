@@ -500,6 +500,18 @@ function loadEvents() {
                 }
             });
         }
+
+        // 全选教师
+        {
+            $('#selectTAll').off('click');
+            $('#selectTAll').click(() => {
+                console.log('全选');
+                // 获取当前页面所有的checkbox，设置为选择状态
+                let checks = $('.check-teacher');
+                // 否则就全部取消选中
+                checks.attr('checked', true);
+            });
+        }
     }
 
 }
