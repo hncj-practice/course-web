@@ -431,19 +431,19 @@ function loadEvents() {
 
 // 单独添加学生
 function addStudent(param, success) {
-    let url = STUDENT_API.ADD;
+    // 添加上管理员权限
     param['adminuser'] = adminUN;
     param['adminpwd'] = adminUP;
-    // 请求添加
-    my_ajax(url, param, (e) => {
-        if (e.code === 200) {
-            toastr.success(e.message);
-            if (!success) {
-                return;
-            }
+
+    let url = STUDENT_API.ADD;
+    // 调用API添加
+    post(url, param).then(e => {
+        toastr.success(e.message);
+        // 如果有回调，执行回调
+        if (success) {
             success();
-        } else {
-            toastr.error(e.message);
         }
+    }).catch(reason => {
+        toastr.error(reason);
     });
 }
