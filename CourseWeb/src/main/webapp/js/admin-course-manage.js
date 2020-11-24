@@ -91,8 +91,9 @@ async function loadEvents() {
         $('.delete-course').click((e) => {
             let cid = $(e.target).attr('cid');
             let body = '确定删除课程？<br>课程ID：' + cid;
+            // 弹窗删除
             myBootstrapModel('警告', body, '确定', '取消', () => {
-                deleteCourse(cid);
+                deleteCourse(cid, refresh);
             });
         });
     }
@@ -102,32 +103,12 @@ async function loadEvents() {
     {
         $('.save-course').off('click');
         $('.save-course').click((e) => {
-
-            console.log(adminUN);
-            console.log(adminUP);
-
             let cid = $(e.target).attr('cid');
             let newName = $('#courseName' + cid).val();
             let body = '确定改名？<br>新名称：' + newName;
+            // 弹窗重命名
             myBootstrapModel('警告', body, '确定', '取消', () => {
-                // 请求API修改
-                let url = COURSE_API.UPDATE;
-                // noinspection DuplicatedCode
-                let param = {
-                    user: adminUN,
-                    pwd: adminUP,
-                    courseid: cid,
-                    name: newName
-                };
-                let success = (e) => {
-                    // 成功
-                    if (e.code === 200) {
-                        toastr.success(e.message);
-                    } else {
-                        toastr.error(e.message);
-                    }
-                };
-                my_ajax(url, param, success);
+                renameCourse(cid, newName);
             });
         });
     }
@@ -242,9 +223,37 @@ async function loadEvents() {
 
 
 /**
- * 删除课程
- * @param cid
+ * 处理awaitWrap的结果
+ * 成功显示一下data的message，然后执行回调
+ * 失败显示err，若err不是字符串则显示 10001错误
+ * @param err
+ * @param data
  * @param success
+ * @returns {Promise<void>}
+ */
+async function process([err, data], success) {
+    // 成功
+    if (data) {
+        toastr.success(data.message);
+        if (success) {
+            await success();
+        }
+    }
+    // 失败
+    else {
+        if (typeof (err) === "string") {
+            toastr.error(err);
+        } else {
+            toastr.error(ErrorCode["10001"]);
+        }
+    }
+}
+
+
+/**
+ * 删除课程
+ * @param cid 课程id
+ * @param success 成功的回调
  */
 async function deleteCourse(cid, success) {
     let url = COURSE_API.DELETE;
@@ -253,15 +262,29 @@ async function deleteCourse(cid, success) {
         adminpwd: adminUP,
         courseid: cid
     };
-
+    // 发送post请求
     const [err, data] = await awaitWrap(post(url, param));
-    // 成功
-    if (data) {
-        toastr.warning(data.message);
-        await refresh();
-    }
-    // 失败
-    else {
-        toastr.error(err);
-    }
+    // 通用处理
+    await process([err, data], success);
+}
+
+
+/**
+ * 重命名课程
+ * @param cid 课程id
+ * @param newName 新名字
+ * @param success 成功回调
+ */
+async function renameCourse(cid, newName, success) {
+    let url = COURSE_API.UPDATE;
+    let param = {
+        user: adminUN,
+        pwd: adminUP,
+        courseid: cid,
+        name: newName
+    };
+    // 发送post请求
+    const [err, data] = await awaitWrap(post(url, param));
+    // 通用处理
+    await process([err, data], success);
 }
