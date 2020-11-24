@@ -4,8 +4,9 @@
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/admin-user-manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-manage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin-user-student.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-student.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/admin-user-teacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-teacher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin-user-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-student.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,14 +130,7 @@
       <workItem from="1606055685008" duration="650000" />
       <workItem from="1606100240412" duration="6538000" />
       <workItem from="1606127914560" duration="7840000" />
-      <workItem from="1606190721925" duration="3426000" />
-    </task>
-    <task id="LOCAL-00069" summary="添加批量导入模板的下载功能">
-      <created>1602212313187</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1602212313187</updated>
+      <workItem from="1606190721925" duration="4311000" />
     </task>
     <task id="LOCAL-00070" summary="修改静态资源链接">
       <created>1602225005796</created>
@@ -474,14 +468,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606192615198</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="管理员用户管理 使用async/await方式添加用户">
+      <created>1606194203425</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1606194203425</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="教师题目管理 实现单独添加判断题" />
     <MESSAGE value="教师题目管理 实现单独添加填空题" />
     <MESSAGE value="教师试卷管理 完成试卷样式" />
     <MESSAGE value="准备整理目录结构" />
@@ -506,7 +506,8 @@
     <MESSAGE value="管理员学生管理 改进单独添加学生的方法" />
     <MESSAGE value="管理员用户管理 将对用户的公共操作提取出来" />
     <MESSAGE value="管理员 将账号密码提取出来" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员 将账号密码提取出来" />
+    <MESSAGE value="管理员用户管理 使用async/await方式添加用户" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员用户管理 使用async/await方式添加用户" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -527,11 +528,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="570" y="178" key="CommitChangelistDialog2" timestamp="1606192614499">
+    <state x="570" y="178" key="CommitChangelistDialog2" timestamp="1606194202815">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="570" y="178" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606192614499" />
+    <state x="570" y="178" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606194202815" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
@@ -617,11 +618,11 @@
     <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="675" y="340" width="998" height="708" key="SettingsEditor/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606110332485" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606192627341">
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606194207453">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="516" y="257" key="Vcs.Push.Dialog.v2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733991625" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606192627341" />
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606194207453" />
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
     <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />

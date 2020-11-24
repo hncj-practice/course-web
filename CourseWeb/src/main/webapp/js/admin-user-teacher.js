@@ -415,7 +415,7 @@ function loadEvents() {
             });
             // input file的change事件
             $('#batchTImportInput').off('change');
-            $('#batchTImportInput').change((e) => {
+            $('#batchTImportInput').change(async (e) => {
                 let files = e.target.files;
                 // 解析文件内容成obj数组
                 resolveXlsx(false, files, (list) => {
@@ -432,11 +432,13 @@ function loadEvents() {
                         };
                         // 最后一次成功回调后刷新页面
                         if (index === list.length - 1) {
-                            addTeacher(param, refreshTeachers);
+                            // addTeacher(param, refreshTeachers);
+                            addUser('teacher', param, refreshTeachers);
                             // 最后置value为null，修复onchange只能触发一次的bug
                             e.target.value = null;
                         } else {
-                            addTeacher(param);
+                            // addTeacher(param);
+                            addUser('teacher', param);
                         }
                     });
                 });

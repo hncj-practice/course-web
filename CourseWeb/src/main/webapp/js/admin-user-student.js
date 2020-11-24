@@ -18,6 +18,9 @@ function refresh() {
 
 // 刷新学生用户表格
 function refreshStudents(page, num) {
+    if (!page) page = 1;
+    if (!num) num = STUDENT_PER_PAGE;
+
     let url = STUDENT_API.FIND;
     let param = {
         page: page,
@@ -105,7 +108,7 @@ function loadEvents() {
         // 添加学生
         {
             $('#addStudent').off('click');
-            $('#addStudent').click(() => {
+            $('#addStudent').click(async () => {
                 console.log('点击添加学生');
                 let sno = $('#snoAdd').val();
                 let sname = $('#snameAdd').val();
@@ -141,7 +144,7 @@ function loadEvents() {
                         avatar: "default",
                         status: 0
                     };
-                    addStudent(param, refreshStudents(1, STUDENT_PER_PAGE));
+                    addUser('student', param, refreshStudents);
                 });
             });
         }
@@ -395,7 +398,7 @@ function loadEvents() {
             });
             // input file的change事件
             $('#batchSImportInput').off('change');
-            $('#batchSImportInput').change((e) => {
+            $('#batchSImportInput').change(async (e) => {
                 let files = e.target.files;
                 // 解析文件内容成obj数组
                 resolveXlsx(false, files, (list) => {
@@ -413,11 +416,13 @@ function loadEvents() {
                         };
                         // 最后一次成功回调后刷新页面
                         if (index === list.length - 1) {
-                            addStudent(param, refreshStudents(1, STUDENT_PER_PAGE));
+                            // addStudent(param, refreshStudents(1, STUDENT_PER_PAGE));
+                            addUser('student', param, refreshStudents);
                             // 最后置value为null，修复onchange只能触发一次的bug
                             e.target.value = null;
                         } else {
-                            addStudent(param);
+                            // addStudent(param);
+                            addUser('student', param);
                         }
                     });
                 });
