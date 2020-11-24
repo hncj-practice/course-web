@@ -8,9 +8,6 @@ const TEACHER_PER_PAGE = 14;
 // 当前教师列表的页数
 let curr_page_teacher = 1;
 
-// let adminUN = 'wsgly';
-// let adminUP = '000000';
-
 // 入口函数
 $(function () {
     console.log('教师用户管理');
@@ -255,7 +252,7 @@ function loadEvents() {
         // 单独添加教师
         {
             $('#addTeacher').off('click');
-            $('#addTeacher').click(() => {
+            $('#addTeacher').click(async () => {
                 console.log('点击添加教师');
                 let tno = $('#tnoAdd').val();
                 let tname = $('#tnameAdd').val();
@@ -291,7 +288,7 @@ function loadEvents() {
                         avatar: "default",
                         status: 1
                     };
-                    addTeacher(param, refreshTeachers);
+                    addUser('teacher', param, refreshTeachers);
                 });
             });
         }

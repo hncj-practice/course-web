@@ -219,6 +219,18 @@ function post(url, param, timeout = 5000) {
 
 
 /**
+ * await错误处理函数
+ * @param promise
+ * @returns {Promise}
+ */
+const awaitWrap = (promise) => {
+    return promise
+        .then(data => [null, data])
+        .catch(err => [err, null]);
+};
+
+
+/**
  * 解析excel文件
  * @param rABS 是否用二进制读取
  * @param files file列表
