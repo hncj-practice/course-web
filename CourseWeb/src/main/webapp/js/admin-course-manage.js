@@ -164,6 +164,7 @@ async function loadEvents() {
                 my_ajax(url, param, success);
             }
         });
+
         // 关闭按钮
         $('#closeAddCourseDiv').off('click');
         $('#closeAddCourseDiv').click(() => {
@@ -187,49 +188,36 @@ async function loadEvents() {
         $('#addCourseEnsure').click(() => {
             console.log('确定新建课程');
 
-            let name = $('#courseNameAdd').val();
-            let tno = $('#teacherList').val();
             let classes = $('#courseClassesAdd').text().split(";");
             // 删除最后面的空元素
             classes.splice(classes.length - 1, 1);
 
             // 调用API新建
-            let url = COURSE_API.ADD;
             let param = {
-                adminuser: adminUN,
-                adminpwd: adminUP,
                 semester: 1,
-                tno: tno,
-                cname: name,
+                tno: $('#teacherList').val(),
+                cname: $('#courseNameAdd').val(),
                 classid: classes,
                 coverimg: 'default',
                 status: '1'
             };
-            let success = (e) => {
-                // 成功
-                if (e.code === 200) {
-                    toastr.success(e.message);
-                    $('.add-new-course').hide(250);
-                    refresh();
-                } else {
-                    toastr.error(e.message);
-                }
-            };
-            // 新建
-            my_ajax(url, param, success);
+
+            addCourse(param, () => {
+                $('.add-new-course').hide(250);
+                refresh();
+            });
         });
     }
 }
 
 
 /**
- * 处理awaitWrap的结果
+ * 通用的处理awaitWrap的结果
  * 成功显示一下data的message，然后执行回调
  * 失败显示err，若err不是字符串则显示 10001错误
  * @param err
  * @param data
  * @param success
- * @returns {Promise<void>}
  */
 async function process([err, data], success) {
     // 成功
@@ -283,6 +271,23 @@ async function renameCourse(cid, newName, success) {
         courseid: cid,
         name: newName
     };
+    // 发送post请求
+    const [err, data] = await awaitWrap(post(url, param));
+    // 通用处理
+    await process([err, data], success);
+}
+
+
+/**
+ * 添加课程
+ * @param param 调用时的参数
+ * @param success 成功回调
+ */
+async function addCourse(param, success) {
+    let url = COURSE_API.ADD;
+    // 添加上管理员权限
+    param['adminuser'] = adminUN;
+    param['adminpwd'] = adminUP;
     // 发送post请求
     const [err, data] = await awaitWrap(post(url, param));
     // 通用处理

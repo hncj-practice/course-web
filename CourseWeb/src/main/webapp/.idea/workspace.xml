@@ -128,14 +128,7 @@
       <workItem from="1606100240412" duration="6538000" />
       <workItem from="1606127914560" duration="7840000" />
       <workItem from="1606190721925" duration="6145000" />
-      <workItem from="1606208045473" duration="3410000" />
-    </task>
-    <task id="LOCAL-00072" summary="初步实现批量添加题目">
-      <created>1602307516855</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1602307516855</updated>
+      <workItem from="1606208045473" duration="6131000" />
     </task>
     <task id="LOCAL-00073" summary="完善批量添加题目">
       <created>1602311905306</created>
@@ -473,14 +466,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606209861161</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="管理员课程管理 添加通用的结果处理方法">
+      <created>1606211579443</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1606211579443</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="准备整理目录结构" />
     <MESSAGE value="前端库使用cdn加速" />
     <MESSAGE value="管理员页面 使用iframe管理页面" />
     <MESSAGE value="管理员页面 重新实现课程管理" />
@@ -505,7 +504,8 @@
     <MESSAGE value="管理员用户管理 使用async/await方式添加用户" />
     <MESSAGE value="管理员用户管理 使用async/await方式添加用户2" />
     <MESSAGE value="管理员课程管理 使用async/await方式删除课程" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 使用async/await方式删除课程" />
+    <MESSAGE value="管理员课程管理 添加通用的结果处理方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 添加通用的结果处理方法" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -526,11 +526,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="570" y="178" key="CommitChangelistDialog2" timestamp="1606209860197">
+    <state x="570" y="178" key="CommitChangelistDialog2" timestamp="1606211578823">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="570" y="178" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606209860197" />
+    <state x="570" y="178" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606211578823" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
