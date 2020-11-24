@@ -95,8 +95,8 @@ async function loadEvents() {
                 let url = COURSE_API.DELETE;
                 // noinspection DuplicatedCode
                 let param = {
-                    adminuser: parent.adminUN,
-                    adminpwd: parent.adminUP,
+                    adminuser: adminUN,
+                    adminpwd: adminUP,
                     courseid: cid
                 };
                 let success = (e) => {
@@ -119,8 +119,8 @@ async function loadEvents() {
         $('.save-course').off('click');
         $('.save-course').click((e) => {
 
-            console.log(parent.adminUN);
-            console.log(parent.adminUP);
+            console.log(adminUN);
+            console.log(adminUP);
 
             let cid = $(e.target).attr('cid');
             let newName = $('#courseName' + cid).val();
@@ -130,8 +130,8 @@ async function loadEvents() {
                 let url = COURSE_API.UPDATE;
                 // noinspection DuplicatedCode
                 let param = {
-                    user: parent.adminUN,
-                    pwd: parent.adminUP,
+                    user: adminUN,
+                    pwd: adminUP,
                     courseid: cid,
                     name: newName
                 };
@@ -231,8 +231,8 @@ async function loadEvents() {
             // 调用API新建
             let url = COURSE_API.ADD;
             let param = {
-                adminuser: parent.adminUN,
-                adminpwd: parent.adminUP,
+                adminuser: adminUN,
+                adminpwd: adminUP,
                 semester: 1,
                 tno: tno,
                 cname: name,

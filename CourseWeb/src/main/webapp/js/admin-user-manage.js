@@ -2,6 +2,13 @@
  * 管理员 - 用户管理公共函数
  */
 
+// let adminUN = '';
+// let adminUP = '';
+
+// // 添加用户
+// const addUser = (type, param, success) => {
+//
+// };
 
 // 单独添加教师
 function addTeacher(param, success) {

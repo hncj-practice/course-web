@@ -4,9 +4,6 @@
 
 const STUDENT_PER_PAGE = 14;
 
-let adminUN = 'wsgly';
-let adminUP = '000000';
-
 // 入口函数
 $(function () {
     console.log('学生用户管理');

@@ -8,8 +8,8 @@ const TEACHER_PER_PAGE = 14;
 // 当前教师列表的页数
 let curr_page_teacher = 1;
 
-let adminUN = 'wsgly';
-let adminUP = '000000';
+// let adminUN = 'wsgly';
+// let adminUP = '000000';
 
 // 入口函数
 $(function () {
