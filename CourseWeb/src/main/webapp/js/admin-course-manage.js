@@ -9,36 +9,38 @@
 
 // 入口函数
 $(function () {
-    // 刷新课程列表
     console.log('切换到课程管理');
-
-    refresh().then(r => {
-        // 为了不报警告
-        return r;
-    });
-
+    // 刷新课程列表
+    (async function () {
+        await refresh();
+    })();
 });
 
 
 // 获取数据
 async function refresh() {
-    // 获取数据
-    let data = await promiseAjaxPost({
-        url: COURSE_API.FIND,
-        param: {
-            page: 1,
-            num: 14
-        }
-    });
+    let url = COURSE_API.FIND;
+    let param = {
+        page: 1,
+        num: 14
+    };
 
-    // 渲染数据
-    await renderCourseTable(data);
+    // 请求数据
+    const [err, data] = await awaitWrap(post(url, param));
 
-    // 元素生成后添加事件
-    await loadEvents();
-
-    // 提示刷新成功
-    toastr.success('课程刷新成功');
+    // 请求成功
+    if (data) {
+        // 渲染数据
+        await renderCourseTable(data);
+        // 元素生成后添加事件
+        await loadEvents();
+        // 提示刷新成功
+        toastr.success('课程刷新成功');
+    }
+    // 请求失败
+    else {
+        toastr.error(err);
+    }
 }
 
 // 渲染课程列表
@@ -62,16 +64,15 @@ function renderCourseTable(data) {
         // noinspection HtmlUnknownAttribute
         html += `
         <tr>
-            <td>{0}</td>
-            <td><input id="courseName{0}" class="course-name" type="text" value="{1}"></td>
-            <td>{2}</td>
-            <td>{3}</td>
+            <td>${cid}</td>
+            <td><input id="courseName${cid}" class="course-name" type="text" value="${cname}"></td>
+            <td>${tname}</td>
+            <td>${status}</td>
             <td class="options">
-                <span cid="{0}" class="save-course">保存更改</span>
-                <span cid="{0}" class="delete-course">删除</span>
+                <span cid="${cid}" class="save-course">保存更改</span>
+                <span cid="${cid}" class="delete-course">删除</span>
             </td>
-        </tr>
-        `.format(cid, cname, tname, status);
+        </tr>`;
     });
 
     // 渲染到页面上
@@ -91,24 +92,7 @@ async function loadEvents() {
             let cid = $(e.target).attr('cid');
             let body = '确定删除课程？<br>课程ID：' + cid;
             myBootstrapModel('警告', body, '确定', '取消', () => {
-                // 请求API删除
-                let url = COURSE_API.DELETE;
-                // noinspection DuplicatedCode
-                let param = {
-                    adminuser: adminUN,
-                    adminpwd: adminUP,
-                    courseid: cid
-                };
-                let success = (e) => {
-                    // 成功
-                    if (e.code === 200) {
-                        toastr.success(e.message);
-                        refresh();
-                    } else {
-                        toastr.error(e.message);
-                    }
-                };
-                my_ajax(url, param, success);
+                deleteCourse(cid);
             });
         });
     }
@@ -253,5 +237,31 @@ async function loadEvents() {
             // 新建
             my_ajax(url, param, success);
         });
+    }
+}
+
+
+/**
+ * 删除课程
+ * @param cid
+ * @param success
+ */
+async function deleteCourse(cid, success) {
+    let url = COURSE_API.DELETE;
+    let param = {
+        adminuser: adminUN,
+        adminpwd: adminUP,
+        courseid: cid
+    };
+
+    const [err, data] = await awaitWrap(post(url, param));
+    // 成功
+    if (data) {
+        toastr.warning(data.message);
+        await refresh();
+    }
+    // 失败
+    else {
+        toastr.error(err);
     }
 }
