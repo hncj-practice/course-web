@@ -280,53 +280,38 @@ function loadEvents() {
         // 批量删除教师
         {
             $('#deleteTAll').off('click');
-            $('#deleteTAll').click(() => {
+            $('#deleteTAll').click(async () => {
                 console.log('批量删除教师');
                 // 拿到所有的复选框
                 let checkedTeachers = $('.check-teacher');
                 // 所选教师集合
-                let ts = [];
+                let teachers = [];
                 // 遍历
-                // noinspection JSUnresolvedVariable
                 jQuery.each(checkedTeachers, (index, item) => {
                     if (item.checked) {
-                        ts.push($(item).attr('tno'));
+                        teachers.push($(item).attr('tno'));
                     }
                 });
-                if (ts.length < 1) {
+                if (teachers.length < 1) {
                     toastr.warning('请选中教师');
                     return;
                 }
-                let body = '确定删除以下教师：<br>工号：' + ts.join('<br>工号：');
+                let body = '确定删除以下教师：<br>工号：' + teachers.join('<br>工号：');
 
-                // 删除完成标志
+                // 删除计数器
                 let n = 0;
                 myBootstrapModel('警告', body, '确定', '取消', () => {
                     // 遍历删除
-                    ts.forEach((item) => {
-                        // noinspection all,DuplicatedCode
-                        let url = ACCOUNT_API.DELETE;
-                        let param = {
-                            adminuser: adminUN,
-                            adminpwd: adminUP,
-                            username: item,
-                            type: 2
-                        };
-                        let success = (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
+                    teachers.forEach(tno => {
+                        deleteUser(Entity.TEACHER, tno, () => {
+                            // 计数器
                             n++;
                             // 所有都删除完成
-                            if (n === ts.length) {
+                            if (n === teachers.length) {
                                 toastr.success('成功删除所选教师！');
                                 refreshTeachers();
                             }
-                        };
-                        my_ajax(url, param, success);
+                        });
                     });
                 })
             });
@@ -416,12 +401,10 @@ function loadEvents() {
                         };
                         // 最后一次成功回调后刷新页面
                         if (index === list.length - 1) {
-                            // addTeacher(param, refreshTeachers);
                             addUser('teacher', param, refreshTeachers);
                             // 最后置value为null，修复onchange只能触发一次的bug
                             e.target.value = null;
                         } else {
-                            // addTeacher(param);
                             addUser('teacher', param);
                         }
                     });
