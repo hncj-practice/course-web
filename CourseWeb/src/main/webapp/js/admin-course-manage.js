@@ -24,23 +24,17 @@ async function refresh() {
         page: 1,
         num: 14
     };
-
     // 请求数据
     const [err, data] = await awaitWrap(post(url, param));
-
-    // 请求成功
-    if (data) {
+    // 处理数据
+    await process([err, data], async () => {
         // 渲染数据
         await renderCourseTable(data);
         // 元素生成后添加事件
         await loadEvents();
         // 提示刷新成功
         toastr.success('课程刷新成功');
-    }
-    // 请求失败
-    else {
-        toastr.error(err);
-    }
+    });
 }
 
 // 渲染课程列表
@@ -92,7 +86,7 @@ async function loadEvents() {
             let cid = $(e.target).attr('cid');
             let body = '确定删除课程？<br>课程ID：' + cid;
             // 弹窗删除
-            myBootstrapModel('警告', body, '确定', '取消', () => {
+            showWarning(body, () => {
                 deleteCourse(cid, refresh);
             });
         });
@@ -107,7 +101,7 @@ async function loadEvents() {
             let newName = $('#courseName' + cid).val();
             let body = '确定改名？<br>新名称：' + newName;
             // 弹窗重命名
-            myBootstrapModel('警告', body, '确定', '取消', () => {
+            showWarning(body, () => {
                 renameCourse(cid, newName);
             });
         });
