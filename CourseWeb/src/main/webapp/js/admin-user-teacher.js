@@ -7,9 +7,9 @@
 
 // 每页展示的教师数
 const TEACHER_PER_PAGE = 14;
-
 // 当前教师列表的页数
 let curr_page_teacher = 1;
+
 
 // 入口函数
 $(function () {
@@ -36,10 +36,10 @@ async function refreshTeachers() {
 
 
 // 渲染教师用户表格
-function renderTeacherTable(obj) {
-    console.log(obj);
+function renderTeacherTable(data) {
+    console.log(data);
     // 判断有没有数据
-    if (obj.code === 401) {
+    if (data.code === 401) {
         toastr.warning('没有数据');
         return;
     }
@@ -49,7 +49,7 @@ function renderTeacherTable(obj) {
     let html = '';
     let tno, name, sex, email;
     // noinspection DuplicatedCode
-    obj.data.forEach((item) => {
+    data.data.forEach((item) => {
         tno = item.tno;
         name = item.name;
         sex = '男';
@@ -57,24 +57,21 @@ function renderTeacherTable(obj) {
             sex = '女';
         }
         email = item.email;
-
-        // noinspection all
         html += `
         <tr>
             <td>
-                <input class="check-teacher" tno="{0}" type="checkbox" />
-                {0}
+                <input class="check-teacher" tno="${tno}" type="checkbox" />
+                ${tno}
             </td>
-            <td>{1}</td>
-            <td>{2}</td>
-            <td>{3}</td>
+            <td>${name}</td>
+            <td>${sex}</td>
+            <td>${email}</td>
             <td>OK</td>
             <td class="options">
-                <span tno="{0}" class="reset-user reset-teacher">重置</span>
-                <span tno="{0}" class="delete-user delete-teacher">删除</span>
+                <span tno="${tno}" class="reset-user reset-teacher">重置</span>
+                <span tno="${tno}" class="delete-user delete-teacher">删除</span>
             </td>
-        </tr>
-        `.format(tno, name, sex, email);
+        </tr>`;
     });
 
     // 添加上最后一行
@@ -94,11 +91,10 @@ function renderTeacherTable(obj) {
     `;
     teacherTable.html(html);
 
-
     // 渲染页码
     {
         // 拿到教师总人数
-        let total = obj['data'][0]['total'];
+        let total = data['data'][0]['total'];
         // 计算出有多少页
         if (total % TEACHER_PER_PAGE === 0) {
             total_page_teacher = parseInt(total / TEACHER_PER_PAGE);
