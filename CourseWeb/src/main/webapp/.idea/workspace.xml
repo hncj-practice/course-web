@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="管理员课程管理 基本改造完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/admin-course-manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-course-manage.js" afterDir="false" />
     </list>
@@ -128,14 +128,8 @@
       <workItem from="1606100240412" duration="6538000" />
       <workItem from="1606127914560" duration="7840000" />
       <workItem from="1606190721925" duration="6145000" />
-      <workItem from="1606208045473" duration="9528000" />
-    </task>
-    <task id="LOCAL-00074" summary="选择导入模板时指定文件类型">
-      <created>1602386497931</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1602386497932</updated>
+      <workItem from="1606208045473" duration="9635000" />
+      <workItem from="1606271442799" duration="1129000" />
     </task>
     <task id="LOCAL-00075" summary="添加题目导入模板的下载链接">
       <created>1602643482353</created>
@@ -473,15 +467,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606214296638</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="管理员课程管理 继续改进代码">
+      <created>1606228979365</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1606228979365</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="管理员页面 使用iframe管理页面" />
-    <MESSAGE value="管理员页面 重新实现课程管理" />
     <MESSAGE value="管理员课程管理 使用promise方式请求课程数据" />
     <MESSAGE value="管理员课程管理 修改一些bug" />
     <MESSAGE value="管理员课程管理 让iframe可以使用父容器的变量" />
@@ -505,7 +504,9 @@
     <MESSAGE value="管理员课程管理 使用async/await方式删除课程" />
     <MESSAGE value="管理员课程管理 添加通用的结果处理方法" />
     <MESSAGE value="管理员课程管理 改进代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 改进代码" />
+    <MESSAGE value="管理员课程管理 继续改进代码" />
+    <MESSAGE value="管理员课程管理 基本改造完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 基本改造完成" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -526,11 +527,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="570" y="178" key="CommitChangelistDialog2" timestamp="1606214296089">
+    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606272544283">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="570" y="178" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606214296089" />
+    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606272544283" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />

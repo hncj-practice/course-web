@@ -122,40 +122,25 @@ async function loadEvents() {
             $('.add-new-course').show(250);
             console.log('打开');
             $('#courseClassesAdd').text('');
-            // 加载信息
-            // 加载所有教师信息，放在下拉框里面
-            {
-                // 获取所有教师
-                let data = await getEntities(Entity.TEACHER);
-                // 添加到下拉列表
-                let html = '';
-                let teacherList = $('#teacherList');
-                data.forEach(item => {
-                    html += `<option value="${item.tno}">${item.tno + ':' + item.name}</option>`;
-                });
-                // 渲染到页面
-                teacherList.html(html);
-            }
-            // 加载所有班级信息，放在下拉框里面
-            {
-                let url = CLASS_API.FIND;
-                let param = {};
-                let success = (e) => {
-                    // 成功
-                    if (e.code === 200) {
-                        // 添加到下拉列表
-                        let html = '';
-                        let classesList = $('#classesList');
-                        e['data'].forEach((item) => {
-                            html += `<option value="{0}">{0}</option>`.format(item.classid);
-                        });
-                        classesList.html(html);
-                    } else {
-                        toastr.error(e.message);
-                    }
-                };
-                my_ajax(url, param, success);
-            }
+            // 加载信息，放到下拉框里面
+            // 并行获取
+            let [teacherData, classData] = await Promise.all([
+                getEntities(Entity.TEACHER),
+                getEntities(Entity.CLASS)
+            ]);
+            // 添加到下拉列表
+            let teacherHtml = '', classHtml = '';
+            let teacherList = $('#teacherList');
+            let classesList = $('#classesList');
+            teacherData.forEach(item => {
+                teacherHtml += `<option value="${item.tno}">${item.tno + ':' + item.name}</option>`;
+            });
+            classData.forEach(item => {
+                classHtml += `<option value="${item.classid}">${item.classid}</option>`;
+            });
+            // 渲染到页面
+            teacherList.html(teacherHtml);
+            classesList.html(classHtml);
         });
 
         // 关闭按钮
@@ -288,34 +273,10 @@ async function addCourse(param, success) {
 }
 
 
-/**
- * 获取所有教师的信息
- * @returns {Promise}
- */
-async function getTeachers() {
-    let url = TEACHER_API.FIND;
-    // const [err, data] = await post(url, {});
-    return new Promise((resolve, reject) => {
-        post(url, {}).then(data => {
-            if (data.code === 200) {
-                resolve(data.data);
-            } else {
-                if (data.message) {
-                    reject(data.message);
-                } else {
-                    reject(ErrorCode["10001"]);
-                }
-            }
-        }).catch(reason => {
-            reject(ErrorCode["10001"]);
-        });
-    });
-}
-
-
 const Entity = {
     TEACHER: 'teacher',
-    STUDENT: 'student'
+    STUDENT: 'student',
+    CLASS: 'class'
 };
 
 
@@ -333,6 +294,9 @@ async function getEntities(entity) {
         case Entity.STUDENT:
             url = STUDENT_API.FIND;
             break;
+        case Entity.CLASS:
+            url = CLASS_API.FIND;
+            break;
     }
 
     return new Promise((resolve, reject) => {
@@ -347,7 +311,7 @@ async function getEntities(entity) {
                 }
             }
         }).catch(reason => {
-            reject(ErrorCode["10001"]);
+            reject(reason);
         });
     });
 
