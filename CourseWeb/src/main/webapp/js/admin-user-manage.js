@@ -3,9 +3,9 @@
  */
 
 // 添加一个用户
-const addUser = async (type, param, success) => {
+async function addUser(type, param, success) {
     // 根据用户类型选择相应的API
-    let url = (type === 'teacher') ? TEACHER_API.ADD : STUDENT_API.ADD;
+    let url = (type === 'teacher') ? API.TEACHER_API.ADD : API.STUDENT_API.ADD;
     // 添加上管理员权限
     param['adminuser'] = adminUN;
     param['adminpwd'] = adminUP;
@@ -13,14 +13,29 @@ const addUser = async (type, param, success) => {
     // 调用API添加
     const [err, data] = await awaitWrap(post(url, param));
 
-    if (err) {
-        toastr.error(err);
-    } else {
-        toastr.success(data.message);
-        // 如果有回调，执行回调
-        if (success) {
-            success();
-        }
-    }
-};
+    // 处理结果
+    await process([err,data], success);
+}
 
+
+/**
+ * 删除用户
+ * @param type
+ * @param id
+ * @param success
+ * @returns {Promise}
+ */
+async function deleteUser(type, id, success) {
+    let url = API.ACCOUNT_API.DELETE;
+    let param = {
+        adminuser: adminUN,
+        adminpwd: adminUP,
+        username: id,
+        type: (type === Entity.STUDENT ? 1 : 2)
+    };
+    // post请求
+    const [err, data] = await awaitWrap(post(url, param));
+
+    // 处理结果
+    await process([err,data], success);
+}

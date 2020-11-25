@@ -231,6 +231,33 @@ const awaitWrap = (promise) => {
 
 
 /**
+ * 通用的处理awaitWrap的结果
+ * 成功显示一下data的message，然后执行回调
+ * 失败显示err，若err不是字符串则显示 10001错误
+ * @param err
+ * @param data
+ * @param success
+ */
+async function process([err, data], success) {
+    // 成功
+    if (data) {
+        toastr.success(data.message);
+        if (success) {
+            await success();
+        }
+    }
+    // 失败
+    else {
+        if (typeof (err) === "string") {
+            toastr.error(err);
+        } else {
+            toastr.error(ErrorCode["10001"]);
+        }
+    }
+}
+
+
+/**
  * 解析excel文件
  * @param rABS 是否用二进制读取
  * @param files file列表

@@ -218,7 +218,7 @@ function loadEvents() {
         // 删除教师
         {
             $('.delete-teacher').off('click');
-            $('.delete-teacher').click((e) => {
+            $('.delete-teacher').click(async (e) => {
                 let tno = $(e.target).attr('tno');
                 console.log('点击：删除 ' + tno);
                 let title = '提示';
@@ -227,24 +227,7 @@ function loadEvents() {
                 myBootstrapModel(title, body, '确定', '取消', () => {
                     console.log('删除：' + tno);
                     // 请求API删除
-                    let url = ACCOUNT_API.DELETE;
-                    let param = {
-                        adminuser: adminUN,
-                        adminpwd: adminUP,
-                        username: tno,
-                        type: 2
-                    };
-                    let success = (e) => {
-                        // 删除成功
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                        // 刷新表格
-                        refreshTeachers();
-                    };
-                    my_ajax(url, param, success);
+                    deleteUser(Entity.TEACHER, tno, refreshTeachers);
                 });
             });
         }
@@ -266,11 +249,12 @@ function loadEvents() {
                 }
 
                 // 添加确认提示
-                let body = '确定添加教师用户？' + '<br>' +
-                    '工号：' + tno + '<br>' +
-                    '姓名：' + tname + '<br>' +
-                    '性别：' + tsex + '<br>' +
-                    '邮箱：' + temail;
+                let body = `
+                    确定添加教师用户？<br>
+                    工号：${tno}<br>
+                    姓名：${tname}<br>
+                    性别：${tsex}<br>
+                    邮箱：${temail}`;
                 myBootstrapModel('提示', body, '确定', '取消', () => {
                     // 处理性别
                     if (tsex === '女') {
@@ -281,11 +265,11 @@ function loadEvents() {
                     // 请求添加教师API
                     let param = {
                         tno: tno,
-                        pwd: "000000",
+                        pwd: "000000", // 默认密码
                         name: tname,
                         sex: tsex,
                         email: temail,
-                        avatar: "default",
+                        avatar: "default", // 默认头像
                         status: 1
                     };
                     addUser('teacher', param, refreshTeachers);
