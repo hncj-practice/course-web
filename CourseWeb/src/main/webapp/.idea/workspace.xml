@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/entity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tanyiqu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/admin-course-manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-course-manage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin-course-manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-course-manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/entity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/entity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/interfaces.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/interfaces.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,14 +131,7 @@
       <workItem from="1606127914560" duration="7840000" />
       <workItem from="1606190721925" duration="6145000" />
       <workItem from="1606208045473" duration="9635000" />
-      <workItem from="1606271442799" duration="3192000" />
-    </task>
-    <task id="LOCAL-00076" summary="教师题目管理 选择题选项和题目分开显示">
-      <created>1604728090298</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1604728090299</updated>
+      <workItem from="1606271442799" duration="4810000" />
     </task>
     <task id="LOCAL-00077" summary="教师题目管理 选择题显示答案">
       <created>1604728306028</created>
@@ -476,14 +469,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606272579611</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="管理员 分离出实体操作">
+      <created>1606277019849</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1606277019849</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="管理员课程管理 使用promise方式请求课程数据" />
     <MESSAGE value="管理员课程管理 修改一些bug" />
     <MESSAGE value="管理员课程管理 让iframe可以使用父容器的变量" />
     <MESSAGE value="管理员用户管理 完成切换面板功能" />
@@ -508,7 +507,8 @@
     <MESSAGE value="管理员课程管理 改进代码" />
     <MESSAGE value="管理员课程管理 继续改进代码" />
     <MESSAGE value="管理员课程管理 基本改造完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 基本改造完成" />
+    <MESSAGE value="管理员 分离出实体操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员 分离出实体操作" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -529,11 +529,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606272578919">
+    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606277019247">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606272578919" />
+    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606277019247" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />

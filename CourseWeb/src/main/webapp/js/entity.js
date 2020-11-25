@@ -21,13 +21,13 @@ function getEntities(entity) {
     let url;
     switch (entity) {
         case Entity.TEACHER:
-            url = TEACHER_API.FIND;
+            url = API.TEACHER_API.FIND;
             break;
         case Entity.STUDENT:
-            url = STUDENT_API.FIND;
+            url = API.STUDENT_API.FIND;
             break;
         case Entity.CLASS:
-            url = CLASS_API.FIND;
+            url = API.CLASS_API.FIND;
             break;
     }
 

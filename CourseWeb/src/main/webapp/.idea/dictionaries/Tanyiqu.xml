@@ -2,6 +2,9 @@
   <dictionary name="Tanyiqu">
     <words>
       <w>abcd</w>
+      <w>addpaper</w>
+      <w>addproblem</w>
+      <w>addproblems</w>
       <w>adminpwd</w>
       <w>adminuser</w>
       <w>chapterid</w>
@@ -11,8 +14,10 @@
       <w>courseid</w>
       <w>coverimg</w>
       <w>cpid</w>
+      <w>delpaper</w>
       <w>endtime</w>
       <w>fillpoints</w>
+      <w>getproblembychapterid</w>
       <w>headerwrap</w>
       <w>imgs</w>
       <w>judgepoints</w>
