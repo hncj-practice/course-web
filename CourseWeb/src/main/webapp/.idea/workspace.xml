@@ -5,17 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/admin-course-manage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-course-manage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/admin-course-manage.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-course-manage.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin-user-student.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-user-student.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/admin-user-teacher.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-user-teacher.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/old-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/old-admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-course.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-course.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-question.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-question.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/teacher-register.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/teacher-register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin-course-manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-course-manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,14 +131,7 @@
       <workItem from="1606127914560" duration="7840000" />
       <workItem from="1606190721925" duration="6145000" />
       <workItem from="1606208045473" duration="9635000" />
-      <workItem from="1606271442799" duration="8382000" />
-    </task>
-    <task id="LOCAL-00078" summary="教师题目管理 合理的格式化选择题">
-      <created>1604731215769</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1604731215769</updated>
+      <workItem from="1606271442799" duration="10314000" />
     </task>
     <task id="LOCAL-00079" summary="教师题目管理 规范显示题目">
       <created>1604733987174</created>
@@ -486,14 +469,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606278913126</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="分离窗口的样式">
+      <created>1606283422498</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1606283422498</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="管理员课程管理 让iframe可以使用父容器的变量" />
     <MESSAGE value="管理员用户管理 完成切换面板功能" />
     <MESSAGE value="封装tab切换的工具函数" />
     <MESSAGE value="管理员页面 将table-div分离出来" />
@@ -518,7 +507,8 @@
     <MESSAGE value="管理员课程管理 基本改造完成" />
     <MESSAGE value="管理员 分离出实体操作" />
     <MESSAGE value="分离出API" />
-    <option name="LAST_COMMIT_MESSAGE" value="分离出API" />
+    <MESSAGE value="分离窗口的样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="分离窗口的样式" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -539,11 +529,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606278912464">
+    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606283421832">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606278912464" />
+    <state x="756" y="176" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606283421832" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
@@ -630,11 +620,11 @@
     <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="675" y="340" width="998" height="708" key="SettingsEditor/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606110332485" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606278918827">
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606283442096">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="516" y="257" key="Vcs.Push.Dialog.v2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733991625" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606278918827" />
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606283442096" />
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
     <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />
@@ -648,10 +638,10 @@
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="786" y="404" key="git4idea.rebase.GitRebaseDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605961330803" />
-    <state x="649" y="250" key="run.anything.popup" timestamp="1606210093880">
+    <state x="649" y="250" key="run.anything.popup" timestamp="1606283675398">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
-    <state x="649" y="250" key="run.anything.popup/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606210093880" />
+    <state x="649" y="250" key="run.anything.popup/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606283675398" />
     <state x="652" y="250" key="run.anything.popup/72.0.1848.1080@72.0.1848.1080" timestamp="1598504276472" />
     <state x="653" y="250" key="run.anything.popup/73.0.1847.1080/-1920.3.1920.1040@73.0.1847.1080" timestamp="1602247750017" />
     <state x="656" y="235" width="674" height="678" key="search.everywhere.popup" timestamp="1605420877694">
