@@ -26,12 +26,14 @@ body {
   margin: 0 auto;
 }
 
+
 // 垂直水平居中
 .vh-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 // 不能被选中
 .cnt-select {
@@ -41,8 +43,48 @@ body {
   user-select: none;
 }
 
+
 // 无边框
 .no-border {
   border: none;
   outline: none;
+}
+
+
+// 窗体样式
+.window {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  padding: 20px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, .15);
+  background: rgba(255, 255, 255, .95);
+  z-index: 10;
+
+  // 关闭按钮
+  .btn-close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 7px;
+    right: 7px;
+    background: url(../imgs/btn/close_hover.png) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  // 标题
+  .title {
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+
+  input[type="text"]{
+    .no-border();
+    background: white;
+  }
 }

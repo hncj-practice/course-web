@@ -33,6 +33,38 @@ body {
   border: none;
   outline: none;
 }
+.window {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  padding: 20px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+}
+.window .btn-close {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 7px;
+  right: 7px;
+  background: url(../imgs/btn/close_hover.png) no-repeat;
+  background-size: 100% 100%;
+}
+.window .title {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+.window input[type="text"] {
+  border: none;
+  outline: none;
+  background: white;
+}
 * {
   -webkit-user-select: none;
   -moz-user-select: none;
