@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="重新封装警告框函数">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin-user-manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-manage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/admin-user-teacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-teacher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
     </list>
@@ -130,14 +131,7 @@
       <workItem from="1606127914560" duration="7840000" />
       <workItem from="1606190721925" duration="6145000" />
       <workItem from="1606208045473" duration="9635000" />
-      <workItem from="1606271442799" duration="13250000" />
-    </task>
-    <task id="LOCAL-00082" summary="教师题目管理 请求服务器加载题目">
-      <created>1605420709782</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1605420709782</updated>
+      <workItem from="1606271442799" duration="16001000" />
     </task>
     <task id="LOCAL-00083" summary="教师题目管理 题目前面显示编号">
       <created>1605420916013</created>
@@ -475,14 +469,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606288148679</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="重新封装警告框函数">
+      <created>1606288753339</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1606288753339</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="管理员用户管理 样式统一分离出来" />
     <MESSAGE value="管理员用户管理 学生和教师用户可以自由切换" />
     <MESSAGE value="管理员用户管理 刷新教师用户" />
     <MESSAGE value="管理员用户管理 刷新学生用户" />
@@ -507,7 +507,8 @@
     <MESSAGE value="管理员课程管理 基本完成" />
     <MESSAGE value="管理员教师管理 单独添加和删除教师" />
     <MESSAGE value="管理员教师管理 批量删除教师" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员教师管理 批量删除教师" />
+    <MESSAGE value="重新封装警告框函数" />
+    <option name="LAST_COMMIT_MESSAGE" value="重新封装警告框函数" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -528,11 +529,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="511" y="154" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606288657353">
+    <state x="496" y="161" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606288752747">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="511" y="154" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606288657353" />
+    <state x="496" y="161" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606288752747" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />

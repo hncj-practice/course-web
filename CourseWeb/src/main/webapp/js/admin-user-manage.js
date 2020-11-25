@@ -14,7 +14,7 @@ async function addUser(type, param, success) {
     const [err, data] = await awaitWrap(post(url, param));
 
     // 处理结果
-    await process([err,data], success);
+    await process([err, data], success);
 }
 
 
@@ -37,5 +37,28 @@ async function deleteUser(type, id, success) {
     const [err, data] = await awaitWrap(post(url, param));
 
     // 处理结果
-    await process([err,data], success);
+    await process([err, data], success);
+}
+
+
+/**
+ * 重置用户
+ * @param type
+ * @param id
+ * @param success
+ * @returns {Promise}
+ */
+async function resetUser(type, id, success) {
+    let url = API.ACCOUNT_API.RESET_BY_ADMIN;
+    let param = {
+        adminuser: adminUN,
+        adminpwd: adminUP,
+        username: id,
+        type: (type === Entity.STUDENT ? 1 : 2)
+    };
+    // post请求
+    const [err, data] = await awaitWrap(post(url, param));
+
+    // 处理结果
+    await process([err, data], success);
 }

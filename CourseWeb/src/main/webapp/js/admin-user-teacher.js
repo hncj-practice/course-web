@@ -180,38 +180,14 @@ function loadEvents() {
         // 重置教师
         {
             $('.reset-teacher').off('click');
-            $('.reset-teacher').click((e) => {
+            $('.reset-teacher').click(async (e) => {
                 let tno = $(e.target).attr('tno');
                 console.log('点击：重置 ' + tno);
-                let title = '提示';
                 let body = '确定重置教师用户？<br>工号：' + tno;
-                // 弹出提示
-                myBootstrapModel(
-                    title,
-                    body,
-                    '确定',
-                    '取消',
-                    () => {
-                        console.log('重置：' + tno);
-                        // 请求API重置
-                        let url = ACCOUNT_API.RESET_BY_ADMIN;
-                        // noinspection DuplicatedCode
-                        let param = {
-                            adminuser: adminUN,
-                            adminpwd: adminUP,
-                            username: tno,
-                            type: 2
-                        };
-                        let success = (e) => {
-                            // 成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                        };
-                        my_ajax(url, param, success);
-                    });
+                showWarning(body, () => {
+                    console.log('重置：' + tno);
+                    resetUser(Entity.TEACHER, tno);
+                });
             });
         }
 
@@ -240,9 +216,8 @@ function loadEvents() {
                 let tname = $('#tnameAdd').val();
                 let tsex = $('#tsexAdd').val();
                 let temail = $('#temailAdd').val();
-
                 // 简单检验参数
-                if (isEmpty(tno) || isEmpty(tname) || isEmpty(tsex) || isEmpty(temail)) {
+                if (testFailed(tno, tname, tsex, temail)) {
                     toastr.error("参数不能为空");
                     return;
                 }
@@ -254,7 +229,8 @@ function loadEvents() {
                     姓名：${tname}<br>
                     性别：${tsex}<br>
                     邮箱：${temail}`;
-                myBootstrapModel('提示', body, '确定', '取消', () => {
+                // 提示框
+                showWarning(body, () => {
                     // 处理性别
                     if (tsex === '女') {
                         tsex = 'f';
@@ -299,7 +275,7 @@ function loadEvents() {
 
                 // 删除计数器
                 let n = 0;
-                myBootstrapModel('警告', body, '确定', '取消', () => {
+                showWarning(body, () => {
                     // 遍历删除
                     teachers.forEach(tno => {
                         deleteUser(Entity.TEACHER, tno, () => {
@@ -319,50 +295,34 @@ function loadEvents() {
         // 批量重置教师
         {
             $('#resetTAll').off('click');
-            $('#resetTAll').click(() => {
+            $('#resetTAll').click(async () => {
                 console.log('批量教师');
                 // 拿到所有的复选框
                 let checkedTeachers = $('.check-teacher');
                 // 所选教师集合
-                let ts = [];
+                let teachers = [];
                 // 遍历
-                // noinspection JSUnresolvedVariable
                 jQuery.each(checkedTeachers, (index, item) => {
                     if (item.checked) {
-                        ts.push($(item).attr('tno'));
+                        teachers.push($(item).attr('tno'));
                     }
                 });
-                if (ts.length < 1) {
+                if (teachers.length < 1) {
                     toastr.warning('请选中教师');
                     return;
                 }
-                let body = '确定重置以下教师：<br>工号：' + ts.join('<br>工号：');
+                let body = `确定重置以下教师：<br>工号：` + teachers.join('<br>工号：');
                 let n = 0;
-                myBootstrapModel('警告', body, '确定', '取消', () => {
-                    // 遍历删除
-                    ts.forEach((item) => {
-                        // noinspection all,DuplicatedCode
-                        let url = ACCOUNT_API.RESET_BY_ADMIN;
-                        let param = {
-                            adminuser: adminUN,
-                            adminpwd: adminUP,
-                            username: item,
-                            type: 2
-                        };
-                        let success = (e) => {
-                            // 成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
+                showWarning(body, () => {
+                    // 遍历重置
+                    teachers.forEach((tno) => {
+                        resetUser(Entity.TEACHER, tno, () => {
                             n++;
                             // 所有都完成
-                            if (n === ts.length) {
+                            if (n === teachers.length) {
                                 toastr.success('成功重置所选教师！');
                             }
-                        };
-                        my_ajax(url, param, success);
+                        });
                     });
                 });
             });

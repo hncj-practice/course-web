@@ -69,6 +69,22 @@ function isEmpty(obj) {
 
 
 /**
+ * 检查字符串是否有空串、undefined、空白串、null等
+ * 如果有则返回true
+ * @param strings
+ */
+function testFailed(...strings) {
+    // 遍历strings
+    for (let i = 0; i < strings.length; i++) {
+        if (isEmpty(strings[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+/**
  * 封装bootstrap的模态框
  * @param title 标题
  * @param body 内容
@@ -357,6 +373,7 @@ class Tab {
         this.btn.removeClass('active');
     };
 }
+
 
 /**
  * 切换iframe页面
