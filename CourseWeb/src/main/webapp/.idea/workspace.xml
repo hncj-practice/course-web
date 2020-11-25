@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
+    <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="管理员课程管理 改进代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/admin-course-manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-course-manage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin-user-teacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-teacher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin-user-manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-manage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,14 +132,8 @@
       <workItem from="1606127914560" duration="7840000" />
       <workItem from="1606190721925" duration="6145000" />
       <workItem from="1606208045473" duration="9635000" />
-      <workItem from="1606271442799" duration="17487000" />
-    </task>
-    <task id="LOCAL-00084" summary="教师题目管理 检查批量导入模板是否正确">
-      <created>1605421526998</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1605421526998</updated>
+      <workItem from="1606271442799" duration="18391000" />
+      <workItem from="1606304529395" duration="1480000" />
     </task>
     <task id="LOCAL-00085" summary="教师课程管理 章节-题目页面">
       <created>1605424320255</created>
@@ -475,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606291526786</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="管理员课程管理 改进代码">
+      <created>1606293134212</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1606293134212</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +499,6 @@
     <MESSAGE value="管理员用户管理 使用async/await方式添加用户2" />
     <MESSAGE value="管理员课程管理 使用async/await方式删除课程" />
     <MESSAGE value="管理员课程管理 添加通用的结果处理方法" />
-    <MESSAGE value="管理员课程管理 改进代码" />
     <MESSAGE value="管理员课程管理 继续改进代码" />
     <MESSAGE value="管理员课程管理 基本改造完成" />
     <MESSAGE value="管理员 分离出实体操作" />
@@ -507,7 +509,8 @@
     <MESSAGE value="管理员教师管理 批量删除教师" />
     <MESSAGE value="重新封装警告框函数" />
     <MESSAGE value="管理员教师管理 基本实现教师的管理功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员教师管理 基本实现教师的管理功能" />
+    <MESSAGE value="管理员课程管理 改进代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员课程管理 改进代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -528,11 +531,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="496" y="161" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606291526199">
+    <state x="386" y="161" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606304564338">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="496" y="161" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606291526199" />
+    <state x="386" y="161" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606304564338" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />

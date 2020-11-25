@@ -350,7 +350,9 @@ function fixData(data) {
 }
 
 
-// Tab类
+/**
+ * Tab类
+ */
 class Tab {
     /**
      * 构造器

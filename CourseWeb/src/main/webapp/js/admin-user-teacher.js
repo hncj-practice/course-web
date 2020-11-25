@@ -1,5 +1,8 @@
 /**
  * 管理员页面 - 用户管理 - 教师
+ * （1）获取数据
+ * （2）渲染数据
+ * （3）添加事件
  */
 
 // 每页展示的教师数
@@ -11,30 +14,26 @@ let curr_page_teacher = 1;
 // 入口函数
 $(function () {
     console.log('教师用户管理');
-
-    refresh();
+    // 刷新
+    (async function () {
+        await refreshTeachers();
+    })();
 });
 
-// 刷新教师用户表格
-function refresh() {
-
-    refreshTeachers();
-
-}
 
 // 刷新教师用户表格
-function refreshTeachers() {
-    let url = TEACHER_API.FIND;
+async function refreshTeachers() {
+    let url = API.TEACHER_API.FIND;
     let param = {
-        // page: page,
         page: curr_page_teacher,
         num: TEACHER_PER_PAGE
     };
 
-    setTimeout(() => {
-        my_ajax(url, param, renderTeacherTable);
-    }, 500);
+    const [err, data] = await awaitWrap(post(url, param));
+
+    await process([err, data], renderTeacherTable(data));
 }
+
 
 // 渲染教师用户表格
 function renderTeacherTable(obj) {
@@ -375,51 +374,51 @@ function loadEvents() {
         {
             // 5个活动页码跳转
             $('.pg-t').off('click');
-            $('.pg-t').click((e) => {
+            $('.pg-t').click(async (e) => {
                 let page = $(e.target).text();
                 // console.log('跳转到' + page);
                 curr_page_teacher = parseInt(page);
-                refreshTeachers()
+                await refreshTeachers()
             });
 
             // 首页
             $('#pStart_t').off('click');
-            $('#pStart_t').click(() => {
+            $('#pStart_t').click(async () => {
                 curr_page_teacher = 1;
-                refreshTeachers()
+                await refreshTeachers()
             });
 
             // 末页
             $('#pEnd_t').off('click');
-            $('#pEnd_t').click(() => {
+            $('#pEnd_t').click(async () => {
                 curr_page_teacher = total_page_teacher;
-                refreshTeachers()
+                await refreshTeachers()
             });
 
             // 下一页
             $('#pNext_t').off('click');
-            $('#pNext_t').click(() => {
+            $('#pNext_t').click(async () => {
                 if (curr_page_teacher === total_page_teacher) return;
                 curr_page_teacher += 1;
-                refreshTeachers()
+                await refreshTeachers()
             });
 
             // 上一页
             $('#pPrev_t').off('click');
-            $('#pPrev_t').click(() => {
+            $('#pPrev_t').click(async () => {
                 if (curr_page_teacher === 1) return;
                 curr_page_teacher -= 1;
-                refreshTeachers()
+                await refreshTeachers()
             });
 
             // 指定页
             $('#pDist_t').off('click');
-            $('#pDist_t').click(() => {
+            $('#pDist_t').click(async () => {
                 let page = parseInt($('#jumpT').val());
                 if (page >= 1 && page <= total_page_teacher) {
                     curr_page_teacher = page;
                     $('#jumpT').val('');
-                    refreshTeachers()
+                    await refreshTeachers()
                 } else {
                     toastr.warning('请输入正确页码！');
                 }

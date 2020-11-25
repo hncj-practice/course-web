@@ -19,7 +19,7 @@ $(function () {
 
 // 获取数据
 async function refresh() {
-    let url = COURSE_API.FIND;
+    let url = API.COURSE_API.FIND;
     let param = {
         page: 1,
         num: 14
@@ -27,15 +27,18 @@ async function refresh() {
     // 请求数据
     const [err, data] = await awaitWrap(post(url, param));
     // 处理数据
-    await process([err, data], async () => {
+    if (data) {
         // 渲染数据
         await renderCourseTable(data);
         // 元素生成后添加事件
         await loadEvents();
         // 提示刷新成功
         toastr.success('课程刷新成功');
-    });
+    } else {
+        toastr.error(err);
+    }
 }
+
 
 // 渲染课程列表
 function renderCourseTable(data) {
