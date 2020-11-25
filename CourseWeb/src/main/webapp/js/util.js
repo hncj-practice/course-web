@@ -121,7 +121,60 @@ function myBootstrapModel(title, body, positive, negative, onPositive) {
 
     // 弹出
     $('#myModal').modal();
+}
 
+
+/**
+ * 弹出警告确认框
+ * @param body 警告内容
+ * @param onPositive 点击确定的回调
+ * @param title 标题
+ * @param positive 确认的按钮名称
+ * @param negative 取消的按钮名称
+ */
+function showWarning(body, onPositive, title = '警告', positive = '确定', negative = '取消') {
+    /*
+        使用页面必须包含此div
+        <!-- 模态框 -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">×
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            模态框标题
+                        </h4>
+                    </div>
+                    <div class="modal-body" id="myModelBody">
+                        模态框内容
+                    </div>
+                    <div class="modal-footer">
+                        <button id="modelCancel" type="button" class="btn btn-default" data-dismiss="modal" >
+                            取消
+                        </button>
+                        <button id="modelConfirm" type="button" class="btn btn-primary">
+                            确定
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        */
+    // 设置文字内容
+    $('#myModalLabel').html(title);
+    $('#myModelBody').html(body);
+    $('#modelConfirm').html(positive);
+    $('#modelCancel').html(negative);
+    // 点击确定
+    $('#modelConfirm').off('click');
+    $('#modelConfirm').click(() => {
+        onPositive();
+        $('#myModal').modal('hide')
+    });
+    // 弹出
+    $('#myModal').modal();
 }
 
 
@@ -156,30 +209,6 @@ function my_ajax(url, param, success, error) {
         error: error
     });
 
-}
-
-
-/**
- * promise的ajax post请求
- * @param obj \{url:'',param:obj'}
- */
-function promiseAjaxPost(obj) {
-    return new Promise((resolve, reject) => {
-        jQuery.ajax({
-            url: obj['url'],
-            type: 'POST',
-            data: obj['param'],
-            traditional: true,
-            timeout: 5000,
-            success: e => {
-                resolve(e);
-            },
-            error: e => {
-                toastr.error('服务器异常');
-                reject(e);
-            }
-        });
-    });
 }
 
 
