@@ -382,7 +382,7 @@ class Tab {
  * @param {string} frame iframe的选择器
  * @param {Tab[]} tabs 页面数组
  */
-function switchTab(frame, tabs) {
+function switchTabIFrame(frame, tabs) {
     /**
      * 步骤：当按钮被点击时：
      * （1）所有按钮都取消激活状态
@@ -402,4 +402,9 @@ function switchTab(frame, tabs) {
             $(frame).attr('src', tabs[i].page);
         });
     }
+}
+
+
+function switchTabDiv() {
+
 }
