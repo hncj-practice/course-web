@@ -13,8 +13,8 @@ $(function () {
  */
 function loadEvents() {
     // 左侧菜单切换
-    switchTabIFrame('.frame-admin', [
-        new Tab('#change2User', 'admin-user-manage.html'),
-        new Tab('#change2Course', 'admin-course-manage.html')
+    switchIFrameTab('.frame-admin', [
+        new IframeTab('#change2User', 'admin-user-manage.html'),
+        new IframeTab('#change2Course', 'admin-course-manage.html')
     ]);
 }

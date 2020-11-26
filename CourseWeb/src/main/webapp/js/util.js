@@ -353,7 +353,7 @@ function fixData(data) {
 /**
  * Tab类
  */
-class Tab {
+class IframeTab {
     /**
      * 构造器
      * @param {string} selector 被点击元素的选择器
@@ -380,9 +380,9 @@ class Tab {
 /**
  * 切换iframe页面
  * @param {string} frame iframe的选择器
- * @param {Tab[]} tabs 页面数组
+ * @param {IframeTab[]} tabs 页面数组
  */
-function switchTabIFrame(frame, tabs) {
+function switchIFrameTab(frame, tabs) {
     /**
      * 步骤：当按钮被点击时：
      * （1）所有按钮都取消激活状态
@@ -405,6 +405,47 @@ function switchTabIFrame(frame, tabs) {
 }
 
 
-function switchTabDiv() {
+/**
+ * Div的Tab
+ */
+class DivTab {
+    /**
+     * 构造器
+     * @param btnSelector 按钮的选择器
+     * @param divSelector 按钮绑定的div的选择器
+     */
+    constructor(btnSelector, divSelector) {
+        this.btn = $(btnSelector);
+        this.target = $(divSelector);
+    }
 
+    // 设置激活状态
+    activate(delay) {
+        this.btn.addClass('active');
+        this.target.show(delay);
+    }
+
+    // 取消激活状态
+    deactivate(delay) {
+        this.btn.removeClass('active');
+        this.target.hide(delay);
+    }
+}
+
+
+/**
+ * 切换div的标签
+ * @param {DivTab[]} tabs
+ * @param delay
+ */
+function switchDivTab(tabs, delay = 0) {
+    const n = tabs.length;
+    for (let i = 0; i < n; i++) {
+        tabs[i].btn.click(() => {
+            for (let j = 0; j < n; j++) {
+                tabs[j].deactivate(delay);
+            }
+            tabs[i].activate(delay);
+        });
+    }
 }

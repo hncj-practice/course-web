@@ -1,3 +1,6 @@
+/**
+ * 用户登录页面
+ */
 * {
   margin: 0;
   padding: 0;
@@ -93,6 +96,8 @@ main .left .login-way div {
   width: 180px;
   height: 50px;
   font-size: 20px;
+  color: #c7c8d4;
+  border-bottom: solid 2px #f2f2f2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,10 +106,6 @@ main .left .login-way div {
 main .left .login-way .active {
   color: #000;
   border-bottom: solid 2px #3a8bff;
-}
-main .left .login-way .inactive {
-  color: #c7c8d4;
-  border-bottom: solid 2px #f2f2f2;
 }
 main .left form {
   width: 360px;

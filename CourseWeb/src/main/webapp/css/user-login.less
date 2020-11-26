@@ -1,0 +1,172 @@
+/**
+ * 用户登录页面
+ */
+
+@import "./style.less";
+
+
+body {
+  background: #f2f4f7;
+  .vh-center();
+}
+
+
+main {
+  width: 900px;
+  height: 584px;
+  background: #fff;
+  display: flex;
+  border-radius: 16px;
+  box-shadow: 0 0 20px 0 rgba(175, 187, 204, 0.15);
+
+  .left {
+    position: relative;
+    width: 540px;
+    height: 100%;
+    flex-direction: column;
+
+    // 登录方式
+    .login-way {
+      width: 360px;
+      .h-center();
+      margin-top: 55px;
+      margin-bottom: 10px;
+      display: flex;
+
+      div {
+        width: 180px;
+        height: 50px;
+        font-size: 20px;
+        color: #c7c8d4;
+        border-bottom: solid 2px #f2f2f2;
+        .vh-center();
+        cursor: pointer;
+      }
+
+      .active {
+        color: #000;
+        border-bottom: solid 2px #3a8bff;
+      }
+    }
+
+    // 账号密码
+    form {
+      width: 360px;
+      .h-center();
+      // height    : 100px;
+      // background: pink;
+
+      input {
+        width: 100%;
+        height: 48px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+      }
+
+      input[type=text],
+      input[type=password] {
+        border: solid 1px #e3e8f0;
+        padding-left: 30px;
+        padding-right: 10px;
+        font-size: 16px;
+      }
+
+      .v-code {
+        display: flex;
+
+        input {
+          width: 252px;
+        }
+
+        img {
+          width: 108px;
+          height: 48px;
+          margin-top: 15px;
+          object-fit: fill;
+        }
+      }
+
+      input[type=submit] {
+        margin-top: 20px;
+        color: #fff;
+        background: #669cff;
+        font-size: 18px;
+      }
+    }
+
+    .admin {
+      display: none;
+    }
+
+    // 验证
+    .verify {
+      position: relative;
+      width: 360px;
+      .h-center();
+      margin-top: 15px;
+
+      span {
+        cursor: pointer;
+        color: #669cff;
+      }
+
+      .signin {
+        position: absolute;
+        left: 20px;
+      }
+
+      .forget {
+        position: absolute;
+        right: 20px;
+      }
+    }
+
+    // 隐私政策
+    .privacy-policy {
+      position: absolute;
+      width: 360px;
+      // background : pink;
+      left: 50%;
+      margin-left: -180px;
+      bottom: 30px;
+      text-align: center;
+    }
+
+  }
+
+  .right {
+    position: relative;
+    width: 360px;
+    height: 100%;
+    border-left: solid 1px #f2f2f2;
+    .vh-center();
+
+    // 二维码框
+    .qr-code {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      // background: pink;
+      border: solid 1px #f2f2f2;
+      border-radius: 12px;
+      .vh-center();
+
+      img {
+        width: 180px;
+        height: 180px;
+        object-fit: fill;
+      }
+
+      .h4 {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: -33px;
+        font-size: 15px;
+      }
+    }
+  }
+}

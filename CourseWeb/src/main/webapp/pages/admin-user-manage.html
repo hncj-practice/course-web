@@ -31,9 +31,9 @@
             // 刷新课程列表
             console.log('切换到用户管理');
             // 点击切换面板
-            switchTabIFrame('.frame-admin-user', [
-                new Tab('#cg2Teacher', 'admin-user-teacher.html'),
-                new Tab('#cg2Student', 'admin-user-student.html')
+            switchIFrameTab('.frame-admin-user', [
+                new IframeTab('#cg2Teacher', 'admin-user-teacher.html'),
+                new IframeTab('#cg2Student', 'admin-user-student.html')
             ]);
         });
     </script>
