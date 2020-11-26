@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4afbb4d3-db7a-4e8d-be23-6a250e6d58db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/admin-user-student.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-user-student.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin-user-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin-user-student.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,14 +131,7 @@
       <workItem from="1606271442799" duration="18391000" />
       <workItem from="1606304529395" duration="3248000" />
       <workItem from="1606358392032" duration="1204000" />
-      <workItem from="1606369444373" duration="2738000" />
-    </task>
-    <task id="LOCAL-00087" summary="教师题目管理 没有题目时显示暂无">
-      <created>1605753822196</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1605753822197</updated>
+      <workItem from="1606369444373" duration="3477000" />
     </task>
     <task id="LOCAL-00088" summary="教师题目管理 准备实现单独添加题目">
       <created>1605759514510</created>
@@ -478,14 +469,20 @@
       <option name="project" value="LOCAL" />
       <updated>1606309698809</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="管理员学生管理 基本完成">
+      <created>1606372433551</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1606372433552</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="管理员教师管理 修改一些细节" />
     <MESSAGE value="管理员教师管理 教师全选" />
     <MESSAGE value="重新封装promise的ajax" />
     <MESSAGE value="消除警告" />
@@ -510,7 +507,8 @@
     <MESSAGE value="管理员课程管理 改进代码" />
     <MESSAGE value="管理员教师管理 改进代码" />
     <MESSAGE value="管理员教师管理 完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员教师管理 完成" />
+    <MESSAGE value="管理员学生管理 基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员学生管理 基本完成" />
   </component>
   <component name="WindowStateProjectService">
     <state x="584" y="198" key="#Inspections" timestamp="1606191576645">
@@ -531,11 +529,11 @@
     </state>
     <state x="747" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1605950127798" />
     <state x="750" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.0.1848.1080@72.0.1848.1080" timestamp="1598712918583" />
-    <state x="386" y="161" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606309698213">
+    <state x="386" y="161" width="818" height="792" key="CommitChangelistDialog2" timestamp="1606372432647">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="493" y="158" key="CommitChangelistDialog2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733986637" />
-    <state x="386" y="161" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606309698213" />
+    <state x="386" y="161" width="818" height="792" key="CommitChangelistDialog2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606372432647" />
     <state x="438" y="132" key="CommitChangelistDialog2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225004863" />
     <state x="498" y="138" key="CommitChangelistDialog2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386496988" />
     <state x="397" y="196" key="CommitChangelistDialog2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643481716" />
@@ -622,11 +620,11 @@
     <state x="574" y="209" key="SettingsEditor/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604726836452" />
     <state x="675" y="340" width="998" height="708" key="SettingsEditor/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606110332485" />
     <state x="-34" y="243" key="SettingsEditor/72.0.1848.1080@72.0.1848.1080" timestamp="1598607474470" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606309703873">
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2" timestamp="1606372438442">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="516" y="257" key="Vcs.Push.Dialog.v2/62.0.1858.1080/-1858.1.1858.1080@62.0.1858.1080" timestamp="1604733991625" />
-    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606309703873" />
+    <state x="520" y="257" key="Vcs.Push.Dialog.v2/67.0.1853.1080/-1853.1.1853.1080@67.0.1853.1080" timestamp="1606372438442" />
     <state x="523" y="257" key="Vcs.Push.Dialog.v2/72.0.1848.1080@72.0.1848.1080" timestamp="1602225012902" />
     <state x="524" y="257" key="Vcs.Push.Dialog.v2/73.0.1847.1080@73.0.1847.1080" timestamp="1602386502391" />
     <state x="526" y="257" key="Vcs.Push.Dialog.v2/75.0.1845.1080@75.0.1845.1080" timestamp="1602643491472" />
