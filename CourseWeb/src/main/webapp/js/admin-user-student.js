@@ -8,38 +8,34 @@ const STUDENT_PER_PAGE = 14;
 $(function () {
     console.log('学生用户管理');
 
-    refresh();
-});
+    // 刷新
+    (async function () {
+        await refreshStudents(1, STUDENT_PER_PAGE);
+    })();
 
-function refresh() {
-    refreshStudents(1, STUDENT_PER_PAGE);
-}
+});
 
 
 // 刷新学生用户表格
-function refreshStudents(page, num) {
+async function refreshStudents(page, num) {
     if (!page) page = 1;
     if (!num) num = STUDENT_PER_PAGE;
 
-    let url = STUDENT_API.FIND;
+    let url = API.STUDENT_API.FIND;
     let param = {
         page: page,
         num: num
     };
-    let error = () => {
-        toastr.error('获取数据失败！');
-    };
-    setTimeout(() => {
-        my_ajax(url, param, renderStudentTable, error);
-    }, 500);
+    const [err, data] = await awaitWrap(post(url, param));
+    await process([err, data], renderStudentTable(data));
 }
 
 
 // 渲染学生用户表格
-function renderStudentTable(obj) {
-    console.log(obj);
+function renderStudentTable(data) {
+    console.log(data);
     // 判断有没有数据
-    if (obj.code === 401) {
+    if (data.code === 401) {
         toastr.warning('没有数据');
         return;
     }
@@ -48,9 +44,8 @@ function renderStudentTable(obj) {
     let html = '';
     let sno, name, cla, sex, email;
 
-
     // noinspection DuplicatedCode
-    obj.data.forEach((item) => {
+    data.data.forEach((item) => {
         sno = item['sno'];
         name = item['name'];
         cla = item['cla'];
@@ -59,25 +54,23 @@ function renderStudentTable(obj) {
             sex = '女';
         }
         email = item['email'];
-
         // noinspection all
         html += `
         <tr>
             <td>
-                <input class="check-student" sno="{0}" cla="{2}" type="checkbox"/>
-                {0}
+                <input class="check-student" sno="${sno}" cla="${cla}" type="checkbox"/>
+                ${sno}
             </td>
-            <td>{1}</td>
-            <td>{2}</td>
-            <td>{3}</td>
-            <td>{4}</td>
+            <td>${name}</td>
+            <td>${cla}</td>
+            <td>${sex}</td>
+            <td>${email}</td>
             <td>OK</td>
             <td class="options">
-                <span sno="{0}" class="reset-user reset-student">重置</span>
-                <span sno="{0}" class="delete-user delete-student">删除</span>
+                <span sno="${sno}" class="reset-user reset-student">重置</span>
+                <span sno="${sno}" class="delete-user delete-student">删除</span>
             </td>
-        </tr>
-        `.format(sno, name, cla, sex, email);
+        </tr>`;
     });
     // 添加一行
     html += `
@@ -94,7 +87,6 @@ function renderStudentTable(obj) {
         </td>
     </tr>
     `;
-
     studentTable.html(html);
     // 每次请求完成后，添加对应的事件
     loadEvents();
@@ -116,7 +108,7 @@ function loadEvents() {
                 let ssex = $('#ssexAdd').val();
                 let semail = $('#semailAdd').val();
                 // 简单检验参数
-                if (isEmpty(sno) || isEmpty(sname) || isEmpty(scla) || isEmpty(ssex) || isEmpty(semail)) {
+                if (testFailed(sno, sname, scla, ssex, semail)) {
                     toastr.error("参数不能为空");
                     return;
                 }
@@ -127,7 +119,7 @@ function loadEvents() {
                     '班级：' + scla + '<br>' +
                     '性别：' + ssex + '<br>' +
                     '邮箱：' + semail;
-                myBootstrapModel('提示', body, '确定', '取消', () => {
+                showWarning(body, () => {
                     // 处理性别
                     if (ssex === '女') {
                         ssex = 'f';
@@ -152,31 +144,12 @@ function loadEvents() {
         // 删除学生
         {
             $('.delete-student').off('click');
-            $('.delete-student').click((e) => {
+            $('.delete-student').click(async (e) => {
                 let sno = $(e.target).attr('sno');
                 console.log('点击：删除 ' + sno);
-                let title = '提示';
                 let body = '确定删除学生用户？<br>学号：' + sno;
-                myBootstrapModel(title, body, '确定', '取消', () => {
-                    // 请求API删除
-                    let url = ACCOUNT_API.DELETE;
-                    let param = {
-                        adminuser: adminUN,
-                        adminpwd: adminUP,
-                        username: sno,
-                        type: 1
-                    };
-                    let success = (e) => {
-                        // 删除成功
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                        // 刷新表格
-                        refreshStudents(1, STUDENT_PER_PAGE);
-                    };
-                    my_ajax(url, param, success);
+                showWarning(body, () => {
+                    deleteUser(Entity.STUDENT, sno, refreshStudents);
                 });
             });
         }
@@ -184,176 +157,120 @@ function loadEvents() {
         // 重置学生
         {
             $('.reset-student').off('click');
-            $('.reset-student').click((e) => {
+            $('.reset-student').click(async (e) => {
                 let sno = $(e.target).attr('sno');
                 console.log('点击：重置 ' + sno);
-                let title = '提示';
                 let body = '确定重置学生用户？<br>学号：' + sno;
                 // 弹出提示
-                myBootstrapModel(
-                    title,
-                    body,
-                    '确定',
-                    '取消',
-                    () => {
-                        console.log('重置：' + sno);
-                        // 请求API重置
-                        let url = ACCOUNT_API.RESET_BY_ADMIN;
-                        // noinspection DuplicatedCode
-                        let param = {
-                            adminuser: adminUN,
-                            adminpwd: adminUP,
-                            username: sno,
-                            type: 1
-                        };
-                        let success = (e) => {
-                            // 成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
-                        };
-                        my_ajax(url, param, success);
-                    });
+                showWarning(body, () => {
+                    resetUser(Entity.STUDENT, sno);
+                });
             });
         }
 
         // 批量删除学生
         {
             $('#deleteSAll').off('click');
-            $('#deleteSAll').click(() => {
+            $('#deleteSAll').click(async () => {
                 console.log('批量删除学生');
                 // 拿到所有的复选框
                 let checkedStudents = $('.check-student');
                 // 所选教师集合
-                let ss = [];
+                let students = [];
                 // 遍历
                 // noinspection JSUnresolvedVariable
                 jQuery.each(checkedStudents, (index, item) => {
                     if (item.checked) {
-                        ss.push($(item).attr('sno'));
+                        students.push($(item).attr('sno'));
                     }
                 });
-                if (ss.length < 1) {
+                if (students.length < 1) {
                     toastr.warning('请选中学生');
                     return;
                 }
-                let body = '确定删除以下学生：<br>学号：' + ss.join('<br>学号：');
-
+                let body = '确定删除以下学生：<br>学号：' + students.join('<br>学号：');
                 // 删除完成标志
                 let n = 0;
-                myBootstrapModel('警告', body, '确定', '取消', () => {
-                    ss.forEach((item) => {
-                        // noinspection DuplicatedCode
-                        let url = ACCOUNT_API.DELETE;
-                        let param = {
-                            adminuser: adminUN,
-                            adminpwd: adminUP,
-                            username: item,
-                            type: 1
-                        };
-                        let success = (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
+                showWarning(body, () => {
+                    students.forEach((sno) => {
+                        deleteUser(Entity.STUDENT, sno, () => {
                             n++;
                             // 刷新表格
-                            if (n === ss.length) {
+                            if (n === students.length) {
                                 toastr.success('成功删除所选学生！');
                                 refreshStudents(1, STUDENT_PER_PAGE);
                             }
-                        };
-                        my_ajax(url, param, success);
+                        });
                     });
-                })
+                });
             });
         }
 
         // 批量重置学生
         {
             $('#resetSAll').off('click');
-            $('#resetSAll').click(() => {
+            $('#resetSAll').click(async () => {
                 console.log('批量重置学生');
                 // 拿到所有的复选框
                 let checkedStudents = $('.check-student');
                 // 所选教师集合
-                let ss = [];
+                let students = [];
                 // 遍历
                 // noinspection JSUnresolvedVariable
                 jQuery.each(checkedStudents, (index, item) => {
                     if (item.checked) {
-                        ss.push($(item).attr('sno'));
+                        students.push($(item).attr('sno'));
                     }
                 });
-                if (ss.length < 1) {
+                if (students.length < 1) {
                     toastr.warning('请选中学生');
                     return;
                 }
-                let body = '确定重置以下学生：<br>学号：' + ss.join('<br>学号：');
+                let body = '确定重置以下学生：<br>学号：' + students.join('<br>学号：');
 
-                // 删除完成标志
+                // 重置完成标志
                 let n = 0;
-                myBootstrapModel('警告', body, '确定', '取消', () => {
-                    ss.forEach((item) => {
-                        // noinspection DuplicatedCode
-                        let url = ACCOUNT_API.RESET_BY_ADMIN;
-                        let param = {
-                            adminuser: adminUN,
-                            adminpwd: adminUP,
-                            username: item,
-                            type: 1
-                        };
-                        // noinspection all
-                        my_ajax(url, param, (e) => {
-                            // 删除成功
-                            if (e.code === 200) {
-                                toastr.success(e.message);
-                            } else {
-                                toastr.error(e.message);
-                            }
+                showWarning(body, () => {
+                    students.forEach((sno) => {
+                        resetUser(Entity.STUDENT, sno, () => {
                             n++;
                             // 刷新表格
-                            if (n === ss.length) {
+                            if (n === students.length) {
                                 toastr.success('成功重置所选学生！');
-                                refreshStudents(1, STUDENT_PER_PAGE);
                             }
                         });
                     });
-                })
+                });
+
             });
         }
 
         // 删除整班学生
         {
             $('#deleteAllClsStudent').off('click');
-            $('#deleteAllClsStudent').click(() => {
+            $('#deleteAllClsStudent').click(async () => {
                 // 获取选择的学生
                 // 拿到所有的复选框
                 let checkedStudents = $('.check-student');
-                // 所选教师集合
-                let ss = [];
+                // 所选班级的集合
+                let classes = [];
                 // 遍历
                 // noinspection JSUnresolvedVariable
                 jQuery.each(checkedStudents, (index, item) => {
                     if (item.checked) {
-                        ss.push($(item).attr('cla'));
+                        classes.push($(item).attr('cla'));
                     }
                 });
-                if (ss.length < 1) {
+                if (classes.length < 1) {
                     toastr.warning('请选中学生');
                     return;
-                } else if (ss.length > 1) {
+                } else if (classes.length > 1) {
                     toastr.warning('请选中一名学生！');
                     return;
                 }
-
                 toastr.warning('用户将要删除整班学生！');
-                let body = '删除 ' + ss[0] + ' 班所有学生？<br>该班级也会被一并删除！<br>该操作不能撤销!!';
-                myBootstrapModel('警告', body, '确定', '取消', () => {
+                let body = '删除 ' + classes[0] + ' 班所有学生？<br>该班级也会被一并删除！<br>该操作不能撤销!!';
+                showWarning(body, async () => {
                     let flag = confirm('再次确认');
                     if (!flag) {
                         toastr.info('操作已取消');
@@ -361,24 +278,19 @@ function loadEvents() {
                     }
                     // 调用API删除
                     console.log('删除整班学生');
-                    let url = CLASS_API.DELETE;
+                    let url = API.CLASS_API.DELETE;
                     let param = {
                         adminuser: adminUN,
                         adminpwd: adminUP,
-                        classid: ss[0]
+                        classid: classes[0]
                     };
-                    let success = (e) => {
-                        // 删除成功
-                        if (e.code === 200) {
-                            toastr.success(e.message);
-                        } else {
-                            toastr.error(e.message);
-                        }
-                        // 刷新表格
-                        refreshStudents();
-                    };
-                    my_ajax(url, param, success);
-
+                    let [err, data] = await awaitWrap(post(url, param));
+                    if (data) {
+                        toastr.success(data.message);
+                        await refreshStudents();
+                    } else {
+                        toastr.error(err);
+                    }
                 });
             });
         }
