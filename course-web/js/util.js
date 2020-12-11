@@ -278,11 +278,11 @@ function post(url, param, timeout = 5000) {
  * @param promise
  * @returns {Promise}
  */
-const awaitWrap = (promise) => {
+function awaitWrap(promise) {
     return promise
         .then(data => [null, data])
         .catch(err => [err, null]);
-};
+}
 
 
 /**

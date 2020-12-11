@@ -43,8 +43,14 @@ function loadEvents() {
             username: username,
             password: password,
             type: 2
-        }, () => {
-
+        }, (data) => {
+            // 存储账号密码到 localStorage中
+            localStorage.setItem('course-web-curr-teacher-username', data.data['tno']);
+            localStorage.setItem('course-web-curr-teacher-password', data.data['pwd']);
+            console.log(localStorage['course-web-curr-teacher-username']);
+            console.log(localStorage['course-web-curr-teacher-password']);
+            // 跳转到教师页面
+            window.location.href = 'teacher.html?sign=' + md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password']);
         });
         return false;
     });
