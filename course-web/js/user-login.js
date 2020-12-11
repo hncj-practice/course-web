@@ -30,7 +30,7 @@ function loadEvents() {
             localStorage.setItem('course-web-curr-admin-username', data.data['adminAccount']);
             localStorage.setItem('course-web-curr-admin-password', data.data['adminPwd']);
             // 跳转到管理页面
-            // window.location.href = 'admin.html';
+            window.location.href = `admin.html?sign=${md5(data.data['adminAccount'] + data.data['adminPwd'])}`;
         });
         return false;
     });

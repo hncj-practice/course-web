@@ -41,8 +41,10 @@
       <w>tname</w>
       <w>toastr</w>
       <w>tsex</w>
+      <w>utftext</w>
       <w>wsgly</w>
       <w>xlsx</w>
+      <w>zabcdefghijklmnopqrstuvwxyz</w>
     </words>
   </dictionary>
 </component>
