@@ -436,6 +436,12 @@ function getQueryString(name) {
 }
 
 
+// 根据当前时间返回欢迎语
+function welcome() {
+    return '下午好（待实现）';
+}
+
+
 /**
  * Tab类
  */

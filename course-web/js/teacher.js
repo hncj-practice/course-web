@@ -1,3 +1,7 @@
+let teacherId = '';
+let teacherPwd = '';
+let allCourses = [];
+
 // 入口函数
 $(function () {
     let sign = getQueryString('sign');
@@ -9,7 +13,7 @@ $(function () {
             // 检验成功，登录成功
             console.log(true);
             // 加载教师的课程
-            await requestCourses(teacherId);
+            await loadData();
         } else {
             // 检验本地存储的是否正确
             if (!(teacherId && teacherPwd)) {
@@ -33,30 +37,43 @@ async function checkAndLogin(teacherId, teacherPwd) {
         window.location.href = 'user-login.html';
     } else {
         console.log(data);
-        await requestCourses(data.data.tno);
+        await loadData();
     }
 }
 
 
-// 请求课程信息
-async function requestCourses(id) {
-    // 进行请求，请求未完成时，显示加载中
-    let url = COURSE_API.FIND_BY;
-    let param = {
-        condition: id,
-        type: 1
-    };
-    let [err, data] = await awaitWrap(post(url, param));
-    if (err) {
-        if (isString(err)) {
-            toastr.warning(err);
+// 加载页面数据
+async function loadData() {
+    //加载姓名头像
+    {
+        // 教师号
+        $('#tno').text(teacherId);
+        // 头像
+        $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
+        $('#LargeAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
+        // 姓名
+        $('#welcome').text(`${localStorage['course-web-curr-teacher-name']}，${welcome()}`);
+    }
+
+    // 加载课程
+    {
+        // 进行请求，请求未完成时，显示加载中
+        let url = COURSE_API.FIND_BY;
+        let param = {
+            condition: teacherId,
+            type: 1
+        };
+        let [err, data] = await awaitWrap(post(url, param));
+        if (err) {
+            if (isString(err)) {
+                toastr.warning(err);
+            } else {
+                toastr.error(ErrorCode["10001"]);
+            }
+            loadError();
         } else {
-            toastr.error(ErrorCode["10001"]);
+            renderCourses(data);
         }
-        loadError();
-    } else {
-        console.log(data);
-        loadCourses(data);
     }
 }
 
@@ -65,7 +82,7 @@ async function requestCourses(id) {
  * 根据obj生成课程信息
  * @param obj obj
  */
-function loadCourses(obj) {
+function renderCourses(obj) {
     let loading = $('.loading');
     let courses = $('.courses');
     if (!obj.data) {
@@ -93,7 +110,6 @@ function loadCourses(obj) {
     courses.html(html);
     loading.hide(250);
     courses.show(250);
-
     // 加载事件
     loadEvent();
 }

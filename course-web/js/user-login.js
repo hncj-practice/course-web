@@ -47,6 +47,8 @@ function loadEvents() {
             // 存储账号密码到 localStorage中
             localStorage.setItem('course-web-curr-teacher-username', data.data['tno']);
             localStorage.setItem('course-web-curr-teacher-password', data.data['pwd']);
+            localStorage.setItem('course-web-curr-teacher-name', data.data['name']);
+            localStorage.setItem('course-web-curr-teacher-avatar', data.data['avatar']);
             console.log(localStorage['course-web-curr-teacher-username']);
             console.log(localStorage['course-web-curr-teacher-password']);
             // 跳转到教师页面
