@@ -18,3 +18,4 @@ function loadEvents() {
         new IframeTab('#change2Course', 'admin-course-manage.html')
     ]);
 }
+

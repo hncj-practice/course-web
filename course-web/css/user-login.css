@@ -144,6 +144,7 @@ main .left form input[type=submit] {
   color: #fff;
   background: #669cff;
   font-size: 18px;
+  cursor: pointer;
 }
 main .left .admin {
   display: none;

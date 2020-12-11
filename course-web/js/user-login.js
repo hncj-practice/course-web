@@ -24,9 +24,13 @@ function loadEvents() {
             username: $('#adminUsername').val(),
             password: $('#adminPassword').val(),
             type: 3
-        }, () => {
+        }, (data) => {
+            // 存储账号密码到 localStorage中
+            console.log(data);
+            localStorage.setItem('course-web-curr-admin-username', data.data['adminAccount']);
+            localStorage.setItem('course-web-curr-admin-password', data.data['adminPwd']);
             // 跳转到管理页面
-            window.location.href = 'admin.html';
+            // window.location.href = 'admin.html';
         });
         return false;
     });
@@ -51,10 +55,9 @@ function loadEvents() {
 function simpleLogin(param, success) {
     let url = API.ACCOUNT_API.LOGIN;
     post(url, param).then(data => {
-        console.log(data);
         toastr.success('登录成功！');
         if (success) {
-            success();
+            success(data);
         }
     }).catch((reason => {
         if (isString(reason)) {
