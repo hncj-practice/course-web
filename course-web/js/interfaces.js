@@ -30,6 +30,8 @@ const HOST = 'http://123.56.156.212/Interface';
 // noinspection SpellCheckingInspection
 const API = {
     ACCOUNT_API: {
+        // 登录
+        LOGIN: 'http://123.56.156.212/Interface/account/login',
         // 重置
         RESET_BY_ADMIN: HOST + '/account/resetpwdbyadmin',
         // 删除用户

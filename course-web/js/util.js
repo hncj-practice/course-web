@@ -59,6 +59,16 @@ String.prototype.format = function (args) {
 
 
 /**
+ * 判断str是不是字符串
+ * @param str
+ * @returns {boolean|boolean}
+ */
+function isString(str) {
+    return (typeof str == 'string') && str.constructor === String;
+}
+
+
+/**
  * 判断字符串是否为空
  * @param obj 字符串
  * @returns {boolean}

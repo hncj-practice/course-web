@@ -11,6 +11,10 @@
     <!-- jQuery -->
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
 
+    <!-- toastr -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <!-- 自己的css -->
     <link rel="stylesheet" href="../css/user-login.css">
 
@@ -34,23 +38,28 @@
             <div id="adminLogin">管理员登录</div>
         </div>
         <br>
+
         <!-- 用户登录表单 -->
-        <form action="${pageContext.request.contextPath}/user/teacher"
-              method="POST" class="user">
-            <input type="text" name="username" placeholder="工号" value="888888888"><br>
-            <input type="password" name="password" placeholder="密码" value="000000"><br>
+        <form id="userLoginForm" class="user">
+            <!--suppress HtmlFormInputWithoutLabel -->
+            <input id="teacherUsername" type="text" name="username" placeholder="工号" value="888888888"><br>
+            <!--suppress HtmlFormInputWithoutLabel -->
+            <input id="teacherPassword" type="password" name="password" placeholder="密码" value="000000"><br>
             <div class="v-code">
+                <!--suppress HtmlFormInputWithoutLabel -->
                 <input type="text" placeholder="验证码">
                 <img src="../imgs/code.jpg" alt=""></div>
             <input type="submit" value="登录" class="submit">
         </form>
 
         <!-- 管理员登录表单 -->
-        <form action="${pageContext.request.contextPath}/user/admin"
-              method="POST" class="admin">
-            <input type="text" name="username" placeholder="账号" value="wsgly"><br>
-            <input type="password" name="password" placeholder="密码" value="000000"><br>
+        <form id="adminLoginForm" class="admin">
+            <!--suppress HtmlFormInputWithoutLabel -->
+            <input id="adminUsername" type="text" name="username" placeholder="账号" value="wsgly"><br>
+            <!--suppress HtmlFormInputWithoutLabel -->
+            <input id="adminPassword" type="password" name="password" placeholder="密码" value="000000"><br>
             <div class="v-code">
+                <!--suppress HtmlFormInputWithoutLabel -->
                 <input type="text" placeholder="验证码">
                 <img src="../imgs/code.jpg" alt=""></div>
             <input type="submit" value="登录" class="submit">
