@@ -394,6 +394,7 @@ function Base64() {
 
     // private method for UTF-8 encoding
     let _utf8_encode = function (string) {
+        string = String(string);
         string = string.replace(/\r\n/g, "\n");
         let utftext = "";
         for (let n = 0; n < string.length; n++) {
