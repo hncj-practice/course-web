@@ -5,6 +5,7 @@
  * 每个代码块的功能都有注释
  */
 
+
 // 入口函数
 $(function () {
     checkLogin();
@@ -34,6 +35,8 @@ function checkLogin() {
     $('#tid').text(localStorage['course-web-curr-teacher-username']);
     $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
 }
+
+
 
 
 // 加载章节试题

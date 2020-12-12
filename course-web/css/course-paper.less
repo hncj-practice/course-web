@@ -1,0 +1,108 @@
+@import "style.less";
+
+html, body {
+  background: #fff;
+}
+
+#paperContain {
+  background: #fff;
+  border: none;
+  padding: 16px 26px;
+
+  // 组卷按钮
+  .make-paper {
+    //margin: 10px 0;
+
+    button {
+      width: 100px;
+      height: 35px;
+    }
+  }
+
+  // 试卷
+  .papers-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // 试卷item
+    .paper-item {
+      margin: 12px 0;
+      width: 32%;
+      height: 180px;
+      background: #fff;
+      border: solid 1px #d6d6d6;
+      display: flex;
+      flex-direction: column;
+      .cnt-select();
+
+      .title {
+        height: 40px;
+        line-height: 40px;
+        margin: 0;
+        padding-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .desc {
+        flex: 1;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 16px;
+
+        .status {
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .option {
+        height: 25%;
+        background: #e8eeda;
+
+        button {
+          width: 20%;
+          height: 70%;
+          float: right;
+          margin-top: 2.2%;
+          margin-right: 15px;
+          background: #7b9e31;
+          color: #fff;
+          .no-border();
+        }
+      }
+
+
+    }
+  }
+}
+
+
+// 随机组卷面板
+.random-paper {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+// 随机组卷成功预览面板
+.random-paper-preview {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}

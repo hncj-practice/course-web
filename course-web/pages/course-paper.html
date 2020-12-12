@@ -18,14 +18,14 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- 自己的css -->
-<!--    <link rel="stylesheet" href="../css/course-question.css">-->
+    <link rel="stylesheet" href="../css/course-paper.css">
 
     <!-- 工具类和常量类 -->
     <script src="../js/util.js"></script>
     <script src="../js/interfaces.js"></script>
 
     <!-- 自己的js -->
-<!--    <script src="../js/course-question.js"></script>-->
+    <script src="../js/course-paper.js"></script>
 
     <!-- 页面可能用到的js代码 -->
     <script>
@@ -34,6 +34,51 @@
 
 </head>
 <body>
-试卷管理
+<main id="paperContain">
+    <div class="make-paper">
+        <button id="manualPaper" class="btn-make-paper">手动组卷</button>
+        <button id="randomPaper" class="btn-make-paper">自动出卷</button>
+    </div>
+
+    <!-- 试卷ul -->
+    <div class="papers-list">
+        <div class="paper-item">
+            <p class="title">第四次测试</p>
+
+            <div class="desc">
+                <p class="start">开始时间：2020-11-11 08:30</p>
+                <p class="end">结束时间：2020-11-11 10:30</p>
+                <p class="status">考试状态：<span>已发布</span></p>
+            </div>
+
+            <div class="option">
+                <button>编辑</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!--  随机组卷面板  -->
+    <!--    <div class="random-paper">-->
+    <!--        <p>所选章节</p>-->
+    <!--        <p>随机选择题数：</p>-->
+    <!--        <p>随机填空题数：</p>-->
+    <!--        <p>随机判断题数：</p>-->
+    <!--        <button class="ensure-random-paper">确定</button>-->
+    <!--    </div>-->
+
+    <!--  随机组卷成功预览面板  -->
+    <!--    <div class="random-paper-preview">-->
+    <!--        <h3>试卷预览</h3>-->
+    <!--        <p>选择题</p>-->
+    <!--        <ul id="previewXZ">-->
+
+    <!--        </ul>-->
+    <!--        <p>填空题</p>-->
+    <!--        <p>判断题</p>-->
+    <!--        <button class="ensure-random-paper-new">确定</button>-->
+    <!--    </div>-->
+
+</main>
 </body>
 </html>

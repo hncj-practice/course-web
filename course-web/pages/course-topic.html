@@ -18,14 +18,14 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- 自己的css -->
-<!--    <link rel="stylesheet" href="../css/course-question.css">-->
+    <link rel="stylesheet" href="../css/course-topic.css">
 
     <!-- 工具类和常量类 -->
     <script src="../js/util.js"></script>
     <script src="../js/interfaces.js"></script>
 
     <!-- 自己的js -->
-<!--    <script src="../js/course-question.js"></script>-->
+    <script src="../js/course-topic.js"></script>
 
     <!-- 页面可能用到的js代码 -->
     <script>
@@ -34,6 +34,46 @@
 
 </head>
 <body>
-话题管理
+<main id="topicContain">
+    <button>新建话题</button>
+    <ul class="topics-ul">
+        <li>
+            <img src="../imgs/头像.png" alt="">
+            <div class="right">
+                <p class="who-start">发起人</p>
+                <h5 class="title">话题标题</h5>
+                <p class="content">话题内容</p>
+                <div class="comments">
+                    <div class="comment">
+                        <span class="who-commit">评论人</span>
+                        <span>评论时间</span>
+                        <p class="comment-content">评论内容</p>
+                    </div>
+
+                    <button>查看全部</button>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <img src="../imgs/头像.png" alt="">
+            <div class="right">
+                <p class="who-start">发起人</p>
+                <h5 class="title">话题标题</h5>
+                <p class="content">话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容话题内容</p>
+                <div class="comments">
+                    <div class="comment">
+                        <span class="who-commit">评论人</span>
+                        <span>评论时间</span>
+                        <p class="comment-content">评论内容</p>
+                    </div>
+                    <button>查看全部</button>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</main>
+
 </body>
 </html>
