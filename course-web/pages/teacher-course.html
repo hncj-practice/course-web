@@ -31,9 +31,9 @@
 
     <!-- 页面可能用到的js代码 -->
     <script>
-        let currCourseId = '1';
-        let teacherId = '888888888';
-        let teacherPassword = '000000'
+        let currCourseId = getQueryString('cid');
+        let teacherId = localStorage['course-web-curr-teacher-username'];
+        let teacherPassword = localStorage['course-web-curr-teacher-password']
     </script>
 
 </head>
@@ -69,12 +69,11 @@
 <header>
 
     <img src="../imgs/logo.png" alt="">
-    <h2>网络课程助手（logo暂定）</h2>
+    <h2>网络课程助手</h2>
 
     <div class="account">
-        <span>吴硕</span>
+        <span id="tid">用户名</span>
         <img id="headAvatar" src="../imgs/头像.png" alt="">
-
     </div>
 </header>
 

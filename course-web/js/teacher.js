@@ -133,9 +133,9 @@ function loadEvent() {
             // 去正在点击的课程id
             let cid = $(e.target).attr('cid');
             console.log('跳转到课程：' + cid);
-            // 跳转
-            // window.open('../course/home?courseId=' + cid, '_blank');
-            alert('跳转到：' + cid);
+            // 跳转到课程并携带sign
+            let url = `teacher-course.html?cid=${cid}&sign=${md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])}`;
+            window.open(url, '_blank');
         });
     }
 }

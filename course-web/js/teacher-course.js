@@ -7,12 +7,26 @@
 
 // 入口函数
 $(function () {
+    checkLogin();
+
     // loadChapterQuestions();
 
     // loadPapers();
 
     loadEvents_Course();
 });
+
+
+// 检查登录
+function checkLogin() {
+    let sign = getQueryString('sign');
+    if (sign !== md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])) {
+        window.location.href = 'user-login.html';
+    }
+    // 更改头像和id
+    $('#tid').text(localStorage['course-web-curr-teacher-username']);
+    $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
+}
 
 
 // 加载章节试题
