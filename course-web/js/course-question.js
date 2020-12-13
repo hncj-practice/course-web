@@ -31,7 +31,7 @@ async function loadChapters() {
         chapters.forEach(chapter => {
             console.log(chapter);
             html += `
-            <li><a href="teacher-question.html?chapter=${chapter['chapterid']}&sign=${md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])}" target="_blank">${chapter['chaptername']}</a></li>
+            <li><a href="chapter-question.html?chapter=${chapter['chapterid']}&sign=${md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])}" target="_blank">${chapter['chaptername']}</a></li>
             `;
         });
 

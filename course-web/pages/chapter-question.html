@@ -18,7 +18,7 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- 自己的css -->
-    <link rel="stylesheet" href="../css/teacher-question.css">
+    <link rel="stylesheet" href="../css/chapter-question.css">
 
     <!-- 工具类和常量类 -->
     <script src="https://cdn.bootcdn.net/ajax/libs/xlsx/0.16.8/xlsx.core.min.js"></script>
@@ -26,13 +26,13 @@
     <script src="../js/interfaces.js"></script>
 
     <!-- 自己的js -->
-    <script src="../js/t-question.js"></script>
+    <script src="../js/chapter-question.js"></script>
 
     <!-- 页面可能用到的js代码 -->
     <script>
-        let teacherId = '888888888';
-        let teacherPassword = '000000';
-        let currCpid = '1';
+        let teacherId = localStorage['course-web-curr-teacher-username'];
+        let teacherPassword = localStorage['course-web-curr-teacher-password'];
+        let currCpid = getQueryString('chapter');
     </script>
 
 </head>
@@ -47,7 +47,7 @@
 </header>
 
 <main>
-    <h2 class="chapterName">第一章 基本数据类型</h2>
+    <h2 class="chapterName">章节名称</h2>
     <input id="importQuestionInput" type="file" accept=".xlsx" style="display: none">
     <button class="btn-import-question" id="addQuestion">添加题目</button>
     <button class="btn-import-question" id="importQuestion">批量导入题目</button>

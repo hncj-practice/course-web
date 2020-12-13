@@ -1,11 +1,35 @@
+/**
+ * 教师 - 课程 - 题目页面
+ */
+
+
 // 入口函数
 $(function () {
+    // 检查登录
+    checkLogin();
+
     // 加载题目
     loadQuestions();
 
     // 加载事件
     loadEvents();
 });
+
+
+// 检查登录
+function checkLogin() {
+    console.log('检查更新');
+    console.log(teacherId);
+    console.log(teacherPassword);
+    console.log(currCpid);
+    let sign = getQueryString('sign');
+    if (sign !== md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])) {
+        window.location.href = 'user-login.html';
+    }
+    // 更改头像和id
+    $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
+}
+
 
 
 /**
