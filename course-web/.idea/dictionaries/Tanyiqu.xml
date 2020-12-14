@@ -11,6 +11,8 @@
       <w>chaptername</w>
       <w>choicepoints</w>
       <w>classid</w>
+      <w>commentcontent</w>
+      <w>commenttime</w>
       <w>committime</w>
       <w>courseid</w>
       <w>coverimg</w>
@@ -31,6 +33,7 @@
       <w>problemids</w>
       <w>ptype</w>
       <w>qtype</w>
+      <w>savatar</w>
       <w>scla</w>
       <w>sclass</w>
       <w>semail</w>

@@ -100,6 +100,10 @@ const API = {
         DELETE: HOST + '/topic/deltopic',
     },
 
+    COMMENT: {
+        FIND: HOST + '/comment/getcommentbytopicid',
+    },
+
     QUESTION_API: {
         // 添加
         ADD: HOST + '/problem/addproblem',
