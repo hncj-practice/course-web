@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>话题详情</title>
+    <link rel="short icon" href="../imgs/logo.png">
+
+    <!-- jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- toastr -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- 自己的css -->
+    <link rel="stylesheet" href="../css/topic-detail.css">
+
+    <!-- 工具类和常量类 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/xlsx/0.16.8/xlsx.core.min.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/interfaces.js"></script>
+
+    <!-- 自己的js -->
+    <script src="../js/topic-detail.js"></script>
+</head>
+<body>
+<header>
+    <img src="../imgs/logo.png" alt="">
+    <h2>网络课程助手</h2>
+    <div class="account">
+        <span id="tno">tno</span>
+        <img id="headAvatar" src="../imgs/头像.png" alt="">
+    </div>
+</header>
+
+<main>
+    <div class="topic-info">
+        <div class="left">
+            <img src="../imgs/头像.png" alt="">
+        </div>
+        <div class="right">
+            <h4 class="topic-teacher">发布人</h4>
+            <h4 class="topic-time">2020-11-22 15:00:00</h4>
+            <h2 class="topic-title">话题名</h2>
+            <h4 class="topic-content">内容..内容..内容..内容..内容..内容..</h4>
+        </div>
+    </div>
+
+    <div class="comment-info">
+        <ul id="commentList">
+            <li class="comment-item">
+                <div class="left">
+                    <img src="../imgs/头像.png" alt="">
+                </div>
+                <div class="right">
+                    <h4 class="comment-student">评论人</h4>
+                    <h4 class="comment-time">2020-11-22 15:00:00</h4>
+                    <p class="comment-content">内容..内容..内内容..内内容..内内容..内容..内容..内容..内容内容..内容..内容..内容..内容..内容..内容....内容..内容..内容..内容..内容..内容..</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</main>
+
+</body>
+</html>

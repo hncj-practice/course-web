@@ -29,6 +29,7 @@ function checkLogin() {
     // 更改头像和章节名
     $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
     $('.chapterName').text(getQuery('chaptername'));
+    $('#tno').text(localStorage['course-web-curr-teacher-username']);
 }
 
 

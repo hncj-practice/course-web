@@ -36,7 +36,8 @@ async function loadTopics() {
                 </div>
                 <div class="right">
                     <h4 class="topic-time">${formatTime(topic['committime'])}</h4>
-                    <h3 class="topic-title">${topic['topictitle']}</h3>
+                    <!--suppress HtmlUnknownAttribute -->
+                    <h3 topicid="${topic['topicid']}" class="topic-title">${topic['topictitle']}</h3>
                     <h4 class="topic-content">${topic['topiccontent']}</h4>
                 </div>
                  <!--suppress HtmlUnknownAttribute -->
@@ -52,6 +53,22 @@ async function loadTopics() {
 
 // 加载话题的事件
 function loadTopicEvents() {
+    // 点击进入详情
+    {
+        $('.topic-title').off('click');
+        $('.topic-title').click(async e => {
+            let id = e.target.attributes['topicid'].value;
+            let url = `
+            topic-detail.html?
+            topicid=${id}
+            &sign=${md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])}
+            `.replace(/\s/g, '');
+            // 跳转
+            window.open(url, '_blank');
+        });
+    }
+
+
     // 点击删除话题
     {
         $('.delete-topic').off('click');
