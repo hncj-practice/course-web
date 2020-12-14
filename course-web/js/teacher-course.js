@@ -39,29 +39,6 @@ function checkLogin() {
 
 
 
-// 加载章节试题
-// function loadChapterQuestions() {
-//     let url = CHAPTER_API.FIND;
-//     let param = {
-//         courseid: currCourseId
-//     };
-//     let success = (e) => {
-//         if (e.code === 200) {
-//             let html = '';
-//             e.data.forEach((item) => {
-//                 html += `
-//                 <li cpid="{0}">{1}</li>
-//                 `.format(item['chapterid'], item['chaptername']);
-//             });
-//             // chapters.html(html);
-//         } else {
-//             toastr.error(e.message);
-//         }
-//     };
-//     // let chapters = $('.chapters-ul');
-//     my_ajax(url, param, success);
-// }
-
 // // 加载试卷
 // function loadPapers() {
 //     let url = PAPER_API.FIND;

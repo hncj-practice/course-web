@@ -449,6 +449,26 @@ function getQuery(key) {
 }
 
 
+// 时间戳转时间
+function formatTime(sec) {
+    // 不够两位数 补0
+    function add0(m) {
+        return m < 10 ? '0' + m : m
+    }
+
+    // 如果sec不是整数，就转成整数
+    sec = sec - 0;
+    let time = new Date(sec);
+    let y = time.getFullYear();
+    let m = time.getMonth() + 1;
+    let d = time.getDate();
+    let h = time.getHours();
+    let mm = time.getMinutes();
+    let s = time.getSeconds();
+    return y + '-' + add0(m) + '-' + add0(d) + ' ' + add0(h) + ':' + add0(mm) + ':' + add0(s);
+}
+
+
 // 根据当前时间返回欢迎语
 function welcome() {
     return '下午好（待实现）';
