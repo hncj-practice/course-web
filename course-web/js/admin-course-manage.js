@@ -192,7 +192,7 @@ async function loadEvents() {
  * @param success 成功的回调
  */
 async function deleteCourse(cid, success) {
-    let url = COURSE_API.DELETE;
+    let url = API.COURSE_API.DELETE;
     let param = {
         adminuser: adminUN,
         adminpwd: adminUP,
@@ -212,7 +212,7 @@ async function deleteCourse(cid, success) {
  * @param success 成功回调
  */
 async function renameCourse(cid, newName, success) {
-    let url = COURSE_API.UPDATE;
+    let url = API.COURSE_API.UPDATE;
     let param = {
         user: adminUN,
         pwd: adminUP,
@@ -232,7 +232,7 @@ async function renameCourse(cid, newName, success) {
  * @param success 成功回调
  */
 async function addCourse(param, success) {
-    let url = COURSE_API.ADD;
+    let url = API.COURSE_API.ADD;
     // 添加上管理员权限
     param['adminuser'] = adminUN;
     param['adminpwd'] = adminUP;

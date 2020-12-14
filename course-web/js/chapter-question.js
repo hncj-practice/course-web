@@ -39,7 +39,7 @@ function checkLogin() {
  * @param success 加载成功的回调
  */
 function loadQuestions(type, success) {
-    let url = QUESTION_API.FIND;
+    let url = API.QUESTION_API.FIND;
     let param = {
         chapterid: currCpid,
         type: type
@@ -352,7 +352,7 @@ function loadEvents() {
 
 // 单独添加题目
 function addQuestion(param, success) {
-    let url = QUESTION_API.ADD;
+    let url = API.QUESTION_API.ADD;
     param['user'] = teacherId;
     param['pwd'] = teacherPassword;
     my_ajax(url, param, (e) => {
