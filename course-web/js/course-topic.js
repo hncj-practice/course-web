@@ -29,7 +29,6 @@ async function loadTopics() {
         let html = '';
 
         topics.forEach(topic => {
-
             html += `
             <li>
                 <div class="left">
@@ -40,12 +39,42 @@ async function loadTopics() {
                     <h3 class="topic-title">${topic['topictitle']}</h3>
                     <h4 class="topic-content">${topic['topiccontent']}</h4>
                 </div>
+                 <!--suppress HtmlUnknownAttribute -->
+                <div topicid="${topic['topicid']}" class="delete-topic"></div>
             </li>
             `;
-
         });
-
         $('.topics-ul').html(html);
+        loadTopicEvents();
     }
+}
 
+
+// 加载话题的事件
+function loadTopicEvents() {
+    // 点击删除话题
+    {
+        $('.delete-topic').off('click');
+        $('.delete-topic').click(async e => {
+            let id = e.target.attributes['topicid'].value;
+
+            let yes = confirm('确定删除话题？');
+            if (yes) {
+                let url = API.TOPIC_APT.DELETE;
+                let param = {
+                    user: localStorage['course-web-curr-teacher-username'],
+                    pwd: localStorage['course-web-curr-teacher-password'],
+                    topicid: id
+                };
+
+                let [err, data] = await awaitWrap(post(url, param));
+                if (err) {
+                    toastr.error(err);
+                } else {
+                    toastr.success(data.message);
+                    await loadTopics();
+                }
+            }
+        });
+    }
 }

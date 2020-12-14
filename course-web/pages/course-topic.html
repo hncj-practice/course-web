@@ -34,6 +34,35 @@
 
 </head>
 <body>
+
+<!-- 对话框 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    模态框标题
+                </h4>
+            </div>
+            <div class="modal-body" id="myModelBody">
+                模态框内容
+            </div>
+            <div class="modal-footer">
+                <button id="modelCancel" type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+                <button id="modelConfirm" type="button" class="btn btn-primary">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <main id="topicContain">
     <button>新建话题</button>
     <ul class="topics-ul">
@@ -47,6 +76,8 @@
                 <h3 class="topic-title">话题标题？</h3>
                 <h4 class="topic-content">话题内容话题内容话题内容</h4>
             </div>
+            <!--suppress HtmlUnknownAttribute -->
+            <div topicid="0011" class="delete-topic"></div>
         </li>
 
         <li>
@@ -58,6 +89,9 @@
                 <h3 class="topic-title">话题标题？</h3>
                 <h4 class="topic-content">话题内容话题内容话题内容</h4>
             </div>
+            <div class="delete"></div>
+            <!--suppress HtmlUnknownAttribute -->
+            <div topicid="0011" class="delete-topic"></div>
         </li>
 
     </ul>

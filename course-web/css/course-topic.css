@@ -79,10 +79,24 @@ body {
   list-style: none;
 }
 #topicContain ul li {
+  position: relative;
   margin: 10px 0;
   display: flex;
   padding-bottom: 18px;
   border-bottom: solid 1px #e6e6e6;
+}
+#topicContain ul li:hover .delete-topic {
+  display: block;
+}
+#topicContain ul li .delete-topic {
+  display: none;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  right: 5px;
+  background: url(../imgs/delete.png) no-repeat center;
+  cursor: pointer;
 }
 #topicContain ul li .left {
   margin-right: 16px;

@@ -96,6 +96,8 @@ const API = {
     TOPIC_APT: {
         // 查询
         FIND: HOST + '/topic/gettopicbycid',
+
+        DELETE: HOST + '/topic/deltopic',
     },
 
     QUESTION_API: {
