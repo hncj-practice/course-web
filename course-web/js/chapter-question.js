@@ -26,8 +26,9 @@ function checkLogin() {
     if (sign !== md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])) {
         window.location.href = 'user-login.html';
     }
-    // 更改头像和id
+    // 更改头像和章节名
     $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
+    $('.chapterName').text(getQuery('chaptername'));
 }
 
 

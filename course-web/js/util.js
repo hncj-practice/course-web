@@ -436,6 +436,19 @@ function getQueryString(name) {
 }
 
 
+// 获取地址栏参数
+function getQuery(key) {
+    let queries = location.search.slice(1).split('&');
+    let obj = {};
+    queries.forEach(query => {
+        query = decodeURIComponent(query);
+        let arr = query.split('=');
+        obj[arr[0]] = arr[1];
+    });
+    return obj[key];
+}
+
+
 // 根据当前时间返回欢迎语
 function welcome() {
     return '下午好（待实现）';
