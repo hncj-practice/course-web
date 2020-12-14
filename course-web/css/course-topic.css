@@ -66,3 +66,42 @@ html,
 body {
   background: #fff;
 }
+#topicContain {
+  background: #fff;
+  padding: 16px 26px;
+}
+#topicContain h3,
+#topicContain h4 {
+  margin: 0;
+  padding: 0;
+}
+#topicContain ul {
+  list-style: none;
+}
+#topicContain ul li {
+  margin: 10px 0;
+  display: flex;
+  padding-bottom: 18px;
+  border-bottom: solid 1px #e6e6e6;
+}
+#topicContain ul li .left {
+  margin-right: 16px;
+}
+#topicContain ul li .left img {
+  height: 50px;
+  border-radius: 50%;
+}
+#topicContain ul li .right .topic-time {
+  height: 22px;
+  line-height: 22px;
+  font-size: 15px;
+}
+#topicContain ul li .right .topic-title {
+  height: 28px;
+  line-height: 28px;
+  font-size: 22px;
+  cursor: pointer;
+}
+#topicContain ul li .right .topic-content {
+  margin-top: 12px;
+}

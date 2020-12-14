@@ -93,6 +93,11 @@ const API = {
         DELETE: HOST + '/paper/delpaper'
     },
 
+    TOPIC_APT: {
+        // 查询
+        FIND: HOST + '/topic/gettopicbycid',
+    },
+
     QUESTION_API: {
         // 添加
         ADD: HOST + '/problem/addproblem',

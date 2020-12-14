@@ -11,6 +11,7 @@
       <w>chaptername</w>
       <w>choicepoints</w>
       <w>classid</w>
+      <w>committime</w>
       <w>courseid</w>
       <w>coverimg</w>
       <w>cpid</w>
@@ -40,6 +41,8 @@
       <w>temail</w>
       <w>tname</w>
       <w>toastr</w>
+      <w>topiccontent</w>
+      <w>topictitle</w>
       <w>tsex</w>
       <w>utftext</w>
       <w>wsgly</w>

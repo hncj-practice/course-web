@@ -15,7 +15,7 @@ $(function () {
 // 加载试卷
 async function loadPapers() {
     let cid = parent.currCourseId;
-    let url = PAPER_API.FIND;
+    let url = API.PAPER_API.FIND;
 
     let [err, data] = await awaitWrap(post(url, {
         courseid: cid
