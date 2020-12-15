@@ -98,6 +98,8 @@ const API = {
         FIND: HOST + '/topic/gettopicbycid',
 
         DELETE: HOST + '/topic/deltopic',
+
+        ADD: HOST + '/topic/addtopic',
     },
 
     COMMENT: {

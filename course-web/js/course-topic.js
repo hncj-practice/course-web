@@ -5,9 +5,11 @@
 
 // 入口函数
 $(function () {
-    // 加载试卷信息
     (async () => {
+        // 加载试卷信息
         await loadTopics();
+
+        loadEvent();
     })();
 });
 
@@ -90,6 +92,63 @@ function loadTopicEvents() {
                 } else {
                     toastr.success(data.message);
                     await loadTopics();
+                }
+            }
+        });
+    }
+}
+
+
+// 加载事件
+function loadEvent() {
+    // 新建话题
+    {
+        // 打开
+        $('#addTopic').click(() => {
+            $('#addTopicDiv').show(200);
+        });
+
+        // 关闭
+        $('.btn-close').click(() => {
+            $('#topicTitle').val('');
+            $('#topicContent').val('');
+            $('#addTopicDiv').hide(200);
+        });
+
+        // 新建
+        $('#btnAddTopic').click(async () => {
+            // 获取值
+            let title = $('#topicTitle').val();
+            let content = $('#topicContent').val();
+            let time = new Date().getTime();
+
+            if (testFailed(title, content)) {
+                toastr.warning('请输入内容！');
+            } else {
+                let url = API.TOPIC_APT.ADD;
+                let param = {
+                    user: localStorage['course-web-curr-teacher-username'],
+                    pwd: localStorage['course-web-curr-teacher-password'],
+                    courseid: parent.currCourseId,
+                    topictitle: title,
+                    topiccontent: content,
+                    committime: time,
+                    topicstatus: 1
+                };
+
+                let [err, data] = await awaitWrap(post(url, param));
+
+                if (err) {
+                    toastr.error(err);
+                } else {
+                    // 提示成功
+                    toastr.success(data.message);
+                    // 刷新
+                    await loadTopics();
+                    // 关闭窗口
+                    $('#topicTitle').val('');
+                    $('#topicContent').val('');
+                    $('#addTopicDiv').hide(200);
                 }
             }
         });

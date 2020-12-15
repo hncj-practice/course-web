@@ -64,7 +64,7 @@
 
 
 <main id="topicContain">
-    <button>新建话题</button>
+    <button id="addTopic" type="button" class="btn btn-info">新建话题</button>
     <ul class="topics-ul">
 
         <li>
@@ -95,8 +95,25 @@
             <!--suppress HtmlUnknownAttribute -->
             <div topicid="0011" class="delete-topic"></div>
         </li>
-
     </ul>
+
+    <div id="addTopicDiv" class="window">
+        <div class="btn-close close"></div>
+
+        <div>
+            <label for="topicTitle"></label>
+            <textarea id="topicTitle" placeholder="请输入话题标题" cols="30" rows="10"></textarea>
+        </div>
+
+        <div>
+            <label for="topicContent"></label>
+            <textarea id="topicContent" placeholder="请输入话题标题" cols="30" rows="10"></textarea>
+        </div>
+
+        <button id="btnAddTopic" type="button" class="btn btn-info">新建</button>
+
+    </div>
+
 </main>
 
 </body>

@@ -119,3 +119,18 @@ body {
 #topicContain ul li .right .topic-content {
   margin-top: 12px;
 }
+#topicContain #addTopicDiv {
+  width: 550px;
+  height: 290px;
+  display: none;
+}
+#topicContain #addTopicDiv textarea {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 5px;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border: solid 1px #e6e6e6;
+}
