@@ -17,6 +17,16 @@ $(function () {
         new IframeTab('#topicManage', 'course-topic.html')
     ]);
 
+    // 跳转到学生情况
+    $('#studentsInfo').click(() => {
+        let url = `
+        course-student-info.html?
+        cid=${getQuery('cid')}
+        &sign=${md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])}
+        `.replace(/\s/g, '');
+        window.open(url, '_blank');
+    });
+
     // loadChapterQuestions();
 
     // loadPapers();
@@ -35,8 +45,6 @@ function checkLogin() {
     $('#tid').text(localStorage['course-web-curr-teacher-username']);
     $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
 }
-
-
 
 
 // // 加载试卷
