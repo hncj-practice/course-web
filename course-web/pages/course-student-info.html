@@ -23,6 +23,7 @@
     <!-- 工具类和常量类 -->
     <script src="../js/util.js"></script>
     <script src="../js/interfaces.js"></script>
+    <script src="../js/tableExport.js"></script>
 
     <!-- 自己的js -->
     <script src="../js/course-student-info.js"></script>
@@ -45,8 +46,9 @@
 
 
 <main>
+    <button id="exportTable" type="button" class="btn btn-info">导出成绩单</button>
     <div class="table-div">
-        <table class="table table-bordered">
+        <table id="studentInfoTable" class="table table-bordered">
             <!-- 表头 -->
             <thead>
             <tr>
@@ -59,7 +61,7 @@
             </thead>
 
             <!-- 表内容 -->
-            <tbody id="studentInfoTable">
+            <tbody id="studentInfoTableBody">
             <tr>
                 <td>888888888</td>
                 <td>赵同学</td>

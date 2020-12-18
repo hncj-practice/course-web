@@ -128,6 +128,7 @@ main {
   padding: 20px;
 }
 main .table-div {
+  margin-top: 10px;
   background: #f4f4f4;
 }
 main .table-div tr:hover {

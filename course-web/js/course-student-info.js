@@ -15,6 +15,8 @@ $(function () {
     (async () => {
 
     })();
+
+    loadEvents();
 });
 
 
@@ -28,4 +30,16 @@ function checkLogin() {
     $('#tid').text(localStorage['course-web-curr-teacher-username']);
     $('#headAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
 
+}
+
+
+// 加载事件
+function loadEvents() {
+    // 导出成绩单
+    {
+        $('#exportTable').click(() => {
+            tableExport('studentInfoTable', 'student-info', 'xls');
+
+        });
+    }
 }
