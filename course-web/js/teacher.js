@@ -98,7 +98,7 @@ function renderCourses(obj) {
         // noinspection all
         html += `
         <div class="course">
-            <img class="course-img" cid="${allCourses[i]['cid']}" src="${allCourses[i]['coverimg']}" alt="" >
+            <img class="course-img" cname="${allCourses[i]['cname']}" cid="${allCourses[i]['cid']}" src="${allCourses[i]['coverimg']}" alt="" >
             <div class="title">
                 <h4 class="name">${allCourses[i]['cname']}</h4>
                 <h4 class="numbers">${allCourses[i]['snum']}人</h4>
@@ -132,9 +132,10 @@ function loadEvent() {
         $('.course-img').click((e) => {
             // 去正在点击的课程id
             let cid = $(e.target).attr('cid');
+            let cname = $(e.target).attr('cname');
             console.log('跳转到课程：' + cid);
             // 跳转到课程并携带sign
-            let url = `teacher-course.html?cid=${cid}&sign=${md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])}`;
+            let url = `teacher-course.html?cid=${cid}&cname=${cname}&sign=${md5(localStorage['course-web-curr-teacher-username'] + localStorage['course-web-curr-teacher-password'])}`;
             window.open(url, '_blank');
         });
     }
