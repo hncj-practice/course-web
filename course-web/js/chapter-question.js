@@ -33,7 +33,6 @@ function checkLogin() {
 }
 
 
-
 /**
  * 加载题目
  * @param type 类型 [1:选择，2:填空，3:判断]，不填则请求所有类型的题目
@@ -42,6 +41,8 @@ function checkLogin() {
 function loadQuestions(type, success) {
     let url = API.QUESTION_API.FIND;
     let param = {
+        user: localStorage['course-web-curr-teacher-username'],
+        pwd: localStorage['course-web-curr-teacher-password'],
         chapterid: currCpid,
         type: type
     };
