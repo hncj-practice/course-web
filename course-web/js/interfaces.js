@@ -98,6 +98,7 @@ const API = {
     TOPIC_APT: {
         // 查询
         FIND: HOST + '/topic/gettopicbycid',
+        FIND_BY_TID: HOST + '/topic/gettopicbytopicid',
 
         DELETE: HOST + '/topic/deltopic',
 

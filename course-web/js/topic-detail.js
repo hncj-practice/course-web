@@ -37,7 +37,21 @@ function checkLogin() {
 // 加载话题
 function loadTopic() {
     let topicid = getQuery('topicid');
+    // 头像
+    $('#teacherAvatar').attr('src', localStorage['course-web-curr-teacher-avatar']);
+    // 用户名
+    $('.topic-teacher').text(localStorage['course-web-curr-teacher-name']);
 
+    (async function () {
+        let url = API.TOPIC_APT.FIND_BY_TID;
+        let param = {
+            topicid: topicid
+        };
+        let [err, data] = await awaitWrap(post(url, param));
+        console.log(data)
+        $('.topic-title').text(data.data[0]['topictitle']);
+        $('.topic-content').text(data.data[0]['topiccontent']);
+    })();
 }
 
 
