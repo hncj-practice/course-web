@@ -49,7 +49,9 @@ const API = {
         // 添加学生
         ADD: HOST + '/account/addstudent',
         // 查询学生
-        FIND: HOST + '/student/allstudent'
+        FIND: HOST + '/student/allstudent',
+        // 统计
+        STATISTIC: HOST + '/student/statistic',
     },
 
     CLASS_API: {

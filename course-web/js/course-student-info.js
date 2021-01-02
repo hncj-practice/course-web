@@ -13,7 +13,30 @@ $(function () {
     checkLogin();
 
     (async () => {
-
+        let url = API.STUDENT_API.STATISTIC;
+        let param = {
+            courseid: cid
+        };
+        let [err, data] = await awaitWrap(post(url, param));
+        if (err) {
+            toastr.error(err);
+        } else {
+            console.log(data);
+            let infos = data.data;
+            let html = '';
+            infos.forEach(info => {
+               html += `
+                <tr>
+                    <td>${info['sno']}</td>
+                    <td>${info['sname']}</td>
+                    <td>${info['finpapernum']}/${info['totalpapernum']}</td>
+                    <td>${info['commentnum']}</td>
+                    <td>0</td>
+                </tr>
+               `;
+            });
+            $('#studentInfoTableBody').html(html);
+        }
     })();
 
     loadEvents();
@@ -39,7 +62,6 @@ function loadEvents() {
     {
         $('#exportTable').click(() => {
             tableExport('studentInfoTable', 'student-info', 'xls');
-
         });
     }
 }
