@@ -155,6 +155,10 @@ main .left .verify {
   margin: 0 auto;
   margin-top: 15px;
 }
+main .left .verify a {
+  text-decoration: none;
+  color: #669cff;
+}
 main .left .verify span {
   cursor: pointer;
   color: #669cff;
